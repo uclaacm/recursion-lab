@@ -12,7 +12,7 @@ What's this? This is a template repository that sets up a few minor systems for 
 - has Netlify redirects set up for multi-route SPAs
 - has Webpack that helps bundle JS/TS files for browser usage
 - Husky for Git Hooks which enforces linting rules for files on commit
-- ESLint with `typescript-airbnb` rules for our .TS and .TSX files
+- ESLint for our .TS and .TSX files
 - StyleLint with SASS guidelines for CSS, SASS, SCSS stylesheets.
 - includes the [Contributor Covenant](https://www.contributor-covenant.org/) in `CODE_OF_CONDUCT.md`
 - has a little bit of documentation for new people!

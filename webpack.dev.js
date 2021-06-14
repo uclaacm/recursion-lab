@@ -13,11 +13,7 @@ module.exports = merge(common, {
     rules: [
       {
         test: /\.(sa|sc|c)ss$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
-        ],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(png|svg|jpe?g|gif|mp3)$/i,
@@ -35,8 +31,7 @@ module.exports = merge(common, {
     contentBase: './dist',
     historyApiFallback: true,
     hot: true,
-    port: 8080,
-    proxy: {
-    },
+    port: 3000,
+    proxy: {},
   },
 });
