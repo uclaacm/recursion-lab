@@ -16,7 +16,7 @@ module.exports = merge(common, {
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.(png|svg|jpe?g|gif|mp3)$/i,
+        test: /\.(png|svg|jpe?g|gif|mp3|ttf)$/i,
         use: {
           loader: 'file-loader',
           options: {

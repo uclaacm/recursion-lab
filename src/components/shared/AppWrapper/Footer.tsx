@@ -3,7 +3,7 @@ function Footer(): JSX.Element {
   return (
     <div id="footer">
       <h3>
-        Made with ❤️ by
+        made with ❤️ by
         {' '}
         <a
           href="https://teachla.uclaacm.com"

@@ -30,6 +30,7 @@ $header-height: 8vh;
   background-color: white;
   bottom: 0;
   display: flex;
+  font-weight: regular;
   height: $header-height;
   justify-content: center;
   position: fixed;
@@ -38,10 +39,11 @@ $header-height: 8vh;
 }
 
 #footer h3 {
+  font-weight: normal;
   margin: 0;
 }
 
 #tla-logo {
-  height: 1.35em;
-  vertical-align: -0.38em;
+  height: 1.55em;
+  vertical-align: -0.51em;
 }

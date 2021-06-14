@@ -1,4 +1,11 @@
+@font-face {
+  font-family: 'Westwood Sans';
+  src: local('Westwood Sans'), 
+    url('../assets/WestwoodSans-Regular.ttf') format('truetype');
+}
+
 body {
-  font-family: 'Poppins', 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-family: 'Westwood Sans', 'Helvetica Neue', 'Helvetica', sans-serif;
+  margin: 0;
   text-align: center;
 }

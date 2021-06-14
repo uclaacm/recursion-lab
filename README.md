@@ -28,13 +28,13 @@ Add the `-n` flag to your commit message to skip Husky's auto-linting.
 EG: `git commit -m "changes" -n`
 
 ### Assets are angry and won't accept <x filetype>
-Our webpack set-up currently accepts asset files with the following extensions: `png, svg, jpg/jpeg, gif, mp3`
+Our webpack set-up currently accepts asset files with the following extensions: `png, svg, jpg/jpeg, gif, mp3, ttf`
 
 Code for it can be seen in line 22 `webpack.dev.js` and in `webpack.prod.js`
 
 ```
       {
-        test: /\.(png|svg|jpe?g|gif|mp3)$/i, // we use regex to test different file types
+        test: /\.(png|svg|jpe?g|gif|mp3|ttf)$/i, // we use regex to test different file types
         use: {
           loader: 'file-loader',
           options: {
@@ -105,6 +105,8 @@ Then install our dependencies!
 yarn install
 yarn prepare
 ```
+
+(If the above commands don't work even after installing yarn via npm, check this [npm installation guide](https://classic.yarnpkg.com/en/docs/install/#mac-stable), click on alternatives, choose your operating system, and follow the steps there!)
 
 (We handle the yarn and npm conflict issues within our `.gitignore` we set up so dw about it!)
 To start our app, you just need to run `yarn start`!
