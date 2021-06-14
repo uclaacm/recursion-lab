@@ -27,7 +27,8 @@ Add the `-n` flag to your commit message to skip Husky's auto-linting.
 
 EG: `git commit -m "changes" -n`
 
-- Our webpack set-up currently accepts asset files with the following extensions: `png, svg, jpg/jpeg, gif, mp3`
+### Assets are angry and won't accept <x filetype>
+Our webpack set-up currently accepts asset files with the following extensions: `png, svg, jpg/jpeg, gif, mp3`
 
 Code for it can be seen in line 22 `webpack.dev.js` and in `webpack.prod.js`
 
@@ -58,6 +59,9 @@ declare module '*.<YOUR_ASSET_TYPE>' {
   export default value;
 }
 ```
+      
+### How can I tell if my asset is actually being served?
+Take a look at `<YOUR_PROJECT_PATH>/asset-manifest.json`. [Like this!](https://teach-la-ts-react-starter.netlify.app/asset-manifest.json)
 
 ## Overview
 
@@ -75,6 +79,8 @@ Things you should do **after using this as a template**:
 - [ ] in `Settings > Branches`, create a branch protection rule for `main` that requires PR reviews. You can optionally enable status checks, like passing `build`.
 - [ ] update the README badges for the GitHub Actions and Netlify with the correct links!
 - [ ] update and delete this documentation!
+- [ ] update `public/index.html` to have a description and title
+- [ ] update `public/favicon.svg` and `public/favaicon512.png` as needed
 - [ ] contact Regina Wang (`@reginawang99`) or Matthew Nieva (`@matthewcn56`) with any questions about our quickstarter template set-up.
 
 ## Development Setup
