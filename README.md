@@ -7,7 +7,6 @@
 
 What's this? This is a template repository that sets up a few minor systems for a React micro-app, which is something that we've done frequently at Teach LA. Here's what it does:
 
-- has the latest, dependabot-certified version of `create-react-app` and dependencies
 - has GitHub Actions automatically set up for testing and linting builds
 - has a default Dependabot config for `yarn` (with monthly audits)
 - has Netlify redirects set up for multi-route SPAs
