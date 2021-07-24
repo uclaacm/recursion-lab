@@ -30,7 +30,7 @@ $header-height: 8vh;
   background-color: white;
   bottom: 0;
   display: flex;
-  font-weight: regular;
+  font-family: 'Westwood Sans','Helvetica Neue', 'Helvetica', sans-serif;
   height: $header-height;
   justify-content: center;
   position: fixed;
@@ -39,8 +39,12 @@ $header-height: 8vh;
 }
 
 #footer h3 {
-  font-weight: normal;
   margin: 0;
+}
+
+#footer-link {
+  color: black;
+  text-decoration: none;
 }
 
 #tla-logo {
