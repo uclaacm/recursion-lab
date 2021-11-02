@@ -40,7 +40,7 @@
     "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
     "mini-css-extract-plugin": "^2.2.1",
-    "sass": "^1.39.0",
+    "sass": "^1.43.4",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.2.1",
     "stylelint": "^13.13.1",
