@@ -14,8 +14,8 @@ body:
       description: Please search to see if an issue already exists for the bug you encountered.
       options:
         - label: I have searched existing issues
-      validations:
-        required: true
+    validations:
+      required: true
   - type: textarea
     id: what-happened
     attributes:
