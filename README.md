@@ -18,79 +18,6 @@ What's this? This is a template repository that sets up a few minor systems for 
 - has a little bit of documentation for new people!
 - Some extra stuff like changing the app logo to TeachLA's logo and setting up the `src` directory for further development!
 
-## FAQs
-
-### Some lint is unnecessary :( How do I disable it?
-There are actually 2 main ways to disable lint. Disabling the "rule" entirely, or in just a single line or file!
-#### Disabling the rule entirely.
-** **Make sure this is what you really want!! It is often likely that you want to disable for just a single file.** **
-
-Depending on whether it's from `stylelint` or `eslint`, you can go to `stylelintrc.json` and add to `"rules"
-```
-<rule-name>: null
-```
-or `eslintrc.json` and add
-```
-'<rule-name>': 'off',
-```
-#### Disabling a rule for a single line or file
-Take a look at the eslint docs for this: https://eslint.org/docs/user-guide/configuring/rules#disabling-rules
-
-Or the stylelint docs for this: https://stylelint.io/user-guide/ignore-code/
-
-It's pretty simple though, it'd look something like 
-```
-/* eslint-disable <rule-name> */
-```
-or 
-```
-// eslint-disable-next-line
-```
-
-The process for `stylelint` is very similar.
-
-### Husky is yelling at me and not letting me commit :(
-
-Add the `-n` flag to your commit message to skip Husky's auto-linting.
-
-EG: `git commit -m "changes" -n`
-
-### Assets are angry and won't accept <x filetype>
-Our webpack set-up currently accepts asset files with the following extensions: `png, svg, jpg/jpeg, gif, mp3, ttf`
-
-Code for it can be seen in line 22 `webpack.dev.js` and in `webpack.prod.js`
-
-```
-      {
-        test: /\.(png|svg|jpe?g|gif|mp3|ttf)$/i, // we use regex to test different file types
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: 'assets/[name].[ext]',
-          },
-        },
-      },
-```
-
-If you want to add more assets like `.pdf`, `.wav`, `.mp4`, <YOUR_ASSET_TYPE> etc.
-
-- [ ] Update `webpack.dev.js` file. Change `test: /\.(png|svg|jpe?g|gif|mp3)$/i` to `test: /\.(png|svg|jpe?g|gif|mp3|<YOUR_ASSET_TYPE>)$/i`
-- [ ] Update `webpack.prod.js` file. Change `test: /\.(png|svg|jpe?g|gif|mp3)$/i,` to `test: /\.(png|svg|jpe?g|gif|mp3|<YOUR_ASSET_TYPE>)$/i`
-- [ ] (If typing is needed) add a folder under `custom_typing` => `import-<YOUR_ASSET_TYPE>`
-- [ ] (If typing is needed) create a file like `import-<YOUR_ASSET_TYPE>.d.ts`
-- [ ] (If typing is needed) add in:
-
-```
-/* eslint-disable @typescript-eslint/no-explicit-any */
-declare module '*.<YOUR_ASSET_TYPE>' {
-  const value: <YOUR_ASSET_TYPE-TYPE>;
-  export default value;
-}
-```
-      
-### How can I tell if my asset is actually being served?
-Take a look at `<YOUR_PROJECT_PATH>/asset-manifest.json`. [Like this!](https://teach-la-ts-react-starter.netlify.app/asset-manifest.json)
-
 ## Overview
 
 ... explain what your project is here! What technology you used, who made it, and what it was for!
@@ -104,12 +31,14 @@ Things you should do **after using this as a template**:
 - [ ] find-and-replace `YOUR_PROJECT_URL_HERE` with your GitHub repo's project name in this README (it's in a few places, so use an editor!)
 - [ ] set up [Netlify](https://www.netlify.com/) for this app - talk to jiin (`@doubleiis02`) if you need access to the Teach LA Netlify team.
 - [ ] turn on "Automatically delete head branches" in GitHub `Settings > Options`
-- [ ] in `Settings > Branches`, create a branch protection rule for `main` that requires PR reviews. You can optionally enable status checks, like passing `build`.
+- [ ] in `Settings > Branches`, create a branch protection rule for `main` that requires PR reviews. Also require status checks, like passing `build`.
+- [ ] _only_ enable squash merging in Github `Settings > Options > Merge Button` (and disable merge commits and rebase merging).
+- [ ] this is a reminder to periodically run accessibility checks & Search Engine Optimization on your project by running `inspect element / developer tools > Lighthouse`
 - [ ] update the README badges for the GitHub Actions and Netlify with the correct links!
 - [ ] update and delete this documentation!
 - [ ] update `public/index.html` to have a description and title
 - [ ] update `public/favicon.svg` and `public/favaicon512.png` as needed
-- [ ] contact Regina Wang (`@reginawang99`) or Matthew Nieva (`@matthewcn56`) with any questions about our quickstarter template set-up.
+- [ ] contact Regina Wang (`@reginawang99`), Matthew Nieva (`@matthewcn56`), or Jiin Kim (`@doubleiis02`) with any questions about our quickstarter template set-up.
 
 ## Development Setup
 
@@ -162,7 +91,7 @@ Here's a quick guide on how to get started.
 5. Once you're ready, stage and commit your changes!
 6. Make a [pull request](https://github.com/uclaacm/YOUR_PROJECT_URL_HERE/pulls) with your changes, and let someone on your project team know.
    a. Netlify has a neat feature called "Deploy Previews" that give you a link to preview your changes; [see the blog post](https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/) for more info!
-7. If your code passes code review, then we can merge it into `main`. Congratulations! If you'd like, it's now safe to delete your branch/fork.
+7. If your code passes code review, then we can **squash and merge** it into `main`. Congratulations! If you'd like, it's now safe to delete your branch/fork.
 
 ## Helpful Commands
 
@@ -173,6 +102,92 @@ yarn lint-fix
 ```
 
 With Husky, we run `yarn lint-staged` automatically before you commit! If you want to lint before commiting, you can run `yarn lint-fix`.
+
+## FAQs
+
+### Some lint is unnecessary :( How do I disable it?
+
+There are actually 2 main ways to disable lint. Disabling the "rule" entirely, or in just a single line or file!
+
+#### Disabling the rule entirely.
+
+\*\* **Make sure this is what you really want!! It is often likely that you want to disable for just a single file.** \*\*
+
+Depending on whether it's from `stylelint` or `eslint`, you can go to `stylelintrc.json` and add to `"rules"
+
+```
+<rule-name>: null
+```
+
+or `eslintrc.json` and add
+
+```
+'<rule-name>': 'off',
+```
+
+#### Disabling a rule for a single line or file
+
+Take a look at the eslint docs for this: https://eslint.org/docs/user-guide/configuring/rules#disabling-rules
+
+Or the stylelint docs for this: https://stylelint.io/user-guide/ignore-code/
+
+It's pretty simple though, it'd look something like
+
+```
+/* eslint-disable <rule-name> */
+```
+
+or
+
+```
+// eslint-disable-next-line
+```
+
+The process for `stylelint` is very similar.
+
+### Husky is yelling at me and not letting me commit :(
+
+Add the `-n` flag to your commit message to skip Husky's auto-linting.
+
+EG: `git commit -m "changes" -n`
+
+### Assets are angry and won't accept <x filetype>
+
+Our webpack set-up currently accepts asset files with the following extensions: `png, svg, jpg/jpeg, gif, mp3, ttf`
+
+Code for it can be seen in line 22 `webpack.dev.js` and in `webpack.prod.js`
+
+```
+      {
+        test: /\.(png|svg|jpe?g|gif|mp3|ttf)$/i, // we use regex to test different file types
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: 'assets/[name].[ext]',
+          },
+        },
+      },
+```
+
+If you want to add more assets like `.pdf`, `.wav`, `.mp4`, <YOUR_ASSET_TYPE> etc.
+
+- [ ] Update `webpack.dev.js` file. Change `test: /\.(png|svg|jpe?g|gif|mp3)$/i` to `test: /\.(png|svg|jpe?g|gif|mp3|<YOUR_ASSET_TYPE>)$/i`
+- [ ] Update `webpack.prod.js` file. Change `test: /\.(png|svg|jpe?g|gif|mp3)$/i,` to `test: /\.(png|svg|jpe?g|gif|mp3|<YOUR_ASSET_TYPE>)$/i`
+- [ ] (If typing is needed) add a folder under `custom_typing` => `import-<YOUR_ASSET_TYPE>`
+- [ ] (If typing is needed) create a file like `import-<YOUR_ASSET_TYPE>.d.ts`
+- [ ] (If typing is needed) add in:
+
+```
+/* eslint-disable @typescript-eslint/no-explicit-any */
+declare module '*.<YOUR_ASSET_TYPE>' {
+  const value: <YOUR_ASSET_TYPE-TYPE>;
+  export default value;
+}
+```
+
+### How can I tell if my asset is actually being served?
+
+Take a look at `<YOUR_PROJECT_PATH>/asset-manifest.json`. [Like this!](https://teach-la-ts-react-starter.netlify.app/asset-manifest.json)
 
 ## Some More Helpful Tools
 
