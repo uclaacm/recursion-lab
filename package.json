@@ -6,6 +6,7 @@
     "lint-staged": "lint-staged",
     "lint": "eslint \"**/*.tsx\" \"**/*.ts\" && npx stylelint \"**/*.css\" \"**/*.scss\"",
     "lint-fix": "eslint --fix \"**/*.tsx\" \"**/*.ts\" && npx stylelint --fix \"**/*.css\" \"**/*.scss\"",
+    "pre-commit": "lint-staged; exit 0",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -13,6 +14,7 @@
     "@types/react-dom": "^17.0.10",
     "babelify": "^10.0.0",
     "browserify": "^17.0.0",
+    "prettier": "^2.5.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
@@ -59,6 +61,7 @@
   },
   "lint-staged": {
     "*.(ts|tsx)": "eslint --cache --fix",
-    "*.(css|scss|sass)": "stylelint --fix"
+    "*.(css|scss|sass)": "stylelint --fix",
+    "*.{ts,tsx,css,scss,sass,md}": "prettier --write"
   }
 }
