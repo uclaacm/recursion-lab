@@ -50,6 +50,18 @@ git clone https://github.com/uclaacm/YOUR_PROJECT_URL_HERE.git
 cd YOUR_PROJECT_URL_HERE
 ```
 
+The instructions to install Node.js will be different based on which platform you're running. It's heavily advised to install your Node.js using NVM (Node Version Manager) because it's easy to manage a standardized version and update it as needed.
+
+### macOS or Linux
+
+Instructions for installing NVM on macOS and Linux (including WSL) are [here](https://github.com/nvm-sh/nvm#installing-and-updating). 
+
+At this point you can run `nvm install`. Assuming you've already `cd`ed into the correct directory as mentioned earlier, this will download the LTS (Long-Term Support) version of Node.js for you. Then, run `nvm use` to make sure you've switched to the right version; if it tells you `Now using Node v16` or something similar, you're good to go! 
+
+### Windows
+
+If you're on Windows, you can use NVM for Windows, a separate version manager whose installation instructions can be found [here](https://github.com/coreybutler/nvm-windows#installation--upgrades). Once you've done that, you can run `nvm install lts` to install the LTS version of Node.js, and `nvm use lts` to switch to it.
+
 If you don't have yarn installed...
 
 ```
