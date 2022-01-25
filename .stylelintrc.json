@@ -1,5 +1,9 @@
 {
-  "extends":  ["stylelint-config-recommended", "stylelint-config-sass-guidelines"],
+  "extends": [
+    "stylelint-config-recommended",
+    "stylelint-config-sass-guidelines",
+    "stylelint-config-prettier"
+  ],
   "rules": {
     "color-named": null,
     "selector-max-id": null,

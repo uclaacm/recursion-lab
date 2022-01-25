@@ -8,6 +8,9 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:import/typescript',
     'plugin:@typescript-eslint/recommended',
+
+    // override all prettier rules, see https://github.com/prettier/eslint-config-prettier
+    'prettier',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -40,9 +43,6 @@ module.exports = {
     // Style
     quotes: ['error', 'single', { avoidEscape: true }],
 
-    // ensures clean diffs, see https://medium.com/@nikgraf/why-you-should-enforce-dangling-commas-for-multiline-statements-d034c98e36f8
-    'comma-dangle': ['error', 'always-multiline'],
-
     // Require all imported dependencies are actually declared in package.json
     'import/no-extraneous-dependencies': [
       'error',
@@ -69,8 +69,8 @@ module.exports = {
 
     // Cannot shadow names
     // note you must disable the base rule as it can report incorrect errors
-    "no-shadow": "off",
-    "@typescript-eslint/no-shadow": ["error"],
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': ['error'],
 
     // Required spacing in property declarations (copied from TSLint, defaults are good)
     'key-spacing': ['error'],
@@ -100,8 +100,8 @@ module.exports = {
     '@typescript-eslint/no-floating-promises': ['error'],
 
     // Don't leave log statements littering the premises!
-    'no-console': ["error", { allow: ["info", "warn", "error"] }],
-    
+    'no-console': ['error', { allow: ['info', 'warn', 'error'] }],
+
     // Useless diff results
     'no-trailing-spaces': ['error'],
 

@@ -18,10 +18,7 @@
     "resolveJsonModule": true,
     "composite": true,
     "incremental": true,
-    "typeRoots": [
-      "./node_modules/@types",
-      "./custom_typing"
-    ]
+    "typeRoots": ["./node_modules/@types", "./custom_typing"]
   },
   "include": ["**/*.ts", "**/*.tsx"]
 }

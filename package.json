@@ -3,10 +3,9 @@
   "scripts": {
     "start": "webpack serve --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "lint-staged": "lint-staged",
-    "lint": "eslint \"**/*.tsx\" \"**/*.ts\" && npx stylelint \"**/*.css\" \"**/*.scss\"",
-    "lint-fix": "eslint --fix \"**/*.tsx\" \"**/*.ts\" && npx stylelint --fix \"**/*.css\" \"**/*.scss\"",
-    "pre-commit": "lint-staged; exit 0",
+    "lint": "eslint \"**/*.tsx\" \"**/*.ts\" && npx stylelint \"**/*.css\" \"**/*.scss\" && prettier --check .",
+    "lint-fix": "eslint --fix \"**/*.tsx\" \"**/*.ts\" && npx stylelint --fix \"**/*.css\" \"**/*.scss\" && prettier --write .",
+    "pre-commit": "yarn lint-fix || true",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -14,9 +13,11 @@
     "@types/react-dom": "^17.0.10",
     "babelify": "^10.0.0",
     "browserify": "^17.0.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "prettier": "^2.5.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "stylelint-config-prettier": "^9.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.14.8",
@@ -33,6 +34,7 @@
     "core-js": "^3.20.2",
     "css-loader": "^6.5.0",
     "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.26.1",
@@ -40,7 +42,6 @@
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^7.0.4",
-    "lint-staged": "^12.2.2",
     "mini-css-extract-plugin": "^2.4.5",
     "sass": "^1.44.0",
     "sass-loader": "^12.4.0",
@@ -58,10 +59,5 @@
     "webpack-merge": "^5.8.0",
     "webpack-nano": "^1.1.1",
     "webpack-pwa-manifest": "^4.3.0"
-  },
-  "lint-staged": {
-    "*.(ts|tsx)": "eslint --cache --fix",
-    "*.(css|scss|sass)": "stylelint --fix",
-    "*.{ts,tsx,css,scss,sass,md}": "prettier --write"
   }
 }
