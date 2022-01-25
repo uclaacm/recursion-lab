@@ -40,7 +40,7 @@
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^7.0.4",
-    "lint-staged": "^11.1.2",
+    "lint-staged": "^12.2.2",
     "mini-css-extract-plugin": "^2.4.5",
     "sass": "^1.44.0",
     "sass-loader": "^12.4.0",
