@@ -12,7 +12,7 @@ const Home: FC = () => {
             <div>
             Home Page.
             </div>
-            <button className="nextButton" onClick={() => navigate('/intro')}>{'>'}</button>
+            <button className="next-button" onClick={() => navigate('/intro')}>{'>'}</button>
         </>
       </AppWrapper>
     </div>

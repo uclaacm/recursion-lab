@@ -12,8 +12,8 @@ const Intro: FC = () => {
             <div>
             Intro Page.
             </div>
-            <button className="prevButton" onClick={() => navigate('/')}>{'<'}</button>
-            <button className="nextButton" onClick={() => navigate('/problem1')}>{'>'}</button>
+            <button className="prev-button" onClick={() => navigate('/')}>{'<'}</button>
+            <button className="next-button" onClick={() => navigate('/problem1')}>{'>'}</button>
         </>
       </AppWrapper>
     </div>

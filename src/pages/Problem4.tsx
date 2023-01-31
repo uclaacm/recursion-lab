@@ -12,8 +12,8 @@ const Problem4: FC = () => {
             <div>
             Problem 4 Goes Here:
             </div>
-            <button className="prevButton" onClick={() => navigate('/problem3')}>{'<'}</button>
-            <button className="nextButton" onClick={() => navigate('/')}>{'>'}</button>
+            <button className="prev-button" onClick={() => navigate('/problem3')}>{'<'}</button>
+            <button className="next-button" onClick={() => navigate('/')}>{'>'}</button>
         </>
       </AppWrapper>
     </div>
