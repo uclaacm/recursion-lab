@@ -14,7 +14,7 @@ export default function Header(props: HeaderProps): JSX.Element {
       <nav>
         <div>TODO: This is A Header Example! </div>
         <div>
-          Text Displayed is:
+          Text Displayed is
           {props.section}
         </div>
         {/* This is an example of using interfaces and enums! */}

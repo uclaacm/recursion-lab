@@ -11,3 +11,31 @@ body {
   margin: 0;
   text-align: center;
 }
+
+.prevButton {
+  background-color:#0a0a23;
+  color: #fff;
+  border:none;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+}
+
+.prevButton:hover {
+  background-color: green;
+  transition: 0.5s;
+}
+
+.nextButton {
+  background-color:#0a0a23;
+  color: #fff;
+  border:none;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+}
+
+.nextButton:hover {
+  background-color: green;
+  transition: 0.5s;
+}
