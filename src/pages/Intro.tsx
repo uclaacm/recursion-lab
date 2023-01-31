@@ -9,11 +9,13 @@ const Intro: FC = () => {
     <div>
       <AppWrapper section={HeaderSections.INTRO_TITLE}>
         <>
-            <div>
-            Intro Page.
-            </div>
-            <button className="prev-button" onClick={() => navigate('/')}>{'<'}</button>
-            <button className="next-button" onClick={() => navigate('/problem1')}>{'>'}</button>
+          <div>Intro Page.</div>
+          <button className="prev-button" onClick={() => navigate('/')}>
+            {'<'}
+          </button>
+          <button className="next-button" onClick={() => navigate('/problem1')}>
+            {'>'}
+          </button>
         </>
       </AppWrapper>
     </div>
