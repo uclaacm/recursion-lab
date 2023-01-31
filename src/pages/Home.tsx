@@ -9,10 +9,10 @@ const Home: FC = () => {
     <div>
       <AppWrapper section={HeaderSections.HOME_TITLE}>
         <>
-            <div>
-            Home Page.
-            </div>
-            <button className="next-button" onClick={() => navigate('/intro')}>{'>'}</button>
+          <div>Home Page.</div>
+          <button className="next-button" onClick={() => navigate('/intro')}>
+            {'>'}
+          </button>
         </>
       </AppWrapper>
     </div>

@@ -8,12 +8,14 @@ const Problem3: FC = () => {
   return (
     <div>
       <AppWrapper section={HeaderSections.PROBLEM3_TITLE}>
-      <>
-            <div>
-            Problem 3 Goes Here:
-            </div>
-            <button className="prev-button" onClick={() => navigate('/problem2')}>{'<'}</button>
-            <button className="next-button" onClick={() => navigate('/problem4')}>{'>'}</button>
+        <>
+          <div>Problem 3 Goes Here:</div>
+          <button className="prev-button" onClick={() => navigate('/problem2')}>
+            {'<'}
+          </button>
+          <button className="next-button" onClick={() => navigate('/problem4')}>
+            {'>'}
+          </button>
         </>
       </AppWrapper>
     </div>

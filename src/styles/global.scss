@@ -12,30 +12,34 @@ body {
   text-align: center;
 }
 
+$button-color: #0a0a23;
+$button-hover-color: green;
+$button-text-color: #fff;
+
 .prev-button {
-  background-color:#0a0a23;
+  background-color: $button-color;
   border: 0;
   border-radius: 100%;
-  color: #fff;
+  color: $button-text-color;
   height: 30px;
   width: 30px;
 }
 
 .prev-button:hover {
-  background-color: green;
+  background-color: $button-hover-color;
   transition: 0.5s;
 }
 
 .next-button {
-  background-color:#0a0a23;
+  background-color: $button-color;
   border: 0;
   border-radius: 100%;
-  color: #fff;
+  color: $button-text-color;
   height: 30px;
   width: 30px;
 }
 
 .next-button:hover {
-  background-color: green;
+  background-color: $button-hover-color;
   transition: 0.5s;
 }
