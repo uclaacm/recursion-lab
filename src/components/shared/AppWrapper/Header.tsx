@@ -11,12 +11,10 @@ export interface HeaderProps {
 export default function Header(props: HeaderProps): JSX.Element {
   return (
     <div id="header">
-      <nav>
-        <div>TODO: This is A Header Example! </div>
-        <div>
-          Text Displayed is
+      <nav id="nav-title">
+        <h1>
           {props.section}
-        </div>
+        </h1>
         {/* This is an example of using interfaces and enums! */}
       </nav>
     </div>

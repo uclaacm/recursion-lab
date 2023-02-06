@@ -6,15 +6,27 @@
     url('../assets/WestwoodSans-Regular.ttf') format('truetype');
 }
 
+$button-color: #0a0a23;
+$button-hover-color: green;
+$button-text-color: #fff;
+
 body {
   font-family: 'Poppins', 'Helvetica Neue', 'Helvetica', sans-serif;
   margin: 0;
   text-align: center;
 }
 
-$button-color: #0a0a23;
-$button-hover-color: green;
-$button-text-color: #fff;
+.body {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.setup {
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+
+
 
 .prev-button {
   background-color: $button-color;
@@ -28,6 +40,7 @@ $button-text-color: #fff;
 .prev-button:hover {
   background-color: $button-hover-color;
   transition: 0.5s;
+  cursor: pointer;
 }
 
 .next-button {
@@ -42,4 +55,5 @@ $button-text-color: #fff;
 .next-button:hover {
   background-color: $button-hover-color;
   transition: 0.5s;
+  cursor: pointer;
 }
