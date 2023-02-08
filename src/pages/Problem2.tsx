@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
 import AppWrapper from '../components/shared/AppWrapper';
-import { HeaderSections } from '../components/shared/globalTypes';
 import Button from '../components/shared/Button';
+import { HeaderSections } from '../components/shared/globalTypes';
 import './Problem2.scss';
 
 const Problem2: FC = () => {

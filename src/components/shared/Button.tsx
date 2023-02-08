@@ -10,6 +10,6 @@ const Button = (
         {icon}
         </button>
     );
-}
+};
 
   export default Button;
