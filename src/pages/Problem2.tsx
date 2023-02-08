@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 import AppWrapper from '../components/shared/AppWrapper';
 import Button from '../components/shared/Button';
 import { HeaderSections } from '../components/shared/globalTypes';
-import './Problem2.scss';
+/** import './Problem2.scss'; **/
 
 const Problem2: FC = () => {
   const [selected, setSelected] = useState(-1);
