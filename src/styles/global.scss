@@ -22,11 +22,44 @@ body {
 }
 
 .setup {
-  padding-top: 50px;
   padding-bottom: 30px;
+  padding-top: 50px;
 }
 
+.wrapper {
+  background-color: #454545;
+}
 
+.accordion {
+  width: 100%;
+}
+
+.item {
+  background: #f0ebe1;
+  margin-bottom: 5px;
+  padding: 10px 20px;
+}
+
+.title {
+  align-items: center;
+  color: #85662b;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content {
+  color: #8b7f75;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+.content.show {
+  height: auto;
+  max-height: 9999px;
+  transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+}
 
 .prev-button {
   background-color: $button-color;
@@ -39,8 +72,8 @@ body {
 
 .prev-button:hover {
   background-color: $button-hover-color;
-  transition: 0.5s;
   cursor: pointer;
+  transition: 0.5s;
 }
 
 .next-button {
@@ -54,6 +87,6 @@ body {
 
 .next-button:hover {
   background-color: $button-hover-color;
-  transition: 0.5s;
   cursor: pointer;
+  transition: 0.5s;
 }

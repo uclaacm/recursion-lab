@@ -12,9 +12,7 @@ export default function Header(props: HeaderProps): JSX.Element {
   return (
     <div id="header">
       <nav id="nav-title">
-        <h1>
-          {props.section}
-        </h1>
+        <h1>{props.section}</h1>
         {/* This is an example of using interfaces and enums! */}
       </nav>
     </div>

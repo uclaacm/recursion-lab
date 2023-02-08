@@ -1,21 +1,16 @@
 import { FC } from 'react';
-import { useNavigate } from 'react-router-dom';
 import AppWrapper from '../components/shared/AppWrapper';
 import { HeaderSections } from '../components/shared/globalTypes';
+import Button from '../components/shared/Button';
 
 const Intro: FC = () => {
-  const navigate = useNavigate();
   return (
     <div>
       <AppWrapper section={HeaderSections.INTRO_TITLE}>
         <>
           <div>Intro Page.</div>
-          <button className="prev-button" onClick={() => navigate('/')}>
-            {'<'}
-          </button>
-          <button className="next-button" onClick={() => navigate('/problem1')}>
-            {'>'}
-          </button>
+          <Button icon="<" className="prev-button" navigation="/"/>
+          <Button icon=">" className="next-button" navigation="/problem1"/>
         </>
       </AppWrapper>
     </div>
