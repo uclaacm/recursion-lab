@@ -9,8 +9,8 @@ const Intro: FC = () => {
       <AppWrapper section={HeaderSections.INTRO_TITLE}>
         <>
           <div>Intro Page.</div>
-          <Button icon="<" className="prev-button" navigation="/"/>
-          <Button icon=">" className="next-button" navigation="/problem1"/>
+          <Button icon="<" className="prev-button" navigation="/" />
+          <Button icon=">" className="next-button" navigation="/problem1" />
         </>
       </AppWrapper>
     </div>
