@@ -75,7 +75,7 @@ const Intro: FC = () => {
                 $3!$ with a base case of $n = -4$, we would have $$3\\cdot 2 \\cdot 1 \\cdot 0 \\cdot \\ldots = 0$$
                 `}
                 </Latex>
-                
+
               </div>
           </div>
           <div className="textbox">
@@ -91,7 +91,7 @@ const Intro: FC = () => {
                 depend on.
                 `}
                 </Latex>
-                
+
               </div>
           </div>
 
