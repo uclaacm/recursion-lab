@@ -5378,6 +5378,13 @@
   dependencies:
     "commander" "^8.0.0"
 
+"katex@^0.16.4":
+  "integrity" "sha512-WudRKUj8yyBeVDI4aYMNxhx5Vhh2PjpzQw1GRu/LVGqL4m1AxwD1GcUp0IMbdJaf5zsjtj8ghP0DOQRYhroNkw=="
+  "resolved" "https://registry.npmjs.org/katex/-/katex-0.16.4.tgz"
+  "version" "0.16.4"
+  dependencies:
+    "commander" "^8.0.0"
+
 "kind-of@^6.0.2", "kind-of@^6.0.3":
   "integrity" "sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw=="
   "resolved" "https://registry.npmjs.org/kind-of/-/kind-of-6.0.3.tgz"

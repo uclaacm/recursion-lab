@@ -1,11 +1,11 @@
 import { FC } from 'react';
+import Latex from 'react-latex-next';
 import AppWrapper from '../components/shared/AppWrapper';
 import Button from '../components/shared/Button';
 import { HeaderSections } from '../components/shared/globalTypes';
 import './Intro.scss';
 
 import 'katex/dist/katex.min.css';
-import Latex from 'react-latex-next';
 
 const Intro: FC = () => {
   return (
