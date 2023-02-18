@@ -14,10 +14,10 @@ const Intro: FC = () => {
         <div className="body">
           <div>Intro Page.</div>
           <div className="textbox">
-              <h2 className='intro_title'>
+              <h2 className='intro-title'>
                 Factorials
               </h2>
-              <div className="intro_content">
+              <div className="intro-content">
                 <Latex>
                 {`For a nonnegative integer $n$, the factorial of $n$ or $n!$ is the number resulting from multiplying
                 $$n\\cdot(n-1)\\cdot\\ldots\\cdot 2\\cdot 1$$ For example,  $4! = 4 \\cdot 3 \\cdot 2 \\cdot 1 = 24$.
@@ -27,10 +27,10 @@ const Intro: FC = () => {
               </div>
           </div>
           <div className="textbox">
-              <h2 className='intro_title'>
+              <h2 className='intro-title'>
                 Recursion
               </h2>
-              <div className='intro_content'>
+              <div className='intro-content'>
                 <Latex>
                   {`A recursive function is a function that calls itself in its definition. Take the below function as an example:
                 $$\\textup{example here}$$
@@ -51,10 +51,10 @@ const Intro: FC = () => {
               </div>
           </div>
           <div className="textbox">
-              <h2 className='intro_title'>
+              <h2 className='intro-title'>
                 The Base Case
               </h2>
-              <div className='intro_content'>
+              <div className='intro-content'>
                 <Latex>
                 {`One important element of recursion is the base case. If we look at the function we wrote above and
                 actually tried to run it, it would never stop. Following the above example with compartments, the computer
@@ -77,10 +77,10 @@ const Intro: FC = () => {
               </div>
           </div>
           <div className="textbox">
-              <h2 className='intro_title'>
+              <h2 className='intro-title'>
                 Summary
               </h2>
-              <div className='intro_content'>
+              <div className='intro-content'>
                 <Latex>
                 {`Recursion is a method for solving problems whose answer is dependent on solving simpler subproblems. This is implemented in
                 code as a recursive function, in which the function will call itself in its definition. An important aspect of a recursive function

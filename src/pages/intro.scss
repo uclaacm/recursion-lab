@@ -1,15 +1,17 @@
 .textbox {
+    background-color: white;
+    padding-bottom: 25px;
     padding-left: 50px;
     padding-right: 50px;
-    padding-bottom: 25px;
-    background-color: white;
 }
-.textbox .intro_title{
+
+.textbox .intro-title{
+  align-items: center;
   color: #85662b;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
-.textbox .intro_content{
+
+.textbox .intro-content{
   text-align:justify;
 }
