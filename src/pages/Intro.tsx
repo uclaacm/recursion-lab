@@ -3,7 +3,7 @@ import Latex from 'react-latex-next';
 import AppWrapper from '../components/shared/AppWrapper';
 import Button from '../components/shared/Button';
 import { HeaderSections } from '../components/shared/globalTypes';
-import './Intro.scss';
+import './intro.scss';
 
 import 'katex/dist/katex.min.css';
 
