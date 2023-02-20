@@ -12,7 +12,6 @@ const Intro: FC = () => {
     <div>
       <AppWrapper section={HeaderSections.INTRO_TITLE}>
         <div className="body">
-          <div>Intro Page.</div>
           <div className="textbox">
             <h2 className="intro-title">Factorials</h2>
             <div className="intro-content">
@@ -64,7 +63,7 @@ const Intro: FC = () => {
                 to correctly choose a base case as it is not enough to just stop the process. The base case should also be relevant to the problem.
                 Taking the factorial again, suppose the base case was $n = -4$. Then, we would somehow have to know $(-4)!$, which
                 is nonsense. Although this may allow the process to stop, our answers would all be wrong. For instance, if we computed
-                $3!$ with a base case of $n = -4$, we would have $$3\\cdot 2 \\cdot 1 \\cdot 0 \\cdot \\ldots = 0$$
+                $3!$ with a base case of $n = -4$, we would have $$3\\cdot 2 \\cdot 1 \\cdot 0 \\cdot \\ldots \\cdot -4 = 0$$
                 `}
               </Latex>
             </div>
