@@ -8,5 +8,5 @@ export enum HeaderSections {
   PROBLEM1_TITLE = ' Problem 1 Title',
   PROBLEM2_TITLE = ' Problem 2 Title',
   PROBLEM3_TITLE = ' Problem 3 Title',
-  PROBLEM4_TITLE = ' Problem 4 Title',
+  PROBLEM4_TITLE = 'Binary Search',
 }
