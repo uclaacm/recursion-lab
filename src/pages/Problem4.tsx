@@ -102,7 +102,7 @@ const Problem4: FC = () => {
           </button>
           {highlighted > 5 && (
             <div>
-              <h2> {`Too slow? Let's learn binary search!`} </h2>
+              <h2> {"Too slow? Let's learn binary search!"} </h2>
               <button
                 style={{ margin: '10px' }}
                 onClick={() => {
