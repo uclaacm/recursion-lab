@@ -89,12 +89,6 @@ const Problem4: FC = () => {
               )}
             </Grid>
           </Box>
-
-          {/*
-                to do: make each item correspond to an array of words,
-                and make the paragraph below display the right index
-*/}
-
           {highlighted > 0 && !passedIntro && (
             <p style={{ padding: '10px' }}>X is greater than Y</p>
           )}
@@ -107,8 +101,8 @@ const Problem4: FC = () => {
             Next
           </button>
           {highlighted > 5 && (
-            <>
-              <h2> Too slow? Let's learn binary search! </h2>
+            <div>
+              <h2> {`Too slow? Let's learn binary search!`} </h2>
               <button
                 style={{ margin: '10px' }}
                 onClick={() => {
@@ -117,7 +111,7 @@ const Problem4: FC = () => {
               >
                 Go!
               </button>
-            </>
+            </div>
           )}
           {passedIntro && (
             <div className="wrapper">
