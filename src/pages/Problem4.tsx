@@ -89,7 +89,7 @@ const Problem4: FC = () => {
             </Grid>
           </Box>
 
-          {/* 
+          {/*
                 to do: make each item correspond to an array of words, and make the paragraph below display the right index
 */}
 
