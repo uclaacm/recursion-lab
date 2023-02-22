@@ -1,8 +1,8 @@
-import { FC, useState } from 'react';
-import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import { styled } from '@mui/material/styles';
+import { FC, useState } from 'react';
 import * as React from 'react';
 import AppWrapper from '../components/shared/AppWrapper';
 import Button from '../components/shared/Button';
@@ -91,7 +91,7 @@ const Problem4: FC = () => {
           </Box>
 
           {/*
-                to do: make each item correspond to an array of words, 
+                to do: make each item correspond to an array of words,
                 and make the paragraph below display the right index
 */}
 
