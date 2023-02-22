@@ -1,13 +1,13 @@
 import { FC, useState } from 'react';
-import AppWrapper from '../components/shared/AppWrapper';
-import Button from '../components/shared/Button';
-import { HeaderSections } from '../components/shared/globalTypes';
-import './Problem4.scss';
-import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
+import * as React from 'react';
+import AppWrapper from '../components/shared/AppWrapper';
+import Button from '../components/shared/Button';
+import { HeaderSections } from '../components/shared/globalTypes';
+import './Problem4.scss';
 
 const Problem4: FC = () => {
   const [selected, setSelected] = useState(-1);
@@ -91,7 +91,8 @@ const Problem4: FC = () => {
           </Box>
 
           {/*
-                to do: make each item correspond to an array of words, and make the paragraph below display the right index
+                to do: make each item correspond to an array of words, 
+                and make the paragraph below display the right index
 */}
 
           {highlighted > 0 && !passedIntro && (
