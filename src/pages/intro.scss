@@ -1,17 +1,23 @@
 .textbox {
-    background-color: white;
-    padding-bottom: 25px;
-    padding-left: 50px;
-    padding-right: 50px;
+  background-color: white;
+  padding-bottom: 25px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
-.textbox .intro-title{
+.textbox .intro-title {
   align-items: center;
   color: #85662b;
   display: flex;
   justify-content: space-between;
 }
 
-.textbox .intro-content{
-  text-align:justify;
+.textbox .intro-content {
+  text-align: justify;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 40px;
 }

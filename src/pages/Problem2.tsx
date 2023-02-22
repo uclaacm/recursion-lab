@@ -45,8 +45,10 @@ const Problem2: FC = () => {
             </div>
           </div>
 
-          <Button icon="<" className="prev-button" navigation="/problem1" />
-          <Button icon=">" className="next-button" navigation="/problem3" />
+          <div className="buttons">
+            <Button icon="<" className="prev-button" navigation="/problem1" />
+            <Button icon=">" className="next-button" navigation="/problem3" />
+          </div>
         </div>
       </AppWrapper>
     </div>
