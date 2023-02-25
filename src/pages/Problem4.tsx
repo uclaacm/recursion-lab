@@ -3,7 +3,6 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
 import { FC, useState } from 'react';
-import * as React from 'react';
 import AppWrapper from '../components/shared/AppWrapper';
 import Button from '../components/shared/Button';
 import { HeaderSections } from '../components/shared/globalTypes';
@@ -34,7 +33,7 @@ const Problem4: FC = () => {
           <p className="setup">Binary Search</p>
 
           <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={2} padding="10px" justifyContent="center">
+            <Grid container spacing={2} padding='10px' justifyContent='center'>
               {highlighted < 5 && (
                 <>
                   <Grid item xs={6}>
@@ -134,8 +133,8 @@ const Problem4: FC = () => {
           )}
 
           <div className="buttons">
-            <Button icon="<" className="prev-button" navigation="/problem3" />
-            <Button icon=">" className="next-button" navigation="/" />
+            <Button icon="Prev" className="prev-button" navigation="/problem3" />
+            <Button icon="Next" className="next-button" navigation="/" />
           </div>
         </div>
       </AppWrapper>
