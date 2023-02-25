@@ -33,7 +33,7 @@ const Problem4: FC = () => {
           <p className="setup">Binary Search</p>
 
           <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={2} padding='10px' justifyContent='center'>
+            <Grid container spacing={2} padding="10px" justifyContent="center">
               {highlighted < 5 && (
                 <>
                   <Grid item xs={6}>
@@ -101,7 +101,7 @@ const Problem4: FC = () => {
           </button>
           {highlighted > 5 && (
             <div>
-              <h2> {`Too slow? Let's learn binary search!`} </h2>
+              <h2> {"Too slow? Let's learn binary search!"} </h2>
               <button
                 style={{ margin: '10px' }}
                 onClick={() => {
@@ -133,7 +133,11 @@ const Problem4: FC = () => {
           )}
 
           <div className="buttons">
-            <Button icon="Prev" className="prev-button" navigation="/problem3" />
+            <Button
+              icon="Prev"
+              className="prev-button"
+              navigation="/problem3"
+            />
             <Button icon="Next" className="next-button" navigation="/" />
           </div>
         </div>
