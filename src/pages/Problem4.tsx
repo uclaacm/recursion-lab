@@ -89,6 +89,12 @@ const Problem4: FC = () => {
               )}
             </Grid>
           </Box>
+
+          {/* need to highlight the overall box like in the code example
+need to replace nuumbers with words from array
+need to replace text box to showing the right word
+ */}
+
           {highlighted > 0 && !passedIntro && (
             <p style={{ padding: '10px' }}>X is greater than Y</p>
           )}
@@ -102,7 +108,7 @@ const Problem4: FC = () => {
           </button>
           {highlighted > 5 && (
             <div>
-              <h2> {"Too slow? Let's learn binary search!"} </h2>
+              <h2> {'Too slow? Learn Binary Search'} </h2>
               <button
                 style={{ margin: '10px' }}
                 onClick={() => {
