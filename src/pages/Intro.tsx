@@ -82,8 +82,12 @@ const Intro: FC = () => {
             </div>
           </div>
           <div className="buttons">
-            <Button icon="<" className="prev-button" navigation="/" />
-            <Button icon=">" className="next-button" navigation="/problem1" />
+            <Button icon="Prev" className="prev-button" navigation="/" />
+            <Button
+              icon="Next"
+              className="next-button"
+              navigation="/problem1"
+            />
           </div>
         </div>
       </AppWrapper>

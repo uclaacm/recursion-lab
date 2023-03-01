@@ -3,7 +3,6 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
 import { FC, useState } from 'react';
-import * as React from 'react';
 import AppWrapper from '../components/shared/AppWrapper';
 import Button from '../components/shared/Button';
 import { HeaderSections } from '../components/shared/globalTypes';
@@ -108,7 +107,9 @@ need to replace text box to showing the right word
           </button>
           {highlighted > 5 && (
             <div>
+<<<<<<< HEAD
               <h2> {'Too slow? Learn Binary Search'} </h2>
+>>>>>>> 8ee3d1f7696f0b253f3c3a88b61dd9235a0a26ea
               <button
                 style={{ margin: '10px' }}
                 onClick={() => {
@@ -140,8 +141,12 @@ need to replace text box to showing the right word
           )}
 
           <div className="buttons">
-            <Button icon="<" className="prev-button" navigation="/problem3" />
-            <Button icon=">" className="next-button" navigation="/" />
+            <Button
+              icon="Prev"
+              className="prev-button"
+              navigation="/problem3"
+            />
+            <Button icon="Next" className="next-button" navigation="/" />
           </div>
         </div>
       </AppWrapper>

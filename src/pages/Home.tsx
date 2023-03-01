@@ -9,7 +9,7 @@ const Home: FC = () => {
       <AppWrapper section={HeaderSections.HOME_TITLE}>
         <>
           <div>Home Page.</div>
-          <Button icon=">" className="next-button" navigation="/intro" />
+          <Button icon="Next" className="next-button" navigation="/intro" />
         </>
       </AppWrapper>
     </div>
