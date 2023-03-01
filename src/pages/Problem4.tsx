@@ -107,9 +107,7 @@ need to replace text box to showing the right word
           </button>
           {highlighted > 5 && (
             <div>
-<<<<<<< HEAD
               <h2> {'Too slow? Learn Binary Search'} </h2>
->>>>>>> 8ee3d1f7696f0b253f3c3a88b61dd9235a0a26ea
               <button
                 style={{ margin: '10px' }}
                 onClick={() => {
