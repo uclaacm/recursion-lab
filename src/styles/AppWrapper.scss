@@ -15,16 +15,109 @@ $header-height: 8vh;
 #header {
   align-items: center;
   background-color: white;
+  display: flex;
   filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
   height: $header-height;
+  justify-content: space-between;
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 99;
+  z-index: 99; /* change z-index if you want the sidebar to display FULLY */
 }
 
-#nav-title {
-  margin-top: 25px;
+.home /* add more !*/ {
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  font-size: 3rem;
+  height: 90vh;
+  justify-content: center;
+}
+
+/* Navbar CSS */
+.navbar {
+  align-items: center;
+  background-color: #fff;
+  display: flex;
+  height: 80px;
+  justify-content: flex-start;
+}
+
+.menu-bars {
+  color: #000;
+  cursor: pointer;
+  font-size: 2rem;
+  margin-left: 5px;
+  width: 42px; /* to keep the title static while sidebar opens */
+}
+
+/* invisible box for header spacing */
+.box {
+  height: 48px;
+  margin-right: 5px;
+  width: 42px;
+}
+
+.nav-menu {
+  background-color: #fff;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  left: -100%;
+  position: fixed;
+  top: 0;
+  transition: 850ms;
+  width: 250px;
+}
+
+.nav-menu.active {
+  left: 0;
+  padding-top: 75px;
+  transition: 450ms;
+}
+
+.nav-text {
+  align-items: center;
+  display: flex;
+  height: 60px;
+  justify-content: flex-start;
+  list-style: none;
+  padding: 8px 0 8px 16px;
+}
+
+.nav-text a {
+  align-items: center;
+  border-radius: 4px;
+  color: #151414;
+  display: flex;
+  font-size: 18px;
+  height: 100%;
+  padding: 0 16px;
+  text-decoration: none;
+  width: 95%;
+}
+
+.nav-text a:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.nav-menu-items {
+  width: 100%;
+}
+
+.navbar-toggle {
+  align-items: center;
+  background-color: #fff;
+  display: flex;
+  height: 80px;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+span {
+  margin-left: 16px;
 }
 
 // Footer
