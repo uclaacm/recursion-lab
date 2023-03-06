@@ -25,6 +25,7 @@ export default function Header(props: HeaderProps): JSX.Element {
             icon={faBars}
             className="menu-icon"
             onClick={showSidebar}
+            size="xl"
           />
         </div>
         <h1>{props.section}</h1>

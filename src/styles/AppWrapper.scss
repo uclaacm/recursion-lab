@@ -46,10 +46,12 @@ $header-height: 8vh;
 
 .menu-bars {
   color: #000;
-  cursor: pointer;
-  font-size: 2rem;
   margin-left: 5px;
   width: 42px; /* to keep the title static while sidebar opens */
+}
+
+.menu-icon {
+  cursor: pointer;
 }
 
 /* invisible box for header spacing */

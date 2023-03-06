@@ -1,10 +1,7 @@
-import {
-  faHouse,
-  faClipboard,
-  faBook,
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import book from '../../assets/book.png';
+import hill from '../../assets/hill.png';
 import mario from '../../assets/mario.png';
+import question from '../../assets/question.png';
 import rabbit from '../../assets/rabbit.png';
 import telephone from '../../assets/telephone.png';
 
@@ -12,13 +9,13 @@ export const SidebarData = [
   {
     title: 'Home',
     path: '/',
-    icons: <FontAwesomeIcon icon={faHouse} size="2x" />,
+    icons: <img src={hill} width="54" alt="a hill" />,
     cName: 'nav-text',
   },
   {
     title: 'Introduction',
     path: '/intro',
-    icons: <FontAwesomeIcon icon={faClipboard} size="2x" />,
+    icons: <img src={question} width="54" alt="question-mark" />,
     cName: 'nav-text',
   },
   {
@@ -42,7 +39,7 @@ export const SidebarData = [
   {
     title: 'Problem 4',
     path: '/problem4',
-    icons: <FontAwesomeIcon icon={faBook} size="2x" />,
+    icons: <img src={book} width="54" alt="books" />,
     cName: 'nav-text',
   },
 ];
