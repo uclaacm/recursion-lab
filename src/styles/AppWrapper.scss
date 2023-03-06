@@ -5,7 +5,7 @@ $header-height: 8vh;
 // AppWrapper
 //=======================================
 #app-wrapper {
-  background-color: #cef3b7;
+  background-color: #FEF2E7; /*#FAF9F6*/
   margin: $header-height 0 $header-height 0;
   min-height: calc(100vh - 2 * #{$header-height});
 }
@@ -14,7 +14,7 @@ $header-height: 8vh;
 //=======================================
 #header {
   align-items: center;
-  background-color: white;
+  background-color: lightblue; /*cef3b7=green*/
   display: flex;
   filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
   height: $header-height;
@@ -133,7 +133,7 @@ $header-height: 8vh;
 //=======================================
 #footer {
   align-items: center;
-  background-color: white;
+  background-color: lightblue;
   bottom: 0;
   display: flex;
   font-family: 'Westwood Sans', 'Helvetica Neue', 'Helvetica', sans-serif;
