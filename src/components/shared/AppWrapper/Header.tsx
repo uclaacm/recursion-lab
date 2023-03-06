@@ -21,33 +21,29 @@ export default function Header(props: HeaderProps): JSX.Element {
     <>
       <div id="header">
         <div className="menu-bars">
-          {sidebar ? (
-            <FontAwesomeIcon
-              icon={faX}
-              size="xl"
-              className="menu-icon"
-              onClick={showSidebar}
-            />
-          ) : (
-            <FontAwesomeIcon
-              icon={faBars}
-              size="xl"
-              className="menu-icon"
-              onClick={showSidebar}
-            />
-          )}
+          <FontAwesomeIcon
+            icon={faBars}
+            className="menu-icon"
+            onClick={showSidebar}
+          />
         </div>
         <h1>{props.section}</h1>
         <div className="box"></div>
       </div>
       <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
+        <FontAwesomeIcon
+          icon={faX}
+          size="xl"
+          onClick={showSidebar}
+          className="close-btn"
+        />
         <ul className="nav-menu-items" onClick={showSidebar}>
           {SidebarData.map((item, index) => {
             return (
               <li key={index} className={item.cName}>
                 <Link to={item.path}>
                   {item.icons}
-                  <span>{item.title}</span>
+                  <span className="sidebar-titles">{item.title}</span>
                 </Link>
               </li>
             );

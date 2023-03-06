@@ -1,3 +1,4 @@
+import { faGreaterThan } from '@fortawesome/free-solid-svg-icons';
 import { FC } from 'react';
 import AppWrapper from '../components/shared/AppWrapper';
 import Button from '../components/shared/Button';
@@ -9,7 +10,11 @@ const Home: FC = () => {
       <AppWrapper section={HeaderSections.HOME_TITLE}>
         <>
           <div>Home Page.</div>
-          <Button icon="Next" className="next-button" navigation="/intro" />
+          <Button
+            icon={faGreaterThan}
+            className="next-btn"
+            navigation="/intro"
+          />
         </>
       </AppWrapper>
     </div>

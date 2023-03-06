@@ -62,30 +62,31 @@ body {
   transition: all 0.5s cubic-bezier(1, 0, 1, 0);
 }
 
-.prev-button {
-  background-color: $button-color;
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 5px;
+  position: relative;
+}
+
+.next-btn {
+  background-color: transparent;
   border: 0;
-  border-radius: 5%;
-  color: $button-text-color;
-  padding: 10px 15px;
-}
-
-.prev-button:hover {
-  background-color: $button-hover-color;
+  bottom: 9vh;
   cursor: pointer;
-  transition: 0.5s;
+  font-family: 'Poppins', 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-size: 22px;
+  position: fixed;
+  right: 0.5%;
 }
 
-.next-button {
-  background-color: $button-color;
+.prev-btn {
+  background-color: transparent;
   border: 0;
-  border-radius: 5%;
-  color: $button-text-color;
-  padding: 10px 15px;
-}
-
-.next-button:hover {
-  background-color: $button-hover-color;
+  bottom: 9vh;
   cursor: pointer;
-  transition: 0.5s;
+  font-family: 'Poppins', 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-size: 22px;
+  left: 0.5%;
+  position: fixed;
 }

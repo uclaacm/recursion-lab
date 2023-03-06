@@ -1,3 +1,5 @@
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from 'react-router-dom';
 
 const Button = ({
@@ -5,16 +7,27 @@ const Button = ({
   className,
   navigation,
 }: {
-  icon: string;
+  icon: IconDefinition;
   className: string;
   navigation: string;
 }): JSX.Element => {
   const navigate = useNavigate();
-  return (
-    <button className={className} onClick={() => navigate(navigation)}>
-      {icon}
-    </button>
-  );
+
+  if (className === 'prev-btn') {
+    return (
+      <button className={className} onClick={() => navigate(navigation)}>
+        <FontAwesomeIcon icon={icon} />
+        <span> Prev</span>
+      </button>
+    );
+  } else {
+    return (
+      <button className={className} onClick={() => navigate(navigation)}>
+        <span>Next </span>
+        <FontAwesomeIcon icon={icon} />
+      </button>
+    );
+  }
 };
 
 export default Button;

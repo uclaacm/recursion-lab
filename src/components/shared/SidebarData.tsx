@@ -9,6 +9,12 @@ export const SidebarData = [
     cName: 'nav-text',
   },
   {
+    title: 'Introduction',
+    path: '/intro',
+    icons: <FontAwesomeIcon icon={faBars} />,
+    cName: 'nav-text',
+  },
+  {
     title: 'Problem 1',
     path: '/problem1',
     icons: <FontAwesomeIcon icon={faBars} />,

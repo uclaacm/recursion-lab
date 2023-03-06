@@ -22,7 +22,7 @@ $header-height: 8vh;
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 99; /* change z-index if you want the sidebar to display FULLY */
+  z-index: 98; /* change z-index if you want the sidebar to display FULLY */
 }
 
 .home /* add more !*/ {
@@ -73,8 +73,8 @@ $header-height: 8vh;
 
 .nav-menu.active {
   left: 0;
-  padding-top: 75px;
   transition: 450ms;
+  z-index: 99;
 }
 
 .nav-text {
@@ -104,6 +104,7 @@ $header-height: 8vh;
 }
 
 .nav-menu-items {
+  padding-left: 0;
   width: 100%;
 }
 
@@ -116,8 +117,14 @@ $header-height: 8vh;
   width: 100%;
 }
 
-span {
+.sidebar-titles {
   margin-left: 16px;
+}
+
+.close-btn {
+  cursor: pointer;
+  padding-left: 20px;
+  padding-top: 25px;
 }
 
 // Footer

@@ -1,3 +1,4 @@
+import { faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import { FC } from 'react';
 import Latex from 'react-latex-next';
 import AppWrapper from '../components/shared/AppWrapper';
@@ -82,10 +83,10 @@ const Intro: FC = () => {
             </div>
           </div>
           <div className="buttons">
-            <Button icon="Prev" className="prev-button" navigation="/" />
+            <Button icon={faLessThan} className="prev-btn" navigation="/" />
             <Button
-              icon="Next"
-              className="next-button"
+              icon={faGreaterThan}
+              className="next-btn"
               navigation="/problem1"
             />
           </div>

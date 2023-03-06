@@ -1,3 +1,4 @@
+import { faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
@@ -140,11 +141,11 @@ need to replace text box to showing the right word
 
           <div className="buttons">
             <Button
-              icon="Prev"
-              className="prev-button"
+              icon={faLessThan}
+              className="prev-btn"
               navigation="/problem3"
             />
-            <Button icon="Next" className="next-button" navigation="/" />
+            <Button icon={faGreaterThan} className="next-btn" navigation="/" />
           </div>
         </div>
       </AppWrapper>
@@ -176,3 +177,11 @@ const data = [
 ];
 
 export default Problem4;
+/*
+            <Button
+              icon="Prev"
+              className="prev-button"
+              navigation="/problem3"
+            />
+            <Button icon="Next" className="next-button" navigation="/" />
+*/

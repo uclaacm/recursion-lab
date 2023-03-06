@@ -1,3 +1,4 @@
+import { faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import { FC, useState } from 'react';
 import AppWrapper from '../components/shared/AppWrapper';
 import Button from '../components/shared/Button';
@@ -47,13 +48,13 @@ const Problem2: FC = () => {
 
           <div className="buttons">
             <Button
-              icon="Prev"
-              className="prev-button"
+              icon={faLessThan}
+              className="prev-btn"
               navigation="/problem1"
             />
             <Button
-              icon="Next"
-              className="next-button"
+              icon={faGreaterThan}
+              className="next-btn"
               navigation="/problem3"
             />
           </div>
@@ -87,3 +88,16 @@ const data = [
 ];
 
 export default Problem2;
+
+/*
+            <Button
+              icon="Prev"
+              className="prev-button"
+              navigation="/problem1"
+            />
+            <Button
+              icon="Next"
+              className="next-button"
+              navigation="/problem3"
+            />
+*/
