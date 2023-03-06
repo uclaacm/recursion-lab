@@ -61,14 +61,14 @@ $header-height: 8vh;
 
 .nav-menu {
   background-color: #fff;
-  display: flex;
   height: 100vh;
+  /*display: flex*/
   justify-content: center;
   left: -100%;
   position: fixed;
   top: 0;
   transition: 850ms;
-  width: 250px;
+  width: 300px;
 }
 
 .nav-menu.active {
