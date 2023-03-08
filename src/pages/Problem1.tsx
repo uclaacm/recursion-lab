@@ -20,16 +20,9 @@ const Problem1: FC = () => {
       <AppWrapper section={HeaderSections.PROBLEM1_TITLE}>
         <div className="body">
           <p className="setup">
-            Setup: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sem
-            viverra aliquet eget sit. Feugiat nibh sed pulvinar proin gravida
-            hendrerit lectus. Eget velit aliquet sagittis id consectetur. In
-            nibh mauris cursus mattis molestie a iaculis at erat. Id aliquet
-            lectus proin nibh nisl condimentum. Pellentesque habitant morbi
-            tristique senectus et netus et malesuada fames. Lectus arcu bibendum
-            at varius vel pharetra. Non quam lacus suspendisse faucibus interdum
-            posuere lorem ipsum dolor. Malesuada proin libero nunc consequat
-            interdum varius.
+            Imagine you are make a lunch plan with your friends.<br/>
+            You decided to call two friends in the friend group to check if they are available. <br/>
+            When they get the call from you, they want to see if other people are also available to join!
           </p>
           <div className="wrapper">
             <div className="accordion">
