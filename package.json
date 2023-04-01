@@ -16,7 +16,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.3.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/material": "^5.11.11",
-    "@types/react": "^18.0.27",
+    "@types/react": "^18.0.31",
     "@types/react-dom": "^18.0.10",
     "babelify": "^10.0.0",
     "browserify": "^17.0.0",
