@@ -1,0 +1,68 @@
+.interactive-staircase {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.n-input-container {
+    margin-bottom: 10px;
+}
+
+.block {
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    display: inline-block;
+    margin-left: 5px;
+  }
+
+  .block-0 {
+    background-color: red;
+  }
+
+  .block-1 {
+    background-color: orange;
+  }
+
+  .block-2 {
+    background-color: yellow;
+  }
+
+  .block-3 {
+    background-color: green;
+  }
+
+  .block-4 {
+    background-color: blue;
+  }
+
+  .block-5 {
+    background-color: purple;
+  }
+
+  .block-6 {
+    background-color: pink;
+  }
+
+  .block-7 {
+    background-color: brown;
+  }
+
+  .block-8 {
+    background-color: black;
+  }
+
+  .row {
+    text-align: left;
+  }
+
+  .triangle {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+  }
+
+  .input-field {
+    width: 40px;
+  }
