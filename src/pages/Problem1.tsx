@@ -6,7 +6,7 @@ import MarioFormula from '../components/mario-comps/MarioFormula';
 import Staircase from '../components/mario-comps/Staircase';
 import AppWrapper from '../components/shared/AppWrapper';
 import Button from '../components/shared/Button';
-//import MarioBackground from '../assets/marioBackground.png';
+import MarioBackground from '../assets/marioBackground.png';
 import { HeaderSections } from '../components/shared/globalTypes';
 
 import '../styles/Problem1.scss';
@@ -24,7 +24,12 @@ const Problem1: FC = () => {
     <div>
       <AppWrapper section={HeaderSections.PROBLEM1_TITLE}>
         <div className="body">
-          <div className="mario-background"></div>
+          <div
+            className="mario-background"
+            style={{ backgroundImage: `url(${MarioBackground})` }}
+          >
+            <h2 className="problem1-title">Staircases</h2>
+          </div>
           <div className="content-container">
             <p className="setup">
               It&apos;s-a-Me, Mario! You are so close to the finish flag! You
