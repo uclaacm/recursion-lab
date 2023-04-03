@@ -31,121 +31,132 @@ const Problem4: FC = () => {
     <div>
       <AppWrapper section={HeaderSections.PROBLEM4_TITLE}>
         <div className="body">
-          <p className="setup">Binary Search</p>
+          <div className="content-container">
+            <p className="setup">Binary Search</p>
 
-          <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={2} padding="10px" justifyContent="center">
-              {highlighted < 5 && (
-                <>
-                  <Grid item xs={6}>
-                    <Item
-                      className={highlighted === 1 ? 'highlight' : undefined}
-                    >
-                      1
-                    </Item>
-                  </Grid>
-                  <Grid item xs={6}>
-                    <Item
-                      className={highlighted === 3 ? 'highlight' : undefined}
-                    >
-                      3
-                    </Item>
-                  </Grid>
-                  <Grid item xs={6}>
-                    <Item
-                      className={highlighted === 2 ? 'highlight' : undefined}
-                    >
-                      2
-                    </Item>
-                  </Grid>
-                  <Grid item xs={6}>
-                    <Item
-                      className={highlighted === 4 ? 'highlight' : undefined}
-                    >
-                      4
-                    </Item>
-                  </Grid>
-                </>
-              )}
-              {highlighted > 4 && (
-                <>
-                  <Grid item xs={6}>
-                    <Item
-                      className={highlighted === 5 ? 'highlight' : undefined}
-                    >
-                      5
-                    </Item>
-                  </Grid>
-                  <Grid item xs={6}>
-                    <Item>7</Item>
-                  </Grid>
-                  <Grid item xs={6}>
-                    <Item>6</Item>
-                  </Grid>
-                  <Grid item xs={6}>
-                    <Item>8</Item>
-                  </Grid>
-                </>
-              )}
-            </Grid>
-          </Box>
-
-          {/* need to highlight the overall box like in the code example
-need to replace nuumbers with words from array
-need to replace text box to showing the right word
- */}
-
-          {highlighted > 0 && !passedIntro && (
-            <p style={{ padding: '10px' }}>X is greater than Y</p>
-          )}
-
-          <button
-            onClick={() => {
-              setHighlighted(highlighted + 1);
-            }}
-          >
-            Next
-          </button>
-          {highlighted > 5 && (
-            <div>
-              <h2> {'Too slow? Learn Binary Search'} </h2>
-              <button
-                style={{ margin: '10px' }}
-                onClick={() => {
-                  setPassedIntro(true);
-                }}
+            <Box sx={{ flexGrow: 1 }}>
+              <Grid
+                container
+                spacing={2}
+                padding="10px"
+                justifyContent="center"
               >
-                Go!
-              </button>
-            </div>
-          )}
-          {passedIntro && (
-            <div className="wrapper">
-              <div className="accordion">
-                {data.map((item, i) => (
-                  <div key={i} className="item">
-                    <div className="title" onClick={() => toggle(i)}>
-                      <h2>{item.step}</h2>
-                      <span>{selected === i ? '-' : '+'}</span>
-                    </div>
-                    <div
-                      className={selected === i ? 'content show' : 'content'}
-                    >
-                      {item.answer}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
+                {highlighted < 5 && (
+                  <>
+                    <Grid item xs={6}>
+                      <Item
+                        className={highlighted === 1 ? 'highlight' : undefined}
+                      >
+                        1
+                      </Item>
+                    </Grid>
+                    <Grid item xs={6}>
+                      <Item
+                        className={highlighted === 3 ? 'highlight' : undefined}
+                      >
+                        3
+                      </Item>
+                    </Grid>
+                    <Grid item xs={6}>
+                      <Item
+                        className={highlighted === 2 ? 'highlight' : undefined}
+                      >
+                        2
+                      </Item>
+                    </Grid>
+                    <Grid item xs={6}>
+                      <Item
+                        className={highlighted === 4 ? 'highlight' : undefined}
+                      >
+                        4
+                      </Item>
+                    </Grid>
+                  </>
+                )}
+                {highlighted > 4 && (
+                  <>
+                    <Grid item xs={6}>
+                      <Item
+                        className={highlighted === 5 ? 'highlight' : undefined}
+                      >
+                        5
+                      </Item>
+                    </Grid>
+                    <Grid item xs={6}>
+                      <Item>7</Item>
+                    </Grid>
+                    <Grid item xs={6}>
+                      <Item>6</Item>
+                    </Grid>
+                    <Grid item xs={6}>
+                      <Item>8</Item>
+                    </Grid>
+                  </>
+                )}
+              </Grid>
+            </Box>
 
-          <div className="buttons">
-            <Button
-              icon={faLessThan}
-              className="prev-btn"
-              navigation="/problem3"
-            />
-            <Button icon={faGreaterThan} className="next-btn" navigation="/" />
+            {/* need to highlight the overall box like in the code example
+  need to replace nuumbers with words from array
+  need to replace text box to showing the right word
+  */}
+
+            {highlighted > 0 && !passedIntro && (
+              <p style={{ padding: '10px' }}>X is greater than Y</p>
+            )}
+
+            <button
+              onClick={() => {
+                setHighlighted(highlighted + 1);
+              }}
+            >
+              Next
+            </button>
+            {highlighted > 5 && (
+              <div>
+                <h2> {'Too slow? Learn Binary Search'} </h2>
+                <button
+                  style={{ margin: '10px' }}
+                  onClick={() => {
+                    setPassedIntro(true);
+                  }}
+                >
+                  Go!
+                </button>
+              </div>
+            )}
+            {passedIntro && (
+              <div className="wrapper">
+                <div className="accordion">
+                  {data.map((item, i) => (
+                    <div key={i} className="item">
+                      <div className="title" onClick={() => toggle(i)}>
+                        <h2>{item.step}</h2>
+                        <span>{selected === i ? '-' : '+'}</span>
+                      </div>
+                      <div
+                        className={selected === i ? 'content show' : 'content'}
+                      >
+                        {item.answer}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div className="buttons">
+              <Button
+                icon={faLessThan}
+                className="prev-btn"
+                navigation="/problem3"
+              />
+              <Button
+                icon={faGreaterThan}
+                className="next-btn"
+                navigation="/"
+              />
+            </div>
           </div>
         </div>
       </AppWrapper>
