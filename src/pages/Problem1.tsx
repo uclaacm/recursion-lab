@@ -1,12 +1,12 @@
 import { faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import { FC, useState } from 'react';
+import MarioBaseCase from '../components/mario-comps/MarioBaseCase';
+import MarioCode from '../components/mario-comps/MarioCode';
+import MarioFormula from '../components/mario-comps/MarioFormula';
+import Staircase from '../components/mario-comps/Staircase';
 import AppWrapper from '../components/shared/AppWrapper';
 import Button from '../components/shared/Button';
 import { HeaderSections } from '../components/shared/globalTypes';
-import Staircase from '../components/mario-comps/Staircase'
-import MarioBaseCase from '../components/mario-comps/MarioBaseCase'
-import MarioFormula from '../components/mario-comps/MarioFormula'
-import MarioCode from '../components/mario-comps/MarioCode'
 
 /** import './Problem1.scss'; **/
 
@@ -24,10 +24,12 @@ const Problem1: FC = () => {
       <AppWrapper section={HeaderSections.PROBLEM1_TITLE}>
         <div className="body">
           <p className="setup">
-            It's-a-Me, Mario! You are so close to the finish flag! You really want to get up those steps and do your
-            signature flag jump, but you just narrowly escaped Bowser for the 100th time and are super tired. You don't
-            know if you have enough energy to complete the level and get up the stairs. Counting the steps will help you
-            know if you can make it.
+            It&apos;s-a-Me, Mario! You are so close to the finish flag! You
+            really want to get up those steps and do your signature flag jump,
+            but you just narrowly escaped Bowser for the 100th time and are
+            super tired. You don&apos;t know if you have enough energy to
+            complete the level and get up the stairs. Counting the steps will
+            help you know if you can make it.
           </p>
           <div className="wrapper">
             <div className="accordion">
@@ -39,12 +41,14 @@ const Problem1: FC = () => {
                       <h2>{item.step}</h2>
                       <span>{selected === i ? '-' : '+'}</span>
                     </div>
-                    <div className={selected === i ? 'content show' : 'content'}>
+                    <div
+                      className={selected === i ? 'content show' : 'content'}
+                    >
                       {Component()}
+                    </div>
                   </div>
-                  </div>
-                )
-            })}
+                );
+              })}
             </div>
           </div>
 
@@ -69,23 +73,19 @@ const Problem1: FC = () => {
 const data = [
   {
     step: 'Understanding the Problem',
-    answer:
-      Staircase,
+    answer: Staircase,
   },
   {
     step: 'Identifying the Base Case',
-    answer:
-      MarioBaseCase,
+    answer: MarioBaseCase,
   },
   {
     step: 'Generalize the Pattern: Recursive Formula',
-    answer:
-      MarioFormula,
+    answer: MarioFormula,
   },
   {
     step: 'Code the Components Together',
-    answer:
-      MarioCode,
+    answer: MarioCode,
   },
 ];
 

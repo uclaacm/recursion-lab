@@ -1,11 +1,7 @@
 //import React, {useState} from 'react'
 
 function MarioFormula(): JSX.Element {
-    return (
-      <div>
-        Mario Formula
-      </div>
-    );
-  }
+  return <div>Mario Formula</div>;
+}
 
-  export default MarioFormula;
+export default MarioFormula;
