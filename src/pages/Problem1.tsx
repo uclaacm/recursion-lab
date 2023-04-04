@@ -1,5 +1,6 @@
 import { faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import { FC, useState } from 'react';
+import BricksBackground from '../assets/bricksBackground.png';
 import MarioBackground from '../assets/marioBackground.png';
 import MarioBaseCase from '../components/mario-comps/MarioBaseCase';
 import MarioCode from '../components/mario-comps/MarioCode';
@@ -40,7 +41,10 @@ const Problem1: FC = () => {
               </p>
             </div>
           </div>
-          <div className="content-container">
+          <div
+            className="content-container"
+            style={{ backgroundImage: `url(${BricksBackground})` }}
+          >
             <div className="wrapper">
               <div className="accordion">
                 {data.map((item, i) => {
