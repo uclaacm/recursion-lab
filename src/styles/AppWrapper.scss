@@ -6,15 +6,15 @@ $header-height: 8vh;
 //=======================================
 #app-wrapper {
   background-color: #fef2e7; /*#FAF9F6*/
-  margin: $header-height 0 $header-height 0;
-  min-height: calc(100vh - 2 * #{$header-height});
+  margin: $header-height 0 0 0;
+  min-height: calc(100vh - #{$header-height});
 }
 
 // Header
 //=======================================
 #header {
   align-items: center;
-  background-color: #007DA3; /*cef3b7=light-green*/
+  background-color: #007da3; /*cef3b7=light-green*/
   color: white;
   display: flex;
   filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
@@ -46,7 +46,6 @@ $header-height: 8vh;
 }
 
 .menu-bars {
-  color: #000;
   margin-left: 5px;
   width: 42px; /* to keep the title static while sidebar opens */
 }
@@ -130,34 +129,4 @@ $header-height: 8vh;
   margin-left: -30px;
   padding-left: 20px;
   padding-top: 25px;
-}
-
-// Footer
-//=======================================
-#footer {
-  align-items: center;
-  background-color: #007DA3;
-  bottom: 0;
-  color: white;
-  display: flex;
-  font-family: 'Westwood Sans', 'Helvetica Neue', 'Helvetica', sans-serif;
-  height: $header-height;
-  justify-content: center;
-  position: fixed;
-  width: 100%;
-  z-index: 98;
-}
-
-#footer h3 {
-  margin: 0;
-}
-
-#footer-link {
-  color: white;
-  text-decoration: none;
-}
-
-#tla-logo {
-  height: 1.66em;
-  vertical-align: -0.5em;
 }

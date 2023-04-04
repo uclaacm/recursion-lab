@@ -28,17 +28,17 @@ const Problem1: FC = () => {
             className="mario-background"
             style={{ backgroundImage: `url(${MarioBackground})` }}
           >
-          <div className="mario-title-container">
-            <h2 className="problem1-title">Staircases</h2>
-            <p className="new-setup">
-              It&apos;s-a-Me, Mario! You are so close to the finish flag! You
-              really want to get up those steps and do your signature flag jump,
-              but you just narrowly escaped Bowser for the 100th time and are
-              super tired. You don&apos;t know if you have enough energy to
-              complete the level and get up the stairs. Counting the total
-              number of steps will help you know if you can make it!
-            </p>
-          </div>
+            <div className="mario-title-container">
+              <h2 className="problem1-title">Staircases</h2>
+              <p className="new-setup">
+                It&apos;s-a-Me, Mario! You are so close to the finish flag! You
+                really want to get up those steps and do your signature flag
+                jump, but you just narrowly escaped Bowser for the 100th time
+                and are super tired. You don&apos;t know if you have enough
+                energy to complete the level and get up the stairs. Counting the
+                total number of steps will help you know if you can make it!
+              </p>
+            </div>
           </div>
           <div className="content-container">
             <div className="wrapper">
