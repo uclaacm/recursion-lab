@@ -4,7 +4,6 @@
 }
 
 .mario-background {
-  background-size: cover;
   height: 687px;
   width: 100%;
 }
@@ -12,4 +11,17 @@
 .problem1-title {
   font-family: 'Press Start 2P', cursive;
   font-size: 35pt;
+  text-align: left;
+}
+
+.mario-title-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 10%;
+}
+
+//this will be used for all pages... currently just "setup"
+.new-setup {
+  text-align: left;
+  margin: 0;
 }

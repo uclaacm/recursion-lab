@@ -1,12 +1,12 @@
 import { faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import { FC, useState } from 'react';
+import MarioBackground from '../assets/marioBackground.png';
 import MarioBaseCase from '../components/mario-comps/MarioBaseCase';
 import MarioCode from '../components/mario-comps/MarioCode';
 import MarioFormula from '../components/mario-comps/MarioFormula';
 import Staircase from '../components/mario-comps/Staircase';
 import AppWrapper from '../components/shared/AppWrapper';
 import Button from '../components/shared/Button';
-import MarioBackground from '../assets/marioBackground.png';
 import { HeaderSections } from '../components/shared/globalTypes';
 
 import '../styles/Problem1.scss';
@@ -28,10 +28,9 @@ const Problem1: FC = () => {
             className="mario-background"
             style={{ backgroundImage: `url(${MarioBackground})` }}
           >
+          <div className="mario-title-container">
             <h2 className="problem1-title">Staircases</h2>
-          </div>
-          <div className="content-container">
-            <p className="setup">
+            <p className="new-setup">
               It&apos;s-a-Me, Mario! You are so close to the finish flag! You
               really want to get up those steps and do your signature flag jump,
               but you just narrowly escaped Bowser for the 100th time and are
@@ -39,6 +38,9 @@ const Problem1: FC = () => {
               complete the level and get up the stairs. Counting the total
               number of steps will help you know if you can make it!
             </p>
+          </div>
+          </div>
+          <div className="content-container">
             <div className="wrapper">
               <div className="accordion">
                 {data.map((item, i) => {
