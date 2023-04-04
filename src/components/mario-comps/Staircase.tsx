@@ -54,13 +54,13 @@ function Staircase(): JSX.Element {
 
   return (
     <div className="staircase-body">
-      <h3 className="mario-step1-subtitle">
+      <p className="mario-step1-subtitle">
         This stage is meant for you to first see the big picture and find a way
         to reduce it into smaller problems that reduce into base cases. This
         interactive staircase should help you see all the steps that make up the
         staircase, so have fun playing with it. Don&apos;t forget to see the
         relationship between one step to the next (literally)!
-      </h3>
+      </p>
       <div>
         <b className="goal">GOAL:</b>
         <span> Find the sum of the first n natural numbers.</span>

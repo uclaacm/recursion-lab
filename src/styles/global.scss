@@ -86,3 +86,57 @@ body {
   left: 0.5%;
   position: fixed;
 }
+
+/* ========== KHAN ACADEMY CARD CSS ========== */
+.khan-footer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.khan-card-container {
+  background-color: white;
+  border: 2px solid black;
+  margin: 20px; // subject to change
+  padding: 35px;
+}
+
+.khan-content {
+  padding: 40px;
+}
+
+.khan-horizontal-line {
+  background: grey;
+  height: 1px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.khan-title {
+  font-size: 30px;
+  font-weight: bolder;
+  text-align: left;
+}
+
+.show-answer,
+.tries-left {
+  color: #8a8a8a;
+}
+
+.tries-left-container {
+  display: flex;
+}
+
+.circle-container {
+  align-items: center;
+  display: flex;
+  padding: 0 30px;
+}
+
+.circle {
+  background-color: grey;
+  border-radius: 50%;
+  height: 10px;
+  margin: 0 10px;
+  width: 10px;
+}

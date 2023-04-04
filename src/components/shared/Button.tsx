@@ -16,7 +16,7 @@ const Button = ({
   if (className === 'prev-btn') {
     return (
       <button className={className} onClick={() => navigate(navigation)}>
-        <FontAwesomeIcon icon={icon} />
+        <FontAwesomeIcon icon={icon} style={{ color: '#007da3' }} />
         <span> Prev</span>
       </button>
     );
@@ -24,7 +24,7 @@ const Button = ({
     return (
       <button className={className} onClick={() => navigate(navigation)}>
         <span>Next </span>
-        <FontAwesomeIcon icon={icon} />
+        <FontAwesomeIcon icon={icon} style={{ color: '#007da3' }} />
       </button>
     );
   }
