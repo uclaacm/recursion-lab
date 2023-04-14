@@ -99,6 +99,10 @@ body {
   padding: 35px;
 }
 
+.khan-card-container-correct {
+  border: 2px solid green;
+}
+
 .khan-content {
   padding: 40px;
 }
@@ -141,4 +145,52 @@ body {
 
 .circle-active {
   background-color: $theme-blue;
+}
+
+.show-answer {
+  font-family: "Poppins", "Helvetica Neue", "Helvetica", sans-serif;
+  font-size: 12pt;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.tries-left {
+  display: flex;
+  align-self: center;
+}
+
+.khan-check-button {
+  cursor: pointer;
+  outline: 0;
+  color: #fff;
+  background-color: $theme-blue;
+  border-color: #0d6efd;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 16px;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.khan-check-button:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+}
+
+.khan-check-button:disabled {
+  cursor: auto;
+  background-color: #f0efef;
+}
+
+.correct-explanation{
+  color: green;
+}
+
+.incorrect-explanation {
+  color: red;
 }
