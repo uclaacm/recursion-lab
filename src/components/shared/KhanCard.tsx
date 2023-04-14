@@ -28,7 +28,6 @@ function KhanCard(props: KhanCardProps): JSX.Element {
     setCorrect(props.correct_answer[props.index]);
   };
 
-
   const handleShowAnswer = () => {
     setShowAnswer((prev) => !prev);
   };
@@ -46,18 +45,16 @@ function KhanCard(props: KhanCardProps): JSX.Element {
     }
   }
 
-
-  if(correct || showAnswer || tries == 0){
+  if (correct || showAnswer || tries == 0) {
     display = props.correct;
-    if(correct && !showAnswer){
-      display = "Correct! " + display;
-      displayClassName="correct-explanation";
+    if (correct && !showAnswer) {
+      display = 'Correct! ' + display;
+      displayClassName = 'correct-explanation';
     }
-  }
-  else {
-    if(!showAnswer){
-      display = "Incorrect. " + props.incorrect;
-      displayClassName="incorrect-explanation";
+  } else {
+    if (!showAnswer) {
+      display = 'Incorrect. ' + props.incorrect;
+      displayClassName = 'incorrect-explanation';
     }
   }
 
