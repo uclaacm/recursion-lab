@@ -13,10 +13,12 @@ function KhanCard(props: KhanCardProps): JSX.Element {
   const [correct, setCorrect] = useState(false);
   const [expand, setExpand] = useState(false);
   const [showAnswer, setShowAnswer] = useState(false);
+  let display = '';
+  let displayClassName = '';
 
   const handleClick = () => {
     if (tries <= 0) {
-      return; //maybe disable the button
+      return;
     }
 
     if (!props.correct_answer[props.index]) {
@@ -28,17 +30,33 @@ function KhanCard(props: KhanCardProps): JSX.Element {
 
   const handleShowAnswer = () => {
     setShowAnswer((prev) => !prev);
-    setExpand((prev) => !prev);
   };
 
+  if (correct || showAnswer || tries == 0) {
+    display = props.correct;
+    if (correct && !showAnswer) {
+      display = 'Correct! ' + display;
+      displayClassName = 'correct-explanation';
+    }
+  } else {
+    if (!showAnswer) {
+      display = 'Incorrect. ' + props.incorrect;
+      displayClassName = 'incorrect-explanation';
+    }
+  }
+
   return (
-    <div className="khan-card-container">
+    <div
+      className={`khan-card-container ${
+        correct ? 'khan-card-container-correct' : ''
+      }`}
+    >
       <div className="khan-title">Fill in the Blank</div>
       <div className="khan-content">{props.children}</div>
       <div className="khan-horizontal-line"></div>
       <div className="khan-footer">
         <button className="show-answer" onClick={handleShowAnswer}>
-          {`${expand ? 'Hide' : 'Show'} Answer`}
+          Show Answer
         </button>
         <div className="tries-left-container">
           <div className="tries-left">Tries Left</div>
@@ -53,20 +71,16 @@ function KhanCard(props: KhanCardProps): JSX.Element {
               className={`circle ${tries >= 1 ? 'circle-active' : ''}`}
             ></div>
           </div>
-          <button onClick={handleClick}>Check</button>
+          <button
+            className="khan-check-button"
+            onClick={handleClick}
+            disabled={tries == 0 ? true : false}
+          >
+            Check
+          </button>
         </div>
       </div>
-      <div>
-        {expand &&
-          (correct || showAnswer ? (
-            <p>
-              {' '}
-              {correct && 'Correct!'} {props.correct}
-            </p>
-          ) : (
-            <p>Incorrect! {props.incorrect}</p>
-          ))}
-      </div>
+      <div>{expand && <p className={displayClassName}>{display}</p>}</div>
     </div>
   );
 }
