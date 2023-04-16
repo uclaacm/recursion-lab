@@ -20,12 +20,13 @@ function KhanInput(props: KhanInputProps): JSX.Element {
 
   return (
     <>
+      {' '}
       <input
         type="text"
         onChange={(e) => handleChange(e)}
         className="input-field"
         value={value}
-      />
+      />{' '}
     </>
   );
 }
