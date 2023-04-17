@@ -1,22 +1,13 @@
 import { faGreaterThan } from '@fortawesome/free-solid-svg-icons';
 import { FC } from 'react';
-import AppWrapper from '../components/shared/AppWrapper';
 import Button from '../components/shared/Button';
-import { HeaderSections } from '../components/shared/globalTypes';
+import '../styles/Home.scss';
 
 const Home: FC = () => {
   return (
-    <div>
-      <AppWrapper section={HeaderSections.HOME_TITLE}>
-        <>
-          <div>Home Page.</div>
-          <Button
-            icon={faGreaterThan}
-            className="next-btn"
-            navigation="/intro"
-          />
-        </>
-      </AppWrapper>
+    <div className="home-container">
+      <span>Home Page.</span>
+      <Button icon={faGreaterThan} className="next-btn" navigation="/intro" />
     </div>
   );
 };

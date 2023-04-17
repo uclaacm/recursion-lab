@@ -44,3 +44,18 @@ function MarioBaseCase(): JSX.Element {
 }
 
 export default MarioBaseCase;
+
+/*
+  const handleClick = () => {
+    const value = numRows + 1;
+    console.log(value);
+    let rows = '';
+    for (let i = 1; i < value; i++) {
+      rows += i.toString();
+      rows += ' + ';
+    }
+    rows += value.toString();
+    setSumEnumerated(rows);
+    setNumRows(prev => prev + 1);
+  }
+*/
