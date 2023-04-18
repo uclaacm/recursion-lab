@@ -9,13 +9,14 @@ interface KhanInputProps {
 function KhanInput(props: KhanInputProps): JSX.Element {
   const [value, setValue] = useState('');
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value);
-    if (e.target.value === props.answer) {
+    const lowerCaseAnswer = e.target.value.toLowerCase();
+    if (lowerCaseAnswer === props.answer) {
       //wanted to use value instead of e.target.value, but race issue
       props.correct_answer[props.index] = true;
     } else {
       props.correct_answer[props.index] = false;
     }
+    setValue(e.target.value);
   };
 
   return (

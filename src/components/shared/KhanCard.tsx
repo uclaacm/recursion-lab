@@ -84,7 +84,7 @@ function KhanCard(props: KhanCardProps): JSX.Element {
           <button
             className="khan-check-button"
             onClick={handleClick}
-            disabled={tries == 0 ? true : false}
+            disabled={tries == 0 || correct ? true : false}
           >
             {isExploding && <ConfettiExplosion {...smallProps} />}
             Check
