@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+.bunnies{
+    
+        
+    font-size: 20px;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+
+    
+    .title{
+        text-align: left;
+        font-family: 'Fredoka', sans-serif;
+
+    }
+    .setup{
+        text-align: left;
+        font-family: 'Poppins', sans-serif;
+        padding: 0;
+    }
+    
+
+    .content-container{
+        background-image: url('../assets/bunnies/headerBackground.png') no-repeat;
+
+    }
+
+    .wrapper{
+        padding-top: 100px;
+        .item{
+            padding-left: 50px;
+            border-radius: 20px;
+        }
+    }
+
+    
+
+        
+
+    
+    
+    
+}
