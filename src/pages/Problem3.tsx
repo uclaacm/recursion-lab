@@ -104,9 +104,30 @@ const Problem3: FC = () => {
             <img src={bottomBackground} alt="" style={{ width: '100%' }} />
           </div>
         </div>
+       
       </AppWrapper>
+
     </div>
   );
 };
+
+{/* const data = [
+  {
+    step: '🗹 Understanding the problem',
+    answer:  UnderstandingProblem
+  },
+  {
+    step: '🗹 Identifying the Base Case',
+    answer: BunnyBaseCase
+  },
+  {
+    step: '🗹 Generalize the Pattern: Recursive Formula',
+    answer: BunnyFormula
+  },
+  {
+    step: '🗹 Code the Components Together',
+    answer: BunnyCode
+  },
+]; */}
 
 export default Problem3;

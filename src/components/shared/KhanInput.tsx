@@ -10,7 +10,10 @@ function KhanInput(props: KhanInputProps): JSX.Element {
   const [value, setValue] = useState('');
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const lowerCaseAnswer = e.target.value.toLowerCase();
+
     if (lowerCaseAnswer === props.answer) {
+      console.log(lowerCaseAnswer)
+      console.log(props.answer)
       //wanted to use value instead of e.target.value, but race issue
       props.correct_answer[props.index] = true;
     } else {
