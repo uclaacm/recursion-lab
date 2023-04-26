@@ -1,18 +1,18 @@
 import { faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import { FC, useState } from 'react';
-import AppWrapper from '../components/shared/AppWrapper';
-import Button from '../components/shared/Button';
-import { HeaderSections } from '../components/shared/globalTypes';
-import './Problem3.scss'
-import rabitGroup from '../assets/bunnies/rabitGroup.png';
-import blueBackground from '../assets/bunnies/blueBackground.png'
+import './Problem3.scss';
+import blueBackground from '../assets/bunnies/blueBackground.png';
 import bottomBackground from '../assets/bunnies/bottomBackground.png';
-import headerBackground from '../assets/bunnies/headerBackground.png'
+import headerBackground from '../assets/bunnies/headerBackground.png';
+import rabitGroup from '../assets/bunnies/rabitGroup.png';
 
-import UnderstandingProblem from '../components/bunny-comps/BunnyUnderstandingProblem';
 import BunnyBaseCase from '../components/bunny-comps/BunnyBaseCase';
 import BunnyCode from '../components/bunny-comps/BunnyCode';
 import BunnyFormula from '../components/bunny-comps/BunnyFormula';
+import UnderstandingProblem from '../components/bunny-comps/BunnyUnderstandingProblem';
+import AppWrapper from '../components/shared/AppWrapper';
+import Button from '../components/shared/Button';
+import { HeaderSections } from '../components/shared/globalTypes';
 
 const Problem3: FC = () => {
   const [selected, setSelected] = useState(-1);
@@ -26,7 +26,7 @@ const Problem3: FC = () => {
   return (
     <div className='bunnies'>
       <AppWrapper section={HeaderSections.PROBLEM3_TITLE}>
-          <div style={{ backgroundImage: `url(${blueBackground})`, backgroundAttachment: 'fixed', backgroundSize: 'contain'}}> 
+          <div style={{ backgroundColor: "white", backgroundImage: `url(${blueBackground})`, backgroundAttachment: 'fixed', backgroundSize: 'contain'}}>
             <div className="body">
               <div className="content-container">
                 <div className='header'>
@@ -43,10 +43,10 @@ const Problem3: FC = () => {
                     suspendisse faucibus interdum posuere lorem ipsum dolor. Malesuada
                     proin libero nunc consequat interdum varius.
                   </p>
-                  <img src={rabitGroup} alt="" style={{"width": "80%"}}/>
-                  <img src={headerBackground} alt="" style={{"width": "125%", "margin": "0 -20%"}}/>
+                  <img src={rabitGroup} alt="" style={{width: '80%'}}/>
+                  <img src={headerBackground} alt="" style={{width: '125%', margin: '0 -20%'}}/>
                 </div>
-                
+
                 <div className="wrapper">
                   <div className="accordion">
                     {data.map((item, i) => {
@@ -63,7 +63,7 @@ const Problem3: FC = () => {
                             {Component()}
                           </div>
                         </div>
-                      )
+                      );
                     })}
                   </div>
                 </div>
@@ -80,11 +80,11 @@ const Problem3: FC = () => {
                   />
                 </div>
               </div>
-              <img src={bottomBackground} alt="" style={{"width": "100%"}}/>
+              <img src={bottomBackground} alt="" style={{width: '100%'}}/>
 
             </div>
           </div>
-       
+
       </AppWrapper>
 
     </div>
@@ -94,7 +94,7 @@ const Problem3: FC = () => {
 const data = [
   {
     step: '🗹 Understanding the problem',
-    answer:  UnderstandingProblem
+    answer: UnderstandingProblem
   },
   {
     step: '🗹 Identifying the Base Case',
