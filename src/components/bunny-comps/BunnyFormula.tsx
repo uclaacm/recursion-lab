@@ -1,7 +1,4 @@
-import { useState } from 'react';
-const BunnyFormula = () => {
-    return (
-        <div> BunnyFormula </div>
-    );
-};
+function BunnyFormula(): JSX.Element {
+  return <div> BunnyFormula </div>;
+}
 export default BunnyFormula;

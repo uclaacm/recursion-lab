@@ -1,6 +1,4 @@
-const BunnyCode = () => {
-    return (
-        <div> BunnyCode </div>
-    );
-};
+function BunnyCode(): JSX.Element {
+  return <div> BunnyCode </div>;
+}
 export default BunnyCode;
