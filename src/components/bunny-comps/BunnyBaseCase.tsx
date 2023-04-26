@@ -26,8 +26,9 @@ function BunnyBaseCase(): JSX.Element {
           <div>
             <p>
               If
-              <Dropdown options={options}
-                  correct_answer={[true]}
+              <Dropdown 
+                  options={options}
+                  correct_answer={isCorrect}
                   index={0}
                   answer={options[0].value}/>
               <br/><br/>

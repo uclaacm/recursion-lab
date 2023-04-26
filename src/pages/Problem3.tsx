@@ -114,7 +114,7 @@ const Problem3: FC = () => {
 {/* const data = [
   {
     step: '🗹 Understanding the problem',
-    answer:  UnderstandingProblem
+    answer: UnderstandingProblem
   },
   {
     step: '🗹 Identifying the Base Case',
