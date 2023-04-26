@@ -106,7 +106,6 @@ const Problem3: FC = () => {
         </div>
        
       </AppWrapper>
-
     </div>
   );
 };
@@ -114,19 +113,19 @@ const Problem3: FC = () => {
 {/* const data = [
   {
     step: '🗹 Understanding the problem',
-    answer: UnderstandingProblem
+    answer: UnderstandingProblem,
   },
   {
     step: '🗹 Identifying the Base Case',
-    answer: BunnyBaseCase
+    answer: BunnyBaseCase,
   },
   {
     step: '🗹 Generalize the Pattern: Recursive Formula',
-    answer: BunnyFormula
+    answer: BunnyFormula,
   },
   {
     step: '🗹 Code the Components Together',
-    answer: BunnyCode
+    answer: BunnyCode,
   },
 ]; */}
 

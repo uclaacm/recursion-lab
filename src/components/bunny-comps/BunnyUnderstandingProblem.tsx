@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import './StylesBunny.scss';
 import UnderstandingQuestion from '../../assets/bunnies/UnderstandingQuestion.png';
-
-import KhanCard from '../shared/KhanCard';
 import KhanInput from '../shared/KhanInput';
+import KhanCard from '../shared/KhanCard';
 
 function UnderstandingProblem(): JSX.Element {
   const [isCorrect] = useState([false, false]);
