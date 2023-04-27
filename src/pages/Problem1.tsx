@@ -2,6 +2,7 @@ import { faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import { FC, useState } from 'react';
 import BricksBackground from '../assets/bricksBackground.png';
 import MarioBackground from '../assets/marioBackground.png';
+import ProgressBar1 from '../assets/progress_bar1.png';
 import MarioBaseCase from '../components/mario-comps/MarioBaseCase';
 import MarioCode from '../components/mario-comps/MarioCode';
 import MarioFormula from '../components/mario-comps/MarioFormula';
@@ -68,7 +69,12 @@ const Problem1: FC = () => {
                 })}
               </div>
             </div>
-
+            <div className="progress-bar">
+              <img
+                src={ProgressBar1}
+                alt="Progress Bar: You are on the First Problem!"
+              />
+            </div>
             <div className="buttons">
               <Button
                 icon={faLessThan}

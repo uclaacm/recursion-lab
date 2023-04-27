@@ -5,7 +5,7 @@ import blueBackground from '../assets/bunnies/blueBackground.png';
 import bottomBackground from '../assets/bunnies/bottomBackground.png';
 import headerBackground from '../assets/bunnies/headerBackground.png';
 import rabitGroup from '../assets/bunnies/rabitGroup.png';
-
+import ProgressBar3 from '../assets/progress_bar3.png';
 import BunnyBaseCase from '../components/bunny-comps/BunnyBaseCase';
 import BunnyCode from '../components/bunny-comps/BunnyCode';
 import BunnyFormula from '../components/bunny-comps/BunnyFormula';
@@ -81,7 +81,14 @@ const Problem3: FC = () => {
                   })}
                 </div>
               </div>
+
               <div className="buttons">
+                <div className="progress-bar3">
+                  <img
+                    src={ProgressBar3}
+                    alt="Progress Bar: You are on the Third Problem!"
+                  />
+                </div>
                 <Button
                   icon={faLessThan}
                   className="prev-btn"
