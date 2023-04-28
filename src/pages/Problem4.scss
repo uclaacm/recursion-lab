@@ -1,3 +1,10 @@
 .highlight {
   border: solid blue 5px;
 }
+
+.progress-bar4 {
+  bottom: 10%;
+  left: 50%;
+  margin-left: -180px; /* very important for the image to be centered */
+  position: absolute;
+}
