@@ -1,18 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+
 .content-container {
   background-position: center;
-  background-size: 100%;
   background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 // .main-title {
 .main-title {
-    font-family: 'Yeseva One', cursive;
-    font-size: 3em;
-    text-align: left;
+  font-family: 'Yeseva One', cursive;
+  font-size: 3em;
+  text-align: left;
 }
 
 .setup {
-    text-align: left;
-    padding: 1em 0em 1em 0em;
+  padding: 1em 0;
+  text-align: left;
 }

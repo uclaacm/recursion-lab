@@ -1,7 +1,7 @@
 import { faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import { FC, useState } from 'react';
+import CircularDiagram from '../assets/Circular_Loop_Diagram_with_name.png';
 import FoodBackground from '../assets/Food_Background.png';
-import CircularDiagram from '../assets/Circular_Loop_Diagram_with_name.png'
 import AppWrapper from '../components/shared/AppWrapper';
 import Button from '../components/shared/Button';
 import { HeaderSections } from '../components/shared/globalTypes';
@@ -19,9 +19,11 @@ const Problem2: FC = () => {
   return (
     <div>
       <AppWrapper section={HeaderSections.PROBLEM2_TITLE}>
-        <div
-          className="body">
-          <div className="content-container" style={{ backgroundImage: `url(${FoodBackground})` }}>
+        <div className="body">
+          <div
+            className="content-container"
+            style={{ backgroundImage: `url(${FoodBackground})` }}
+          >
             <div className="main-title">Dining Out</div>
             <p className="setup">
               Setup: Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -36,7 +38,7 @@ const Problem2: FC = () => {
               proin libero nunc consequat interdum varius.
             </p>
             <div className="circular-diagram">
-                <img src={CircularDiagram} alt="Circular Diagram with names" />
+              <img src={CircularDiagram} alt="Circular Diagram with names" />
             </div>
 
             <div className="wrapper">
