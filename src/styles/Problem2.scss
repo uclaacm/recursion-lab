@@ -1,6 +1,18 @@
-.home-container {
-    background-color: #fef2e7;
-    height: 100vh;
-    width: 100%;
-  }
-  
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+.content-container {
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+// .main-title {
+.main-title {
+    font-family: 'Yeseva One', cursive;
+    font-size: 3em;
+    text-align: left;
+}
+
+.setup {
+    text-align: left;
+    padding: 1em 0em 1em 0em;
+}

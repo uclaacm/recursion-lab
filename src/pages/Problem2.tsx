@@ -1,10 +1,11 @@
 import { faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import { FC, useState } from 'react';
 import FoodBackground from '../assets/Food_Background.png';
+import CircularDiagram from '../assets/Circular_Loop_Diagram_with_name.png'
 import AppWrapper from '../components/shared/AppWrapper';
 import Button from '../components/shared/Button';
 import { HeaderSections } from '../components/shared/globalTypes';
-// import './Problem2.scss';
+import '../styles/Problem2.scss';
 
 const Problem2: FC = () => {
   const [selected, setSelected] = useState(-1);
@@ -18,10 +19,10 @@ const Problem2: FC = () => {
   return (
     <div>
       <AppWrapper section={HeaderSections.PROBLEM2_TITLE}>
-        <div className="body" style={{ backgroundImage: `url(${FoodBackground})`}}>
-          <div
-            className="content-container">
-            <div>Dining Out</div>
+        <div
+          className="body">
+          <div className="content-container" style={{ backgroundImage: `url(${FoodBackground})` }}>
+            <div className="main-title">Dining Out</div>
             <p className="setup">
               Setup: Lorem ipsum dolor sit amet, consectetur adipiscing elit,
               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -34,6 +35,10 @@ const Problem2: FC = () => {
               suspendisse faucibus interdum posuere lorem ipsum dolor. Malesuada
               proin libero nunc consequat interdum varius.
             </p>
+            <div className="circular-diagram">
+                <img src={CircularDiagram} alt="Circular Diagram with names" />
+            </div>
+
             <div className="wrapper">
               <div className="accordion">
                 {data.map((item, i) => (
@@ -73,22 +78,22 @@ const Problem2: FC = () => {
 
 const data = [
   {
-    step: 'step 1',
+    step: 'Understanding the Problem',
     answer:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
   {
-    step: 'step 2',
+    step: 'Identifying the Base Case',
     answer:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
   {
-    step: 'step 3',
+    step: 'Generalize the Pattern: Recursive Formula',
     answer:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
   {
-    step: 'step 4',
+    step: 'Code the Components Together',
     answer:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
