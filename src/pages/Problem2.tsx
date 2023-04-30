@@ -1,10 +1,10 @@
 import { faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import { FC, useState } from 'react';
+import FoodBackground from '../assets/Food_Background.png';
 import AppWrapper from '../components/shared/AppWrapper';
 import Button from '../components/shared/Button';
 import { HeaderSections } from '../components/shared/globalTypes';
-// import './Problem2.scss'; 
-import FoodBackground from '../assets/Food_Background.png';
+// import './Problem2.scss';
 
 const Problem2: FC = () => {
   const [selected, setSelected] = useState(-1);
@@ -18,8 +18,10 @@ const Problem2: FC = () => {
   return (
     <div>
       <AppWrapper section={HeaderSections.PROBLEM2_TITLE}>
-        <div className="body">
-          <div className="content-container" style={{ backgroundImage:`url(${FoodBackground})`}}>
+        <div className="body" style={{ backgroundImage: `url(${FoodBackground})`}}>
+          <div
+            className="content-container">
+            <div>Dining Out</div>
             <p className="setup">
               Setup: Lorem ipsum dolor sit amet, consectetur adipiscing elit,
               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
