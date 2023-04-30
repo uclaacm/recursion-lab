@@ -1,0 +1,31 @@
+.center-rabbit {
+    animation: whack-a-mole 3s linear infinite;
+    bottom: 100px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%) scale(1.5);
+    visibility: hidden;
+  }
+  
+  @keyframes whack-a-mole {
+    0% {
+      bottom: 80px; 
+      visibility: hidden;
+    }
+
+    33% {
+      bottom: 100px; 
+      visibility: visible; 
+    }
+
+    67% {
+      bottom: 100px; 
+      visibility: visible;
+    }
+
+    100% {
+      bottom: 80px;
+      visibility: hidden;
+    }
+  }
+
