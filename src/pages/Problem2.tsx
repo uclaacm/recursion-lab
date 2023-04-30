@@ -2,6 +2,7 @@ import { faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import { FC, useState } from 'react';
 import CircularDiagram from '../assets/Circular_Loop_Diagram_with_name.png';
 import FoodBackground from '../assets/Food_Background.png';
+import ProgressBar2 from '../assets/progress_bar2.png';
 import AppWrapper from '../components/shared/AppWrapper';
 import Button from '../components/shared/Button';
 import { HeaderSections } from '../components/shared/globalTypes';
@@ -57,6 +58,12 @@ const Problem2: FC = () => {
                   </div>
                 ))}
               </div>
+            </div>
+            <div className="progress-bar">
+              <img
+                src={ProgressBar2}
+                alt="Progress Bar: You are on the Second Problem!"
+              />
             </div>
 
             <div className="buttons">

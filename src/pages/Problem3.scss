@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.bunnies {
+  // font-size: 20px;
+  // height: 100%;
+  // background-size: cover;
+  // background-repeat: no-repeat;
+
+  .title {
+    font-family: 'Fredoka', sans-serif;
+    text-align: left;
+  }
+
+  .setup {
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    text-align: left;
+  }
+
+  .content-container {
+    background-image: url('../assets/bunnies/headerBackground.png') no-repeat;
+  }
+
+  .wrapper {
+    padding-top: 100px;
+  }
+
+  .item {
+    border-radius: 20px;
+    padding-left: 50px;
+  }
+}
+
+.progress-bar3 {
+  bottom: -800%;
+  left: 50%;
+  margin-left: -200px; /* very important for the image to be centered */
+  position: absolute;
+}

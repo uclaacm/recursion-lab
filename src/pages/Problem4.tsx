@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
 import { FC, useState } from 'react';
+import ProgressBar4 from '../assets/progress_bar4.png';
 import AppWrapper from '../components/shared/AppWrapper';
 import Button from '../components/shared/Button';
 import { HeaderSections } from '../components/shared/globalTypes';
@@ -144,6 +145,12 @@ const Problem4: FC = () => {
                 </div>
               </div>
             )}
+            <div className="progress-bar4">
+              <img
+                src={ProgressBar4}
+                alt="Progress Bar: You are on the Fourth Problem!"
+              />
+            </div>
 
             <div className="buttons">
               <Button
