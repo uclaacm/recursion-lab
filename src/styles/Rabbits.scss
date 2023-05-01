@@ -1,31 +1,120 @@
 .center-rabbit {
-    animation: whack-a-mole 3s linear infinite;
-    bottom: 100px;
-    left: 50%;
-    position: absolute;
-    transform: translateX(-50%) scale(1.5);
+  animation: whack-a-mole-center 30s linear infinite;
+  bottom: 90px;
+  left: 48%;
+  position: absolute;
+  transform: translateX(-50%) scale(1);
+  visibility: hidden;
+  z-index: 1;
+}
+
+@keyframes whack-a-mole-center {
+  0% {
+    bottom: 90px;
     visibility: hidden;
   }
-  
-  @keyframes whack-a-mole {
-    0% {
-      bottom: 80px; 
-      visibility: hidden;
-    }
 
-    33% {
-      bottom: 100px; 
-      visibility: visible; 
-    }
-
-    67% {
-      bottom: 100px; 
-      visibility: visible;
-    }
-
-    100% {
-      bottom: 80px;
-      visibility: hidden;
-    }
+  3% {
+    bottom: 100px;
+    visibility: visible;
   }
 
+  6.7% {
+    bottom: 100px;
+    visibility: visible;
+  }
+
+  10% {
+    bottom: 90px;
+    visibility: hidden;
+  }
+
+  100% {
+    bottom: 90px;
+    visibility: visible;
+  }
+}
+
+.left-rabbit {
+  animation: whack-a-mole-left 30s linear infinite;
+  bottom: 20px;
+  left: 55%;
+  position: absolute;
+  transform: translateX(-50%) scale(1);
+  visibility: visible;
+  z-index: 3;
+}
+
+@keyframes whack-a-mole-left {
+  0% {
+    bottom: 10px;
+    visibility: visible;
+  }
+
+  30% {
+    bottom: 10px;
+    visibility: hidden;
+  }
+
+  33% {
+    bottom: 40px;
+    visibility: visible;
+  }
+
+  36.7% {
+    bottom: 40px;
+    visibility: visible;
+  }
+
+  40% {
+    bottom: 10px;
+    visibility: hidden;
+  }
+
+  100% {
+    bottom: 10px;
+    visibility: visible;
+  }
+}
+
+.right-rabbit {
+  animation: whack-a-mole-right 30s linear infinite;
+  bottom: 30px;
+  left: 37%;
+  position: absolute;
+  transform: translateX(-50%) scale(1);
+  visibility: visible;
+  z-index: 3;
+}
+
+@keyframes whack-a-mole-right {
+  0% {
+    bottom: 25px;
+    visibility: visible;
+  }
+
+  80% {
+    bottom: 25px;
+    visibility: hidden;
+  }
+
+  83% {
+    bottom: 50px;
+    visibility: visible;
+  }
+
+  86.7% {
+    bottom: 50px;
+    visibility: visible;
+  }
+
+  90% {
+    bottom: 25px;
+    visibility: hidden;
+  }
+
+  100% {
+    bottom: 25px;
+    visibility: visible;
+  }
+}

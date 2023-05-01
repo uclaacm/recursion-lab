@@ -21,25 +21,50 @@
 .start-button-container {
   left: 50%;
   position: absolute;
-  top: 65%;
+  top: 60%;
   transform: translate(-50%, -50%) scale(0.7);
+  z-index: 2;
 }
 
 @keyframes slide-down {
   from {
-  margin-top: 20px;
-  }
-  
-  to {
-  margin-top: 450px;
-  }
-  
+    margin-top: 20px;
   }
 
-.title {
+  to {
+    margin-top: 450px;
+  }
+}
+
+.homepage-title {
   animation: slide-down 2s ease-in-out forwards;
   left: 50%;
   position: absolute;
   top: -20%;
   transform: translateX(-50%);
+}
+
+.center-meadows {
+  left: 50%;
+  position: absolute;
+  top: 93.5%;
+  transform: translate(-63%, -50%) scale(1);
+  z-index: 2;
+}
+/*
+.homepage-frontlayer{
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-63%, -50%);
+  z-index:2;
+}
+*/
+
+.side-meadows {
+  left: 65%;
+  position: absolute;
+  top: 81%;
+  transform: translate(-63%, -50%) scale(0.9);
+  z-index: 4;
 }

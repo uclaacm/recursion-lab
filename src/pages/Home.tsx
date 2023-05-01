@@ -1,33 +1,62 @@
 import { faGreaterThan } from '@fortawesome/free-solid-svg-icons';
 import { FC } from 'react';
-import centerRabbit from '../assets/center_rabbit.png';
 import '../styles/Home.scss';
 import '../styles/Mario.scss';
 import '../styles/Rabbits.scss';
-import homeBackground from '../assets/home_page.png';
+import centerRabbit from '../assets/center_rabbit.png';
+import centerMeadows from '../assets/centerMeadows.png';
+import homepageTitle from '../assets/homepage_title.png';
+import homepageBacklayer from '../assets/homepageBacklayer.png';
+import leftRabbit from '../assets/leftRabbit.png';
 import marioHomepage from '../assets/mario_homepage.png';
+import rightRabbit from '../assets/rightRabbit.png';
+import sideMeadows from '../assets/sideMeadows.png';
 import startButton from '../assets/start_button.png';
-import title from '../assets/title.png';
 import Button from '../components/shared/Button';
 
 const Home: FC = () => {
   return (
-    <div className="home-container" style={{ backgroundImage: `url(${homeBackground})`, backgroundSize: 'cover' }} >
+    <div
+      className="home-container"
+      style={{
+        backgroundImage: `url(${homepageBacklayer})`,
+        backgroundSize: 'cover',
+      }}
+    >
       <Button icon={faGreaterThan} className="next-btn" navigation="/intro" />
       <div className="start-button-container">
         <img className="start-button" src={startButton} alt="Start Button" />
       </div>
       <div>
-      <img className="mario-image" src={marioHomepage} alt="Mario" />
+        <img className="mario-image" src={marioHomepage} alt="Mario" />
       </div>
       <div>
-      <img className="title" src={title} alt="Title" />
+        <img
+          className="homepage-title"
+          src={homepageTitle}
+          alt="Homepage Title"
+        />
       </div>
       <div>
-      <img className="center-rabbit" src={centerRabbit} alt="Center Rabbit" />
+        <img className="center-rabbit" src={centerRabbit} alt="Center Rabbit" />
+      </div>
+      <div>
+        <img className="left-rabbit" src={leftRabbit} alt="Left Rabbit" />
+      </div>
+      <div>
+        <img className="right-rabbit" src={rightRabbit} alt="Right Rabbit" />
+      </div>
+      <div>
+        <img
+          className="center-meadows"
+          src={centerMeadows}
+          alt="Center Meadows"
+        />
+      </div>
+      <div>
+        <img className="side-meadows" src={sideMeadows} alt="Side Meadows" />
       </div>
     </div>
-
   );
 };
 
