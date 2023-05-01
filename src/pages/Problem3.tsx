@@ -2,8 +2,10 @@ import { faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import EmojiNatureIcon from '@mui/icons-material/EmojiNature';
 import { FC } from 'react';
 import './Problem3.scss';
+
 import blueBackground from '../assets/bunnies/blueBackground.png';
 import bottomBackground from '../assets/bunnies/bottomBackground.png';
+import greyTick from '../assets/bunnies/greyTick.png';
 import headerBackground from '../assets/bunnies/headerBackground.png';
 import rabitGroup from '../assets/bunnies/rabitGroup.png';
 import ProgressBar3 from '../assets/progress_bar3.png';
@@ -31,7 +33,7 @@ const Problem3: FC = () => {
           <div className="body">
             <div className="content-container">
               <div className="header">
-                <h1 className="title"> Rabbit </h1>
+                <h1 className="title-name"> Rabbit </h1>
                 <p className="setup">
                   Population growth is the natural increase in the number of
                   individuals in a given population. Factors like resources,
@@ -112,19 +114,19 @@ const Problem3: FC = () => {
 
 {/* const data = [
   {
-    step: '🗹 Understanding the problem',
+    step: <h2> <img src={greyTick} alt="" style={{ width: '15pt' }} /> Understanding the problem </h2>,
     answer: UnderstandingProblem,
   },
   {
-    step: '🗹 Identifying the Base Case',
+    step: <h2> <img src={greyTick} alt="" style={{ width: '15pt' }} /> Identifying the Base Case </h2>,
     answer: BunnyBaseCase,
   },
   {
-    step: '🗹 Generalize the Pattern: Recursive Formula',
+    step: <h2> <img src={greyTick} alt="" style={{ width: '15pt' }} /> Generalize the Pattern: Recursive Formula </h2>,
     answer: BunnyFormula,
   },
   {
-    step: '🗹 Code the Components Together',
+    step: <h2> <img src={greyTick} alt="" style={{ width: '15pt' }} /> Code the Components Together </h2>,
     answer: BunnyCode,
   },
 ]; */}
