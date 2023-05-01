@@ -27,7 +27,7 @@
     "react-confetti-explosion": "^2.1.2",
     "react-dom": "^18.2.0",
     "react-latex-next": "^2.2.0",
-    "react-router-dom": "^6.8.0",
+    "react-router-dom": "^6.11.0",
     "react-select": "^5.7.2",
     "stylelint-config-prettier": "^9.0.4"
   },
