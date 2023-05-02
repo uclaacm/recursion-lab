@@ -114,19 +114,43 @@ const Problem3: FC = () => {
 
 {/* const data = [
   {
-    step: <h2> <img src={greyTick} alt="" style={{ width: '15pt' }} /> Understanding the problem </h2>,
+    step: (
+      <h2>
+        {' '}
+        <img src={greyTick} alt="" style={{ width: '15pt' }} /> Understanding
+        the problem{' '}
+      </h2>
+    ),
     answer: UnderstandingProblem,
   },
   {
-    step: <h2> <img src={greyTick} alt="" style={{ width: '15pt' }} /> Identifying the Base Case </h2>,
+    step: (
+      <h2>
+        {' '}
+        <img src={greyTick} alt="" style={{ width: '15pt' }} /> Identifying the
+        Base Case{' '}
+      </h2>
+    ),
     answer: BunnyBaseCase,
   },
   {
-    step: <h2> <img src={greyTick} alt="" style={{ width: '15pt' }} /> Generalize the Pattern: Recursive Formula </h2>,
+    step: (
+      <h2>
+        {' '}
+        <img src={greyTick} alt="" style={{ width: '15pt' }} /> Generalize the
+        Pattern: Recursive Formula{' '}
+      </h2>
+    ),
     answer: BunnyFormula,
   },
   {
-    step: <h2> <img src={greyTick} alt="" style={{ width: '15pt' }} /> Code the Components Together </h2>,
+    step: (
+      <h2>
+        {' '}
+        <img src={greyTick} alt="" style={{ width: '15pt' }} /> Code the
+        Components Together{' '}
+      </h2>
+    ),
     answer: BunnyCode,
   },
 ]; */}
