@@ -24,9 +24,9 @@ function UnderstandingProblem(): JSX.Element {
           <p>
             What is the nth number of rabbits?
             <KhanInput
-            correct_answer={isCorrect} //must pass in correctness state from parent
-            index={0} //index for what KhanCard you are referring to
-            answer={answerKey.question1} //the answer from answerkey
+              correct_answer={isCorrect} //must pass in correctness state from parent
+              index={0} //index for what KhanCard you are referring to
+              answer={answerKey.question1} //the answer from answerkey
             />
           </p>
         </div>

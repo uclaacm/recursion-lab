@@ -41,19 +41,19 @@ const Problem3: FC = () => {
               <div className="header">
                 <h1 className="title-name"> Rabbit </h1>
                 <p className="setup">
-                Population growth is the natural increase in the number of
-                individuals in a given population. Factors like resources,
-                predation, disease, and reproductive success influence
-                population growth in rabbits. To predict the future population
-                growth of rabbits in a closed environment, we can use recursion.
-                Starting with a pair of rabbits, one girl and one boy, after
-                a month, they can give birth to a litter of 2-8 offspring.
-                Assuming the rabbits can breed every month and the offspring
-                can start breeding after two months, we can recursively
-                calculate the number of rabbits after each month. However,
-                the population growth will eventually reach a carrying capacity,
-                after which it will stabilize or even decrease due to competition
-                for resources and disease.
+                  Population growth is the natural increase in the number of
+                  individuals in a given population. Factors like resources,
+                  predation, disease, and reproductive success influence
+                  population growth in rabbits. To predict the future population
+                  growth of rabbits in a closed environment, we can use
+                  recursion. Starting with a pair of rabbits, one girl and one
+                  boy, after a month, they can give birth to a litter of 2-8
+                  offspring. Assuming the rabbits can breed every month and the
+                  offspring can start breeding after two months, we can
+                  recursively calculate the number of rabbits after each month.
+                  However, the population growth will eventually reach a
+                  carrying capacity, after which it will stabilize or even
+                  decrease due to competition for resources and disease.
                 </p>
                 <img src={rabitGroup} alt="" style={{ width: '80%' }} />
                 <img
@@ -108,19 +108,43 @@ const Problem3: FC = () => {
 
 const data = [
   {
-    step: <h2> <img src={greyTick} alt="" style={{ width: '15pt' }} /> Understanding the problem </h2>,
+    step: (
+      <h2>
+        {' '}
+        <img src={greyTick} alt="" style={{ width: '15pt' }} /> Understanding
+        the problem{' '}
+      </h2>
+    ),
     answer: UnderstandingProblem,
   },
   {
-    step: <h2> <img src={greyTick} alt="" style={{ width: '15pt' }} /> Identifying the Base Case </h2>,
+    step: (
+      <h2>
+        {' '}
+        <img src={greyTick} alt="" style={{ width: '15pt' }} /> Identifying the
+        Base Case{' '}
+      </h2>
+    ),
     answer: BunnyBaseCase,
   },
   {
-    step: <h2> <img src={greyTick} alt="" style={{ width: '15pt' }} /> Generalize the Pattern: Recursive Formula </h2>,
+    step: (
+      <h2>
+        {' '}
+        <img src={greyTick} alt="" style={{ width: '15pt' }} /> Generalize the
+        Pattern: Recursive Formula{' '}
+      </h2>
+    ),
     answer: BunnyFormula,
   },
   {
-    step: <h2> <img src={greyTick} alt="" style={{ width: '15pt' }} /> Code the Components Together </h2>,
+    step: (
+      <h2>
+        {' '}
+        <img src={greyTick} alt="" style={{ width: '15pt' }} /> Code the
+        Components Together{' '}
+      </h2>
+    ),
     answer: BunnyCode,
   },
 ];
