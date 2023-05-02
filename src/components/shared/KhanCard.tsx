@@ -82,7 +82,7 @@ function KhanCard(props: KhanCardProps): JSX.Element {
             ></div>
           </div>
           <button
-            className="khan-check-button"
+            className="code-check-button"
             onClick={handleClick}
             disabled={tries == 0 || correct ? true : false}
           >

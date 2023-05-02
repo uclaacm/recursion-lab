@@ -7,6 +7,7 @@ import Problem1 from '../pages/Problem1';
 import Problem2 from '../pages/Problem2';
 import Problem3 from '../pages/Problem3';
 import Problem4 from '../pages/Problem4';
+import RecursionFormula from '../pages/RecursionFormula';
 
 function App(): JSX.Element {
   return (
@@ -19,6 +20,7 @@ function App(): JSX.Element {
           <Route path="/problem2" element={<Problem2 />} />
           <Route path="/problem3" element={<Problem3 />} />
           <Route path="/problem4" element={<Problem4 />} />
+          <Route path="/recursionformula" element={<RecursionFormula />} />
           <Route path="/*" element={<Page404 />} />
         </Routes>
       </BrowserRouter>

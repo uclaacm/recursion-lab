@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import ConfettiExplosion from 'react-confetti-explosion';
 
-interface KhanCardProps {
+interface FinishCodeCardProps {
   children?: JSX.Element;
   correct: string;
   incorrect: string;
@@ -29,7 +29,7 @@ const smallProps: ConfettiProps = {
   width: 400,
 };
 
-function KhanCard(props: KhanCardProps): JSX.Element {
+function FinishCodeCard(props: FinishCodeCardProps): JSX.Element {
   const [isExploding, setIsExploding] = useState(false);
   const [tries, setTries] = useState(3);
   const [correct, setCorrect] = useState(false);
@@ -61,7 +61,7 @@ function KhanCard(props: KhanCardProps): JSX.Element {
         correct ? 'khan-card-container-correct' : ''
       }`}
     >
-      <div className="khan-title">Fill in the Blank</div>
+      <div className="khan-title">Finish the code</div>
       <div className="khan-content">{props.children}</div>
       <div className="khan-horizontal-line"></div>
       <div className="khan-footer">
@@ -71,6 +71,9 @@ function KhanCard(props: KhanCardProps): JSX.Element {
         <div className="tries-left-container">
           <div className="tries-left">Tries Left</div>
           <div className="circle-container">
+            <div
+              className={`circle ${tries == 4 ? 'circle-active' : ''}`}
+            ></div>
             <div
               className={`circle ${tries == 3 ? 'circle-active' : ''}`}
             ></div>
@@ -106,4 +109,4 @@ function KhanCard(props: KhanCardProps): JSX.Element {
   );
 }
 
-export default KhanCard;
+export default FinishCodeCard;
