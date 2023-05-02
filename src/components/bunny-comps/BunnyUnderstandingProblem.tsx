@@ -3,8 +3,14 @@ import './StylesBunny.scss';
 import UnderstandingQuestion from '../../assets/bunnies/UnderstandingQuestion.png';
 
 import KhanCard from '../shared/KhanCard';
+import KhanInput from '../shared/KhanInput';
+
 function UnderstandingProblem(): JSX.Element {
   const [isCorrect] = useState([false, false]);
+  const [answerKey] = useState({
+    //you can have multiple "Fill in the Blank" questions
+    question1: '8',
+  });
 
   return (
     <KhanCard
@@ -17,14 +23,16 @@ function UnderstandingProblem(): JSX.Element {
         <div className="question">
           <p>
             What is the nth number of rabbits?
-            <input />
+            <KhanInput
+              correct_answer={isCorrect} //must pass in correctness state from parent
+              index={0} //index for what KhanCard you are referring to
+              answer={answerKey.question1} //the answer from answerkey
+            />
           </p>
         </div>
         <div className="questionImage">
           <img src={UnderstandingQuestion} alt="" style={{ width: '100%' }} />
         </div>
-        <br />
-        <button className="submit-button"> Submit </button>
       </div>
     </KhanCard>
   );
