@@ -62,9 +62,12 @@
 */
 
 .side-meadows {
+  height: 350px;
   left: 65%;
+  object-fit: cover;
   position: absolute;
   top: 81%;
   transform: translate(-63%, -50%) scale(0.9);
+  width: 115%;
   z-index: 4;
 }
