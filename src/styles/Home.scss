@@ -5,10 +5,16 @@
 }
 
 .start-button {
-  animation: blink 1s infinite;
+  animation: blink 1s infinite, fadeIn 3s;
+  animation-play-state: running;
+  cursor: pointer;
 }
 
 .start-button:hover {
+  animation-play-state: paused;
+}
+
+.start-button:unhover {
   animation: none;
 }
 
@@ -16,6 +22,11 @@
   50% {
     transform: scale(1.2);
   }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 .start-button-container {
@@ -51,15 +62,6 @@
   transform: translate(-63%, -50%) scale(1);
   z-index: 2;
 }
-/*
-.homepage-frontlayer{
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-63%, -50%);
-  z-index:2;
-}
-*/
 
 .side-meadows {
   height: 350px;

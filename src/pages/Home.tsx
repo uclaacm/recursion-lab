@@ -1,4 +1,3 @@
-import { faGreaterThan } from '@fortawesome/free-solid-svg-icons';
 import { FC } from 'react';
 import '../styles/Home.scss';
 import '../styles/Mario.scss';
@@ -12,7 +11,6 @@ import marioHomepage from '../assets/mario_homepage.png';
 import rightRabbit from '../assets/rightRabbit.png';
 import sideMeadows from '../assets/sideMeadows.png';
 import startButton from '../assets/start_button.png';
-import Button from '../components/shared/Button';
 
 const Home: FC = () => {
   return (
@@ -23,10 +21,13 @@ const Home: FC = () => {
         backgroundSize: 'cover',
       }}
     >
-      <Button icon={faGreaterThan} className="next-btn" navigation="/intro" />
-      <div className="start-button-container">
-        <img className="start-button" src={startButton} alt="Start Button" />
+    <div className="start-button-container">
+      <div className="start-button">
+        <a href="/intro">
+          <img src={startButton} alt="Start Button" />
+        </a>
       </div>
+    </div>
       <div>
         <img className="mario-image" src={marioHomepage} alt="Mario" />
       </div>
