@@ -1,10 +1,41 @@
 .highlight {
-  border: solid blue 5px;
+  border: solid blue 2px;
 }
 
 .progress-bar4 {
-  bottom: 10%;
-  left: 50%;
-  margin-left: -180px; /* very important for the image to be centered */
+  position: relative;
+  top: 320px;
+}
+
+#bottom-bar {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+
+.problem-body {
+  position: relative;
+  top: 300px;
+  z-index: 1;
+}
+
+.open-book {
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
   position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.number-list {
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  right: 0;
+  top: 150px;
+  width: 450px;
+  z-index: 1;
 }
