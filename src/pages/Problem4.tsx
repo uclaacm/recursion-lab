@@ -4,6 +4,8 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
 import { FC, useState } from 'react';
+import OpenBook from '../assets/open-book.png';
+import ProgressBar4 from '../assets/progress_bar4.png';
 import AppWrapper from '../components/shared/AppWrapper';
 import Button from '../components/shared/Button';
 import { HeaderSections } from '../components/shared/globalTypes';
@@ -25,16 +27,16 @@ const Problem4: FC = () => {
     textAlign: 'center',
     color: theme.palette.text.secondary,
   }));
-  const [highlighted, setHighlighted] = useState(0);
+  const [highlighted, setHighlighted] = useState(1);
   const [passedIntro, setPassedIntro] = useState(false);
   return (
     <div>
       <AppWrapper section={HeaderSections.PROBLEM4_TITLE}>
         <div className="body">
           <div className="content-container">
-            <p className="setup">Binary Search</p>
+            <img src={OpenBook} className="open-book"></img>
 
-            <Box sx={{ flexGrow: 1 }}>
+            <Box sx={{ flexGrow: 1 }} className="number-list">
               <Grid
                 container
                 spacing={2}
@@ -45,6 +47,7 @@ const Problem4: FC = () => {
                   <>
                     <Grid item xs={6}>
                       <Item
+                        style={{ background: 'transparent', boxShadow: 'none' }}
                         className={highlighted === 1 ? 'highlight' : undefined}
                       >
                         1
@@ -52,6 +55,7 @@ const Problem4: FC = () => {
                     </Grid>
                     <Grid item xs={6}>
                       <Item
+                        style={{ background: 'transparent', boxShadow: 'none' }}
                         className={highlighted === 3 ? 'highlight' : undefined}
                       >
                         3
@@ -59,6 +63,7 @@ const Problem4: FC = () => {
                     </Grid>
                     <Grid item xs={6}>
                       <Item
+                        style={{ background: 'transparent', boxShadow: 'none' }}
                         className={highlighted === 2 ? 'highlight' : undefined}
                       >
                         2
@@ -66,6 +71,7 @@ const Problem4: FC = () => {
                     </Grid>
                     <Grid item xs={6}>
                       <Item
+                        style={{ background: 'transparent', boxShadow: 'none' }}
                         className={highlighted === 4 ? 'highlight' : undefined}
                       >
                         4
@@ -77,19 +83,32 @@ const Problem4: FC = () => {
                   <>
                     <Grid item xs={6}>
                       <Item
+                        style={{ background: 'transparent', boxShadow: 'none' }}
                         className={highlighted === 5 ? 'highlight' : undefined}
                       >
                         5
                       </Item>
                     </Grid>
                     <Grid item xs={6}>
-                      <Item>7</Item>
+                      <Item
+                        style={{ background: 'transparent', boxShadow: 'none' }}
+                      >
+                        7
+                      </Item>
                     </Grid>
                     <Grid item xs={6}>
-                      <Item>6</Item>
+                      <Item
+                        style={{ background: 'transparent', boxShadow: 'none' }}
+                      >
+                        6
+                      </Item>
                     </Grid>
                     <Grid item xs={6}>
-                      <Item>8</Item>
+                      <Item
+                        style={{ background: 'transparent', boxShadow: 'none' }}
+                      >
+                        8
+                      </Item>
                     </Grid>
                   </>
                 )}
@@ -97,60 +116,70 @@ const Problem4: FC = () => {
             </Box>
 
             {/* need to highlight the overall box like in the code example
-  need to replace nuumbers with words from array
-  need to replace text box to showing the right word
-  */}
+              need to replace nuumbers with words from array
+              need to replace text box to showing the right word
+              */}
 
-            {highlighted > 0 && !passedIntro && (
-              <p style={{ padding: '10px' }}>X is greater than Y</p>
-            )}
+            <div className="problem-body">
+              {highlighted > 0 && (
+                <p style={{ padding: '10px' }}>X is greater than Y</p>
+              )}
 
-            <button
-              onClick={() => {
-                setHighlighted(highlighted + 1);
-              }}
-            >
-              Next
-            </button>
-            {highlighted > 5 && (
-              <div>
-                <h2> {'Too slow? Learn Binary Search'} </h2>
-                <button
-                  style={{ margin: '10px' }}
-                  onClick={() => {
-                    setPassedIntro(true);
-                  }}
-                >
-                  Go!
-                </button>
-              </div>
-            )}
-            {passedIntro && (
-              <div className="wrapper">
-                <div className="accordion">
-                  {data.map((item, i) => (
-                    <div key={i} className="item">
-                      <div className="title" onClick={() => toggle(i)}>
-                        <h2>{item.step}</h2>
-                        <span>{selected === i ? '-' : '+'}</span>
-                      </div>
-                      <div
-                        className={selected === i ? 'content show' : 'content'}
-                      >
-                        {item.answer}
-                      </div>
-                    </div>
-                  ))}
+              <button
+                onClick={() => {
+                  setHighlighted(highlighted + 1);
+                }}
+              >
+                Next
+              </button>
+              {highlighted > 5 && (
+                <div>
+                  <h2> {'Too slow? Learn Binary Search'} </h2>
+                  <button
+                    style={{ margin: '10px' }}
+                    onClick={() => {
+                      setPassedIntro(true);
+                    }}
+                  >
+                    Go!
+                  </button>
                 </div>
-              </div>
-            )}
+              )}
+              {passedIntro && (
+                <div className="wrapper">
+                  <div className="accordion">
+                    {data.map((item, i) => (
+                      <div key={i} className="item">
+                        <div className="title" onClick={() => toggle(i)}>
+                          <h2>{item.step}</h2>
+                          <span>{selected === i ? '-' : '+'}</span>
+                        </div>
+                        <div
+                          className={
+                            selected === i ? 'content show' : 'content'
+                          }
+                        >
+                          {item.answer}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
 
-            <div className="buttons">
+            <div id="bottom-bar">
               <Button
                 icon={faLessThan}
                 className="prev-btn"
                 navigation="/problem3"
               />
+              <div className="progress-bar4">
+                <img
+                  src={ProgressBar4}
+                  alt="Progress Bar: You are on the Fourth Problem!"
+                />
+              </div>
               <Button
                 icon={faGreaterThan}
                 className="next-btn"
