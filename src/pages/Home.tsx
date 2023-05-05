@@ -21,13 +21,13 @@ const Home: FC = () => {
         backgroundSize: 'cover',
       }}
     >
-    <div className="start-button-container">
-      <div className="start-button">
-        <a href="/intro">
-          <img src={startButton} alt="Start Button" />
-        </a>
+      <div className="start-button-container">
+        <div className="start-button">
+          <a href="/intro">
+            <img src={startButton} alt="Start Button" />
+          </a>
+        </div>
       </div>
-    </div>
       <div>
         <img className="mario-image" src={marioHomepage} alt="Mario" />
       </div>

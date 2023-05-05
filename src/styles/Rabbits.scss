@@ -10,27 +10,27 @@
 
 @keyframes whack-a-mole-center {
   0% {
-    bottom: 90px;
+    bottom: 88px;
     visibility: hidden;
   }
 
+  1.5% {
+    bottom: 95px;
+    visibility: visible;
+  }
+
   3% {
-    bottom: 100px;
+    bottom: 95px;
     visibility: visible;
   }
 
-  6.7% {
-    bottom: 100px;
-    visibility: visible;
-  }
-
-  10% {
-    bottom: 90px;
+  5% {
+    bottom: 88px;
     visibility: hidden;
   }
 
   100% {
-    bottom: 90px;
+    bottom: 88px;
     visibility: visible;
   }
 }
@@ -47,13 +47,18 @@
 
 @keyframes whack-a-mole-left {
   0% {
-    bottom: 10px;
+    bottom: 15px;
     visibility: visible;
   }
 
   30% {
-    bottom: 10px;
+    bottom: 15px;
     visibility: hidden;
+  }
+
+  31.5% {
+    bottom: 40px;
+    visibility: visible;
   }
 
   33% {
@@ -61,26 +66,21 @@
     visibility: visible;
   }
 
-  36.7% {
-    bottom: 40px;
-    visibility: visible;
-  }
-
-  40% {
-    bottom: 10px;
+  35% {
+    bottom: 15px;
     visibility: hidden;
   }
 
   100% {
-    bottom: 10px;
+    bottom: 15px;
     visibility: visible;
   }
 }
 
 .right-rabbit {
   animation: whack-a-mole-right 30s linear infinite;
-  bottom: 30px;
-  left: 37%;
+  bottom: 1px;
+  left: 34%;
   position: absolute;
   transform: translateX(-50%) scale(1);
   visibility: visible;
@@ -89,32 +89,32 @@
 
 @keyframes whack-a-mole-right {
   0% {
-    bottom: 25px;
+    bottom: 33px;
     visibility: visible;
   }
 
   80% {
-    bottom: 25px;
+    bottom: 33px;
     visibility: hidden;
   }
 
+  81.5% {
+    bottom: 45px;
+    visibility: visible;
+  }
+
   83% {
-    bottom: 50px;
+    bottom: 45px;
     visibility: visible;
   }
 
-  86.7% {
-    bottom: 50px;
-    visibility: visible;
-  }
-
-  90% {
-    bottom: 25px;
+  85% {
+    bottom: 33px;
     visibility: hidden;
   }
 
   100% {
-    bottom: 25px;
+    bottom: 33px;
     visibility: visible;
   }
 }
