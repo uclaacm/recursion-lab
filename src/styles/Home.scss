@@ -1,5 +1,76 @@
 .home-container {
   background-color: #fef2e7;
   height: 100vh;
-  width: 100%;
+  width: 101%;
+}
+
+.start-button {
+  animation: blink 1s infinite, fadeIn 3s;
+  animation-play-state: running;
+  cursor: pointer;
+}
+
+.start-button:hover {
+  animation-play-state: paused;
+}
+
+@keyframes blink {
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.start-button-container {
+  left: 50%;
+  position: absolute;
+  top: 60%;
+  transform: translate(-50%, -50%) scale(0.7);
+  z-index: 2;
+}
+
+@keyframes slide-down {
+  from {
+    margin-top: 20px;
+  }
+
+  to {
+    margin-top: 450px;
+  }
+}
+
+.homepage-title {
+  animation: slide-down 2s ease-in-out forwards;
+  left: 50%;
+  position: absolute;
+  top: -20%;
+  transform: translateX(-50%);
+}
+
+.center-meadows {
+  left: 50%;
+  position: absolute;
+  top: 94.5%;
+  transform: translate(-63%, -50%) scale(1);
+  z-index: 2;
+}
+
+.side-meadows {
+  height: 350px;
+  left: 65%;
+  object-fit: cover;
+  position: absolute;
+  top: 81%;
+  transform: translate(-63%, -50%) scale(0.9);
+  width: 115%;
+  z-index: 4;
 }
