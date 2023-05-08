@@ -1,6 +1,6 @@
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { useState } from 'react';
 import ConfettiExplosion from 'react-confetti-explosion';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 interface KhanCardProps {
   children?: JSX.Element;
@@ -62,7 +62,10 @@ function KhanCard(props: KhanCardProps): JSX.Element {
         correct ? 'khan-card-container-correct' : ''
       }`}
     >
-      <div className="khan-title">
+      <div
+        className="khan-title"
+        style={{ display: 'flex', alignItems: 'center' }}
+      >
         {correct ? (
           <CheckCircleIcon sx={{ color: 'green', fontSize: 'inherit' }} />
         ) : (
