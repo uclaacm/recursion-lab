@@ -1,4 +1,5 @@
 import { faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
+import FlagCircleIcon from '@mui/icons-material/FlagCircle';
 import { FC, useState } from 'react';
 import BricksBackground from '../assets/bricksBackground.png';
 import MarioBackground from '../assets/marioBackground.png';
@@ -9,7 +10,12 @@ import MarioFormula from '../components/mario-comps/MarioFormula';
 import Staircase from '../components/mario-comps/Staircase';
 import AppWrapper from '../components/shared/AppWrapper';
 import Button from '../components/shared/Button';
+import ExpandBox from '../components/shared/ExpandBox';
 import { HeaderSections } from '../components/shared/globalTypes';
+//import CallIcon from '@mui/icons-material/Call';
+//import EmojiNatureIcon from '@mui/icons-material/EmojiNature';
+//import YardIcon from '@mui/icons-material/Yard';
+//import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 
 import '../styles/Problem1.scss';
 
@@ -69,6 +75,32 @@ const Problem1: FC = () => {
                 })}
               </div>
             </div>
+
+            <ExpandBox
+              class="mario-title-new"
+              title="Understanding the Problem"
+              component={Staircase}
+              icon={FlagCircleIcon}
+            />
+            <ExpandBox
+              class="mario-title-new"
+              title="Identifying the Base Case"
+              component={MarioBaseCase}
+              icon={FlagCircleIcon}
+            />
+            <ExpandBox
+              class="mario-title-new"
+              title="Generalize the Pattern: Recursive Formula"
+              component={MarioFormula}
+              icon={FlagCircleIcon}
+            />
+            <ExpandBox
+              class="mario-title-new"
+              title="Code the Components Together"
+              component={MarioCode}
+              icon={FlagCircleIcon}
+            />
+
             <div className="progress-bar">
               <img
                 src={ProgressBar1}
