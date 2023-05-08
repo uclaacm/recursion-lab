@@ -6,7 +6,7 @@ interface KhanCardProps {
   correct: string;
   incorrect: string;
   correct_answer: boolean[];
-  index: number;
+  index: number[];
 }
 
 interface ConfettiProps
@@ -42,13 +42,24 @@ function KhanCard(props: KhanCardProps): JSX.Element {
     }
     setShowAnswer(false);
 
-    if (!props.correct_answer[props.index]) {
+    let isCorrect = true;
+    const indexArray = props.index;
+    for (let i = 0; i < indexArray.length; i++) {
+      if (!props.correct_answer[indexArray[i]]) {
+        isCorrect = false;
+      }
+    }
+
+    if (!isCorrect) {
       setTries((prevTries) => prevTries - 1);
     } else {
       setIsExploding(true);
     }
     setExpand(true);
-    setCorrect(props.correct_answer[props.index]);
+    indexArray.forEach((index) =>
+      setCorrect(props.correct_answer[indexArray[index]])
+    );
+    //setCorrect(props.correct_answer[props.index]);
   };
 
   const handleShowAnswer = () => {

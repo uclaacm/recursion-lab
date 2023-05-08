@@ -17,7 +17,7 @@ function UnderstandingProblem(): JSX.Element {
       correct="This is an explanation for when you get the answer correct." //explanation for when user gets answer correct
       incorrect="This is a hint for when you get the answer incorrect." //hint when user gets answer incorrect
       correct_answer={isCorrect} //must pass in correctness state from parent
-      index={0} //index for what KhanCard you are referring to
+      index={[0]} //index for what KhanCard you are referring to
     >
       <div className="understanding-problem">
         <div className="question">
