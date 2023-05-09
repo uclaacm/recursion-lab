@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import ConfettiExplosion from 'react-confetti-explosion';
-import CheckMark from '../../assets/CheckMark.png';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 interface FinishCodeCardProps {
   children?: JSX.Element;
@@ -63,8 +63,12 @@ function FinishCodeCard(props: FinishCodeCardProps): JSX.Element {
       }`}
     >
       <div className="finish-title">
-        <img src={`${CheckMark}`}></img>
-        <div>Finish the code</div>
+      {correct ? (
+          <CheckCircleIcon sx={{ color: 'green', fontSize: 'inherit' }} />
+        ) : (
+          <CheckCircleIcon sx={{ color: 'grey', fontSize: 'inherit' }} />
+        )}
+        &nbsp;&nbsp;Finish the code
       </div>
       <div className="finish-content">{props.children}</div>
       <div className="finish-horizontal-line"></div>
