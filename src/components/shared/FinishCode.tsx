@@ -1,13 +1,13 @@
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { useState } from 'react';
 import ConfettiExplosion from 'react-confetti-explosion';
+import CheckMark from '../../assets/CheckMark.png';
 
-interface KhanCardProps {
+interface FinishCodeCardProps {
   children?: JSX.Element;
   correct: string;
   incorrect: string;
   correct_answer: boolean[];
-  index: number[];
+  index: number;
 }
 
 interface ConfettiProps
@@ -30,7 +30,7 @@ const smallProps: ConfettiProps = {
   width: 400,
 };
 
-function KhanCard(props: KhanCardProps): JSX.Element {
+function FinishCodeCard(props: FinishCodeCardProps): JSX.Element {
   const [isExploding, setIsExploding] = useState(false);
   const [tries, setTries] = useState(3);
   const [correct, setCorrect] = useState(false);
@@ -43,24 +43,13 @@ function KhanCard(props: KhanCardProps): JSX.Element {
     }
     setShowAnswer(false);
 
-    let isCorrect = true;
-    const indexArray = props.index;
-    for (let i = 0; i < indexArray.length; i++) {
-      if (!props.correct_answer[indexArray[i]]) {
-        isCorrect = false;
-      }
-    }
-
-    if (!isCorrect) {
+    if (!props.correct_answer[props.index]) {
       setTries((prevTries) => prevTries - 1);
     } else {
       setIsExploding(true);
     }
     setExpand(true);
-    indexArray.forEach((index) =>
-      setCorrect(props.correct_answer[indexArray[index]])
-    );
-    //setCorrect(props.correct_answer[props.index]);
+    setCorrect(props.correct_answer[props.index]);
   };
 
   const handleShowAnswer = () => {
@@ -69,24 +58,14 @@ function KhanCard(props: KhanCardProps): JSX.Element {
 
   return (
     <div
-      className={`khan-card-container ${
-        correct ? 'khan-card-container-correct' : ''
+      className={`finish-card-container ${
+        correct ? 'finish-card-container-correct' : ''
       }`}
     >
-      <div
-        className="khan-title"
-        style={{ display: 'flex', alignItems: 'center' }}
-      >
-        {correct ? (
-          <CheckCircleIcon sx={{ color: 'green', fontSize: 'inherit' }} />
-        ) : (
-          <CheckCircleIcon sx={{ color: 'grey', fontSize: 'inherit' }} />
-        )}
-        &nbsp;&nbsp; Fill in the Blank
-      </div>
-      <div className="khan-content">{props.children}</div>
-      <div className="khan-horizontal-line"></div>
-      <div className="khan-footer">
+      <div className="finish-title"><img src={`${CheckMark}`}></img>  Finish the code</div>
+      <div className="finish-content">{props.children}</div>
+      <div className="finish-horizontal-line"></div>
+      <div className="finish-footer">
         <button className="show-answer" onClick={handleShowAnswer}>
           {showAnswer ? 'Hide Answer' : 'Show Answer'}
         </button>
@@ -104,7 +83,7 @@ function KhanCard(props: KhanCardProps): JSX.Element {
             ></div>
           </div>
           <button
-            className="code-check-button"
+            className="finish-check-button"
             onClick={handleClick}
             disabled={tries == 0 || correct ? true : false}
           >
@@ -128,4 +107,4 @@ function KhanCard(props: KhanCardProps): JSX.Element {
   );
 }
 
-export default KhanCard;
+export default FinishCodeCard;
