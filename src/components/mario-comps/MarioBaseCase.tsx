@@ -23,7 +23,7 @@ function MarioBaseCase(): JSX.Element {
         correct="This is an explanation for when you get the answer correct." //explanation for when user gets answer correct
         incorrect="This is a hint for when you get the answer incorrect." //hint when user gets answer incorrect
         correct_answer={isCorrect} //must pass in correctness state from parent
-        index={0} //index for what KhanCard you are referring to
+        index={[0, 1]} //index for what KhanCard you are referring to
       >
         <div>
           <span>
@@ -37,6 +37,11 @@ function MarioBaseCase(): JSX.Element {
             answer={answerKey.question1} //the answer from answerkey
           />
           .
+          <KhanInput
+            correct_answer={isCorrect} //must pass in correctness state from parent
+            index={1} //index for what KhanCard you are referring to
+            answer={answerKey.question2} //the answer from answerkey
+          />
         </div>
       </KhanCard>
     </div>
