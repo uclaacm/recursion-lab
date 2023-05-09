@@ -1,0 +1,120 @@
+.center-rabbit {
+  animation: whack-a-mole-center 30s linear infinite;
+  bottom: 90px;
+  left: 48%;
+  position: absolute;
+  transform: translateX(-50%) scale(1);
+  visibility: hidden;
+  z-index: 1;
+}
+
+@keyframes whack-a-mole-center {
+  0% {
+    bottom: 88px;
+    visibility: hidden;
+  }
+
+  1.5% {
+    bottom: 95px;
+    visibility: visible;
+  }
+
+  3% {
+    bottom: 95px;
+    visibility: visible;
+  }
+
+  5% {
+    bottom: 88px;
+    visibility: hidden;
+  }
+
+  100% {
+    bottom: 88px;
+    visibility: visible;
+  }
+}
+
+.left-rabbit {
+  animation: whack-a-mole-left 30s linear infinite;
+  bottom: 20px;
+  left: 55%;
+  position: absolute;
+  transform: translateX(-50%) scale(1);
+  visibility: visible;
+  z-index: 3;
+}
+
+@keyframes whack-a-mole-left {
+  0% {
+    bottom: 15px;
+    visibility: visible;
+  }
+
+  30% {
+    bottom: 15px;
+    visibility: hidden;
+  }
+
+  31.5% {
+    bottom: 40px;
+    visibility: visible;
+  }
+
+  33% {
+    bottom: 40px;
+    visibility: visible;
+  }
+
+  35% {
+    bottom: 15px;
+    visibility: hidden;
+  }
+
+  100% {
+    bottom: 15px;
+    visibility: visible;
+  }
+}
+
+.right-rabbit {
+  animation: whack-a-mole-right 30s linear infinite;
+  bottom: 1px;
+  left: 34%;
+  position: absolute;
+  transform: translateX(-50%) scale(1);
+  visibility: visible;
+  z-index: 3;
+}
+
+@keyframes whack-a-mole-right {
+  0% {
+    bottom: 33px;
+    visibility: visible;
+  }
+
+  80% {
+    bottom: 33px;
+    visibility: hidden;
+  }
+
+  81.5% {
+    bottom: 45px;
+    visibility: visible;
+  }
+
+  83% {
+    bottom: 45px;
+    visibility: visible;
+  }
+
+  85% {
+    bottom: 33px;
+    visibility: hidden;
+  }
+
+  100% {
+    bottom: 33px;
+    visibility: visible;
+  }
+}

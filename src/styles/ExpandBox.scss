@@ -1,0 +1,20 @@
+.accordion-title {
+  align-items: center;
+  display: flex;
+}
+
+.mario-title-new {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 14pt;
+}
+
+.expandbox-container {
+  background: white; /*FFE4CB for background of accordion*/
+  box-shadow: 0 10px 25px rgba(92, 99, 105, 0.2);
+  margin-bottom: 20px;
+  padding: 10px 20px 10px 50px;
+}
+
+.bunnies-title {
+  font-family: 'Fredoka', sans-serif;
+}
