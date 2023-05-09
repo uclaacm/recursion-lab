@@ -201,7 +201,7 @@ body {
 
 // =========== FinishCode Card CSS ===========
 .code-component-container {
-  display:flex;
+  display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
@@ -241,6 +241,8 @@ body {
 }
 
 .finish-title {
+  align-items: center;
+  display: flex;
   font-size: 30px;
   font-weight: bolder;
   text-align: left;
@@ -271,8 +273,6 @@ body {
   background-color: #f0efef;
   cursor: auto;
 }
-
-
 
 #output {
   background-color: #f0efef;

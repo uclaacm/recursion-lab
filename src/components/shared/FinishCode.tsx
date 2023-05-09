@@ -62,7 +62,10 @@ function FinishCodeCard(props: FinishCodeCardProps): JSX.Element {
         correct ? 'finish-card-container-correct' : ''
       }`}
     >
-      <div className="finish-title"><img src={`${CheckMark}`}></img>  Finish the code</div>
+      <div className="finish-title">
+        <img src={`${CheckMark}`}></img>
+        <div>Finish the code</div>
+      </div>
       <div className="finish-content">{props.children}</div>
       <div className="finish-horizontal-line"></div>
       <div className="finish-footer">

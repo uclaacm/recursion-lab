@@ -60,7 +60,6 @@ function KhanCard(props: KhanCardProps): JSX.Element {
     indexArray.forEach((index) =>
       setCorrect(props.correct_answer[indexArray[index]])
     );
-    //setCorrect(props.correct_answer[props.index]);
   };
 
   const handleShowAnswer = () => {
@@ -104,7 +103,7 @@ function KhanCard(props: KhanCardProps): JSX.Element {
             ></div>
           </div>
           <button
-            className="code-check-button"
+            className="khan-check-button"
             onClick={handleClick}
             disabled={tries == 0 || correct ? true : false}
           >
