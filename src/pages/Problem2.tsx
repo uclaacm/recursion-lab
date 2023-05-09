@@ -5,11 +5,11 @@ import FoodBackground from '../assets/Food_Background.png';
 import ProgressBar2 from '../assets/progress_bar2.png';
 import AppWrapper from '../components/shared/AppWrapper';
 import Button from '../components/shared/Button';
-import { HeaderSections } from '../components/shared/globalTypes';
+import Dropdown from '../components/shared/Dropdown';
 import FinishCodeCard from '../components/shared/FinishCode';
+import { HeaderSections } from '../components/shared/globalTypes';
 import '../styles/Problem2.scss';
 import { options_array } from '../types';
-import Dropdown from '../components/shared/Dropdown';
 
 const Problem2: FC = () => {
   const [selected, setSelected] = useState(-1);
@@ -72,7 +72,7 @@ const Problem2: FC = () => {
     },
     {
       step: 'Code the Components Together',
-      answer:  (
+      answer: (
         <FinishCodeCard
           correct="This is an explanation for when you get the answer correct."
           incorrect="This is a hint for when you get the answer incorrect."
@@ -81,7 +81,7 @@ const Problem2: FC = () => {
         >
           <div className="Card-Container">
             <div className="Factorial-Text">
-              <div>In this example we will use n = 5</div>
+              <div>In this example, we will use n = 5.</div>
               <div>factorial(n):</div>
               <span>if</span>
               <Dropdown
@@ -103,10 +103,9 @@ const Problem2: FC = () => {
             <div id="output"></div>
           </div>
         </FinishCodeCard>
-      ), // Using the FinishCodeCard component inside    
+      ), // Using the FinishCodeCard component inside
     },
   ];
-  
 
 
   function factorial(n: number): number {
@@ -116,15 +115,15 @@ const Problem2: FC = () => {
       return n * factorial(n - 1);
     }
   }
-  
-  let outputDiv = document.getElementById('output');
-  
+
+  const outputDiv = document.getElementById('output');
+
   // If you're sure the element exists
   if (outputDiv) {
-    let factorialOutput = factorial(5);
+    const factorialOutput = factorial(5);
     outputDiv.innerHTML = `Factorial of 5 is: ${factorialOutput}`;
   }
-  
+
   return (
     <div>
       <AppWrapper section={HeaderSections.PROBLEM2_TITLE}>
@@ -193,7 +192,7 @@ const Problem2: FC = () => {
   );
 };
 export default Problem2;
-  
+
 /*
             <Button
               icon="Prev"
@@ -256,7 +255,7 @@ export default Problem2;
 //           <div id="output"></div>
 //         </div>
 //       </FinishCodeCard>
-//     ), // Using the FinishCodeCard component inside    
+//     ), // Using the FinishCodeCard component inside
 //   },
 // ];
 
