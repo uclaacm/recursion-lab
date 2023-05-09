@@ -1,7 +1,6 @@
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useState } from 'react';
-
 import '../../styles/ExpandBox.scss';
 
 interface ExpandBoxProps {
@@ -10,8 +9,6 @@ interface ExpandBoxProps {
   component: React.FC;
   icon: any;
 }
-
-//let data = [1, 2];
 
 function ExpandBox(props: ExpandBoxProps): JSX.Element {
   const [open, setOpen] = useState(false);
@@ -43,8 +40,3 @@ function ExpandBox(props: ExpandBoxProps): JSX.Element {
 }
 
 export default ExpandBox;
-
-//data.size = # of expandable boxes
-//each element is an object
-//step = title
-//answer = component

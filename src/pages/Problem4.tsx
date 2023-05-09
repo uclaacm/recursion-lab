@@ -1,4 +1,5 @@
 import { faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
+import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
@@ -6,20 +7,17 @@ import { styled } from '@mui/material/styles';
 import { FC, useState } from 'react';
 import OpenBook from '../assets/open-book.png';
 import ProgressBar4 from '../assets/progress_bar4.png';
+import BinaryBaseCase from '../components/binary-comps/BinaryBaseCase';
+import BinaryCode from '../components/binary-comps/BinaryCode';
+import BinaryFormula from '../components/binary-comps/BinaryFormula';
+import BinaryUnderstand from '../components/binary-comps/BinaryUnderstand';
 import AppWrapper from '../components/shared/AppWrapper';
 import Button from '../components/shared/Button';
+import ExpandBox from '../components/shared/ExpandBox';
 import { HeaderSections } from '../components/shared/globalTypes';
 import './Problem4.scss';
 
 const Problem4: FC = () => {
-  const [selected, setSelected] = useState(-1);
-
-  const toggle = (i: number) => {
-    if (selected === i) {
-      return setSelected(-1);
-    }
-    setSelected(i);
-  };
   const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
     ...theme.typography.body2,
@@ -146,25 +144,32 @@ const Problem4: FC = () => {
                 </div>
               )}
               {passedIntro && (
-                <div className="wrapper">
-                  <div className="accordion">
-                    {data.map((item, i) => (
-                      <div key={i} className="item">
-                        <div className="title" onClick={() => toggle(i)}>
-                          <h2>{item.step}</h2>
-                          <span>{selected === i ? '-' : '+'}</span>
-                        </div>
-                        <div
-                          className={
-                            selected === i ? 'content show' : 'content'
-                          }
-                        >
-                          {item.answer}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                <>
+                  <ExpandBox
+                    class="binary-title"
+                    title="Understanding the Problem"
+                    component={BinaryUnderstand}
+                    icon={AutoStoriesIcon}
+                  />
+                  <ExpandBox
+                    class="binary-title"
+                    title="Identifying the Base Case"
+                    component={BinaryBaseCase}
+                    icon={AutoStoriesIcon}
+                  />
+                  <ExpandBox
+                    class="binary-title"
+                    title="Generalize the Pattern: Recursive Formula"
+                    component={BinaryFormula}
+                    icon={AutoStoriesIcon}
+                  />
+                  <ExpandBox
+                    class="binary-title"
+                    title="Code the Components Together"
+                    component={BinaryCode}
+                    icon={AutoStoriesIcon}
+                  />
+                </>
               )}
             </div>
 
@@ -193,35 +198,4 @@ const Problem4: FC = () => {
   );
 };
 
-const data = [
-  {
-    step: 'step 1',
-    answer:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  },
-  {
-    step: 'step 2',
-    answer:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  },
-  {
-    step: 'step 3',
-    answer:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  },
-  {
-    step: 'step 4',
-    answer:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  },
-];
-
 export default Problem4;
-/*
-            <Button
-              icon="Prev"
-              className="prev-button"
-              navigation="/problem3"
-            />
-            <Button icon="Next" className="next-button" navigation="/" />
-*/

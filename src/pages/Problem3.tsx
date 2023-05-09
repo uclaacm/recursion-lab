@@ -1,5 +1,6 @@
 import { faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
-import { FC, useState } from 'react';
+import EmojiNatureIcon from '@mui/icons-material/EmojiNature';
+import { FC } from 'react';
 import './Problem3.scss';
 import blueBackground from '../assets/bunnies/blueBackground.png';
 import bottomBackground from '../assets/bunnies/bottomBackground.png';
@@ -12,17 +13,10 @@ import BunnyFormula from '../components/bunny-comps/BunnyFormula';
 import UnderstandingProblem from '../components/bunny-comps/BunnyUnderstandingProblem';
 import AppWrapper from '../components/shared/AppWrapper';
 import Button from '../components/shared/Button';
+import ExpandBox from '../components/shared/ExpandBox';
 import { HeaderSections } from '../components/shared/globalTypes';
 
 const Problem3: FC = () => {
-  const [selected, setSelected] = useState(-1);
-
-  const toggle = (i: number) => {
-    if (selected === i) {
-      return setSelected(-1);
-    }
-    setSelected(i);
-  };
   return (
     <div className="bunnies">
       <AppWrapper section={HeaderSections.PROBLEM3_TITLE}>
@@ -59,28 +53,33 @@ const Problem3: FC = () => {
                 />
               </div>
 
-              <div className="wrapper">
-                <div className="accordion">
-                  {data.map((item, i) => {
-                    const Component = item.answer;
-                    return (
-                      <div key={i} className="item">
-                        <div className="title" onClick={() => toggle(i)}>
-                          <h2>{item.step}</h2>
-                          <span>{selected === i ? '-' : '+'}</span>
-                        </div>
-                        <div
-                          className={
-                            selected === i ? 'content show' : 'content'
-                          }
-                        >
-                          {Component()}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
+              <div style={{ paddingTop: '100px' }}>
+                <ExpandBox
+                  class="bunnies-title"
+                  title="Understanding the Problem"
+                  component={UnderstandingProblem}
+                  icon={EmojiNatureIcon}
+                />
+                <ExpandBox
+                  class="bunnies-title"
+                  title="Identifying the Base Case"
+                  component={BunnyBaseCase}
+                  icon={EmojiNatureIcon}
+                />
+                <ExpandBox
+                  class="bunnies-title"
+                  title="Generalize the Pattern: Recursive Formula"
+                  component={BunnyFormula}
+                  icon={EmojiNatureIcon}
+                />
+                <ExpandBox
+                  class="bunnies-title"
+                  title="Code the Components Together"
+                  component={BunnyCode}
+                  icon={EmojiNatureIcon}
+                />
               </div>
+
               <div className="buttons">
                 <Button
                   icon={faLessThan}
@@ -108,35 +107,4 @@ const Problem3: FC = () => {
   );
 };
 
-const data = [
-  {
-    step: '🗹 Understanding the problem',
-    answer: UnderstandingProblem,
-  },
-  {
-    step: '🗹 Identifying the Base Case',
-    answer: BunnyBaseCase,
-  },
-  {
-    step: '🗹 Generalize the Pattern: Recursive Formula',
-    answer: BunnyFormula,
-  },
-  {
-    step: '🗹 Code the Components Together',
-    answer: BunnyCode,
-  },
-];
-
 export default Problem3;
-/*
-            <Button
-              icon="Prev"
-              className="prev-button"
-              navigation="/problem2"
-            />
-            <Button
-              icon="Next"
-              className="next-button"
-              navigation="/problem4"
-            />
-*/
