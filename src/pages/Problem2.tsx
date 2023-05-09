@@ -6,10 +6,17 @@ import ProgressBar2 from '../assets/progress_bar2.png';
 import AppWrapper from '../components/shared/AppWrapper';
 import Button from '../components/shared/Button';
 import { HeaderSections } from '../components/shared/globalTypes';
+import FinishCodeCard from '../components/shared/FinishCode';
 import '../styles/Problem2.scss';
+import { options_array } from '../types';
+import Dropdown from '../components/shared/Dropdown';
 
 const Problem2: FC = () => {
   const [selected, setSelected] = useState(-1);
+  const [isCorrect] = useState([false]);
+  const [answerKey] = useState({
+    question1: 'dropdown2',
+  });
 
   const toggle = (i: number) => {
     if (selected === i) {
@@ -17,6 +24,107 @@ const Problem2: FC = () => {
     }
     setSelected(i);
   };
+
+
+  const options0: options_array[] = [
+    {
+      value: 'dropdown1',
+      label: 'n==0',
+    },
+    {
+      value: 'dropdown2',
+      label: 'n==1',
+    },
+    {
+      value: 'dropdown3',
+      label: 'n==2',
+    },
+  ];
+  const options1: options_array[] = [
+    {
+      value: 'dropdown1',
+      label: '0',
+    },
+    {
+      value: 'dropdown2',
+      label: '1',
+    },
+    {
+      value: 'dropdown3',
+      label: '2',
+    },
+  ];
+  const data = [
+    {
+      step: 'Understanding the Problem',
+      answer:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+      step: 'Identifying the Base Case',
+      answer:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+      step: 'Generalize the Pattern: Recursive Formula',
+      answer:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+      step: 'Code the Components Together',
+      answer:  (
+        <FinishCodeCard
+          correct="This is an explanation for when you get the answer correct."
+          incorrect="This is a hint for when you get the answer incorrect."
+          correct_answer={isCorrect}
+          index={0}
+        >
+          <div className="Card-Container">
+            <div className="Factorial-Text">
+              <div>In this example we will use n = 5</div>
+              <div>factorial(n):</div>
+              <span>if</span>
+              <Dropdown
+                options={options0}
+                correct_answer={isCorrect}
+                index={0}
+                answer={answerKey.question1}
+              />
+              <div></div>
+              <span>return</span>
+              <Dropdown
+                options={options1}
+                correct_answer={isCorrect}
+                index={0}
+                answer={answerKey.question1}
+              />
+              <div>return n * factorial(n-1)</div>
+            </div>
+            <div id="output"></div>
+          </div>
+        </FinishCodeCard>
+      ), // Using the FinishCodeCard component inside    
+    },
+  ];
+  
+
+
+  function factorial(n: number): number {
+    if (n === 0) {
+      return 1;
+    } else {
+      return n * factorial(n - 1);
+    }
+  }
+  
+  let outputDiv = document.getElementById('output');
+  
+  // If you're sure the element exists
+  if (outputDiv) {
+    let factorialOutput = factorial(5);
+    outputDiv.innerHTML = `Factorial of 5 is: ${factorialOutput}`;
+  }
+  
   return (
     <div>
       <AppWrapper section={HeaderSections.PROBLEM2_TITLE}>
@@ -84,32 +192,8 @@ const Problem2: FC = () => {
     </div>
   );
 };
-
-const data = [
-  {
-    step: 'Understanding the Problem',
-    answer:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  },
-  {
-    step: 'Identifying the Base Case',
-    answer:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  },
-  {
-    step: 'Generalize the Pattern: Recursive Formula',
-    answer:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  },
-  {
-    step: 'Code the Components Together',
-    answer:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  },
-];
-
 export default Problem2;
-
+  
 /*
             <Button
               icon="Prev"
@@ -122,3 +206,71 @@ export default Problem2;
               navigation="/problem3"
             />
 */
+
+// const data = [
+//   {
+//     step: 'Understanding the Problem',
+//     answer:
+//       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+//   },
+//   {
+//     step: 'Identifying the Base Case',
+//     answer:
+//       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+//   },
+//   {
+//     step: 'Generalize the Pattern: Recursive Formula',
+//     answer:
+//       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+//   },
+//   {
+//     step: 'Code the Components Together',
+//     answer:  (
+//       <FinishCodeCard
+//         correct="This is an explanation for when you get the answer correct."
+//         incorrect="This is a hint for when you get the answer incorrect."
+//         correct_answer={isCorrect}
+//         index={0}
+//       >
+//         <div className="Card-Container">
+//           <div className="Factorial-Text">
+//             <div>In this example we will use n = 5</div>
+//             <div>factorial(n):</div>
+//             <span>if</span>
+//             <Dropdown
+//               options={options0}
+//               correct_answer={isCorrect}
+//               index={0}
+//               answer={answerKey.question1}
+//             />
+//             <div></div>
+//             <span>return</span>
+//             <Dropdown
+//               options={options1}
+//               correct_answer={isCorrect}
+//               index={0}
+//               answer={answerKey.question1}
+//             />
+//             <div>return n * factorial(n-1)</div>
+//           </div>
+//           <div id="output"></div>
+//         </div>
+//       </FinishCodeCard>
+//     ), // Using the FinishCodeCard component inside    
+//   },
+// ];
+
+// export default Problem2;
+
+// /*
+//             <Button
+//               icon="Prev"
+//               className="prev-button"
+//               navigation="/problem1"
+//             />
+//             <Button
+//               icon="Next"
+//               className="next-button"
+//               navigation="/problem3"
+//             />
+// */

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import ConfettiExplosion from 'react-confetti-explosion';
+import CheckMark from '../../assets/CheckMark.png';
 
 interface FinishCodeCardProps {
   children?: JSX.Element;
@@ -57,23 +58,20 @@ function FinishCodeCard(props: FinishCodeCardProps): JSX.Element {
 
   return (
     <div
-      className={`khan-card-container ${
-        correct ? 'khan-card-container-correct' : ''
+      className={`finish-card-container ${
+        correct ? 'finish-card-container-correct' : ''
       }`}
     >
-      <div className="khan-title">Finish the code</div>
-      <div className="khan-content">{props.children}</div>
-      <div className="khan-horizontal-line"></div>
-      <div className="khan-footer">
+      <div className="finish-title"><img src={`${CheckMark}`}></img>  Finish the code</div>
+      <div className="finish-content">{props.children}</div>
+      <div className="finish-horizontal-line"></div>
+      <div className="finish-footer">
         <button className="show-answer" onClick={handleShowAnswer}>
           {showAnswer ? 'Hide Answer' : 'Show Answer'}
         </button>
         <div className="tries-left-container">
           <div className="tries-left">Tries Left</div>
           <div className="circle-container">
-            <div
-              className={`circle ${tries == 4 ? 'circle-active' : ''}`}
-            ></div>
             <div
               className={`circle ${tries == 3 ? 'circle-active' : ''}`}
             ></div>
@@ -85,7 +83,7 @@ function FinishCodeCard(props: FinishCodeCardProps): JSX.Element {
             ></div>
           </div>
           <button
-            className="khan-check-button"
+            className="finish-check-button"
             onClick={handleClick}
             disabled={tries == 0 || correct ? true : false}
           >
