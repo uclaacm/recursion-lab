@@ -79,8 +79,8 @@ const Problem2: FC = () => {
           correct_answer={isCorrect}
           index={0}
         >
-          <div className="Card-Container">
-            <div className="Factorial-Text">
+          <div className="code-component-container">
+            <div className="factorial-text">
               <div>In this example, we will use n = 5.</div>
               <div>factorial(n):</div>
               <span>if</span>
