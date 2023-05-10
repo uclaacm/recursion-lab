@@ -1,6 +1,7 @@
 import { faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import { FC } from 'react';
 import Latex from 'react-latex-next';
+import FactorialQuestion from '../components/intro_comps/FactorialQuestion';
 import AppWrapper from '../components/shared/AppWrapper';
 import Button from '../components/shared/Button';
 import { HeaderSections } from '../components/shared/globalTypes';
@@ -23,6 +24,7 @@ const Intro: FC = () => {
                   In particular, if we already know $4!$, then we can compute $5!$ quickly:
                   $$5! = 5\\cdot(4\\cdot3\\cdot2\\cdot1) = 5\\cdot4! = 120$$`}
                 </Latex>
+                {FactorialQuestion()}
               </div>
             </div>
             <div className="textbox">
