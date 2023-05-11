@@ -7,7 +7,15 @@ import Button from '../components/shared/Button';
 import { HeaderSections } from '../components/shared/globalTypes';
 import './intro.scss';
 
+import BricksBackground from '../assets/bricksBackground.png';
+import MarioBackground from '../assets/marioBackground.png';
+import ImageSlider from '../components/shared/SlideShow';
 import 'katex/dist/katex.min.css';
+
+const slides: { url: string; title: string }[] = [
+  { url: `${MarioBackground}`, title: '1' },
+  { url: `${BricksBackground}`, title: '2' },
+];
 
 const Intro: FC = () => {
   return (
@@ -41,9 +49,29 @@ const Intro: FC = () => {
                   is called again, the computer halts the current compartment, creates another compartment for the
                   new recursive function call, and begins to run the new compartment. Only when the new compartment finishes
                   running does the original compartment continue. However, this process may continue repeatedly as the new compartment
-                  may call the recursive function again. Below is an animation of this process:
-                  $$\\textup{animation example}$$
-                  Note that we only call the recursive function once within its definition, resulting in the linear structure above, but
+                  may call the recursive function again. Below is an slideshow of this process:
+                  `}
+                </Latex>
+                <div
+                  style={{
+                    margin: '0 auto',
+                    display: 'flex',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <div
+                    style={{
+                      width: '500px',
+                      height: '280px',
+                      marginBottom: '150px',
+                      marginTop: '50px',
+                    }}
+                  >
+                    <ImageSlider slides={slides} />
+                  </div>
+                </div>
+                <Latex>
+                  {`Note that we only call the recursive function once within its definition, resulting in the linear structure above, but
                   as you will see in later examples, there can be more than one call to the recursive function.
                   `}
                 </Latex>
