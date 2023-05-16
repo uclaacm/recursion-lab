@@ -5,7 +5,6 @@ import './Problem3.scss';
 
 import blueBackground from '../assets/bunnies/blueBackground.png';
 import bottomBackground from '../assets/bunnies/bottomBackground.png';
-import greyTick from '../assets/bunnies/greyTick.png';
 import headerBackground from '../assets/bunnies/headerBackground.png';
 import rabitGroup from '../assets/bunnies/rabitGroup.png';
 import ProgressBar3 from '../assets/progress_bar3.png';
