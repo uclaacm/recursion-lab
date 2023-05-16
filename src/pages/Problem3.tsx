@@ -105,13 +105,13 @@ const Problem3: FC = () => {
             <img src={bottomBackground} alt="" style={{ width: '100%' }} />
           </div>
         </div>
-       
       </AppWrapper>
     </div>
   );
 };
 
-{/* const data = [
+{
+  /* const data = [
   {
     step: (
       <h2>
@@ -152,6 +152,7 @@ const Problem3: FC = () => {
     ),
     answer: BunnyCode,
   },
-]; */}
+]; */
+}
 
 export default Problem3;

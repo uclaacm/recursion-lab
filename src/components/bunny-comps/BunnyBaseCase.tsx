@@ -1,14 +1,12 @@
 import { useState } from 'react';
-import Dropdown from "../shared/Dropdown";
-import KhanCard from "../shared/KhanCard";
-import KhanInput from "../shared/KhanInput";
+import Dropdown from '../shared/Dropdown';
+import KhanCard from '../shared/KhanCard';
+import KhanInput from '../shared/KhanInput';
 
 function BunnyBaseCase(): JSX.Element {
-  const [isCorrect, setIsCorrect] = useState([false]); // state for if the question is correct
+  const [isCorrect] = useState([false]); // state for if the question is correct
 
-  const options = [
-    { value: 'option1', label: 'n >= 1' },
-  ];
+  const options = [{ value: 'option1', label: 'n >= 1' }];
   const [answerKey] = useState({
     //you can have multiple "Fill in the Blank" questions
     question1: 'n',
@@ -17,21 +15,23 @@ function BunnyBaseCase(): JSX.Element {
   return (
     <div>
       <KhanCard
-      correct="This is an explanation for when you get the answer correct." //explanation for when user gets answer correct
-      incorrect="This is a hint for when you get the answer incorrect." //hint when user gets answer incorrect
-      correct_answer={isCorrect} //must pass in correctness state from parent
-      index={[0]} //index for what KhanCard you are referring to
+        correct="This is an explanation for when you get the answer correct." //explanation for when user gets answer correct
+        incorrect="This is a hint for when you get the answer incorrect." //hint when user gets answer incorrect
+        correct_answer={isCorrect} //must pass in correctness state from parent
+        index={[0]} //index for what KhanCard you are referring to
       >
-        <div >
+        <div>
           <div>
             <p>
               If
-              <Dropdown 
-                  options={options}
-                  correct_answer={isCorrect}
-                  index={0}
-                  answer={options[0].value}/>
-              <br/><br/>
+              <Dropdown
+                options={options}
+                correct_answer={isCorrect}
+                index={0}
+                answer={options[0].value}
+              />
+              <br />
+              <br />
               Return
               <KhanInput
                 correct_answer={isCorrect} //must pass in correctness state from parent
@@ -40,10 +40,8 @@ function BunnyBaseCase(): JSX.Element {
               />
             </p>
           </div>
-         
         </div>
       </KhanCard>
-      
     </div>
   );
 }
