@@ -23,11 +23,21 @@
   .content-container {
     background-image: url('../assets/bunnies/headerBackground.png') no-repeat;
   }
-}
 
-.progress-bar3 {
-  bottom: -800%;
-  left: 50%;
-  margin-left: -200px; /* very important for the image to be centered */
-  position: absolute;
+  .wrapper {
+    padding-top: 100px;
+  }
+
+  .item {
+    border-radius: 20px;
+    font-family: 'Fredoka', sans-serif;
+    padding-left: 50px;
+  }
+  
+  .progress-bar3 {
+    bottom: -800%;
+    left: 50%;
+    margin-left: -200px; /* very important for the image to be centered */
+    position: absolute;
+  }
 }
