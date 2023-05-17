@@ -1,0 +1,53 @@
+
+
+.Profile-Container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.Output-Divider {
+    display: block;
+    width: 50%;
+    background-color: #FFBBBB;
+    margin: 0em auto;
+    padding:2em;
+}
+
+.Output-Container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0em 8em 0em 8em;
+    justify-content: center;
+    background-color: #2A5E70;
+}
+.Stack-Output {
+    display:flex;
+    flex-direction: row;
+}
+
+.Output-Box {
+    width: 100%;
+    background-color: #BBBBBB;
+}
+
+
+// .Output-Box {
+//     width: 100%;
+//     height: 200px;
+//     margin: 10px 0;
+//     padding: 10px;
+//     box-sizing: border-box;
+//     border: 1px solid #ddd;
+//     border-radius: 4px;
+//     background-color: #000000;
+//     overflow-y: auto;
+//     font-size: 16px;
+//     line-height: 1.5;
+//   }
+  
+//   .Output-Box div {
+//     margin-bottom: 10px;
+//   }
+  
