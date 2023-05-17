@@ -59,7 +59,7 @@ const ImageSlider = ({
   const goToNext = () => {
     setPlayState(false);
     const isLastSlide = currentIndex === slides.length - 1;
-    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    const newIndex = isLastSlide ? currentIndex : currentIndex + 1;
     setCurrentIndex(newIndex);
   };
 
@@ -96,6 +96,7 @@ const ImageSlider = ({
             aria-label="previous"
             onClick={goToPrevious}
             size="small"
+            disabled={currentIndex === 0}
           >
             <NavigateBeforeSharpIcon />
           </Fab>
@@ -104,6 +105,7 @@ const ImageSlider = ({
             aria-label="next"
             onClick={goToNext}
             size="small"
+            disabled={currentIndex === slides.length - 1}
           >
             <NavigateNextIcon />
           </Fab>
@@ -122,6 +124,7 @@ const ImageSlider = ({
               aria-label="play"
               size="small"
               onClick={beginAutoPlay}
+              disabled={currentIndex === slides.length - 1}
             >
               <PlayArrowSharpIcon />
             </Fab>
