@@ -4,7 +4,7 @@ import Dropdown from '../shared/Dropdown';
 import KhanCard from '../shared/KhanCard';
 
 function MarioFormula(): JSX.Element {
-  const [isCorrect] = useState([false]);
+  const [isCorrect, setIsCorrect] = useState([false]);
   const [answerKey] = useState({
     question1: 'dropdown2',
   });
@@ -43,6 +43,7 @@ function MarioFormula(): JSX.Element {
             correct_answer={isCorrect} //must pass in correctness state from parent
             index={0} //index for what KhanCard you are referring to
             answer={answerKey.question1} //the answer from answerkey
+            update_answer={setIsCorrect}
           />
           .
         </div>
