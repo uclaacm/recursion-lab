@@ -55,12 +55,10 @@ function KhanCard(props: KhanCardProps): JSX.Element {
     if (!isCorrect) {
       setTries((prevTries) => prevTries - 1);
     } else {
+      setCorrect(true);
       setIsExploding(true);
     }
     setExpand(true);
-    indexArray.forEach((index) =>
-      setCorrect(props.correct_answer[indexArray[index]])
-    );
   };
 
   const handleShowAnswer = () => {
