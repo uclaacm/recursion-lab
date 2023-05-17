@@ -1755,6 +1755,14 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
+"@types/hoist-non-react-statics@*":
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz#1124aafe5118cb591977aeb1ceaaed1070eb039f"
+  integrity sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==
+  dependencies:
+    "@types/react" "*"
+    hoist-non-react-statics "^3.3.0"
+
 "@types/html-minifier-terser@^6.0.0":
   version "6.1.0"
   resolved "https://registry.npmjs.org/@types/html-minifier-terser/-/html-minifier-terser-6.1.0.tgz"
@@ -1910,6 +1918,15 @@
   integrity sha512-f0KEEe05NvUnat+boPTZ0dgaLZ4SfSouXUgv5noUiefG2ajgKjmETo9ZJyuqsl7dfl2aHlLJUiki6B4ZYldiiw==
   dependencies:
     "@types/node" "*"
+
+"@types/styled-components@^5.1.0":
+  version "5.1.26"
+  resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-5.1.26.tgz#5627e6812ee96d755028a98dae61d28e57c233af"
+  integrity sha512-KuKJ9Z6xb93uJiIyxo/+ksS7yLjS1KzG6iv5i78dhVg/X3u5t1H7juRWqVmodIdz6wGVaIApo1u01kmFRdJHVw==
+  dependencies:
+    "@types/hoist-non-react-statics" "*"
+    "@types/react" "*"
+    csstype "^3.0.2"
 
 "@types/ws@^8.5.1":
   version "8.5.4"
@@ -7027,7 +7044,6 @@ raw-body@2.5.1:
     http-errors "2.0.0"
     iconv-lite "0.4.24"
     unpipe "1.0.0"
-
 react-checkmark@^1.4.0:
   version "1.4.0"
   resolved "https://registry.npmjs.org/react-checkmark/-/react-checkmark-1.4.0.tgz"
@@ -7042,7 +7058,6 @@ react-code-blocks@^0.0.9-0:
     react-syntax-highlighter "^12.2.1"
     styled-components "^5.1.1"
     tslib "^2.0.0"
-
 react-confetti-explosion@^2.1.2:
   version "2.1.2"
   resolved "https://registry.npmjs.org/react-confetti-explosion/-/react-confetti-explosion-2.1.2.tgz"
@@ -7148,6 +7163,14 @@ react-transition-group@^4.3.0, react-transition-group@^4.4.5:
     dom-helpers "^5.0.1"
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
+
+react-typescript-checkmark@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/react-typescript-checkmark/-/react-typescript-checkmark-1.2.2.tgz#ce2e8313f8be069126069adb14376de50a5802e6"
+  integrity sha512-GLETx4PIjhlexF2xKN/SvqjqAoOzrJLTsMABariujtGkUysmJ+HlRJOHhuhJz640aQGgV2Cz7jqVRRnCqtYKRQ==
+  dependencies:
+    "@types/styled-components" "^5.1.0"
+    styled-components "^5.1.1"
 
 react@^18.2.0:
   version "18.2.0"
