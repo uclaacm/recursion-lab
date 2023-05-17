@@ -32,6 +32,7 @@
     "react-latex-next": "^2.2.0",
     "react-router-dom": "^6.11.0",
     "react-select": "^5.7.2",
+    "react-typescript-checkmark": "^1.2.2",
     "stylelint-config-prettier": "^9.0.4"
   },
   "devDependencies": {

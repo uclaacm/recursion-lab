@@ -6,6 +6,7 @@ import BricksBackground from '../assets/bricksBackground.png';
 import MarioBackground from '../assets/marioBackground.png';
 import rabbit from '../assets/rabbit.png';
 import teachlalogo from '../assets/teach-la-logo.svg';
+
 import FactorialQuestion from '../components/intro_comps/FactorialQuestion';
 import AppWrapper from '../components/shared/AppWrapper';
 import Button from '../components/shared/Button';
