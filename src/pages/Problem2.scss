@@ -10,17 +10,12 @@
     display: block;
     width: 50%;
     background-color: #FFBBBB;
-    margin: 0em auto;
-    padding:2em;
+    margin: 1em auto;
+    border: 1px solid #000000;
 }
 
 .Output-Container {
-    display: flex;
-    flex-direction: column;
     width: 100%;
-    margin: 0em 8em 0em 8em;
-    justify-content: center;
-    background-color: #2A5E70;
 }
 .Stack-Output {
     display:flex;
@@ -31,23 +26,26 @@
     width: 100%;
     background-color: #BBBBBB;
 }
+.Output-Container-2 {
+    display: flex;
+    flex-direction: column;
+    margin: 0em 3em 0em 3em;
+    justify-content: center;
+    background-color: #2A5E70;
+}
 
-
-// .Output-Box {
-//     width: 100%;
-//     height: 200px;
-//     margin: 10px 0;
-//     padding: 10px;
-//     box-sizing: border-box;
-//     border: 1px solid #ddd;
-//     border-radius: 4px;
-//     background-color: #000000;
-//     overflow-y: auto;
-//     font-size: 16px;
-//     line-height: 1.5;
-//   }
+@keyframes popIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
   
-//   .Output-Box div {
-//     margin-bottom: 10px;
-//   }
+  .Output-Divider {
+    animation: popIn 0.5s ease-out;
+  }
   
