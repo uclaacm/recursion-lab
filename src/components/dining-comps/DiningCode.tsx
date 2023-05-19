@@ -4,9 +4,10 @@ import FinishCodeCard from '../../components/shared/FinishCode';
 import { options_array } from '../../types';
 
 function DiningCode(): JSX.Element {
-  const [isCorrect] = useState([false]);
-  const [answerKey] = useState({
-    question1: 'dropdown2',
+  const [isCorrect] = useState([false, false]);
+  const [selectedanswer, setselectedanswer] = useState({
+    question1: '',
+    question2: '',
   });
   const options0: options_array[] = [
     {
@@ -44,14 +45,23 @@ function DiningCode(): JSX.Element {
       return n * factorial(n - 1);
     }
   }
-
-  const outputDiv = document.getElementById('output');
+  function selectedfactorial(n: number, n1: number, n2: number): number {
+    if (n === n1) {
+      return n2;
+    } else {
+      return n * selectedfactorial(n - 1, n1, n2);
+    }
+  }
 
   // If you're sure the element exists
-  if (outputDiv) {
-    const factorialOutput = factorial(5);
-    outputDiv.innerHTML = `Factorial of 5 is: ${factorialOutput}`;
-  }
+
+  const handleUpdateAnswer = (index: number, chosenAnswer: string) => {
+    setselectedanswer((prevAnswerKey) => ({
+      ...prevAnswerKey,
+      [`question${index + 1}`]: chosenAnswer,
+    }));
+  };
+  //const shouldShowOutputDiv = isCorrect[0] && isCorrect[1];
 
   return (
     <FinishCodeCard
@@ -69,19 +79,38 @@ function DiningCode(): JSX.Element {
             options={options0}
             correct_answer={isCorrect}
             index={0}
-            answer={answerKey.question1}
+            answer={'n==0'}
+            update_answer={(chosenAnswer) =>
+              handleUpdateAnswer(0, chosenAnswer)
+            }
           />
           <div></div>
           <span>return</span>
           <Dropdown
             options={options1}
             correct_answer={isCorrect}
-            index={0}
-            answer={answerKey.question1}
+            index={1}
+            answer={'1'}
+            update_answer={(chosenAnswer) =>
+              handleUpdateAnswer(1, chosenAnswer)
+            }
           />
           <div>return n * factorial(n-1)</div>
         </div>
-        <div id="output"></div>
+        {selectedanswer.question1 !== '' && selectedanswer.question2 !== '' ? (
+          <div id="output">
+            The correct answer is {factorial(5)}
+            <br />
+            Your answer is{' '}
+            {selectedfactorial(
+              5,
+              parseInt(selectedanswer.question1[3]),
+              parseInt(selectedanswer.question2)
+            )}
+          </div>
+        ) : (
+          <div id="output">Factorial of 5 is {factorial(5)}</div>
+        )}
       </div>
     </FinishCodeCard>
   );
