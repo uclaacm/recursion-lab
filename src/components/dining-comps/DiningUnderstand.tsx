@@ -67,7 +67,7 @@ function DiningUnderstand(): JSX.Element {
 
   // const [currentIndex, setCurrentIndex] = useState(friends.length - 1);
   // const [renderedItems, setRenderedItems] = useState<Friend[]>([friends[friends.length - 1]]);
-  // const [totalMinutes, setTotalMinutes] = useState(renderedItems.reduce((total, friend) => total + 
+  // const [totalMinutes, setTotalMinutes] = useState(renderedItems.reduce((total, friend) => total +
   // friend.minutes, 0));
 
   const [currentIndex, setCurrentIndex] = useState(friends.length - 1);
@@ -100,11 +100,11 @@ function DiningUnderstand(): JSX.Element {
         the total number of minutes increases. The result represents how much time will
         have passed until your call with Lea is over, etc. </p>
       {currentIndex < friends.length - 1 && (
-        <button onClick={handlePrevious}>Previous</button>
+        <button className="buttons" onClick={handlePrevious}>Previous</button>
       )}
 
       {currentIndex > 0 && (
-        <button onClick={handleNext}>Next</button>
+        <button className="buttons" onClick={handleNext}>Next</button>
       )}
       <div className="Stack-Output">
         <div className="Output-Container">

@@ -32,6 +32,8 @@
     margin: 0em 3em 0em 3em;
     justify-content: center;
     background-color: #2A5E70;
+    justify-content: end;
+    height: 825px;
 }
 
 @keyframes popIn {
@@ -48,4 +50,42 @@
   .Output-Divider {
     animation: popIn 0.5s ease-out;
   }
+
+  .buttons {
+    display: inline-block;
+    margin-right: 10px;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: grey;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    margin: 5px;
+}
+
+.buttons:hover {
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+.buttons:active {
+    color: #fff;
+    background-color: grey;
+    border-color: #0056b3;
+}
+
+.buttons:focus {
+    outline: 0;
+    box-shadow: 0 0 0 .2rem rgba(0,123,255,.5);
+}
+.buttons:last-child {
+    margin-right: 0; /* remove right margin from the last button */
+}
   
