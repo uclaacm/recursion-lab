@@ -21,7 +21,8 @@ function DiningUnderstand(): JSX.Element {
     left: Friend | null;
     right: Friend | null;
 
-    constructor(minutes: number, name: string, imageUrl: string, left: Friend | null = null, right: Friend | null = null) {
+    constructor(minutes: number, name: string, imageUrl: string, 
+      left: Friend | null = null, right: Friend | null = null) {
       this.minutes = minutes;
       this.name = name;
       this.imageUrl = imageUrl;
