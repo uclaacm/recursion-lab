@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import Dropdown from '../../components/shared/Dropdown';
+import Dropdown from './DiningDropdown';
 import FinishCodeCard from '../../components/shared/FinishCode';
 import { options_array } from '../../types';
 
 function DiningCode(): JSX.Element {
-  const [isCorrect] = useState([false, false]);
+  const [isCorrect] = useState(false);
   const [selectedanswer, setselectedanswer] = useState({
-    question1: '',
-    question2: '',
+    question1: 'n==0',
+    question2: '0',
   });
   const options0: options_array[] = [
     {
@@ -53,8 +53,6 @@ function DiningCode(): JSX.Element {
     }
   }
 
-  // If you're sure the element exists
-
   const handleUpdateAnswer = (index: number, chosenAnswer: string) => {
     setselectedanswer((prevAnswerKey) => ({
       ...prevAnswerKey,
@@ -65,9 +63,26 @@ function DiningCode(): JSX.Element {
 
   return (
     <FinishCodeCard
-      correct="This is an explanation for when you get the answer correct."
-      incorrect="This is a hint for when you get the answer incorrect."
-      correct_answer={isCorrect}
+      correct={'The answer is ' + factorial(5).toString() + '.'}
+      incorrect={
+        'The correct answer is ' +
+        factorial(5).toString() +
+        '. Your answer is ' +
+        selectedfactorial(
+          5,
+          parseInt(selectedanswer.question1[3]),
+          parseInt(selectedanswer.question2)
+        ).toString() +
+        '.'
+      }
+      correct_answer={[
+        factorial(5) ==
+          selectedfactorial(
+            5,
+            parseInt(selectedanswer.question1[3]),
+            parseInt(selectedanswer.question2)
+          ),
+      ]}
       index={0}
     >
       <div className="code-component-container">
@@ -77,7 +92,7 @@ function DiningCode(): JSX.Element {
           <span>if</span>
           <Dropdown
             options={options0}
-            correct_answer={isCorrect}
+            correct_answer={[isCorrect]}
             index={0}
             answer={'n==0'}
             update_answer={(chosenAnswer) =>
@@ -88,7 +103,7 @@ function DiningCode(): JSX.Element {
           <span>return</span>
           <Dropdown
             options={options1}
-            correct_answer={isCorrect}
+            correct_answer={[isCorrect]}
             index={1}
             answer={'1'}
             update_answer={(chosenAnswer) =>
@@ -97,20 +112,6 @@ function DiningCode(): JSX.Element {
           />
           <div>return n * factorial(n-1)</div>
         </div>
-        {selectedanswer.question1 !== '' && selectedanswer.question2 !== '' ? (
-          <div id="output">
-            The correct answer is {factorial(5)}
-            <br />
-            Your answer is{' '}
-            {selectedfactorial(
-              5,
-              parseInt(selectedanswer.question1[3]),
-              parseInt(selectedanswer.question2)
-            )}
-          </div>
-        ) : (
-          <div id="output">Factorial of 5 is {factorial(5)}</div>
-        )}
       </div>
     </FinishCodeCard>
   );

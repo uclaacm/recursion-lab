@@ -8,13 +8,20 @@ interface DropdownProps {
   index: number;
   answer: string;
   update_answer: React.Dispatch<React.SetStateAction<boolean[]>>;
-  //boolans: boolean;
 }
 
 function Dropdown(props: DropdownProps): JSX.Element {
   const handleChange = (selectedOption: any) => {
-    const chosenAnswer = selectedOption.label;
-    props.update_answer(chosenAnswer);
+    const chosenAnswer = selectedOption.value;
+
+    const newArray = props.correct_answer.map((val, i) => {
+      if (i == props.index) {
+        return props.answer === chosenAnswer;
+      } else {
+        return val;
+      }
+    });
+    props.update_answer(newArray);
   };
 
   return (
