@@ -2,14 +2,10 @@ import { FC } from 'react';
 import '../styles/Home.scss';
 import '../styles/Mario.scss';
 import '../styles/Rabbits.scss';
-import centerRabbit from '../assets/center_rabbit.png';
-import centerMeadows from '../assets/centerMeadows.png';
+import meadows from '../assets/hill-background.png';
 import homepageTitle from '../assets/homepage_title.png';
 import homepageBacklayer from '../assets/homepageBacklayer.png';
-import leftRabbit from '../assets/leftRabbit.png';
 import marioHomepage from '../assets/mario_homepage.png';
-import rightRabbit from '../assets/rightRabbit.png';
-import sideMeadows from '../assets/sideMeadows.png';
 import startButton from '../assets/start_button.png';
 
 const Home: FC = () => {
@@ -28,35 +24,13 @@ const Home: FC = () => {
           </a>
         </div>
       </div>
-      <div>
-        <img className="mario-image" src={marioHomepage} alt="Mario" />
-      </div>
-      <div>
-        <img
-          className="homepage-title"
-          src={homepageTitle}
-          alt="Homepage Title"
-        />
-      </div>
-      <div>
-        <img className="center-rabbit" src={centerRabbit} alt="Center Rabbit" />
-      </div>
-      <div>
-        <img className="left-rabbit" src={leftRabbit} alt="Left Rabbit" />
-      </div>
-      <div>
-        <img className="right-rabbit" src={rightRabbit} alt="Right Rabbit" />
-      </div>
-      <div>
-        <img
-          className="center-meadows"
-          src={centerMeadows}
-          alt="Center Meadows"
-        />
-      </div>
-      <div>
-        <img className="side-meadows" src={sideMeadows} alt="Side Meadows" />
-      </div>
+      <img className="mario-image" src={marioHomepage} alt="Mario" />
+      <img
+        className="homepage-title"
+        src={homepageTitle}
+        alt="Homepage Title"
+      />
+      <img className="meadows" src={meadows} alt="Meadows" />
     </div>
   );
 };
