@@ -1,4 +1,4 @@
-import { useState } from 'react';
+//import { useState } from 'react';
 import Select from 'react-select';
 import { options_array } from '../../types';
 
@@ -7,18 +7,21 @@ interface DropdownProps {
   correct_answer: boolean[];
   index: number;
   answer: string;
+  update_answer: React.Dispatch<React.SetStateAction<boolean[]>>;
 }
 
 function Dropdown(props: DropdownProps): JSX.Element {
-  const [, setVal] = useState<string>('');
   const handleChange = (selectedOption: any) => {
     const chosenAnswer = selectedOption.value;
-    if (chosenAnswer === props.answer) {
-      props.correct_answer[props.index] = true;
-    } else {
-      props.correct_answer[props.index] = false;
-    }
-    setVal(chosenAnswer);
+
+    const newArray = props.correct_answer.map((val, i) => {
+      if (i == props.index) {
+        return props.answer === chosenAnswer;
+      } else {
+        return val;
+      }
+    });
+    props.update_answer(newArray);
   };
 
   return (

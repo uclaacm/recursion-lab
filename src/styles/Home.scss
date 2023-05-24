@@ -56,15 +56,7 @@
   transform: translateX(-50%);
 }
 
-.center-meadows {
-  left: 50%;
-  position: absolute;
-  top: 94.5%;
-  transform: translate(-63%, -50%) scale(1);
-  z-index: 2;
-}
-
-.side-meadows {
+.meadows {
   height: 350px;
   left: 65%;
   object-fit: cover;
