@@ -1,91 +1,94 @@
-
-
-.Profile-Container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-.Output-Divider {
-    display: block;
-    width: 50%;
-    background-color: #FFBBBB;
-    margin: 1em auto;
-    border: 1px solid #000000;
+.profile-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-.Output-Container {
-    width: 100%;
-}
-.Stack-Output {
-    display:flex;
-    flex-direction: row;
+.output-divider {
+  background-color: #fbb;
+  border: 1px solid #000;
+  display: block;
+  margin: 1em auto;
+  width: 50%;
 }
 
-.Output-Box {
-    width: 100%;
-    background-color: #BBBBBB;
+.output-container {
+  width: 100%;
 }
-.Output-Container-2 {
-    display: flex;
-    flex-direction: column;
-    margin: 0em 3em 0em 3em;
-    justify-content: center;
-    background-color: #2A5E70;
-    justify-content: end;
-    height: 825px;
+
+.stack-output {
+  display: flex;
+  flex-direction: row;
+}
+
+.output-box {
+  background-color: #bbb;
+  width: 100%;
+}
+
+.output-container-2 {
+  background-color: #2a5e70;
+  display: flex;
+  flex-direction: column;
+  height: 825px;
+  justify-content: center;
+  justify-content: end;
+  margin: 0 3em;
 }
 
 @keyframes popIn {
-    0% {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .Output-Divider {
-    animation: popIn 0.5s ease-out;
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
   }
 
-  .buttons {
-    display: inline-block;
-    margin-right: 10px;
-    font-weight: 400;
-    color: #fff;
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    background-color: grey;
-    border: 1px solid transparent;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: .25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    margin: 5px;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.output-divider-2 {
+  animation: popIn 0.5s ease-out;
+}
+
+.buttons {
+  background-color: grey;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 5px;
+  margin-right: 10px;
+  padding: 0.375rem 0.75rem;
+  text-align: center;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  vertical-align: middle;
 }
 
 .buttons:hover {
-    color: #fff;
-    background-color: #0069d9;
-    border-color: #0062cc;
+  background-color: #0069d9;
+  border-color: #0062cc;
+  color: #fff;
 }
 
 .buttons:active {
-    color: #fff;
-    background-color: grey;
-    border-color: #0056b3;
+  background-color: grey;
+  border-color: #0056b3;
+  color: #fff;
 }
 
 .buttons:focus {
-    outline: 0;
-    box-shadow: 0 0 0 .2rem rgba(0,123,255,.5);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+  outline: 0;
 }
+
 .buttons:last-child {
-    margin-right: 0; /* remove right margin from the last button */
+  margin-right: 0; /* remove right margin from the last button */
 }
-  

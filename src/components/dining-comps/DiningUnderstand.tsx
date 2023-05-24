@@ -13,7 +13,6 @@ function DiningUnderstand(): JSX.Element {
   // The user can click "Next" to go to the next step in the animation.
   // The user can click "Previous" to go to the previous step in the animation.
 
-
   class Friend {
     minutes: number;
     name: string;
@@ -21,8 +20,13 @@ function DiningUnderstand(): JSX.Element {
     left: Friend | null;
     right: Friend | null;
 
-    constructor(minutes: number, name: string, imageUrl: string, 
-      left: Friend | null = null, right: Friend | null = null) {
+    constructor(
+      minutes: number,
+      name: string,
+      imageUrl: string,
+      left: Friend | null = null,
+      right: Friend | null = null
+    ) {
       this.minutes = minutes;
       this.name = name;
       this.imageUrl = imageUrl;
@@ -65,22 +69,25 @@ function DiningUnderstand(): JSX.Element {
   friends[4].left = friends[3];
   friends[4].right = null;
 
-
   // const [currentIndex, setCurrentIndex] = useState(friends.length - 1);
   // const [renderedItems, setRenderedItems] = useState<Friend[]>([friends[friends.length - 1]]);
   // const [totalMinutes, setTotalMinutes] = useState(renderedItems.reduce((total, friend) => total +
   // friend.minutes, 0));
 
   const [currentIndex, setCurrentIndex] = useState(friends.length - 1);
-  const [renderedItems, setRenderedItems] = useState<Friend[]>([friends[friends.length - 1]]);
-  const [totalMinutes, setTotalMinutes] = useState(renderedItems.reduce((total, friend) => total + friend.minutes, 0));
+  const [renderedItems, setRenderedItems] = useState<Friend[]>([
+    friends[friends.length - 1],
+  ]);
+  const [totalMinutes, setTotalMinutes] = useState(
+    renderedItems.reduce((total, friend) => total + friend.minutes, 0)
+  );
 
   const handleNext = () => {
     if (currentIndex > 0) {
       const nextIndex = currentIndex - 1;
       const nextFriend = friends[nextIndex];
-      setTotalMinutes(prevTotal => prevTotal + nextFriend.minutes); // Update total minutes
-      setRenderedItems(prevItems => [...prevItems, nextFriend]);
+      setTotalMinutes((prevTotal) => prevTotal + nextFriend.minutes); // Update total minutes
+      setRenderedItems((prevItems) => [...prevItems, nextFriend]);
       setCurrentIndex(nextIndex);
     }
   };
@@ -89,54 +96,67 @@ function DiningUnderstand(): JSX.Element {
     if (currentIndex < friends.length - 1) {
       const prevIndex = currentIndex + 1;
       const prevFriend = renderedItems[renderedItems.length - 1];
-      setTotalMinutes(prevTotal => prevTotal - prevFriend.minutes); // Update total minutes
-      setRenderedItems(prevItems => prevItems.slice(0, prevItems.length - 1));
+      setTotalMinutes((prevTotal) => prevTotal - prevFriend.minutes); // Update total minutes
+      setRenderedItems((prevItems) => prevItems.slice(0, prevItems.length - 1));
       setCurrentIndex(prevIndex);
     }
   };
 
   return (
     <div>
-      <p>The call stack starts at Sam. As each person calls the next person following,
-        the total number of minutes increases. The result represents how much time will
-        have passed until your call with Lea is over, etc. </p>
+      <p>
+        The call stack starts at Sam. As each person calls the next person
+        following, the total number of minutes increases. The result represents
+        how much time will have passed until your call with Lea is over, etc.{' '}
+      </p>
       {currentIndex < friends.length - 1 && (
-        <button className="buttons" onClick={handlePrevious}>Previous</button>
+        <button className="buttons" onClick={handlePrevious}>
+          Previous
+        </button>
       )}
 
       {currentIndex > 0 && (
-        <button className="buttons" onClick={handleNext}>Next</button>
+        <button className="buttons" onClick={handleNext}>
+          Next
+        </button>
       )}
-      <div className="Stack-Output">
-        <div className="Output-Container">
-          <div className="Output-Container-2">
-          {renderedItems.slice().reverse().map((friend, index) => (
-          <div className="Output-Divider">
-            <div key={index} className="Profile-Container">
-              <div>
-                <div>{friend.minutes} minutes</div>
-              </div>
-              <div className="Photo-Name">
-                <div>{friend.name}</div>
-                <img src={friend.imageUrl} alt={friend.name} />
-              </div>
-            </div>
+      <div className="stack-output">
+        <div className="output-container">
+          <div className="output-container-2">
+            {renderedItems
+              .slice()
+              .reverse()
+              .map((friend, index) => (
+                <div key={index} className="output-divider output-divider-2">
+                  <div className="profile-container">
+                    <div>
+                      <div>{friend.minutes} minutes</div>
+                    </div>
+                    <div className="photo-name">
+                      <div>{friend.name}</div>
+                      <img src={friend.imageUrl} alt={friend.name} />
+                    </div>
+                  </div>
+                </div>
+              ))}
           </div>
-          ))}
         </div>
-        </div>
-        <div className="Output-Box">
-          {renderedItems.slice().reverse().map((friend, index) => (
-            <div key={index}>
-              <div>{friend.callDescription()}</div>
-              {index === renderedItems.length - 1 && <div>Total Minutes: {totalMinutes}</div>}
-            </div>
-          ))}
+        <div className="output-box">
+          {renderedItems
+            .slice()
+            .reverse()
+            .map((friend, index) => (
+              <div key={index}>
+                <div>{friend.callDescription()}</div>
+                {index === renderedItems.length - 1 && (
+                  <div>Total Minutes: {totalMinutes}</div>
+                )}
+              </div>
+            ))}
         </div>
       </div>
     </div>
-);
+  );
 }
-
 
 export default DiningUnderstand;
