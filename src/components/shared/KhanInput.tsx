@@ -4,6 +4,7 @@ interface KhanInputProps {
   correct_answer: boolean[];
   index: number;
   answer: string;
+  update_answer: React.Dispatch<React.SetStateAction<boolean[]>>;
 }
 
 function KhanInput(props: KhanInputProps): JSX.Element {
@@ -11,12 +12,14 @@ function KhanInput(props: KhanInputProps): JSX.Element {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const lowerCaseAnswer = e.target.value.toLowerCase();
 
-    if (lowerCaseAnswer === props.answer) {
-      //wanted to use value instead of e.target.value, but race issue
-      props.correct_answer[props.index] = true;
-    } else {
-      props.correct_answer[props.index] = false;
-    }
+    const newArray = props.correct_answer.map((val, i) => {
+      if (i == props.index) {
+        return props.answer === lowerCaseAnswer;
+      } else {
+        return val;
+      }
+    });
+    props.update_answer(newArray);
     setValue(e.target.value);
   };
 

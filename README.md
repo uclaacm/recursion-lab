@@ -3,7 +3,7 @@
 ![Production Build](https://github.com/uclaacm/recursion-lab/workflows/Production%20Build/badge.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/4932fc43-c02a-4724-bfc0-0253ac602219/deploy-status)](https://incomparable-gelato-6f31d7.netlify.app/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4932fc43-c02a-4724-bfc0-0253ac602219/deploy-status)](https://recursion-excursion.netlify.app/)
 
 What's this? This is a template repository that sets up a few minor systems for a React micro-app, which is something that we've done frequently at Teach LA. Here's what it does:
 
@@ -20,7 +20,7 @@ What's this? This is a template repository that sets up a few minor systems for 
 
 ## Overview
 
-Recursion Learning Lab is a step-by-step, interactive method for teaching the concept of recursion. This web app is suitable for CS31 and CS32 students who want practice with recursion.
+Recursion Excursion is a step-by-step, interactive format for teaching the concept of recursion. This web app is suitable for CS31 and CS32 students who want practice with recursion.
 
 ## Development Setup
 
@@ -78,14 +78,14 @@ Thanks for your interest in contributing to recursion-lab! ❤️
 
 Here's a quick guide on how to get started.
 
-1. Either make a new branch or a fork of this repository. `main` is a protected branch, **so you cannot push to it**.
-2. Follow the instructions in "Development Setup" above. If you're on a fork, replace the URL with the fork's URL; if you're on a different branch, check it out using `git checkout`.
+1. Make a new branch of this repository using `git checkout -b <your-branch-name>`. `main` is a protected branch, **so you cannot push to it**.
+2. Follow the yarn instructions in "Development Setup" above.
 3. Beep boop away!
-4. **Before you push**, make sure your app runs with `yarn start`. If there are any errors, our CI/CD service will **reject your build**.
+4. **Before you push**, make sure you fix linting errors with `yarn lint-fix` and your app runs with `yarn start`. If there are any errors, our CI/CD service will **reject your build**.
 5. Once you're ready, stage and commit your changes!
 6. Make a [pull request](https://github.com/uclaacm/recursion-lab/pulls) with your changes, and let someone on your project team know.
    a. Netlify has a neat feature called "Deploy Previews" that give you a link to preview your changes; [see the blog post](https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/) for more info!
-7. If your code passes code review, then we can **squash and merge** it into `main`. Congratulations! If you'd like, it's now safe to delete your branch/fork.
+7. If your code passes code review, then we can **squash and merge** it into `main`. Congratulations! If you'd like, it's now safe to delete your branch.
 
 ## Helpful Commands
 
@@ -94,8 +94,6 @@ By running `yarn lint-fix` we can use the linter that we set-up to format our co
 ```
 yarn lint-fix
 ```
-
-With Husky, we run `yarn lint-staged` automatically before you commit! If you want to lint before commiting, you can run `yarn lint-fix`.
 
 ## FAQs
 
@@ -181,7 +179,7 @@ declare module '*.<YOUR_ASSET_TYPE>' {
 
 ### How can I tell if my asset is actually being served?
 
-Take a look at `<YOUR_PROJECT_PATH>/asset-manifest.json`. [Like this!](https://teach-la-ts-react-starter.netlify.app/asset-manifest.json)
+Take a look at `https://recursion-excursion.netlify.app/asset-manifest.json`. [Like this!](https://teach-la-ts-react-starter.netlify.app/asset-manifest.json)
 
 ## Some More Helpful Tools
 
