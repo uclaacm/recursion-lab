@@ -126,7 +126,7 @@ const Problem4: FC = () => {
               )}
 
               <button
-                style={{margin: '10px'}}
+                style={{ margin: '10px' }}
                 onClick={() => {
                   setHighlighted(highlighted + 1);
                 }}
