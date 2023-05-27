@@ -4,7 +4,6 @@
 
 .progress-bar4 {
   position: relative;
-  top: 320px;
 }
 
 #bottom-bar {
@@ -15,7 +14,6 @@
 
 .problem-body {
   position: relative;
-  top: 300px;
   z-index: 1;
 }
 
@@ -23,9 +21,8 @@
   left: 0;
   margin-left: auto;
   margin-right: auto;
-  position: absolute;
+  position: relative;
   right: 0;
-  top: 0;
   z-index: 0;
 }
 

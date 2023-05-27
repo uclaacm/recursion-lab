@@ -5,12 +5,14 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
 import { FC, useState } from 'react';
+import BookShelf from '../assets/books.png';
 import OpenBook from '../assets/open-book.png';
 import ProgressBar4 from '../assets/progress_bar4.png';
 import BinaryBaseCase from '../components/binary-comps/BinaryBaseCase';
 import BinaryCode from '../components/binary-comps/BinaryCode';
 import BinaryFormula from '../components/binary-comps/BinaryFormula';
-import BinaryUnderstand from '../components/binary-comps/BinaryUnderstand';
+import BinaryUnderstandPart1 from '../components/binary-comps/BinaryUnderstandPart1';
+import BinaryUnderstandPart2 from '../components/binary-comps/BinaryUnderstandPart2';
 import AppWrapper from '../components/shared/AppWrapper';
 import Button from '../components/shared/Button';
 import ExpandBox from '../components/shared/ExpandBox';
@@ -31,16 +33,16 @@ const Problem4: FC = () => {
     <div>
       <AppWrapper section={HeaderSections.PROBLEM4_TITLE}>
         <div className="body">
-          <div className="content-container">
+          <div
+            className="content-container"
+            style={{
+              backgroundImage: `url(${BookShelf})`,
+            }}
+          >
             <img src={OpenBook} className="open-book"></img>
 
             <Box sx={{ flexGrow: 1 }} className="number-list">
-              <Grid
-                container
-                spacing={2}
-                padding="10px"
-                justifyContent="center"
-              >
+              <Grid container spacing={2} justifyContent="center">
                 {highlighted < 5 && (
                   <>
                     <Grid item xs={6}>
@@ -124,6 +126,7 @@ const Problem4: FC = () => {
               )}
 
               <button
+                style={{margin: '10px'}}
                 onClick={() => {
                   setHighlighted(highlighted + 1);
                 }}
@@ -147,13 +150,25 @@ const Problem4: FC = () => {
                 <>
                   <ExpandBox
                     class="binary-title"
-                    title="Understanding the Problem"
-                    component={BinaryUnderstand}
+                    title="Understanding the Problem Part 1"
+                    component={BinaryUnderstandPart1}
                     icon={AutoStoriesIcon}
                   />
                   <ExpandBox
                     class="binary-title"
-                    title="Identifying the Base Case"
+                    title="Identifying the Base Case Part 1"
+                    component={BinaryBaseCase}
+                    icon={AutoStoriesIcon}
+                  />
+                  <ExpandBox
+                    class="binary-title"
+                    title="Understanding the Problem Part 2"
+                    component={BinaryUnderstandPart2}
+                    icon={AutoStoriesIcon}
+                  />
+                  <ExpandBox
+                    class="binary-title"
+                    title="Identifying the Base Case Part 2"
                     component={BinaryBaseCase}
                     icon={AutoStoriesIcon}
                   />
