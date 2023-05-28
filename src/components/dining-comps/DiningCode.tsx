@@ -80,7 +80,6 @@ function DiningCode(): JSX.Element {
             index={0}
             answer={answerKey.question1}
             update_answer={setIsCorrect}
-
           />
           <div>return n * factorial(n-1)</div>
         </div>
