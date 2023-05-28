@@ -4,7 +4,7 @@ import FinishCodeCard from '../../components/shared/FinishCode';
 import { options_array } from '../../types';
 
 function DiningCode(): JSX.Element {
-  const [isCorrect] = useState([false]);
+  const [isCorrect, setIsCorrect] = useState([false]);
   const [answerKey] = useState({
     question1: 'dropdown2',
   });
@@ -70,6 +70,7 @@ function DiningCode(): JSX.Element {
             correct_answer={isCorrect}
             index={0}
             answer={answerKey.question1}
+            update_answer={setIsCorrect}
           />
           <div></div>
           <span>return</span>
@@ -78,6 +79,8 @@ function DiningCode(): JSX.Element {
             correct_answer={isCorrect}
             index={0}
             answer={answerKey.question1}
+            update_answer={setIsCorrect}
+
           />
           <div>return n * factorial(n-1)</div>
         </div>
