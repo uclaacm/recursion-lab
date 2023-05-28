@@ -8,7 +8,7 @@
     grid-template-columns: repeat(4, 2fr);
   }
 
-  .arrow-rabbit{
+  .arrow-rabbit {
     margin-left: 100%;
   }
 
@@ -18,7 +18,7 @@
     height: 300px;
     justify-content: left;
   }
-  
+
   .box:nth-child(1) {
     grid-column: 1;
   }
@@ -35,17 +35,15 @@
     grid-column: 4;
   }
 
-  .rabit-group{
+  .rabit-group {
     width: 400%;
   }
-  
-  .next-button{
+
+  .next-button {
     background-color: lightblue;
     border-radius: 10px;
     cursor: pointer;
     height: 50px;
     width: 100px;
-    
   }
-
 }
