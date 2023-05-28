@@ -1,10 +1,22 @@
 .understanding-problem {
-  margin: 20px 20px 20px 20px;
   border: 2px solid;
+  margin: 20px;
   padding: 40px;
+
   .container {
     display: grid;
     grid-template-columns: repeat(4, 2fr);
+  }
+
+  .arrow-rabbit{
+    margin-left: 100%;
+  }
+
+  .box {
+    align-items: center;
+    display: flex;
+    height: 300px;
+    justify-content: left;
   }
   
   .box:nth-child(1) {
@@ -23,47 +35,17 @@
     grid-column: 4;
   }
 
-  .box {
-    height: 300px;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-  }
-  .arrow-rabbit{
-    margin-left: 100%;
-  }
-
   .rabit-group{
     width: 400%;
   }
   
   .next-button{
-    border: none;
-    border-radius: 10px;
     background-color: lightblue;
+    border-radius: 10px;
+    cursor: pointer;
     height: 50px;
     width: 100px;
-    cursor: pointer;
+    
   }
 
 }
-
-// .understanding-problem {
-//   .question {
-//     text-align: left;
-//   }
-
-//   p {
-//     padding: 10px;
-//   }
-
-//   input {
-//     background-color: rgb(222, 222, 222);
-//     border: 0;
-//     border-radius: 10px;
-//     height: 30px;
-//     margin-left: 10px;
-//     text-align: center;
-//     width: 100px;
-//   }
-// }
