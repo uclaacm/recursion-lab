@@ -23,8 +23,17 @@
 
 .mario-image {
   animation: mirror 2s ease-in-out infinite;
+  bottom: 12%;
   left: 69%;
   position: absolute;
-  top: 69%;
   transform: translate(-50%, -50%) scale(0.7);
+  z-index: 2;
+}
+
+@media screen and (max-width: 1200px) {
+  .mario-image {
+    bottom: 10%;
+    height: auto;
+    width: 6%;
+  }
 }

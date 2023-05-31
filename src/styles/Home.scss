@@ -57,12 +57,11 @@
 }
 
 .meadows {
-  height: 350px;
-  left: 65%;
+  bottom: 0;
+
+  left: 0;
   object-fit: cover;
-  position: absolute;
-  top: 81%;
-  transform: translate(-63%, -50%) scale(0.9);
-  width: 115%;
-  z-index: 4;
+  position: fixed;
+  width: 100%;
+  z-index: 0;
 }
