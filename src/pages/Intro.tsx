@@ -8,6 +8,7 @@ import rabbit from '../assets/rabbit.png';
 import teachlalogo from '../assets/teach-la-logo.svg';
 
 import FactorialQuestion from '../components/intro_comps/FactorialQuestion';
+import IntroCode from '../components/intro_comps/intro_code'
 import AppWrapper from '../components/shared/AppWrapper';
 import Button from '../components/shared/Button';
 import { HeaderSections } from '../components/shared/globalTypes';
@@ -141,6 +142,7 @@ const Intro: FC = () => {
                   $3!$ with a base case of $n = -4$, we would have $$3\\cdot 2 \\cdot 1 \\cdot 0 \\cdot \\ldots \\cdot -4 = 0$$
                   `}
                 </Latex>
+                <IntroCode/>
               </div>
             </div>
             <div className="textbox">
