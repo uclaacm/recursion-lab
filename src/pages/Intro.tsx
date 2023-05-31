@@ -1,21 +1,52 @@
 import { faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import { FC } from 'react';
+import { CodeBlock, dracula } from 'react-code-blocks';
 import Latex from 'react-latex-next';
+import BricksBackground from '../assets/bricksBackground.png';
+import MarioBackground from '../assets/marioBackground.png';
+import rabbit from '../assets/rabbit.png';
+import teachlalogo from '../assets/teach-la-logo.svg';
+
 import FactorialQuestion from '../components/intro_comps/FactorialQuestion';
+import IntroCode from '../components/intro_comps/intro_code';
 import AppWrapper from '../components/shared/AppWrapper';
 import Button from '../components/shared/Button';
 import { HeaderSections } from '../components/shared/globalTypes';
 import './intro.scss';
 
-import BricksBackground from '../assets/bricksBackground.png';
-import MarioBackground from '../assets/marioBackground.png';
 import ImageSlider from '../components/shared/SlideShow';
 import 'katex/dist/katex.min.css';
 
 const slides: { url: string; title: string }[] = [
   { url: `${MarioBackground}`, title: '1' },
   { url: `${BricksBackground}`, title: '2' },
+  { url: `${teachlalogo}`, title: '3' },
+  { url: `${rabbit}`, title: '4' },
 ];
+
+function recursionCodeBlock(
+  code: string,
+  language: string,
+  showLineNumbers: boolean,
+  startingLineNumber: number
+) {
+  return (
+    <CodeBlock
+      text={code}
+      language={language}
+      showLineNumbers={showLineNumbers}
+      startingLineNumber={startingLineNumber}
+      theme={dracula}
+    />
+  );
+}
+const code = `void doSomething() {
+    //---- do stuff ----
+    cout << "did something" << endl;
+    //------------------
+
+    doSomething();
+}`;
 
 const Intro: FC = () => {
   return (
@@ -39,8 +70,21 @@ const Intro: FC = () => {
               <h2 className="intro-title">Recursion</h2>
               <div className="intro-content">
                 <Latex>
-                  {`A recursive function is a function that calls itself in its definition. Take the below function as an example:
-                  $$\\textup{example here}$$
+                  {
+                    'A recursive function is a function that calls itself in its definition. Take the below function as a basic example:'
+                  }
+                </Latex>
+                <div
+                  style={{
+                    width: '500px',
+                    margin: '15px auto',
+                    fontFamily: 'monospace',
+                  }}
+                >
+                  {recursionCodeBlock(code, 'cpp', true, 1)}
+                </div>
+                <Latex>
+                  {`
                   Typically recursion is useful for solving problems whose solution is dependent on solving smaller subproblems. For
                   instance, in the factorial example, once we solved for $(n-1)!$, we can easily solve $n!$ by taking $n\\cdot (n-1)!$.
                   $$$$
@@ -63,7 +107,7 @@ const Intro: FC = () => {
                     style={{
                       width: '500px',
                       height: '280px',
-                      marginBottom: '150px',
+                      marginBottom: '100px',
                       marginTop: '50px',
                     }}
                   >
@@ -84,7 +128,7 @@ const Intro: FC = () => {
                   {`One important element of recursion is the base case. If we look at the function we wrote above and
                   actually tried to run it, it would never stop. Following the above example with compartments, the computer
                   would repeatedly create new compartments until it runs out of space:
-                  $$\\textup{animation example}$$
+                  $$$$
                   To fix this issue, we need to add some sort of check to our original function to let the process stop. This
                   motivates the idea of a base case, which could be thought of as the "simplest" version of the problem. When
                   the function encounters the base case, it will immediately return the answer since it doesn't rely on solving
@@ -98,6 +142,7 @@ const Intro: FC = () => {
                   $3!$ with a base case of $n = -4$, we would have $$3\\cdot 2 \\cdot 1 \\cdot 0 \\cdot \\ldots \\cdot -4 = 0$$
                   `}
                 </Latex>
+                <IntroCode />
               </div>
             </div>
             <div className="textbox">
@@ -108,7 +153,7 @@ const Intro: FC = () => {
                   code as a recursive function, in which the function will call itself in its definition. An important aspect of a recursive function
                   is the base case, which represents the simplest possible subproblem. A correct base case will prevent the recursive function
                   from executing infinitely and will provide the answer to the simplest possible subproblem from which more complex problems will
-                  depend on.
+                  depend on. (For some extra practice, go back and see what the code in the basic example above does).
                   `}
                 </Latex>
               </div>
