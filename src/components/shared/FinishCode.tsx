@@ -108,7 +108,7 @@ function FinishCodeCard(props: FinishCodeCardProps): JSX.Element {
             ))}
           <div>
             {(showAnswer || tries == 0) && (
-              <p>{`One answer is ${showAnswerResponse}.`}</p>
+              <p>{`One possible answer is ${showAnswerResponse}.`}</p>
             )}
           </div>
         </div>

@@ -102,6 +102,7 @@ function DiningCode(): JSX.Element {
             }
           />
           <div></div>
+          <span>return</span>
           <DiningDropdown
             options={options1}
             correct_answer={[isCorrect]}
