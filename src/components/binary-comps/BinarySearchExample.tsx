@@ -112,15 +112,13 @@ export default function BinarySearchExample({ answer }: Data): JSX.Element {
       >
         {WordList.map((value, index) => {
           return (
-            <div key={index}>
-              <div style={{ flex: '0 0 20%' }}>
-                {' '}
-                <SearchableWord
-                  word={value}
-                  selected={currentIndex === index && left <= right}
-                  inRange={left <= index && index <= right}
-                />{' '}
-              </div>
+            <div style={{ flex: '0 0 20%' }} key={index}>
+              {' '}
+              <SearchableWord
+                word={value}
+                selected={currentIndex === index && left <= right}
+                inRange={left <= index && index <= right}
+              />{' '}
             </div>
           );
         })}
