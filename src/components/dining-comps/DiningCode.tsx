@@ -100,8 +100,10 @@ function DiningCode(): JSX.Element {
             update_answer={(chosenAnswer: string) =>
               handleUpdateAnswer(0, chosenAnswer)
             }
-            answer={answerKey.question1}
-            update_answer={setIsCorrect}
+          />
+          <div></div>
+          <DiningDropdown
+            options={options1}
             correct_answer={[isCorrect]}
             index={1}
             answer={'1'}

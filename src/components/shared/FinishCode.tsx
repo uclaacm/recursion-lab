@@ -94,7 +94,7 @@ function FinishCodeCard(props: FinishCodeCardProps): JSX.Element {
       </div>
       <div className="finish-content">
         <div>{props.children}</div>
-        <div className="output-box">
+        <div className="code-output">
           {expand &&
             !showAnswer &&
             tries != 0 &&
