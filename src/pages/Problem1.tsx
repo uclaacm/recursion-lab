@@ -3,7 +3,7 @@ import FlagCircleIcon from '@mui/icons-material/FlagCircle';
 import { FC } from 'react';
 import BricksBackground from '../assets/bricksBackground.png';
 import MarioBackground from '../assets/marioBackground.png';
-import ProgressBar1 from '../assets/progress_bar1.png';
+import ProgressBar1 from '../assets/progress_bars/progress1.png';
 import MarioBaseCase from '../components/mario-comps/MarioBaseCase';
 import MarioCode from '../components/mario-comps/MarioCode';
 import MarioFormula from '../components/mario-comps/MarioFormula';
@@ -18,7 +18,7 @@ import '../styles/Problem1.scss';
 const Problem1: FC = () => {
   return (
     <div>
-      <AppWrapper section={HeaderSections.PROBLEM1_TITLE}>
+      <AppWrapper section={HeaderSections.PROBLEM1_TITLE} page={1}>
         <div className="body">
           <div
             className="mario-background"
