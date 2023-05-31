@@ -2,13 +2,16 @@
 import Select from 'react-select';
 import { options_array } from '../../types';
 
+interface MyFunction {
+  (str: string): void;
+}
+
 interface DropdownProps {
   options: options_array[];
   correct_answer: boolean[];
   index: number;
   answer: string;
-  update_answer: React.Dispatch<React.SetStateAction<boolean[]>>;
-  //boolans: boolean;
+  update_answer: MyFunction;
 }
 
 function Dropdown(props: DropdownProps): JSX.Element {

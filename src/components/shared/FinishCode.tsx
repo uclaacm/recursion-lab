@@ -5,10 +5,11 @@ import Checkmark from 'react-typescript-checkmark';
 
 interface FinishCodeCardProps {
   children?: JSX.Element;
-  correct: string;
-  incorrect: string;
   correct_answer: boolean[];
   index: number;
+  chosen_function: any;
+  given_function: any;
+  answer_key: Record<PropertyKey, string>;
 }
 
 interface ConfettiProps
@@ -37,13 +38,28 @@ function FinishCodeCard(props: FinishCodeCardProps): JSX.Element {
   const [correct, setCorrect] = useState(false);
   const [expand, setExpand] = useState(false);
   const [showAnswer, setShowAnswer] = useState(false);
+  const [givenAnswer, setGivenAnswer] = useState(props.given_function());
+  const [chosenAnswer, setChosenAnswer] = useState(0);
+  let showAnswerResponse = '';
+  const someArray = Object.entries(props.answer_key);
 
-  const handleClick = () => {
+  someArray.forEach((element, index) => {
+    const value = element[1];
+    if (index != someArray.length - 1) {
+      showAnswerResponse = showAnswerResponse + value + ', ';
+    } else {
+      showAnswerResponse = showAnswerResponse + value;
+    }
+  });
+
+  const handleClick = async () => {
     if (tries <= 0) {
       return;
     }
-    setShowAnswer(false);
+    setGivenAnswer(props.given_function());
+    setChosenAnswer(props.chosen_function());
 
+    setShowAnswer(false);
     if (!props.correct_answer[props.index]) {
       setTries((prevTries) => prevTries - 1);
     } else {
@@ -76,7 +92,27 @@ function FinishCodeCard(props: FinishCodeCardProps): JSX.Element {
         )}
         &nbsp;&nbsp;Finish the code
       </div>
-      <div className="finish-content">{props.children}</div>
+      <div className="finish-content">
+        <div>{props.children}</div>
+        <div className="output-box">
+          {expand &&
+            !showAnswer &&
+            tries != 0 &&
+            (correct ? (
+              <p className="correct-explanation">{`Correct! The answer is ${givenAnswer}.`}</p>
+            ) : (
+              <p className="incorrect-explanation">
+                Incorrect. <br></br>{' '}
+                {`The correct answer is ${givenAnswer}. Your answer was ${chosenAnswer}`}
+              </p>
+            ))}
+          <div>
+            {(showAnswer || tries == 0) && (
+              <p>{`One answer is ${showAnswerResponse}.`}</p>
+            )}
+          </div>
+        </div>
+      </div>
       <div className="finish-horizontal-line"></div>
       <div className="finish-footer">
         <button className="show-answer" onClick={handleShowAnswer}>
@@ -105,17 +141,6 @@ function FinishCodeCard(props: FinishCodeCardProps): JSX.Element {
           </button>
         </div>
       </div>
-      <div>
-        {expand &&
-          !showAnswer &&
-          tries != 0 &&
-          (correct ? (
-            <p className="correct-explanation">{`Correct! ${props.correct}`}</p>
-          ) : (
-            <p className="incorrect-explanation">{`Incorrect. ${props.incorrect}`}</p>
-          ))}
-      </div>
-      <div>{(showAnswer || tries == 0) && <p>{props.correct}</p>}</div>
     </div>
   );
 }

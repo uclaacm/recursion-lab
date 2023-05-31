@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Dropdown from './DiningDropdown';
+import DiningDropdown from './DiningDropdown';
 import FinishCodeCard from '../../components/shared/FinishCode';
 import { options_array } from '../../types';
 
@@ -9,6 +9,11 @@ function DiningCode(): JSX.Element {
     question1: 'n==0',
     question2: '0',
   });
+  const [answerKey] = useState({
+    question1: 'n==0',
+    question2: '0',
+  });
+
   const options0: options_array[] = [
     {
       value: 'dropdown1',
@@ -59,22 +64,9 @@ function DiningCode(): JSX.Element {
       [`question${index + 1}`]: chosenAnswer,
     }));
   };
-  //const shouldShowOutputDiv = isCorrect[0] && isCorrect[1];
 
   return (
     <FinishCodeCard
-      correct={'The answer is ' + factorial(5).toString() + '.'}
-      incorrect={
-        'The correct answer is ' +
-        factorial(5).toString() +
-        '. Your answer is ' +
-        selectedfactorial(
-          5,
-          parseInt(selectedanswer.question1[3]),
-          parseInt(selectedanswer.question2)
-        ).toString() +
-        '.'
-      }
       correct_answer={[
         factorial(5) ==
           selectedfactorial(
@@ -84,29 +76,38 @@ function DiningCode(): JSX.Element {
           ),
       ]}
       index={0}
+      chosen_function={() =>
+        selectedfactorial(
+          5,
+          parseInt(selectedanswer.question1[3]),
+          parseInt(selectedanswer.question2)
+        )
+      }
+      given_function={() => factorial(5)}
+      answer_key={answerKey}
     >
       <div className="code-component-container">
         <div className="factorial-text">
           <div>In this example, we will use n = 5.</div>
           <div>factorial(n):</div>
           <span>if</span>
-          <Dropdown
+          <DiningDropdown
             options={options0}
             correct_answer={[isCorrect]}
             index={0}
             answer={'n==0'}
-            update_answer={(chosenAnswer) =>
+            update_answer={(chosenAnswer: string) =>
               handleUpdateAnswer(0, chosenAnswer)
             }
           />
           <div></div>
           <span>return</span>
-          <Dropdown
+          <DiningDropdown
             options={options1}
             correct_answer={[isCorrect]}
             index={1}
             answer={'1'}
-            update_answer={(chosenAnswer) =>
+            update_answer={(chosenAnswer: string) =>
               handleUpdateAnswer(1, chosenAnswer)
             }
           />
