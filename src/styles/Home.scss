@@ -56,21 +56,12 @@
   transform: translateX(-50%);
 }
 
-.center-meadows {
-  left: 50%;
-  position: absolute;
-  top: 94.5%;
-  transform: translate(-63%, -50%) scale(1);
-  z-index: 2;
-}
+.meadows {
+  bottom: 0;
 
-.side-meadows {
-  height: 350px;
-  left: 65%;
+  left: 0;
   object-fit: cover;
-  position: absolute;
-  top: 81%;
-  transform: translate(-63%, -50%) scale(0.9);
-  width: 115%;
-  z-index: 4;
+  position: fixed;
+  width: 100%;
+  z-index: 0;
 }

@@ -9,6 +9,7 @@ function DiningCode(): JSX.Element {
     question1: 'n==0',
     question2: '0',
   });
+
   const [answerKey] = useState({
     question1: 'n==0',
     question2: '0',
@@ -99,11 +100,8 @@ function DiningCode(): JSX.Element {
             update_answer={(chosenAnswer: string) =>
               handleUpdateAnswer(0, chosenAnswer)
             }
-          />
-          <div></div>
-          <span>return</span>
-          <DiningDropdown
-            options={options1}
+            answer={answerKey.question1}
+            update_answer={setIsCorrect}
             correct_answer={[isCorrect]}
             index={1}
             answer={'1'}
