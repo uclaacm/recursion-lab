@@ -1,13 +1,20 @@
 import { useState } from 'react';
-import Dropdown from '../../components/shared/Dropdown';
+import DiningDropdown from './DiningDropdown';
 import FinishCodeCard from '../../components/shared/FinishCode';
 import { options_array } from '../../types';
 
 function DiningCode(): JSX.Element {
-  const [isCorrect, setIsCorrect] = useState([false]);
-  const [answerKey] = useState({
-    question1: 'dropdown2',
+  const [isCorrect] = useState(false);
+  const [selectedanswer, setselectedanswer] = useState({
+    question1: 'n==0',
+    question2: '0',
   });
+
+  const [answerKey] = useState({
+    question1: 'n==0',
+    question2: '0',
+  });
+
   const options0: options_array[] = [
     {
       value: 'dropdown1',
@@ -44,46 +51,69 @@ function DiningCode(): JSX.Element {
       return n * factorial(n - 1);
     }
   }
-
-  const outputDiv = document.getElementById('output');
-
-  // If you're sure the element exists
-  if (outputDiv) {
-    const factorialOutput = factorial(5);
-    outputDiv.innerHTML = `Factorial of 5 is: ${factorialOutput}`;
+  function selectedfactorial(n: number, n1: number, n2: number): number {
+    if (n === n1) {
+      return n2;
+    } else {
+      return n * selectedfactorial(n - 1, n1, n2);
+    }
   }
+
+  const handleUpdateAnswer = (index: number, chosenAnswer: string) => {
+    setselectedanswer((prevAnswerKey) => ({
+      ...prevAnswerKey,
+      [`question${index + 1}`]: chosenAnswer,
+    }));
+  };
 
   return (
     <FinishCodeCard
-      correct="This is an explanation for when you get the answer correct."
-      incorrect="This is a hint for when you get the answer incorrect."
-      correct_answer={isCorrect}
+      correct_answer={[
+        factorial(5) ==
+          selectedfactorial(
+            5,
+            parseInt(selectedanswer.question1[3]),
+            parseInt(selectedanswer.question2)
+          ),
+      ]}
       index={0}
+      chosen_function={() =>
+        selectedfactorial(
+          5,
+          parseInt(selectedanswer.question1[3]),
+          parseInt(selectedanswer.question2)
+        )
+      }
+      given_function={() => factorial(5)}
+      answer_key={answerKey}
     >
       <div className="code-component-container">
         <div className="factorial-text">
           <div>In this example, we will use n = 5.</div>
           <div>factorial(n):</div>
           <span>if</span>
-          <Dropdown
+          <DiningDropdown
             options={options0}
-            correct_answer={isCorrect}
+            correct_answer={[isCorrect]}
             index={0}
-            answer={answerKey.question1}
-            update_answer={setIsCorrect}
+            answer={'n==0'}
+            update_answer={(chosenAnswer: string) =>
+              handleUpdateAnswer(0, chosenAnswer)
+            }
           />
           <div></div>
           <span>return</span>
-          <Dropdown
+          <DiningDropdown
             options={options1}
-            correct_answer={isCorrect}
-            index={0}
-            answer={answerKey.question1}
-            update_answer={setIsCorrect}
+            correct_answer={[isCorrect]}
+            index={1}
+            answer={'1'}
+            update_answer={(chosenAnswer: string) =>
+              handleUpdateAnswer(1, chosenAnswer)
+            }
           />
           <div>return n * factorial(n-1)</div>
         </div>
-        <div id="output"></div>
       </div>
     </FinishCodeCard>
   );
