@@ -51,7 +51,7 @@ const code = `void doSomething() {
 const Intro: FC = () => {
   return (
     <div>
-      <AppWrapper section={HeaderSections.INTRO_TITLE}>
+      <AppWrapper section={HeaderSections.INTRO_TITLE} page={0}>
         <div className="body">
           <div className="content-container">
             <div className="textbox">

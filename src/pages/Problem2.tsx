@@ -3,7 +3,7 @@ import CallIcon from '@mui/icons-material/Call';
 import { FC } from 'react';
 import CircularDiagram from '../assets/Circular_Loop_Diagram_with_name.png';
 import FoodBackground from '../assets/Food_Background.png';
-import ProgressBar2 from '../assets/progress_bar2.png';
+import ProgressBar2 from '../assets/progress_bars/progress2.png';
 import DiningBaseCase from '../components/dining-comps/DiningBaseCase';
 import DiningCode from '../components/dining-comps/DiningCode';
 import DiningFormula from '../components/dining-comps/DiningFormula';
@@ -17,7 +17,7 @@ import '../styles/Problem2.scss';
 const Problem2: FC = () => {
   return (
     <div>
-      <AppWrapper section={HeaderSections.PROBLEM2_TITLE}>
+      <AppWrapper section={HeaderSections.PROBLEM2_TITLE} page={2}>
         <div className="body">
           <div
             className="content-container"

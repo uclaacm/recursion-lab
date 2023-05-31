@@ -6,7 +6,7 @@ import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
 import { FC, useState } from 'react';
 import OpenBook from '../assets/open-book.png';
-import ProgressBar4 from '../assets/progress_bar4.png';
+import ProgressBar4 from '../assets/progress_bars/progress4.png';
 import BinaryBaseCase from '../components/binary-comps/BinaryBaseCase';
 import BinaryCode from '../components/binary-comps/BinaryCode';
 import BinaryFormula from '../components/binary-comps/BinaryFormula';
@@ -29,7 +29,7 @@ const Problem4: FC = () => {
   const [passedIntro, setPassedIntro] = useState(false);
   return (
     <div>
-      <AppWrapper section={HeaderSections.PROBLEM4_TITLE}>
+      <AppWrapper section={HeaderSections.PROBLEM4_TITLE} page={4}>
         <div className="body">
           <div className="content-container">
             <img src={OpenBook} className="open-book"></img>
@@ -179,7 +179,7 @@ const Problem4: FC = () => {
                 className="prev-btn"
                 navigation="/problem3"
               />
-              <div className="progress-bar4">
+              <div className="progress-bar progress-bar4">
                 <img
                   src={ProgressBar4}
                   alt="Progress Bar: You are on the Fourth Problem!"
