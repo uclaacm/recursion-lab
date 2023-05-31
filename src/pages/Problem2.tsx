@@ -2,7 +2,7 @@ import { faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import CallIcon from '@mui/icons-material/Call';
 import { FC } from 'react';
 import CircularDiagram from '../assets/Circular_Loop_Diagram_with_name.png';
-import FoodBackground from '../assets/Food_Background.png';
+import FoodBackground from '../assets/newFoodBackground.png';
 import ProgressBar2 from '../assets/progress_bars/progress2.png';
 import DiningBaseCase from '../components/dining-comps/DiningBaseCase';
 import DiningCode from '../components/dining-comps/DiningCode';
@@ -21,7 +21,10 @@ const Problem2: FC = () => {
         <div className="body">
           <div
             className="content-container"
-            style={{ backgroundImage: `url(${FoodBackground})` }}
+            style={{
+              backgroundImage: `url(${FoodBackground})`,
+              backgroundColor: 'white',
+            }}
           >
             <div className="main-title">Dining Out</div>
             <p className="setup">
