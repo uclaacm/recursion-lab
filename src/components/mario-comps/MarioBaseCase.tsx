@@ -44,6 +44,7 @@ function MarioBaseCase(): JSX.Element {
           update_answer={setIsCorrect} //function to update the correctness array
         />
         <br />
+        <br />
         return
         <KhanInput
           correct_answer={isCorrect} //must pass in correctness array from parent
