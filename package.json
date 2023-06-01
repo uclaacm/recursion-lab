@@ -17,7 +17,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.12.3",
-    "@types/react": "^18.0.32",
+    "@types/react": "^18.2.7",
     "@types/react-dom": "^18.2.1",
     "babelify": "^10.0.0",
     "browserify": "^17.0.0",
