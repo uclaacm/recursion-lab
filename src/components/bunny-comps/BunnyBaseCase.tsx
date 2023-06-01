@@ -8,49 +8,50 @@ import KhanInput from '../shared/KhanInput';
 function BunnyBaseCase(): JSX.Element {
   const [isCorrect, setIsCorrect] = useState([false, false]);
   const [answerKey] = useState({
-    //you can have multiple "Fill in the Blank" questions
-    question1: 'n',
-    question2: 'dropdown1',
+    question1: 'n <= 1',
+    question2: 'n',
   });
 
   const options2: options_array[] = [
     {
-      value: 'dropdown1',
+      value: 'n <= 1',
       label: 'n <= 1',
     },
     {
-      value: 'dropdown2',
+      value: 'n > 1',
       label: 'n > 1',
     },
     {
-      value: 'dropdown3',
+      value: 'n < 1',
       label: 'n < 1',
     },
   ];
 
   return (
     <KhanCard
-      correct="This is an explanation for when you get the answer correct." //explanation for when user gets answer correct
-      incorrect="This is a hint for when you get the answer incorrect." //hint when user gets answer incorrect
-      correct_answer={isCorrect} //must pass in correctness state from parent
-      index={[0, 1]} //index for what KhanCard you are referring to
+      correct="The fibonacci sequence should end at 1! which is 1. Thus, we return the value n itself."
+      incorrect="Think about what number is the last number to multiply within the factorial computation. That is the base case value. What does it return?"
+      correct_answer={isCorrect}
+      index={[0, 1]}
     >
       <div>
         if
         <Dropdown
           options={options2}
-          correct_answer={isCorrect} //must pass in correctness array from parent
-          index={0} //index for what question # you are referring to
-          answer={answerKey.question2} //the answer from answerkey
-          update_answer={setIsCorrect} //function to update the correctness array
+          correct_answer={isCorrect}
+          index={0}
+          answer={answerKey.question1}
+          update_answer={setIsCorrect}
         />
+        :
+        <br />
         <br />
         return
         <KhanInput
-          correct_answer={isCorrect} //must pass in correctness array from parent
-          index={1} //index for what KhanCard you are referring to
-          answer={answerKey.question1} //the answer from answerkey
-          update_answer={setIsCorrect} //function to update the correctness array
+          correct_answer={isCorrect}
+          index={1}
+          answer={answerKey.question2}
+          update_answer={setIsCorrect}
         />
       </div>
     </KhanCard>
