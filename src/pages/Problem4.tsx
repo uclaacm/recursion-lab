@@ -34,8 +34,8 @@ const Problem4: FC = () => {
     'Ababda',
     'abaca',
   ];
-  const [topDisplacement, setTopDisplacement] = useState(50);
-  const [rightDisplacement, setRightDisplacement] = useState(465);
+  const [topDisplacement, setTopDisplacement] = useState(40);
+  const [rightDisplacement, setRightDisplacement] = useState(450);
 
   useEffect(() => {
     if (index > 0 && index < 12) {
@@ -45,7 +45,7 @@ const Problem4: FC = () => {
       setPassedIntro(true);
     }
     if (index === 6) {
-      setTopDisplacement(50);
+      setTopDisplacement(40);
       setRightDisplacement(-200);
     }
   }, [index]);
@@ -77,7 +77,19 @@ const Problem4: FC = () => {
                 return (
                   /* style={{ flex: '0 0 50%' }} */
                   <div key={i}>
-                    <div style={{ paddingBottom: '10px' }}>{value}</div>
+                    {i === index && (
+                      <div
+                        style={{
+                          paddingBottom: '15px',
+                          textShadow: '1px 0px 0px black',
+                        }}
+                      >
+                        {value}
+                      </div>
+                    )}
+                    {i !== index && (
+                      <div style={{ paddingBottom: '15px' }}>{value}</div>
+                    )}
                   </div>
                 );
               })}
