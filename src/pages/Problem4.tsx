@@ -6,6 +6,7 @@ import Magnifying from '../assets/magnifying.png';
 import OpenBook from '../assets/open-book.png';
 import ProgressBar4 from '../assets/progress_bars/progress4.png';
 import BinaryBaseCase from '../components/binary-comps/BinaryBaseCase';
+import BinaryBaseCasePt2 from '../components/binary-comps/BinaryBaseCasePt2';
 import BinaryCode from '../components/binary-comps/BinaryCode';
 import BinaryFormula from '../components/binary-comps/BinaryFormula';
 import BinaryUnderstandPart1 from '../components/binary-comps/BinaryUnderstandPart1';
@@ -130,7 +131,7 @@ const Problem4: FC = () => {
                   <ExpandBox
                     class="binary-title"
                     title="Identifying the Base Case Part 2"
-                    component={BinaryBaseCase}
+                    component={BinaryBaseCasePt2}
                     icon={AutoStoriesIcon}
                   />
                   <ExpandBox
