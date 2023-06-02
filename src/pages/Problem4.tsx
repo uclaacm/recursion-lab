@@ -76,8 +76,14 @@ const Problem4: FC = () => {
               {wordList.map((value, i) => {
                 return (
                   /* style={{ flex: '0 0 50%' }} */
-                  <div key={i}>
-                    <div style={{ paddingBottom: '10px' }}>{value}</div>
+                  <div key={i} style={{ paddingBottom: '10px' }}>
+                    {i === index ? (
+                      <div style={{ textShadow: '1px 0px 0px black' }}>
+                        {value}
+                      </div>
+                    ) : (
+                      <div>{value}</div>
+                    )}
                   </div>
                 );
               })}
