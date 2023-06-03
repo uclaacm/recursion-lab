@@ -12,14 +12,16 @@ import '../../../../src/styles/AppWrapper.scss';
  */
 export interface HeaderProps {
   section: HeaderSections;
+  page: number;
 }
 
 export default function Header(props: HeaderProps): JSX.Element {
+  const pageColors = ['#282A36', '#C84C0C', '#007da3', '#687B23', '#9D20A0'];
   const [sidebar, setSidebar] = useState(false);
   const showSidebar = () => setSidebar(!sidebar);
   return (
     <>
-      <div id="header">
+      <div id="header" style={{ backgroundColor: pageColors[props.page] }}>
         <div className="menu-bars">
           <FontAwesomeIcon
             icon={faBars}

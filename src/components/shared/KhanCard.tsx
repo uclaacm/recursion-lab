@@ -88,6 +88,7 @@ function KhanCard(props: KhanCardProps): JSX.Element {
         &nbsp;&nbsp; Fill in the Blank
       </div>
       <div className="khan-content">{props.children}</div>
+      <br></br>
       <div className="khan-horizontal-line"></div>
       <div className="khan-footer">
         <button className="show-answer" onClick={handleShowAnswer}>

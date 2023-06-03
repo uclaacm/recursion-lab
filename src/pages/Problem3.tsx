@@ -7,7 +7,7 @@ import blueBackground from '../assets/bunnies/blueBackground.png';
 import bottomBackground from '../assets/bunnies/bottomBackground.png';
 import headerBackground from '../assets/bunnies/headerBackground.png';
 import rabitGroup from '../assets/bunnies/rabitGroup.png';
-import ProgressBar3 from '../assets/progress_bar3.png';
+import ProgressBar3 from '../assets/progress_bars/progress3.png';
 
 import BunnyBaseCase from '../components/bunny-comps/BunnyBaseCase';
 import BunnyCode from '../components/bunny-comps/BunnyCode';
@@ -21,7 +21,7 @@ import { HeaderSections } from '../components/shared/globalTypes';
 const Problem3: FC = () => {
   return (
     <div className="bunnies">
-      <AppWrapper section={HeaderSections.PROBLEM3_TITLE}>
+      <AppWrapper section={HeaderSections.PROBLEM3_TITLE} page={3}>
         <div
           style={{
             backgroundColor: 'white',
@@ -83,18 +83,18 @@ const Problem3: FC = () => {
                   icon={EmojiNatureIcon}
                 />
               </div>
+              <div className="progress-bar" style={{ marginBottom: '0px' }}>
+                <img
+                  src={ProgressBar3}
+                  alt="Progress Bar: You are on the Third Problem!"
+                />
+              </div>
               <div className="buttons">
                 <Button
                   icon={faLessThan}
                   className="prev-btn"
                   navigation="/problem2"
                 />
-                <div className="progress-bar3">
-                  <img
-                    src={ProgressBar3}
-                    alt="Progress Bar: You are on the Third Problem!"
-                  />
-                </div>
                 <Button
                   icon={faGreaterThan}
                   className="next-btn"
@@ -102,57 +102,16 @@ const Problem3: FC = () => {
                 />
               </div>
             </div>
-            <img src={bottomBackground} alt="" style={{ width: '100%' }} />
+            <img
+              src={bottomBackground}
+              alt=""
+              style={{ width: '100%', marginBottom: '-7px' }}
+            />
           </div>
         </div>
       </AppWrapper>
     </div>
   );
 };
-
-{
-  /* const data = [
-  {
-    step: (
-      <h2>
-        {' '}
-        <img src={greyTick} alt="" style={{ width: '15pt' }} /> Understanding
-        the problem{' '}
-      </h2>
-    ),
-    answer: UnderstandingProblem,
-  },
-  {
-    step: (
-      <h2>
-        {' '}
-        <img src={greyTick} alt="" style={{ width: '15pt' }} /> Identifying the
-        Base Case{' '}
-      </h2>
-    ),
-    answer: BunnyBaseCase,
-  },
-  {
-    step: (
-      <h2>
-        {' '}
-        <img src={greyTick} alt="" style={{ width: '15pt' }} /> Generalize the
-        Pattern: Recursive Formula{' '}
-      </h2>
-    ),
-    answer: BunnyFormula,
-  },
-  {
-    step: (
-      <h2>
-        {' '}
-        <img src={greyTick} alt="" style={{ width: '15pt' }} /> Code the
-        Components Together{' '}
-      </h2>
-    ),
-    answer: BunnyCode,
-  },
-]; */
-}
 
 export default Problem3;
