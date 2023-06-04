@@ -2773,6 +2773,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/webpack-env@npm:^1.18.1":
+  version: 1.18.1
+  resolution: "@types/webpack-env@npm:1.18.1"
+  checksum: 3173c069763e51a96565d602af7e6dac9d772ae4aa6f26cac187cbf599a7f0b88f790b4b050b9dbdb0485daed3061b4a337863f3b8ce66f8a4e51f75ad387c6a
+  languageName: node
+  linkType: hard
+
 "@types/ws@npm:^8.5.1":
   version: 8.5.4
   resolution: "@types/ws@npm:8.5.4"
@@ -9668,7 +9675,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-scss@npm:^4.0.2":
+"postcss-scss@npm:^4.0.6":
   version: 4.0.6
   resolution: "postcss-scss@npm:4.0.6"
   peerDependencies:
@@ -9687,15 +9694,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-sorting@npm:^7.0.1":
-  version: 7.0.1
-  resolution: "postcss-sorting@npm:7.0.1"
-  peerDependencies:
-    postcss: ^8.3.9
-  checksum: 79cca6703ef7c60ea913c3bfb91f85bd7adce35e60b834a40cadd1c7e18f37961d63f0e641387651ee3bf1df1996e952d8fe443f93a271aa2d23f239ea3145bc
-  languageName: node
-  linkType: hard
-
 "postcss-value-parser@npm:^4.0.2, postcss-value-parser@npm:^4.1.0, postcss-value-parser@npm:^4.2.0":
   version: 4.2.0
   resolution: "postcss-value-parser@npm:4.2.0"
@@ -9703,7 +9701,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.3.11, postcss@npm:^8.4.19":
+"postcss@npm:^8.4.19":
   version: 8.4.23
   resolution: "postcss@npm:8.4.23"
   dependencies:
@@ -10578,6 +10576,7 @@ __metadata:
     "@mui/material": ^5.12.3
     "@types/react": ^18.0.32
     "@types/react-dom": ^18.2.1
+    "@types/webpack-env": ^1.18.1
     "@typescript-eslint/eslint-plugin": ^4.33.0
     "@typescript-eslint/parser": ^4.32.0
     babel-loader: ^9.1.2
@@ -10616,7 +10615,7 @@ __metadata:
     style-loader: ^3.3.1
     stylelint: ^14.16.1
     stylelint-config-prettier: ^9.0.4
-    stylelint-config-sass-guidelines: ^9.0.0
+    stylelint-config-sass-guidelines: ^10.0.0
     stylelint-config-standard: ^29.0.0
     ts-loader: ^9.4.2
     typescript: ^5.0.4
@@ -11426,17 +11425,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint-config-sass-guidelines@npm:^9.0.0":
-  version: 9.0.1
-  resolution: "stylelint-config-sass-guidelines@npm:9.0.1"
+"stylelint-config-sass-guidelines@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "stylelint-config-sass-guidelines@npm:10.0.0"
   dependencies:
-    postcss-scss: ^4.0.2
-    stylelint-order: ^5.0.0
-    stylelint-scss: ^4.0.0
+    postcss-scss: ^4.0.6
+    stylelint-scss: ^4.4.0
   peerDependencies:
-    postcss: ^8.3.3
-    stylelint: ^14.0.1
-  checksum: 9844e0858b1175b30786cbca873cc5856313475de4b3cf3e4a8504d19f2673899f0fe4d56bef5cf73c93d0ed6c7c8c3d5a3dd91b7a9586aa52ddab12ef52a64b
+    postcss: ^8.4.21
+    stylelint: ^15.2.0
+  checksum: 1fbd55d780bc60c46ee9bdd9f2bb8097ff890791704faaaaecf6a0542250006a94d6726fd781d7fee68c831cd33093953d1f441c73b27471e76828d100446597
   languageName: node
   linkType: hard
 
@@ -11451,19 +11449,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint-order@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "stylelint-order@npm:5.0.0"
-  dependencies:
-    postcss: ^8.3.11
-    postcss-sorting: ^7.0.1
-  peerDependencies:
-    stylelint: ^14.0.0
-  checksum: fa3ace3cc65486b9f94165603bd04983636fda5ac959cd29bf87847a95b32f366b16faf612bd49e3b9f96073f8fe28a22a5c5727cc08c8f9d7327c89084b3f30
-  languageName: node
-  linkType: hard
-
-"stylelint-scss@npm:^4.0.0":
+"stylelint-scss@npm:^4.4.0":
   version: 4.7.0
   resolution: "stylelint-scss@npm:4.7.0"
   dependencies:
@@ -11964,11 +11950,11 @@ __metadata:
 
 "typescript@patch:typescript@^5.0.4#~builtin<compat/typescript>":
   version: 5.0.4
-  resolution: "typescript@patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=b5f058"
+  resolution: "typescript@patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=85af82"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: d26b6ba97b6d163c55dbdffd9bbb4c211667ebebc743accfeb2c8c0154aace7afd097b51165a72a5bad2cf65a4612259344ff60f8e642362aa1695c760d303ac
+  checksum: bb309d320c59a26565fb3793dba550576ab861018ff3fd1b7fccabbe46ae4a35546bc45f342c0a0b6f265c801ccdf64ffd68f548f117ceb7f0eac4b805cd52a9
   languageName: node
   linkType: hard
 
