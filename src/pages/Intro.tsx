@@ -14,12 +14,15 @@ import ImageSlider from '../components/shared/SlideShow';
 import 'katex/dist/katex.min.css';
 
 function importAll(r: any) {
-  let images:{url:string}[] = [];
-  r.keys().map((item:any) => {images.push({url : '../assets/'+item.replace('./','')});});
+  const images: { url: string }[] = [];
+  r.keys().map((item: any) => {
+    images.push({ url: '../assets/' + item.replace('./', '') });
+  });
   return images;
 }
-const slides:{url:string}[] = importAll(require.context('../assets/', false, /Variant\d\.(png|jpe?g|svg)$/));
-console.log(slides[0])
+const slides: { url: string }[] = importAll(
+  require.context('../assets/', false, /Variant\d\.(png|jpe?g|svg)$/)
+);
 
 function recursionCodeBlock(
   code: string,
@@ -49,7 +52,7 @@ const Intro: FC = () => {
   return (
     <div>
       <AppWrapper section={HeaderSections.INTRO_TITLE} page={0}>
-        <div className="body" style={{backgroundColor:'white'}}>
+        <div className="body" style={{ backgroundColor: 'white' }}>
           <div className="content-container">
             <div className="textbox">
               <h2 className="intro-title">Factorials</h2>
@@ -63,7 +66,7 @@ const Intro: FC = () => {
                 {FactorialQuestion()}
               </div>
             </div>
-            <div className="textbox" style={{paddingBottom:'50px'}}>
+            <div className="textbox" style={{ paddingBottom: '50px' }}>
               <h2 className="intro-title">Recursion</h2>
               <div className="intro-content">
                 <Latex>
@@ -142,7 +145,10 @@ const Intro: FC = () => {
                 <IntroCode />
               </div>
             </div>
-            <div className="textbox" style={{marginBottom:'250px', paddingBottom:'50px'}}>
+            <div
+              className="textbox"
+              style={{ marginBottom: '250px', paddingBottom: '50px' }}
+            >
               <h2 className="intro-title">Summary</h2>
               <div className="intro-content">
                 <Latex>

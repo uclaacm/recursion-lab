@@ -31,11 +31,7 @@ const ToolbarStyle: CSS.Properties = {
   textAlign: 'center',
 };
 
-const ImageSlider = ({
-  slides,
-}: {
-  slides: { url: string }[];
-}) => {
+const ImageSlider = ({ slides }: { slides: { url: string }[] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [playState, setPlayState] = useState(false);
   let slideInterval: any;
