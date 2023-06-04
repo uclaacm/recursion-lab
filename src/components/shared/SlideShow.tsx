@@ -8,6 +8,10 @@ import Fab from '@mui/material/Fab';
 import type * as CSS from 'csstype';
 import { useEffect, useState } from 'react';
 
+const buttonStyles: CSS.Properties = {
+  zIndex: 1,
+};
+
 const slideStyles: CSS.Properties = {
   width: '100%',
   height: '100%',
@@ -30,7 +34,7 @@ const ToolbarStyle: CSS.Properties = {
 const ImageSlider = ({
   slides,
 }: {
-  slides: { url: string; title: string }[];
+  slides: { url: string }[];
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [playState, setPlayState] = useState(false);
@@ -92,6 +96,7 @@ const ImageSlider = ({
       <div style={ToolbarStyle}>
         <Box sx={{ '& > :not(style)': { m: 0.75 } }}>
           <Fab
+            style={buttonStyles}
             color="primary"
             aria-label="previous"
             onClick={goToPrevious}
@@ -101,6 +106,7 @@ const ImageSlider = ({
             <NavigateBeforeSharpIcon />
           </Fab>
           <Fab
+            style={buttonStyles}
             color="primary"
             aria-label="next"
             onClick={goToNext}
@@ -111,6 +117,7 @@ const ImageSlider = ({
           </Fab>
           {playState ? (
             <Fab
+              style={buttonStyles}
               color="secondary"
               aria-label="pause"
               size="small"
@@ -120,6 +127,7 @@ const ImageSlider = ({
             </Fab>
           ) : (
             <Fab
+              style={buttonStyles}
               color="primary"
               aria-label="play"
               size="small"
@@ -131,6 +139,7 @@ const ImageSlider = ({
           )}
 
           <Fab
+            style={buttonStyles}
             color="primary"
             aria-label="restart"
             size="small"
