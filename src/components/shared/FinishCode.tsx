@@ -5,6 +5,7 @@ import Checkmark from 'react-typescript-checkmark';
 
 interface FinishCodeCardProps {
   children?: JSX.Element;
+  description?: string;
   correct_answer: boolean[];
   index: number;
   chosen_function: any;
@@ -91,6 +92,9 @@ function FinishCodeCard(props: FinishCodeCardProps): JSX.Element {
           <CheckCircleIcon sx={{ color: 'grey', fontSize: 'inherit' }} />
         )}
         &nbsp;&nbsp;Finish the code
+      </div>
+      <div style={{ margin: 'auto', textAlign: 'center', marginTop: '10px' }}>
+        {props.description}
       </div>
       <div className="finish-content">
         <div>{props.children}</div>

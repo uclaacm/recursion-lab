@@ -11,7 +11,7 @@ How to use the KhanCard and corresponding KhanInput component:
 const explanation =
   'We have that n!=n\u{00d7}(n-1)\u{00d7}...\u{00d7}1, but (n-1)\u{00d7}...\u{00d7}1 is exactly (n-1)!';
 function FactorialQuestion(): JSX.Element {
-  const [isCorrect] = useState([false, false]); //state for if questions are correct
+  const [isCorrect, setIsCorrect] = useState([false, false]); //state for if questions are correct
   const [answerKey] = useState({
     //you can have multiple "Fill in the Blank" questions
     question1: '(n-1)!',
@@ -40,6 +40,7 @@ function FactorialQuestion(): JSX.Element {
                 correct_answer={isCorrect} //must pass in correctness state from parent
                 index={0} //index for what KhanCard you are referring to
                 answer={answerKey.question1} //the answer from answerkey
+                update_answer={setIsCorrect}
               />
             </div>
           </span>

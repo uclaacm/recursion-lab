@@ -3,7 +3,7 @@ import IntroDropdown from './intro_dropdown';
 import FinishCodeCard from '../../components/shared/FinishCode';
 import { options_array } from '../../types';
 
-function DiningCode(): JSX.Element {
+function IntroCode(): JSX.Element {
   const [isCorrect] = useState(false);
   const [selectedanswer, setselectedanswer] = useState({
     question1: 'n==0',
@@ -68,6 +68,7 @@ function DiningCode(): JSX.Element {
 
   return (
     <FinishCodeCard
+      description="Finish the code below using the dropdown menus. You answer will be checked for the case where n = 5."
       correct_answer={[
         factorial(5) ==
           selectedfactorial(
@@ -89,7 +90,6 @@ function DiningCode(): JSX.Element {
     >
       <div className="code-component-container">
         <div className="factorial-text">
-          <div>In this example, we will use n = 5.</div>
           <div>factorial(n):</div>
           <span>if</span>
           <IntroDropdown
@@ -119,4 +119,4 @@ function DiningCode(): JSX.Element {
   );
 }
 
-export default DiningCode;
+export default IntroCode;
