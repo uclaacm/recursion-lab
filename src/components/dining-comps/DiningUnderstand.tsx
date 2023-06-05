@@ -42,6 +42,7 @@ function DiningUnderstand(): JSX.Element {
       } else if (this.right) {
         if (this.name === 'Lea') {
           description += 'nobody!';
+          return description;
         } else {
           description += `${this.right.name}.`;
         }
@@ -114,50 +115,52 @@ function DiningUnderstand(): JSX.Element {
         following, the total number of minutes increases. The result represents
         how much time will have passed until your call with Lea is over, etc.{' '}
       </p>
-      {currentIndex < friends.length - 1 && (
-        <button className="buttons" onClick={handlePrevious}>
-          Previous
-        </button>
-      )}
+      <div className="button-container">
+        {currentIndex < friends.length - 1 && (
+          <button className="buttons" onClick={handlePrevious}>
+            Previous
+          </button>
+        )}
 
-      {currentIndex > 0 && (
-        <button className="buttons" onClick={handleNext}>
-          Next
-        </button>
-      )}
-      <div className="stack-output">
-        <div className="output-container">
-          <div className="output-container-2">
+        {currentIndex > 0 && (
+          <button className="buttons" onClick={handleNext}>
+            Next
+          </button>
+        )}
+        <div className="stack-output">
+          <div className="output-container">
+            <div className="output-container-2">
+              {renderedItems
+                .slice()
+                .reverse()
+                .map((friend, index) => (
+                  <div key={index} className="output-divider output-divider-2">
+                    <div className="profile-container">
+                      <div>
+                        <div className="friend-name">{friend.name}</div>
+                        <div>{friend.minutes} min</div>
+                      </div>
+                      <div className="photo-name">
+                        <img src={friend.imageUrl} alt={friend.name} />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
+          <div className="output-box">
             {renderedItems
               .slice()
               .reverse()
               .map((friend, index) => (
-                <div key={index} className="output-divider output-divider-2">
-                  <div className="profile-container">
-                    <div>
-                      <div className="friend-name">{friend.name}</div>
-                      <div>{friend.minutes} min</div>
-                    </div>
-                    <div className="photo-name">
-                      <img src={friend.imageUrl} alt={friend.name} />
-                    </div>
-                  </div>
+                <div key={index}>
+                  <div>{friend.callDescription()}</div>
+                  {index === renderedItems.length - 1 && (
+                    <div>Total Minutes: {totalMinutes}</div>
+                  )}
                 </div>
               ))}
           </div>
-        </div>
-        <div className="output-box">
-          {renderedItems
-            .slice()
-            .reverse()
-            .map((friend, index) => (
-              <div key={index}>
-                <div>{friend.callDescription()}</div>
-                {index === renderedItems.length - 1 && (
-                  <div>Total Minutes: {totalMinutes}</div>
-                )}
-              </div>
-            ))}
         </div>
       </div>
     </div>
