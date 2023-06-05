@@ -42,9 +42,8 @@ function DiningUnderstand(): JSX.Element {
       } else if (this.right) {
         if (this.name === 'Lea') {
           description += 'nobody!';
-        }
-        else {
-        description += `${this.right.name}.`;
+        } else {
+          description += `${this.right.name}.`;
         }
       } else {
         description += 'nobody!';
@@ -52,9 +51,6 @@ function DiningUnderstand(): JSX.Element {
       description += ` This call takes ${this.minutes} minutes.`;
       return description;
     }
-
-    
-    
   }
 
   const friends: Friend[] = [
@@ -77,7 +73,6 @@ function DiningUnderstand(): JSX.Element {
   friends[4].left = friends[3];
   friends[4].right = null;
   // Set relationships
-
 
   // const [currentIndex, setCurrentIndex] = useState(friends.length - 1);
   // const [renderedItems, setRenderedItems] = useState<Friend[]>([friends[friends.length - 1]]);
@@ -140,10 +135,10 @@ function DiningUnderstand(): JSX.Element {
                 <div key={index} className="output-divider output-divider-2">
                   <div className="profile-container">
                     <div>
+                      <div className="friend-name">{friend.name}</div>
                       <div>{friend.minutes} min</div>
                     </div>
                     <div className="photo-name">
-                      <div>{friend.name}</div>
                       <img src={friend.imageUrl} alt={friend.name} />
                     </div>
                   </div>
