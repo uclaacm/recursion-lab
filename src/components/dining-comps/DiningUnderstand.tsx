@@ -19,6 +19,7 @@ function DiningUnderstand(): JSX.Element {
     imageUrl: string;
     left: Friend | null;
     right: Friend | null;
+    totalCallTime: number;
 
     constructor(
       minutes: number,
@@ -32,6 +33,7 @@ function DiningUnderstand(): JSX.Element {
       this.imageUrl = imageUrl;
       this.left = left;
       this.right = right;
+      this.totalCallTime = minutes;
     }
     callDescription(): string {
       let description = `${this.name} is on a call with `;
@@ -95,6 +97,14 @@ function DiningUnderstand(): JSX.Element {
       setTotalMinutes((prevTotal) => prevTotal + nextFriend.minutes); // Update total minutes
       setRenderedItems((prevItems) => [...prevItems, nextFriend]);
       setCurrentIndex(nextIndex);
+
+      if (nextIndex === 0) {
+        let totalCallTimeSoFar = nextFriend.minutes;
+        for (let i = nextIndex + 1; i < friends.length; i++) {
+          totalCallTimeSoFar += friends[i].minutes;
+          friends[i].totalCallTime = totalCallTimeSoFar;
+        }
+      }
     }
   };
 
@@ -110,27 +120,27 @@ function DiningUnderstand(): JSX.Element {
 
   return (
     <div>
+      {/* <p>
+        The call stack starts at Sam. As each person calls the next person
+        following, the total number of minutes increases. The result represents
+        how much time will have passed until your call with Lea is over, etc.{' '}
+      </p> */}
       <p>
         The call stack starts at Sam. As each person calls the next person
         following, the total number of minutes increases. The result represents
         how much time will have passed until your call with Lea is over, etc.{' '}
+        <strong>
+          Now, with the new feature, you can see the total call time for each friend, 
+          which represents the total time it will take for their call and all subsequent 
+          calls to finish.
+        </strong>
       </p>
-      <div className="button-container">
-        {currentIndex < friends.length - 1 && (
-          <button className="buttons" onClick={handlePrevious}>
-            Previous
-          </button>
-        )}
 
-        {currentIndex > 0 && (
-          <button className="buttons" onClick={handleNext}>
-            Next
-          </button>
-        )}
+      <div className="button-container">
         <div className="stack-output">
           <div className="output-container">
             <div className="output-container-2">
-              {renderedItems
+              {/* {renderedItems
                 .slice()
                 .reverse()
                 .map((friend, index) => (
@@ -145,6 +155,22 @@ function DiningUnderstand(): JSX.Element {
                       </div>
                     </div>
                   </div>
+                ))} */}
+                {renderedItems
+                  .slice()
+                  .reverse()
+                  .map((friend, index) => (
+                    <div key={index} className="output-divider output-divider-2">
+                      <div className="profile-container">
+                        <div>
+                          <div className="friend-name">{friend.name}</div>
+                          <div>{friend.minutes} min</div>
+                        </div>
+                        <div className="photo-name">
+                          <img src={friend.imageUrl} alt={friend.name} />
+                        </div>
+                      </div>
+                    </div>
                 ))}
             </div>
           </div>
@@ -162,6 +188,17 @@ function DiningUnderstand(): JSX.Element {
               ))}
           </div>
         </div>
+        {currentIndex < friends.length - 1 && (
+          <button className="buttons" onClick={handlePrevious}>
+            Previous
+          </button>
+        )}
+
+        {currentIndex > 0 && (
+          <button className="buttons" onClick={handleNext}>
+            Next
+          </button>
+        )}
       </div>
     </div>
   );
