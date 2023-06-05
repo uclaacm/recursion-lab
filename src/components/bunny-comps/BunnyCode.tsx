@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { options_array } from '../../types';
 import BunnyCodeDropdown from '../../components/intro_comps/intro_dropdown';
 import FinishCodeCard from '../../components/shared/FinishCode';
+import { options_array } from '../../types';
 
 function BunnyCode(): JSX.Element {
   const [isCorrect] = useState([false, false, false]);
@@ -20,79 +20,95 @@ function BunnyCode(): JSX.Element {
     if (n <= 1) {
       return n;
     }
-    return recurFib(n-2) + recurFib(n - 1);
+    return recurFib(n - 2) + recurFib(n - 1);
   }
 
   function selectedRecurFib(
     startValue: number,
     ifStatement: string,
     ifReturnVal: string,
-    functionReturnVal: string,
-  ):number{
-    if  (ifStatement == 'n > 1'){
-      return startValue
-    }
-    else if (ifStatement == 'n <= 1' && ifReturnVal=='n' && functionReturnVal == 'fib(n-1) + fib(n-2)') {
-      return nLess1NFib(startValue)
-    }
-    else if (ifStatement == 'n <= 1' && ifReturnVal=='0' && functionReturnVal == 'fib(n-1) + fib(n-2)') {
-      return nLess10Fib(startValue)
-    }
-    else if (ifStatement == 'n <= 1' && ifReturnVal=='1' && functionReturnVal == 'fib(n-1) + fib(n-2)') {
-      return nLess11Fib(startValue)
+    functionReturnVal: string
+  ): number {
+    if (ifStatement == 'n > 1') {
+      return startValue;
+    } else if (
+      ifStatement == 'n <= 1' &&
+      ifReturnVal == 'n' &&
+      functionReturnVal == 'fib(n-1) + fib(n-2)'
+    ) {
+      return nLess1NFib(startValue);
+    } else if (
+      ifStatement == 'n <= 1' &&
+      ifReturnVal == '0' &&
+      functionReturnVal == 'fib(n-1) + fib(n-2)'
+    ) {
+      return nLess10Fib(startValue);
+    } else if (
+      ifStatement == 'n <= 1' &&
+      ifReturnVal == '1' &&
+      functionReturnVal == 'fib(n-1) + fib(n-2)'
+    ) {
+      return nLess11Fib(startValue);
+    } else if (
+      ifStatement == 'n <= 1' &&
+      ifReturnVal == 'n' &&
+      functionReturnVal == 'n + fib(n-1)'
+    ) {
+      return nLess1NSum(startValue);
+    } else if (
+      ifStatement == 'n <= 1' &&
+      ifReturnVal == '0' &&
+      functionReturnVal == 'n + fib(n-1)'
+    ) {
+      return nLess10Sum(startValue);
+    } else if (
+      ifStatement == 'n <= 1' &&
+      ifReturnVal == '1' &&
+      functionReturnVal == 'n + fib(n-1)'
+    ) {
+      return nLess11Sum(startValue);
     }
 
-    else if (ifStatement == 'n <= 1' && ifReturnVal=='n' && functionReturnVal == 'n + fib(n-1)') {
-      return nLess1NSum(startValue)
-    }
-    else if (ifStatement == 'n <= 1' && ifReturnVal=='0' && functionReturnVal == 'n + fib(n-1)') {
-      return nLess10Sum(startValue)
-    }
-    else if (ifStatement == 'n <= 1' && ifReturnVal=='1' && functionReturnVal == 'n + fib(n-1)') {
-      return nLess11Sum(startValue)
-    }
-
-    return 0
+    return 0;
   }
 
-  function nLess1NFib (n:number):number{
+  function nLess1NFib(n: number): number {
     if (n <= 1) {
       return n;
     }
-    return nLess1NFib(n-2) + nLess1NFib(n - 1);
+    return nLess1NFib(n - 2) + nLess1NFib(n - 1);
   }
-  function nLess10Fib (n:number):number{
+  function nLess10Fib(n: number): number {
     if (n <= 1) {
       return 0;
     }
-    return nLess10Fib(n-2) + nLess10Fib(n - 1);
+    return nLess10Fib(n - 2) + nLess10Fib(n - 1);
   }
-  function nLess11Fib (n:number):number{
+  function nLess11Fib(n: number): number {
     if (n <= 1) {
       return 1;
     }
-    return nLess11Fib(n-2) + nLess11Fib(n - 1);
+    return nLess11Fib(n - 2) + nLess11Fib(n - 1);
   }
 
-  function nLess1NSum (n:number):number{
+  function nLess1NSum(n: number): number {
     if (n <= 1) {
       return n;
     }
-    return n + nLess1NSum(n-1)
+    return n + nLess1NSum(n - 1);
   }
-  function nLess10Sum (n:number):number{
+  function nLess10Sum(n: number): number {
     if (n <= 1) {
       return 0;
     }
-    return n + nLess10Sum(n-1)
+    return n + nLess10Sum(n - 1);
   }
-  function nLess11Sum (n:number):number{
+  function nLess11Sum(n: number): number {
     if (n <= 1) {
       return 1;
     }
-    return n + nLess11Sum(n-1)
+    return n + nLess11Sum(n - 1);
   }
-
 
   const options1: options_array[] = [
     {
@@ -102,7 +118,7 @@ function BunnyCode(): JSX.Element {
     {
       value: 'n > 1',
       label: 'n > 1',
-    }
+    },
   ];
   const options2: options_array[] = [
     {
@@ -142,13 +158,18 @@ function BunnyCode(): JSX.Element {
       <FinishCodeCard
         // correct="Put the base case and calculate fib(n) by adding fib(n-1) and fib(n-2)"
         // incorrect="Combine the 2 code from `base case` and `recursive formula` into your answer."
-        correct_answer={[recurFib(7) == selectedRecurFib(7,selectedanswer.question1,
-          selectedanswer.question2,
-          selectedanswer.question3)]}
+        correct_answer={[
+          recurFib(7) ==
+            selectedRecurFib(
+              7,
+              selectedanswer.question1,
+              selectedanswer.question2,
+              selectedanswer.question3
+            ),
+        ]}
         index={0}
         given_function={() => recurFib(7)}
-          
-        chosen_function= {() =>
+        chosen_function={() =>
           selectedRecurFib(
             7,
             selectedanswer.question1,
