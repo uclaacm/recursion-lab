@@ -180,13 +180,13 @@ function BunnyCode(): JSX.Element {
         answer_key={answerKey}
       >
         <div>
-          def fib(n):
+          <span style={{ color: 'purple' }}> def fib(n): </span>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <br />
-          if
+          <b style={{ color: 'purple' }}> if </b>
           <BunnyCodeDropdown
             options={options1}
             correct_answer={isCorrect}
@@ -198,7 +198,8 @@ function BunnyCode(): JSX.Element {
           />
           <br />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <b style={{ color: 'purple' }}>return </b>
           <BunnyCodeDropdown
             options={options2}
             correct_answer={isCorrect}
@@ -209,7 +210,8 @@ function BunnyCode(): JSX.Element {
             }
           />
           <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <b style={{ color: 'purple' }}>return</b>
           <BunnyCodeDropdown
             options={options3}
             correct_answer={isCorrect}
