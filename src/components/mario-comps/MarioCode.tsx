@@ -253,6 +253,9 @@ function MarioCode(): JSX.Element {
     if (startValue <= ifStatementVal) {
       return ifReturnVal;
     }
+    if (startValue < 0) {
+      return -100;
+    }
     return (
       startValue +
       lessThanMinusOneNRecurSum(startValue - 1, ifStatementVal, ifReturnVal)
@@ -266,6 +269,9 @@ function MarioCode(): JSX.Element {
   ): number {
     if (startValue <= ifStatementVal) {
       return ifReturnVal;
+    }
+    if (startValue < 0) {
+      return -100;
     }
     return (
       startValue +
@@ -286,6 +292,9 @@ function MarioCode(): JSX.Element {
     if (startValue <= ifStatementVal) {
       return ifReturnVal;
     }
+    if (startValue < 0) {
+      return -100;
+    }
     return (
       startValue -
       1 +
@@ -305,6 +314,9 @@ function MarioCode(): JSX.Element {
     if (startValue <= ifStatementVal) {
       return ifReturnVal;
     }
+    if (startValue < 0) {
+      return -100;
+    }
     return (
       startValue +
       lessThanMinusTwoNMinusOneRecurSum(
@@ -322,6 +334,9 @@ function MarioCode(): JSX.Element {
   ): number {
     if (startValue <= ifStatementVal) {
       return ifReturnVal;
+    }
+    if (startValue < 0) {
+      return -100;
     }
     return (
       startValue +
@@ -342,6 +357,9 @@ function MarioCode(): JSX.Element {
     if (startValue <= ifStatementVal) {
       return ifReturnVal;
     }
+    if (startValue < 0) {
+      return -100;
+    }
     return (
       startValue -
       1 +
@@ -361,6 +379,9 @@ function MarioCode(): JSX.Element {
     if (startValue <= ifStatementVal) {
       return ifReturnVal;
     }
+    if (startValue < 0) {
+      return -100;
+    }
     return (
       startValue +
       lessThanMinusThreeNMinusOneRecurSum(
@@ -378,6 +399,9 @@ function MarioCode(): JSX.Element {
   ): number {
     if (startValue <= ifStatementVal) {
       return ifReturnVal;
+    }
+    if (startValue < 0) {
+      return -100;
     }
     return (
       startValue +
@@ -398,6 +422,9 @@ function MarioCode(): JSX.Element {
     if (startValue == ifStatementVal) {
       return ifReturnVal;
     }
+    if (startValue < 0) {
+      return -100;
+    }
     return (
       startValue -
       1 +
@@ -417,6 +444,9 @@ function MarioCode(): JSX.Element {
     if (startValue == ifStatementVal) {
       return ifReturnVal;
     }
+    if (startValue < 0) {
+      return -100;
+    }
     return (
       startValue +
       equalMinusOneNRecurSum(startValue - 1, ifStatementVal, ifReturnVal)
@@ -430,6 +460,9 @@ function MarioCode(): JSX.Element {
   ): number {
     if (startValue == ifStatementVal) {
       return ifReturnVal;
+    }
+    if (startValue < 0) {
+      return -100;
     }
     return (
       startValue +
@@ -445,6 +478,9 @@ function MarioCode(): JSX.Element {
   ): number {
     if (startValue == ifStatementVal) {
       return ifReturnVal;
+    }
+    if (startValue < 0) {
+      return -100;
     }
     return (
       startValue -
@@ -465,6 +501,9 @@ function MarioCode(): JSX.Element {
     if (startValue == ifStatementVal) {
       return ifReturnVal;
     }
+    if (startValue < 0) {
+      return -100;
+    }
     return (
       startValue +
       equalMinusTwoNRecurSum(startValue - 2, ifStatementVal, ifReturnVal)
@@ -478,6 +517,9 @@ function MarioCode(): JSX.Element {
   ): number {
     if (startValue == ifStatementVal) {
       return ifReturnVal;
+    }
+    if (startValue < 0) {
+      return -100;
     }
     return (
       startValue +
@@ -493,6 +535,9 @@ function MarioCode(): JSX.Element {
   ): number {
     if (startValue == ifStatementVal) {
       return ifReturnVal;
+    }
+    if (startValue < 0) {
+      return -100;
     }
     return (
       startValue -
@@ -513,6 +558,9 @@ function MarioCode(): JSX.Element {
     if (startValue == ifStatementVal) {
       return ifReturnVal;
     }
+    if (startValue < 0) {
+      return -100;
+    }
     return (
       startValue +
       equalMinusThreeNMinusOneRecurSum(
@@ -530,6 +578,9 @@ function MarioCode(): JSX.Element {
   ): number {
     if (startValue == ifStatementVal) {
       return ifReturnVal;
+    }
+    if (startValue < 0) {
+      return -100;
     }
     return (
       startValue +
