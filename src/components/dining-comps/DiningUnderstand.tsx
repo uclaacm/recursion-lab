@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Jane from '../../assets/dining_guests/Jane.png';
 import Lea from '../../assets/dining_guests/Lea.png';
 import May from '../../assets/dining_guests/May.png';
@@ -57,11 +57,11 @@ function DiningUnderstand(): JSX.Element {
   }
 
   const friends: Friend[] = [
-    new Friend(10, 'Lea', Lea),
-    new Friend(20, 'May', May),
-    new Friend(30, 'Jane', Jane),
-    new Friend(40, 'Ryan', Ryan),
-    new Friend(50, 'Sam', Sam),
+    new Friend(0, 'Lea', Lea),
+    new Friend(10, 'May', May),
+    new Friend(20, 'Jane', Jane),
+    new Friend(30, 'Ryan', Ryan),
+    new Friend(40, 'Sam', Sam),
   ];
 
   // Set relationships
@@ -81,6 +81,8 @@ function DiningUnderstand(): JSX.Element {
   // const [renderedItems, setRenderedItems] = useState<Friend[]>([friends[friends.length - 1]]);
   // const [totalMinutes, setTotalMinutes] = useState(renderedItems.reduce((total, friend) => total +
   // friend.minutes, 0));
+  const [callSummary, setCallSummary] = useState<string[]>([]);
+
 
   const [currentIndex, setCurrentIndex] = useState(friends.length - 1);
   const [renderedItems, setRenderedItems] = useState<Friend[]>([
@@ -90,24 +92,55 @@ function DiningUnderstand(): JSX.Element {
     renderedItems.reduce((total, friend) => total + friend.minutes, 0)
   );
 
+  // const handleNext = () => {
+  //   if (currentIndex > 0) {
+  //     const nextIndex = currentIndex - 1;
+  //     const nextFriend = friends[nextIndex];
+  //     setTotalMinutes((prevTotal) => prevTotal + nextFriend.minutes); // Update total minutes
+  //     setRenderedItems((prevItems) => [...prevItems, nextFriend]);
+  //     setCurrentIndex(nextIndex);
+
+  //     if (nextIndex === 0) {
+  //       let totalCallTimeSoFar = nextFriend.minutes;
+  //       let summary = '';
+  //       for (let i = nextIndex + 1; i < friends.length; i++) {
+  //         totalCallTimeSoFar += friends[i].minutes;
+  //         friends[i].totalCallTime = totalCallTimeSoFar;
+  //         summary += `${friends[i].name}’s call took ${friends[i].minutes} + `;
+  //       }
+  //       summary += `0 minutes.\nZ = ${totalCallTimeSoFar}\nTherefore, ${friends[friends.length - 1].name}’s call took Z minutes!`;
+  //       setCallSummary(summary);
+  //     }
+  //   }
+  // };
   const handleNext = () => {
     if (currentIndex > 0) {
       const nextIndex = currentIndex - 1;
       const nextFriend = friends[nextIndex];
-      setTotalMinutes((prevTotal) => prevTotal + nextFriend.minutes); // Update total minutes
+      setTotalMinutes((prevTotal) => prevTotal + nextFriend.minutes);
       setRenderedItems((prevItems) => [...prevItems, nextFriend]);
       setCurrentIndex(nextIndex);
 
+      // if (nextIndex === 3) {
+      //   const finalLine = `${friends[0].name}’s call took 0 minutes!`;
+      //   setCallSummary((prevSummary) => [...prevSummary, finalLine]);
+      // }
+      let totalCallTimeSoFar = nextFriend.minutes;
+      let summary = `${friends[(friends.length - 2) - nextIndex].name}’s call took `;
+      for (let i = friends.length - 1; i > nextIndex; i--) {
+        totalCallTimeSoFar += friends[i].minutes;
+        summary += `${friends[friends.length - i].minutes} + `;
+      }
+      summary += `0 minutes.`;
+      setCallSummary((prevSummary) => [...prevSummary, summary]);
+
       if (nextIndex === 0) {
-        let totalCallTimeSoFar = nextFriend.minutes;
-        for (let i = nextIndex + 1; i < friends.length; i++) {
-          totalCallTimeSoFar += friends[i].minutes;
-          friends[i].totalCallTime = totalCallTimeSoFar;
-        }
+        const finalLine = `Therefore, ${friends[friends.length - 1].name}’s call took ${totalCallTimeSoFar} minutes!`;
+        setCallSummary((prevSummary) => [...prevSummary, finalLine]);
       }
     }
   };
-
+  
   const handlePrevious = () => {
     if (currentIndex < friends.length - 1) {
       const prevIndex = currentIndex + 1;
@@ -115,24 +148,22 @@ function DiningUnderstand(): JSX.Element {
       setTotalMinutes((prevTotal) => prevTotal - prevFriend.minutes); // Update total minutes
       setRenderedItems((prevItems) => prevItems.slice(0, prevItems.length - 1));
       setCurrentIndex(prevIndex);
+
+      const summaryLength = friends.length - prevIndex;
+      setCallSummary((prevSummary) => prevSummary.slice(0, summaryLength));
     }
   };
 
   return (
     <div>
-      {/* <p>
-        The call stack starts at Sam. As each person calls the next person
-        following, the total number of minutes increases. The result represents
-        how much time will have passed until your call with Lea is over, etc.{' '}
-      </p> */}
       <p>
         The call stack starts at Sam. As each person calls the next person
         following, the total number of minutes increases. The result represents
         how much time will have passed until your call with Lea is over, etc.{' '}
         <strong>
-          Now, with the new feature, you can see the total call time for each friend, 
-          which represents the total time it will take for their call and all subsequent 
-          calls to finish.
+          Now, with the new feature, you can see the total call time for each
+          friend, which represents the total time it will take for their call
+          and all subsequent calls to finish.
         </strong>
       </p>
 
@@ -156,21 +187,21 @@ function DiningUnderstand(): JSX.Element {
                     </div>
                   </div>
                 ))} */}
-                {renderedItems
-                  .slice()
-                  .reverse()
-                  .map((friend, index) => (
-                    <div key={index} className="output-divider output-divider-2">
-                      <div className="profile-container">
-                        <div>
-                          <div className="friend-name">{friend.name}</div>
-                          <div>{friend.minutes} min</div>
-                        </div>
-                        <div className="photo-name">
-                          <img src={friend.imageUrl} alt={friend.name} />
-                        </div>
+              {renderedItems
+                .slice()
+                .reverse()
+                .map((friend, index) => (
+                  <div key={index} className="output-divider output-divider-2">
+                    <div className="profile-container">
+                      <div>
+                        <div className="friend-name">{friend.name}</div>
+                        <div>{friend.minutes} min</div>
+                      </div>
+                      <div className="photo-name">
+                        <img src={friend.imageUrl} alt={friend.name} />
                       </div>
                     </div>
+                  </div>
                 ))}
             </div>
           </div>
@@ -186,6 +217,10 @@ function DiningUnderstand(): JSX.Element {
                   )}
                 </div>
               ))}
+              {callSummary.map((line, index) => (
+                <div key={index}>{line}</div>
+              ))}
+
           </div>
         </div>
         {currentIndex < friends.length - 1 && (
@@ -205,3 +240,12 @@ function DiningUnderstand(): JSX.Element {
 }
 
 export default DiningUnderstand;
+/* 
+So Lea’s call took 0 minutes.
+May’s call took {friend[0].right.minutes} + 0 minutes.
+Jane’s call took {friend[1].right.minutes} + {friend[0].right.minutes} + 0 minutes.
+Ryan’s call took {friend[2].right.minutes} + {friend[1].right.minutes} + {friend[0].right.minutes} + 0 minutes.
+Sam’s call took {friend[3].right.minutes} + {friend[2].right.minutes} + {friend[1].right.minutes} + {friend[0].right.minutes} + 0 minutes.
+Z = {friend[3].right.minutes} + {friend[2].right.minutes} + {friend[1].right.minutes} + {friend[0].right.minutes} + 0 
+Therefore, Sam’s call took Z minutes!
+*/

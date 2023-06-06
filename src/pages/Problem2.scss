@@ -45,13 +45,14 @@
   justify-content: end;
   margin: 0 6em;
 }
+
 .photo-name {
   padding: 0.5em;
 }
 
 .photo-name img {
-  max-width: 75%;
   height: auto;
+  max-width: 75%;
 }
 
 @keyframes popIn {
