@@ -25,11 +25,14 @@ const Home: FC = () => {
         </div>
       </div>
       <img className="mario-image" src={marioHomepage} alt="Mario" />
-      <img
-        className="homepage-title"
-        src={homepageTitle}
-        alt="Homepage Title"
-      />
+      <div>
+        <img
+          className="homepage-title"
+          src={homepageTitle}
+          alt="Homepage Title"
+        />
+      </div>
+
       <img className="meadows" src={meadows} alt="Meadows" />
     </div>
   );
