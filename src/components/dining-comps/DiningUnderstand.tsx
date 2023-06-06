@@ -91,28 +91,6 @@ function DiningUnderstand(): JSX.Element {
   const [totalMinutes, setTotalMinutes] = useState(
     renderedItems.reduce((total, friend) => total + friend.minutes, 0)
   );
-
-  // const handleNext = () => {
-  //   if (currentIndex > 0) {
-  //     const nextIndex = currentIndex - 1;
-  //     const nextFriend = friends[nextIndex];
-  //     setTotalMinutes((prevTotal) => prevTotal + nextFriend.minutes); // Update total minutes
-  //     setRenderedItems((prevItems) => [...prevItems, nextFriend]);
-  //     setCurrentIndex(nextIndex);
-
-  //     if (nextIndex === 0) {
-  //       let totalCallTimeSoFar = nextFriend.minutes;
-  //       let summary = '';
-  //       for (let i = nextIndex + 1; i < friends.length; i++) {
-  //         totalCallTimeSoFar += friends[i].minutes;
-  //         friends[i].totalCallTime = totalCallTimeSoFar;
-  //         summary += `${friends[i].name}’s call took ${friends[i].minutes} + `;
-  //       }
-  //       summary += `0 minutes.\nZ = ${totalCallTimeSoFar}\nTherefore, ${friends[friends.length - 1].name}’s call took Z minutes!`;
-  //       setCallSummary(summary);
-  //     }
-  //   }
-  // };
   const handleNext = () => {
     if (currentIndex > 0) {
       const nextIndex = currentIndex - 1;
@@ -131,16 +109,17 @@ function DiningUnderstand(): JSX.Element {
         totalCallTimeSoFar += friends[i].minutes;
         summary += `${friends[friends.length - i].minutes} + `;
       }
-      summary += `0 minutes.`;
+      summary += '0 minutes.';
       setCallSummary((prevSummary) => [...prevSummary, summary]);
 
       if (nextIndex === 0) {
-        const finalLine = `Therefore, ${friends[friends.length - 1].name}’s call took ${totalCallTimeSoFar} minutes!`;
+        const finalLine = `Therefore, ${friends[friends.length - 1].name}’s 
+        call took ${totalCallTimeSoFar} minutes!`;
         setCallSummary((prevSummary) => [...prevSummary, finalLine]);
       }
     }
   };
-  
+
   const handlePrevious = () => {
     if (currentIndex < friends.length - 1) {
       const prevIndex = currentIndex + 1;
@@ -149,7 +128,7 @@ function DiningUnderstand(): JSX.Element {
       setRenderedItems((prevItems) => prevItems.slice(0, prevItems.length - 1));
       setCurrentIndex(prevIndex);
 
-      const summaryLength = friends.length - prevIndex;
+      const summaryLength = friends.length - prevIndex - 1;
       setCallSummary((prevSummary) => prevSummary.slice(0, summaryLength));
     }
   };
@@ -240,12 +219,12 @@ function DiningUnderstand(): JSX.Element {
 }
 
 export default DiningUnderstand;
-/* 
+/*
 So Lea’s call took 0 minutes.
 May’s call took {friend[0].right.minutes} + 0 minutes.
 Jane’s call took {friend[1].right.minutes} + {friend[0].right.minutes} + 0 minutes.
 Ryan’s call took {friend[2].right.minutes} + {friend[1].right.minutes} + {friend[0].right.minutes} + 0 minutes.
 Sam’s call took {friend[3].right.minutes} + {friend[2].right.minutes} + {friend[1].right.minutes} + {friend[0].right.minutes} + 0 minutes.
-Z = {friend[3].right.minutes} + {friend[2].right.minutes} + {friend[1].right.minutes} + {friend[0].right.minutes} + 0 
+Z = {friend[3].right.minutes} + {friend[2].right.minutes} + {friend[1].right.minutes} + {friend[0].right.minutes} + 0
 Therefore, Sam’s call took Z minutes!
 */
