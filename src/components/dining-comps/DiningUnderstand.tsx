@@ -219,12 +219,3 @@ function DiningUnderstand(): JSX.Element {
 }
 
 export default DiningUnderstand;
-/*
-So Lea’s call took 0 minutes.
-May’s call took {friend[0].right.minutes} + 0 minutes.
-Jane’s call took {friend[1].right.minutes} + {friend[0].right.minutes} + 0 minutes.
-Ryan’s call took {friend[2].right.minutes} + {friend[1].right.minutes} + {friend[0].right.minutes} + 0 minutes.
-Sam’s call took {friend[3].right.minutes} + {friend[2].right.minutes} + {friend[1].right.minutes} + {friend[0].right.minutes} + 0 minutes.
-Z = {friend[3].right.minutes} + {friend[2].right.minutes} + {friend[1].right.minutes} + {friend[0].right.minutes} + 0
-Therefore, Sam’s call took Z minutes!
-*/
