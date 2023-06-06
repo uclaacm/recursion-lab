@@ -107,7 +107,9 @@ function FinishCodeCard(props: FinishCodeCardProps): JSX.Element {
             ) : (
               <p className="incorrect-explanation">
                 Incorrect. <br></br>{' '}
-                {`The correct answer is ${givenAnswer}. Your answer was ${chosenAnswer}`}
+                {`The correct answer is ${givenAnswer}. Your answer was ${
+                  chosenAnswer <= -1 ? 'max call stack exceeded' : chosenAnswer
+                }`}
               </p>
             ))}
           <div>
