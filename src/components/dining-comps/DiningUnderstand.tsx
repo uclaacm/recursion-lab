@@ -83,7 +83,6 @@ function DiningUnderstand(): JSX.Element {
   // friend.minutes, 0));
   const [callSummary, setCallSummary] = useState<string[]>([]);
 
-
   const [currentIndex, setCurrentIndex] = useState(friends.length - 1);
   const [renderedItems, setRenderedItems] = useState<Friend[]>([
     friends[friends.length - 1],
@@ -104,7 +103,8 @@ function DiningUnderstand(): JSX.Element {
       //   setCallSummary((prevSummary) => [...prevSummary, finalLine]);
       // }
       let totalCallTimeSoFar = nextFriend.minutes;
-      let summary = `${friends[(friends.length - 2) - nextIndex].name}’s call took `;
+      let summary = `${
+        friends[friends.length - 2 - nextIndex].name}’s call took `;
       for (let i = friends.length - 1; i > nextIndex; i--) {
         totalCallTimeSoFar += friends[i].minutes;
         summary += `${friends[friends.length - i].minutes} + `;
@@ -196,10 +196,9 @@ function DiningUnderstand(): JSX.Element {
                   )}
                 </div>
               ))}
-              {callSummary.map((line, index) => (
-                <div key={index}>{line}</div>
-              ))}
-
+            {callSummary.map((line, index) => (
+              <div key={index}>{line}</div>
+            ))}
           </div>
         </div>
         {currentIndex < friends.length - 1 && (
