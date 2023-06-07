@@ -7,8 +7,10 @@ import Sam from '../../assets/dining_guests/Sam.png';
 import '../../pages/Problem2.scss';
 
 function DiningUnderstand(): JSX.Element {
-  // An step-through animation that allows the user to visualize what exactly the code is doing at every step.
-  // It's the same idea of a function call stack but putting "Friends"/nodes onto the stack rather than functions.
+  // An step-through animation that allows the user to
+  //visualize what exactly the code is doing at every step.
+  // It's the same idea of a function call stack
+  // but putting "Friends"/nodes onto the stack rather than functions.
   // The output box is a verbose version of what's happening in the stack.
   // The user can click "Next" to go to the next step in the animation.
   // The user can click "Previous" to go to the previous step in the animation.
@@ -83,7 +85,6 @@ function DiningUnderstand(): JSX.Element {
   // friend.minutes, 0));
   const [callSummary, setCallSummary] = useState<string[]>([]);
 
-
   const [currentIndex, setCurrentIndex] = useState(friends.length - 1);
   const [renderedItems, setRenderedItems] = useState<Friend[]>([
     friends[friends.length - 1],
@@ -108,7 +109,8 @@ function DiningUnderstand(): JSX.Element {
   //         friends[i].totalCallTime = totalCallTimeSoFar;
   //         summary += `${friends[i].name}’s call took ${friends[i].minutes} + `;
   //       }
-  //       summary += `0 minutes.\nZ = ${totalCallTimeSoFar}\nTherefore, ${friends[friends.length - 1].name}’s call took Z minutes!`;
+  //       summary += `0 minutes.\nZ = ${totalCallTimeSoFar}\nTherefore,
+  //       ${friends[friends.length - 1].name}’s call took Z minutes!`;
   //       setCallSummary(summary);
   //     }
   //   }
@@ -126,21 +128,25 @@ function DiningUnderstand(): JSX.Element {
       //   setCallSummary((prevSummary) => [...prevSummary, finalLine]);
       // }
       let totalCallTimeSoFar = nextFriend.minutes;
-      let summary = `${friends[(friends.length - 2) - nextIndex].name}’s call took `;
+      let summary = `${
+        friends[friends.length - 2 - nextIndex].name
+      }’s call took `;
       for (let i = friends.length - 1; i > nextIndex; i--) {
         totalCallTimeSoFar += friends[i].minutes;
         summary += `${friends[friends.length - i].minutes} + `;
       }
-      summary += `0 minutes.`;
+      summary += '0 minutes.';
       setCallSummary((prevSummary) => [...prevSummary, summary]);
 
       if (nextIndex === 0) {
-        const finalLine = `Therefore, ${friends[friends.length - 1].name}’s call took ${totalCallTimeSoFar} minutes!`;
+        const finalLine = `Therefore, ${
+          friends[friends.length - 1].name
+        }’s call took ${totalCallTimeSoFar} minutes!`;
         setCallSummary((prevSummary) => [...prevSummary, finalLine]);
       }
     }
   };
-  
+
   const handlePrevious = () => {
     if (currentIndex < friends.length - 1) {
       const prevIndex = currentIndex + 1;
@@ -217,10 +223,9 @@ function DiningUnderstand(): JSX.Element {
                   )}
                 </div>
               ))}
-              {callSummary.map((line, index) => (
-                <div key={index}>{line}</div>
-              ))}
-
+            {callSummary.map((line, index) => (
+              <div key={index}>{line}</div>
+            ))}
           </div>
         </div>
         {currentIndex < friends.length - 1 && (
@@ -240,12 +245,13 @@ function DiningUnderstand(): JSX.Element {
 }
 
 export default DiningUnderstand;
-/* 
+/*
 So Lea’s call took 0 minutes.
 May’s call took {friend[0].right.minutes} + 0 minutes.
 Jane’s call took {friend[1].right.minutes} + {friend[0].right.minutes} + 0 minutes.
 Ryan’s call took {friend[2].right.minutes} + {friend[1].right.minutes} + {friend[0].right.minutes} + 0 minutes.
-Sam’s call took {friend[3].right.minutes} + {friend[2].right.minutes} + {friend[1].right.minutes} + {friend[0].right.minutes} + 0 minutes.
-Z = {friend[3].right.minutes} + {friend[2].right.minutes} + {friend[1].right.minutes} + {friend[0].right.minutes} + 0 
+Sam’s call took {friend[3].right.minutes} +
+{friend[2].right.minutes} + {friend[1].right.minutes} + {friend[0].right.minutes} + 0 minutes.
+Z = {friend[3].right.minutes} + {friend[2].right.minutes} + {friend[1].right.minutes} + {friend[0].right.minutes} + 0
 Therefore, Sam’s call took Z minutes!
 */
