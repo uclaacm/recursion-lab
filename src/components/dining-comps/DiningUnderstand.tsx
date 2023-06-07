@@ -147,6 +147,7 @@ function DiningUnderstand(): JSX.Element {
     }
   };
 
+
   const handlePrevious = () => {
     if (currentIndex < friends.length - 1) {
       const prevIndex = currentIndex + 1;
@@ -155,7 +156,7 @@ function DiningUnderstand(): JSX.Element {
       setRenderedItems((prevItems) => prevItems.slice(0, prevItems.length - 1));
       setCurrentIndex(prevIndex);
 
-      const summaryLength = friends.length - prevIndex;
+      const summaryLength = friends.length - prevIndex - 1;
       setCallSummary((prevSummary) => prevSummary.slice(0, summaryLength));
     }
   };
