@@ -147,7 +147,6 @@ function DiningUnderstand(): JSX.Element {
     }
   };
 
-
   const handlePrevious = () => {
     if (currentIndex < friends.length - 1) {
       const prevIndex = currentIndex + 1;
