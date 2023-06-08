@@ -26,18 +26,16 @@ const Problem2: FC = () => {
               backgroundColor: 'white',
             }}
           >
-            <div className="main-title">Dining Out</div>
-            <p className="setup">
-              Setup: Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Sem viverra aliquet eget sit. Feugiat nibh sed pulvinar proin
-              gravida hendrerit lectus. Eget velit aliquet sagittis id
-              consectetur. In nibh mauris cursus mattis molestie a iaculis at
-              erat. Id aliquet lectus proin nibh nisl condimentum. Pellentesque
-              habitant morbi tristique senectus et netus et malesuada fames.
-              Lectus arcu bibendum at varius vel pharetra. Non quam lacus
-              suspendisse faucibus interdum posuere lorem ipsum dolor. Malesuada
-              proin libero nunc consequat interdum varius.
+            <div className="problem2-title">Dining Out</div>
+            <p className="dining-setup">
+              Ring Ring! It&apos;s lunch time. You live in a world where
+              everyone is always on the phone, so you need to take into account
+              the total time it will take to call your friend, especially if
+              your friend is on a phone call with his friend and his friend is
+              on a call with his friend, and so on. Assume each person can be on
+              the phone with at most two friends and you know how long each
+              direct phone call will be. Sounds like a binary tree, doesn&apos;t
+              it...
             </p>
             <div className="circular-diagram">
               <img src={CircularDiagram} alt="Circular Diagram with names" />
