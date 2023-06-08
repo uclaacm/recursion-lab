@@ -12,7 +12,7 @@ function IntroCode(): JSX.Element {
 
   const [answerKey] = useState({
     question1: 'n==0',
-    question2: '0',
+    question2: '1',
   });
 
   const options0: options_array[] = [
