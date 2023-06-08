@@ -6,7 +6,7 @@
 }
 
 .output-divider {
-  background-color: #fbb;
+  background-color: #e0e0e0;
   border: 1px solid #000;
   display: block;
   margin: 1em auto;
@@ -22,19 +22,37 @@
   flex-direction: row;
 }
 
+.friend-name {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0 1em;
+}
+
 .output-box {
-  background-color: #bbb;
+  background-color: #d9d9d9;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   width: 100%;
 }
 
 .output-container-2 {
-  background-color: #2a5e70;
+  background-color: #007da3;
   display: flex;
   flex-direction: column;
-  height: 825px;
+  height: 40em;
   justify-content: center;
   justify-content: end;
-  margin: 0 3em;
+  margin: 0 6em;
+}
+
+.photo-name {
+  padding: 0.5em;
+}
+
+.photo-name img {
+  height: auto;
+  max-width: 75%;
 }
 
 @keyframes popIn {
