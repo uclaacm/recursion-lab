@@ -1,4 +1,4 @@
-# Your Teach LA Project Here!
+# Recursion Excursion
 
 ![Production Build](https://github.com/uclaacm/recursion-lab/workflows/Production%20Build/badge.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -74,7 +74,7 @@ yarn run build
 
 ## Contribution Workflow
 
-Thanks for your interest in contributing to recursion-lab! ❤️
+Thanks for your interest in contributing to Recursion Excursion! ❤️
 
 Here's a quick guide on how to get started.
 
@@ -136,12 +136,6 @@ or
 ```
 
 The process for `stylelint` is very similar.
-
-### Husky is yelling at me and not letting me commit :(
-
-Add the `-n` flag to your commit message to skip Husky's auto-linting.
-
-EG: `git commit -m "changes" -n`
 
 ### Assets are angry and won't accept <x filetype>
 
