@@ -26,8 +26,8 @@ const Problem2: FC = () => {
               backgroundColor: 'white',
             }}
           >
-            <div className="main-title">Dining Out</div>
-            <p className="setup">
+            <div className="problem2-title">Dining Out</div>
+            <p className="dining-setup">
               Setup: Lorem ipsum dolor sit amet, consectetur adipiscing elit,
               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
               Sem viverra aliquet eget sit. Feugiat nibh sed pulvinar proin

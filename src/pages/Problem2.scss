@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins:wght@600&display=swap');
+
+.problem2-title {
+  font-family: 'Montserrat', cursive;
+  font-size: 3em !important;
+  font-weight: bolder !important;
+  text-align: left;
+}
+
+.dining-setup {
+  font-family: 'Poppins', cursive;
+  padding: 1em 0;
+  text-align: left;
+}
+
 .profile-container {
   align-items: center;
   display: flex;

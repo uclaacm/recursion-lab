@@ -137,7 +137,6 @@ or
 
 The process for `stylelint` is very similar.
 
-
 ### Assets are angry and won't accept <x filetype>
 
 Our webpack set-up currently accepts asset files with the following extensions: `png, svg, jpg/jpeg, gif, mp3, ttf`
