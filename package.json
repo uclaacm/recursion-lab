@@ -18,7 +18,7 @@
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.12.3",
     "@types/react": "^18.2.9",
-    "@types/react-dom": "^18.2.1",
+    "@types/react-dom": "^18.2.6",
     "@types/webpack-env": "^1.18.1",
     "babelify": "^10.0.0",
     "browserify": "^17.0.0",
