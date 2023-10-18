@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../../styles/Staircase.scss';
 
 interface TriangleProps {
-  numRows: number;
+  numColumns: number;
 }
 
 interface BlockProps {
@@ -10,21 +10,21 @@ interface BlockProps {
   key: number;
 }
 
-const Triangle: React.FC<TriangleProps> = ({ numRows }) => {
-  const rows = Array(numRows).fill(null);
-  const triangleRows = rows.map((_, i) => {
-    const row = Array(i + 1)
+const Triangle: React.FC<TriangleProps> = ({ numColumns }) => {
+  const columns = Array(numColumns).fill(null);
+  const triangleColumns = columns.map((_, i) => {
+    const column = Array(i + 1)
       .fill(null)
       .map((__, j) => {
-        return <Block key={i * numRows + j} index={i} />;
+        return <Block key={i * numColumns + j} index={i} />;
       });
     return (
-      <div key={i} className="row">
-        {row}
+      <div key={i} className="column">
+        {column}
       </div>
     );
   });
-  return <div className="triangle">{triangleRows}</div>;
+  return <div className="triangle">{triangleColumns}</div>;
 };
 
 const Block: React.FC<BlockProps> = ({ index }) => {
@@ -32,20 +32,20 @@ const Block: React.FC<BlockProps> = ({ index }) => {
 };
 
 function Staircase(): JSX.Element {
-  const [numRows, setNumRows] = useState<number>(1);
+  const [numColumns, setNumColumns] = useState<number>(1);
   const [sumEnumerated, setSumEnumerated] = useState<string>('');
-  const sum = (numRows * (numRows + 1)) / 2;
+  const sum = (numColumns * (numColumns + 1)) / 2;
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     const value = parseInt(e.currentTarget.value);
-    let rows = '';
+    let columns = '';
     for (let i = 1; i < value; i++) {
-      rows += i.toString();
-      rows += ' + ';
+      columns += i.toString();
+      columns += ' + ';
     }
-    rows += value.toString();
-    setSumEnumerated(rows);
-    setNumRows(value);
+    columns += value.toString();
+    setSumEnumerated(columns);
+    setNumColumns(value);
   };
 
   return (
@@ -63,7 +63,7 @@ function Staircase(): JSX.Element {
       </div>
       <p>
         Use the slider to set the number of steps the staircase goes up to:{' '}
-        {numRows}
+        {numColumns}
       </p>
       <div className="interactive-staircase">
         <div className="n-input-container">
@@ -71,7 +71,7 @@ function Staircase(): JSX.Element {
             type="range"
             min="1"
             max="9"
-            value={numRows}
+            value={numColumns}
             step="1"
             onInput={(e) => handleChange(e)}
             className="input-field"
@@ -89,9 +89,9 @@ function Staircase(): JSX.Element {
             <option value="9"></option>
           </datalist>
         </div>
-        <Triangle numRows={numRows} />
+        <Triangle numColumns={numColumns} />
         <span>
-          {numRows > 1 ? `SUM = ${sumEnumerated} = ${sum}` : `SUM = ${sum}`}
+          {numColumns > 1 ? `SUM = ${sumEnumerated} = ${sum}` : `SUM = ${sum}`}
         </span>
       </div>
     </div>
