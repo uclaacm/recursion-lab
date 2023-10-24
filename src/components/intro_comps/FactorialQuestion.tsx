@@ -37,6 +37,7 @@ function FactorialQuestion(): JSX.Element {
             <div style={{ textAlign: 'center' }}>
               <Latex>{'$n! = n \\cdot$'}</Latex>
               <KhanInput
+                size="medium"
                 correct_answer={isCorrect} //must pass in correctness state from parent
                 index={0} //index for what KhanCard you are referring to
                 answer={answerKey.question1} //the answer from answerkey
