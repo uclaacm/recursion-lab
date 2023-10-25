@@ -61,10 +61,7 @@ function Staircase(): JSX.Element {
         <b className="goal">GOAL:</b>
         <span> Find the sum of the first n natural numbers.</span>
       </div>
-      <p>
-        Use the slider to set the number of steps:{' '}
-        {numColumns}
-      </p>
+      <p>Use the slider to set the number of steps: {numColumns}</p>
       <div className="interactive-staircase">
         <div className="n-input-container">
           <input
