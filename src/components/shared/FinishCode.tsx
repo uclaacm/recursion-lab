@@ -1,7 +1,7 @@
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { useState } from 'react';
 import ConfettiExplosion from 'react-confetti-explosion';
-import Checkmark from 'react-typescript-checkmark';
+// import Checkmark from 'react-typescript-checkmark';
 
 interface FinishCodeCardProps {
   children?: JSX.Element;
@@ -82,12 +82,7 @@ function FinishCodeCard(props: FinishCodeCardProps): JSX.Element {
     >
       <div className="finish-title">
         {correct ? (
-          <Checkmark
-            size="md"
-            backgroundColor="green"
-            animationDuration={0.8}
-            explosion={1.2}
-          />
+          <CheckCircleIcon sx={{ color: 'green', fontSize: 'inherit' }} />
         ) : (
           <CheckCircleIcon sx={{ color: 'grey', fontSize: 'inherit' }} />
         )}
