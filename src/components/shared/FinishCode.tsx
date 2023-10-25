@@ -1,7 +1,6 @@
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { useState } from 'react';
 import ConfettiExplosion from 'react-confetti-explosion';
-// import Checkmark from 'react-typescript-checkmark';
 
 interface FinishCodeCardProps {
   children?: JSX.Element;
