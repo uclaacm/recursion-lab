@@ -15,7 +15,7 @@ function MarioBaseCase(): JSX.Element {
   const options2: options_array[] = [
     {
       value: 'dropdown1',
-      label: 'n <= 1',
+      label: 'n == 1',
     },
     {
       value: 'dropdown2',
@@ -24,6 +24,10 @@ function MarioBaseCase(): JSX.Element {
     {
       value: 'dropdown3',
       label: 'n < 1',
+    },
+    {
+      value: 'dropdown4',
+      label: 'n < 0',
     },
   ];
 
@@ -48,7 +52,7 @@ function MarioBaseCase(): JSX.Element {
         return
         <KhanInput
           correct_answer={isCorrect} //must pass in correctness array from parent
-          index={1} //index for what KhanCard you are referring to
+          index={1} //index for what question # you are referring to
           answer={answerKey.question1} //the answer from answerkey
           update_answer={setIsCorrect} //function to update the correctness array
         />
