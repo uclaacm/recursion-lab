@@ -11,64 +11,68 @@
 
 .block {
   background-color: black;
-  display: inline-block;
+  //display: inline-flex;
   height: 20px;
-  margin-left: 5px;
+  margin: 3px;
   width: 20px;
 }
 
 .block-0 {
-  background-color: red;
+  background-color: #b8d8fd;
 }
 
 .block-1 {
-  background-color: orange;
+  background-color: #c0c0fd;
 }
 
 .block-2 {
-  background-color: yellow;
+  background-color: #edd0fd;
 }
 
 .block-3 {
-  background-color: green;
+  background-color: #ffc6f8;
 }
 
 .block-4 {
-  background-color: blue;
+  background-color: #ffb3d6;
 }
 
 .block-5 {
-  background-color: purple;
+  background-color: #ffcfbc;
 }
 
 .block-6 {
-  background-color: pink;
+  background-color: #ffe2c6;
 }
 
 .block-7 {
-  background-color: brown;
+  background-color: #fff5c6;
 }
 
 .block-8 {
-  background-color: black;
+  background-color: #f1febc;
 }
 
-.row {
-  text-align: left;
+.column {
+  // writing-mode: sideways-lr;
+  // text-orientation: upright;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .triangle {
   display: flex;
-  flex-direction: column;
-  width: fit-content;
+  flex-direction: row;
+  justify-content: center;
+  // width: 20px;
 }
 
 .input-field {
-  background-color: #f0efef;
-  border: 0;
-  border-radius: 5%;
-  height: 25px;
-  width: 60px;
+  // background-color: #f0efef;
+  // border: 0;
+  // border-radius: 5%;
+  // height: 25px;
+  width: 300px;
 }
 
 .small-input-field {
