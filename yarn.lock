@@ -1604,8 +1604,10 @@
     eslint-scope "^5.1.1"
     eslint-utils "^3.0.0"
 
-"@typescript-eslint/parser@^4.0.0", "@typescript-eslint/parser@^4.32.0":
+"@typescript-eslint/parser@^4.0.0", "@typescript-eslint/parser@^4.33.0":
   version "4.33.0"
+  resolved "https://registry.npmjs.org/@typescript-eslint/parser/-/parser-4.33.0.tgz"
+  integrity sha512-ZohdsbXadjGBSK0/r+d87X0SBmKzOq4/S5nzK6SBgJspFo9/CUDJ7hjayuze+JK7CZQLDMroqytp7pOcFKTxZA==
   dependencies:
     "@typescript-eslint/scope-manager" "4.33.0"
     "@typescript-eslint/types" "4.33.0"

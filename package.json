@@ -42,7 +42,7 @@
     "@babel/preset-react": "^7.22.5",
     "@babel/preset-typescript": "^7.22.11",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
-    "@typescript-eslint/parser": "^4.32.0",
+    "@typescript-eslint/parser": "^4.33.0",
     "babel-loader": "^9.1.2",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
