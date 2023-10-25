@@ -41,6 +41,7 @@ function MarioFormula(): JSX.Element {
         <div>
           recurSum(n) =
           <KhanInput
+            size="medium"
             correct_answer={isCorrect}
             index={0}
             answer={answerKey.question1}
@@ -48,6 +49,7 @@ function MarioFormula(): JSX.Element {
           />
           +
           <Dropdown
+            size="medium"
             options={options0}
             correct_answer={isCorrect} //must pass in correctness state from parent
             index={1} //index for what KhanCard you are referring to

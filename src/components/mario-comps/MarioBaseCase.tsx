@@ -41,6 +41,7 @@ function MarioBaseCase(): JSX.Element {
       <div>
         if
         <Dropdown
+          size="medium"
           options={options2}
           correct_answer={isCorrect} //must pass in correctness array from parent
           index={0} //index for what question # you are referring to
@@ -51,6 +52,7 @@ function MarioBaseCase(): JSX.Element {
         <br />
         return
         <KhanInput
+          size="medium"
           correct_answer={isCorrect} //must pass in correctness array from parent
           index={1} //index for what question # you are referring to
           answer={answerKey.question1} //the answer from answerkey
