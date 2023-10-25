@@ -76,16 +76,23 @@ yarn run build
 
 Thanks for your interest in contributing to Recursion Excursion! ❤️
 
-Here's a quick guide on how to get started.
+Here's a quick guide for working on a new Github issue:
 
-1. Make a new branch of this repository using `git checkout -b <your-branch-name>`. `main` is a protected branch, **so you cannot push to it**.
-2. Follow the yarn instructions in "Development Setup" above.
-3. Beep boop away!
-4. **Before you push**, make sure you fix linting errors with `yarn lint-fix` and your app runs with `yarn start`. If there are any errors, our CI/CD service will **reject your build**.
-5. Once you're ready, stage and commit your changes!
-6. Make a [pull request](https://github.com/uclaacm/recursion-lab/pulls) with your changes, and let someone on your project team know.
+1. Make sure your main branch is updated with other peoples' changes using `git checkout main` then `git pull`.
+2. Make a new branch of this repository using `git checkout -b <your-branch-name>`. `main` is a protected branch, **so you cannot push to it**.
+3. Implement your code changes for your feature: Beep boop away!
+4. Update your local branch with changes from main branch using `git merge main`.
+5. **Before you push**, make sure you fix linting errors with `yarn lint-fix` and your app runs with `yarn start`. If there are any errors, our CI/CD service will **reject your build**.
+6. Once you're ready, stage and commit your changes using `git commit -am <some-message>`.
+7. Move your local branch changes to remote repository using `git push --set-upstream origin <your-branch-name>`.
+8. Make a [pull request](https://github.com/uclaacm/recursion-lab/pulls) with your changes, and let someone on your project team know.
    a. Netlify has a neat feature called "Deploy Previews" that give you a link to preview your changes; [see the blog post](https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/) for more info!
-7. If your code passes code review, then we can **squash and merge** it into `main`. Congratulations! If you'd like, it's now safe to delete your branch.
+9. If your code passes code review, then we can **squash and merge** it into `main`. Congratulations! If you'd like, it's now safe to delete your branch.
+
+Note that if you are continuing to work on the same issue you were in a previous session:
+
+- for #2, simply run `git checkout <your-local-branch` instead.
+- for #7, simply run `git push` instead.
 
 ## Helpful Commands
 
@@ -93,6 +100,18 @@ By running `yarn lint-fix` we can use the linter that we set-up to format our co
 
 ```
 yarn lint-fix
+```
+
+By running `git status` you'll get suggestions about what actions you might need to take to bring your repository to a clean and organized state.
+
+```
+git status
+```
+
+By running `git branch` you can list, create, delete, and manage branches within your repository.
+
+```
+git branch [options] [branch-name]
 ```
 
 ## FAQs
