@@ -9,7 +9,6 @@ interface DropdownProps {
   index: number;
   answer: string;
   update_answer: React.Dispatch<React.SetStateAction<boolean[]>>;
-  onChangeDropSize?: (selectedOption: any) => void;
 }
 
 function Dropdown(props: DropdownProps): JSX.Element {
@@ -23,10 +22,6 @@ function Dropdown(props: DropdownProps): JSX.Element {
       }
     });
     props.update_answer(newArray);
-
-    if (selectedOption.value && props.onChangeDropSize) {
-      props.onChangeDropSize(selectedOption); //change dropdown size
-    }
   };
 
   return (
@@ -34,7 +29,7 @@ function Dropdown(props: DropdownProps): JSX.Element {
       {' '}
       <div
         style={{
-          width: props.size === 'small' ? '105px' : '200px',
+          width: props.size == 'medium' ? '200px' : '100px',
           display: 'inline-block',
         }}
       >

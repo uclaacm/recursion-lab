@@ -6,7 +6,6 @@ interface KhanInputProps {
   index: number;
   answer: string;
   update_answer: React.Dispatch<React.SetStateAction<boolean[]>>;
-  onChangeKhanSize?: (lowerCaseAnswer: any) => void;
 }
 
 function KhanInput(props: KhanInputProps): JSX.Element {
@@ -23,10 +22,6 @@ function KhanInput(props: KhanInputProps): JSX.Element {
     });
     props.update_answer(newArray);
     setValue(e.target.value);
-
-    if (lowerCaseAnswer && props.onChangeKhanSize) {
-      props.onChangeKhanSize(lowerCaseAnswer);
-    }
   };
 
   return (
@@ -35,8 +30,7 @@ function KhanInput(props: KhanInputProps): JSX.Element {
       <input
         type="text"
         onChange={(e) => handleChange(e)}
-        className="input-field"
-        style={{ width: props.size === 'small' ? '10px' : '60px' }}
+        className="small-input-field"
         value={value}
       />{' '}
     </>

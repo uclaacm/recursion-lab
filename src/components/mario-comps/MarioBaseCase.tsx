@@ -11,8 +11,6 @@ function MarioBaseCase(): JSX.Element {
     question1: 'n',
     question2: 'dropdown1',
   });
-  const [dropSize, setDropSize] = useState('medium');
-  const [inputSize, setInputSize] = useState('medium');
 
   const options2: options_array[] = [
     {
@@ -29,20 +27,6 @@ function MarioBaseCase(): JSX.Element {
     },
   ];
 
-  const handleDropDownChange = (selectedOption: any) => {
-    if (selectedOption.value) {
-      setDropSize('small'); //set size prop to small when option is selected
-    } else {
-      setDropSize('medium');
-    }
-  };
-
-  const handleKhanInputChange = (lowerCaseAnswer: any) => {
-    if (lowerCaseAnswer != '') {
-      setInputSize('small');
-    }
-  };
-
   return (
     <KhanCard
       correct="This is an explanation for when you get the answer correct." //explanation for when user gets answer correct
@@ -53,24 +37,22 @@ function MarioBaseCase(): JSX.Element {
       <div>
         if
         <Dropdown
-          size={dropSize}
+          size="medium"
           options={options2}
           correct_answer={isCorrect} //must pass in correctness array from parent
           index={0} //index for what question # you are referring to
           answer={answerKey.question2} //the answer from answerkey
           update_answer={setIsCorrect} //function to update the correctness array
-          onChangeDropSize={handleDropDownChange}
         />
         <br />
         <br />
         return
         <KhanInput
-          size={inputSize}
+          size="medium"
           correct_answer={isCorrect} //must pass in correctness array from parent
           index={1} //index for what KhanCard you are referring to
           answer={answerKey.question1} //the answer from answerkey
           update_answer={setIsCorrect} //function to update the correctness array
-          onChangeKhanSize={handleKhanInputChange}
         />
       </div>
     </KhanCard>
