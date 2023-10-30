@@ -72,6 +72,7 @@ $header-height: 7vh;
   top: 0;
   transition: 850ms;
   width: 300px;
+  z-index: 99;
 }
 
 .nav-menu.active {
@@ -127,7 +128,7 @@ $header-height: 7vh;
 
 .close-btn {
   cursor: pointer;
-  margin-left: -30px;
+  margin-left: 190px;
   padding-left: 20px;
   padding-top: 25px;
 }
