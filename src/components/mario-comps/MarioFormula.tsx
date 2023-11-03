@@ -33,14 +33,15 @@ function MarioFormula(): JSX.Element {
   return (
     <div>
       <KhanCard
-        correct="This is an explanation for when you get the answer correct." //explanation for when user gets answer correct
-        incorrect="This is a hint for when you get the answer incorrect." //hint when user gets answer incorrect
+        correct="The total sum depends on the number of blocks in the current row, n, and in the rows above, recurSum(n-1)." //explanation for when user gets answer correct
+        incorrect="Think about what terms you add together to get the total sum of the current and above rows." //hint when user gets answer incorrect
         correct_answer={isCorrect} //must pass in correctness state from parent
         index={[0]} //index for what KhanCard you are referring to
       >
         <div>
           recurSum(n) =
           <KhanInput
+            size="medium"
             correct_answer={isCorrect}
             index={0}
             answer={answerKey.question1}
@@ -48,6 +49,7 @@ function MarioFormula(): JSX.Element {
           />
           +
           <Dropdown
+            size="medium"
             options={options0}
             correct_answer={isCorrect} //must pass in correctness state from parent
             index={1} //index for what KhanCard you are referring to
