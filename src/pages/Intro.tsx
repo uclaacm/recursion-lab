@@ -1,6 +1,6 @@
 import { faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import { FC } from 'react';
-//import { CodeBlock, dracula } from 'react-code-blocks';
+import { CodeBlock, dracula } from 'react-code-blocks';
 import Latex from 'react-latex-next';
 
 import FactorialQuestion from '../components/intro_comps/FactorialQuestion';

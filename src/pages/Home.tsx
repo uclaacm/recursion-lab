@@ -32,12 +32,14 @@ const Home: FC = () => {
           alt="Homepage Title"
         />
       </div>
-      <p className = "hp-text"> Learn the concept of recursion through four guided problems! Beginner-friendly and a great refresher to this CS concept.</p>
-
+      <p className="hp-text">
+        {' '}
+        Learn the concept of recursion through four guided problems!
+        Beginner-friendly and a great refresher to this CS concept.
+      </p>
 
       <img className="meadows" src={meadows} alt="Meadows" />
     </div>
-
   );
 };
 
