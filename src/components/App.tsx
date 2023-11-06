@@ -1,5 +1,6 @@
 import '../assets/WestwoodSans-Regular.ttf';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './shared/ScrollToTop';
 import Home from '../pages/Home';
 import Intro from '../pages/Intro';
 import Page404 from '../pages/Page404';
@@ -7,7 +8,6 @@ import Problem1 from '../pages/Problem1';
 import Problem2 from '../pages/Problem2';
 import Problem3 from '../pages/Problem3';
 import Problem4 from '../pages/Problem4';
-import ScrollToTop from './shared/ScrollToTop';
 
 function App(): JSX.Element {
   return (

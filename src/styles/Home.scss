@@ -1,7 +1,12 @@
 .home-container {
-  background-color: #fef2e7;
+  //background-color: #fef2e7;
   height: 100vh;
   width: 101%;
+}
+
+.hp-text {
+  margin-left: 33%;
+  margin-right: 33%;
 }
 
 .start-button {
@@ -12,6 +17,7 @@
 
 .start-button:hover {
   animation-play-state: paused;
+  opacity: 0.7;
 }
 
 @keyframes blink {
@@ -33,7 +39,7 @@
 .start-button-container {
   left: 50%;
   position: absolute;
-  top: 60%;
+  top: 57%;
   transform: translate(-50%, -50%) scale(0.7);
   z-index: 2;
 }
@@ -50,7 +56,7 @@
 
 .homepage-title {
   height: auto;
-  margin-top: 12%;
+  margin-top: 15%;
   width: 60%;
 }
 
