@@ -3,7 +3,7 @@ import '../styles/Home.scss';
 import '../styles/Mario.scss';
 import '../styles/Rabbits.scss';
 import meadows from '../assets/hill-background.png';
-import homepageTitle from '../assets/homepage_title.png';
+import homepageTitle from '../assets/homepage_newtitle.png';
 import homepageBacklayer from '../assets/homepageBacklayer.png';
 import marioHomepage from '../assets/mario_homepage.png';
 import startButton from '../assets/start_button.png';
@@ -32,6 +32,11 @@ const Home: FC = () => {
           alt="Homepage Title"
         />
       </div>
+      <p className="hp-text">
+        {' '}
+        Learn the concept of recursion through four guided problems!
+        Beginner-friendly and a great refresher to this CS concept.
+      </p>
 
       <img className="meadows" src={meadows} alt="Meadows" />
     </div>

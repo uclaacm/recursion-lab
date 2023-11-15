@@ -43,13 +43,13 @@ const Problem2: FC = () => {
 
             <ExpandBox
               class="dining-title"
-              title="Understanding the Problem"
+              title="Understand the Problem"
               component={DiningUnderstand}
               icon={CallIcon}
             />
             <ExpandBox
               class="dining-title"
-              title="Identifying the Base Case"
+              title="Identify the Base Case"
               component={DiningBaseCase}
               icon={CallIcon}
             />
