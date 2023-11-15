@@ -60,13 +60,13 @@ const Problem3: FC = () => {
               <div style={{ paddingTop: '100px' }}>
                 <ExpandBox
                   class="bunnies-title"
-                  title="Understanding the Problem"
+                  title="Understand the Problem"
                   component={UnderstandingProblem}
                   icon={EmojiNatureIcon}
                 />
                 <ExpandBox
                   class="bunnies-title"
-                  title="Identifying the Base Case"
+                  title="Identify the Base Case"
                   component={BunnyBaseCase}
                   icon={EmojiNatureIcon}
                 />
