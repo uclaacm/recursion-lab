@@ -65,7 +65,7 @@ const Problem2: FC = () => {
               component={DiningCode}
               icon={CallIcon}
             />
-            
+
             <div className="progress-bar">
               <img
                 src={ProgressBar2}
