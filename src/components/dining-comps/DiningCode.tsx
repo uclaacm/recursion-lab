@@ -159,6 +159,7 @@ function DiningCode(): JSX.Element {
 
   return (
     <div>
+      
       <FinishCodeCard
         correct_answer={[
           postOrderSum([10, 20, 30, 40, 50]) ==
