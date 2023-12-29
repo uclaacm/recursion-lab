@@ -6,7 +6,20 @@
 }
 
 .n-input-container {
-  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tickmark-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding-left: 0.5em;
+  padding-right: 0.3em;
+}
+
+.tickmark-label {
+  font-size: 15px;
 }
 
 .block {

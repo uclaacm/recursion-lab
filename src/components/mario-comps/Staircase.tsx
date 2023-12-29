@@ -86,6 +86,44 @@ function Staircase(): JSX.Element {
             <option value="9"></option>
           </datalist>
         </div>
+        <div className="tickmark-container">
+          <div className="tickmark-label">
+            {' '}
+            {numColumns == 1 ? <b>1</b> : 1}
+          </div>
+          <div className="tickmark-label">
+            {' '}
+            {numColumns == 2 ? <b>2</b> : 2}{' '}
+          </div>
+          <div className="tickmark-label">
+            {' '}
+            {numColumns == 3 ? <b>3</b> : 3}{' '}
+          </div>
+          <div className="tickmark-label">
+            {' '}
+            {numColumns == 4 ? <b>4</b> : 4}{' '}
+          </div>
+          <div className="tickmark-label">
+            {' '}
+            {numColumns == 5 ? <b>5</b> : 5}{' '}
+          </div>
+          <div className="tickmark-label">
+            {' '}
+            {numColumns == 6 ? <b>6</b> : 6}
+          </div>
+          <div className="tickmark-label">
+            {' '}
+            {numColumns == 7 ? <b>7</b> : 7}{' '}
+          </div>
+          <div className="tickmark-label">
+            {' '}
+            {numColumns == 8 ? <b>8</b> : 8}{' '}
+          </div>
+          <div className="tickmark-label">
+            {' '}
+            {numColumns == 9 ? <b>9</b> : 9}{' '}
+          </div>
+        </div>
         <Triangle numColumns={numColumns} />
         <span>
           {numColumns > 1 ? `SUM = ${sumEnumerated} = ${sum}` : `SUM = ${sum}`}
