@@ -131,13 +131,13 @@ const Problem4: FC = () => {
                 <>
                   <ExpandBox
                     class="binary-title"
-                    title="Understanding the Problem Part 1"
+                    title="Understand the Problem Part 1"
                     component={BinaryUnderstandPart1}
                     icon={AutoStoriesIcon}
                   />
                   <ExpandBox
                     class="binary-title"
-                    title="Identifying the Base Case Part 1"
+                    title="Identify the Base Case Part 1"
                     component={BinaryBaseCase}
                     icon={AutoStoriesIcon}
                   />
