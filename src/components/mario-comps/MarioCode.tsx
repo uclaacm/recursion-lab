@@ -1,86 +1,30 @@
 import { useState } from 'react';
-import MarioDropdown from '../../components/intro_comps/intro_dropdown';
+import {
+  codeOptions1,
+  codeOptions2,
+  codeOptions3,
+  codeOptions4,
+} from './dropdown_imports';
 import FinishCodeCard from '../../components/shared/FinishCode';
-import { options_array } from '../../types';
+import Blue from '../shared/Blue';
+import MarioDropdown from '../shared/Dropdown';
+import Gold from '../shared/Gold';
+import Tab from '../shared/Tab';
 
 function MarioCode(): JSX.Element {
-  const [isCorrect] = useState(false);
   const [selectedanswer, setselectedanswer] = useState({
     question1: 'n==1',
     question2: '0',
     question3: '0',
-    question4: 'recurSum(n-1)',
+    question4: 'n-1',
   });
 
   const [answerKey] = useState({
     question1: 'n<=1',
     question2: '1',
     question3: 'n',
-    question4: 'recurSum(n-1)',
+    question4: 'n-1',
   });
-
-  const options1: options_array[] = [
-    {
-      value: 'n==1',
-      label: 'n==1',
-    },
-    {
-      value: 'n==2',
-      label: 'n==2',
-    },
-    {
-      value: 'n<=1',
-      label: 'n<=1',
-    },
-    {
-      value: 'n<=0',
-      label: 'n<=0',
-    },
-  ];
-  const options2: options_array[] = [
-    {
-      value: '0',
-      label: '0',
-    },
-    {
-      value: '1',
-      label: '1',
-    },
-    {
-      value: '2',
-      label: '2',
-    },
-  ];
-
-  const options3: options_array[] = [
-    {
-      value: 'n-1',
-      label: 'n-1',
-    },
-    {
-      value: 'n',
-      label: 'n',
-    },
-    {
-      value: 'n+1',
-      label: 'n+1',
-    },
-  ];
-
-  const options4: options_array[] = [
-    {
-      value: 'recurSum(n-3)',
-      label: 'recurSum(n-3)',
-    },
-    {
-      value: 'recurSum(n-2)',
-      label: 'recurSum(n-2)',
-    },
-    {
-      value: 'recurSum(n-1)',
-      label: 'recurSum(n-1)',
-    },
-  ];
 
   function recurSum(n: number): number {
     if (n <= 1) {
@@ -97,7 +41,7 @@ function MarioCode(): JSX.Element {
     recursiveFunc: string
   ): number {
     if (ifStatement == 'n<=0' || ifStatement == 'n<=1') {
-      if (recursiveFunc == 'recurSum(n-1)') {
+      if (recursiveFunc == 'n-1') {
         if (functionReturnVal == 'n-1') {
           return lessThanMinusOneNMinusOneRecurSum(
             startValue,
@@ -118,7 +62,7 @@ function MarioCode(): JSX.Element {
             ifReturnVal
           );
         }
-      } else if (recursiveFunc == 'recurSum(n-2)') {
+      } else if (recursiveFunc == 'n-2') {
         if (functionReturnVal == 'n-1') {
           return lessThanMinusTwoNMinusOneRecurSum(
             startValue,
@@ -162,7 +106,7 @@ function MarioCode(): JSX.Element {
         }
       }
     } else {
-      if (recursiveFunc == 'recurSum(n-1)') {
+      if (recursiveFunc == 'n-1') {
         if (functionReturnVal == 'n-1') {
           return equalMinusOneNMinusOneRecurSum(
             startValue,
@@ -182,7 +126,7 @@ function MarioCode(): JSX.Element {
             ifReturnVal
           );
         }
-      } else if (recursiveFunc == 'recurSum(n-2)') {
+      } else if (recursiveFunc == 'n-2') {
         if (functionReturnVal == 'n-1') {
           return equalMinusTwoNMinusOneRecurSum(
             startValue,
@@ -625,59 +569,62 @@ function MarioCode(): JSX.Element {
       given_function={() => recurSum(5)}
       answer_key={answerKey}
     >
-      <div className="code-component-container">
-        <div className="factorial-text">
-          <div>In this example, we will use n = 5.</div>
-          <div>recurSum(n):</div>
-          <br></br>
-          <span style={{ marginLeft: '-25px' }}>if</span>
-          <MarioDropdown
-            options={options1}
-            correct_answer={[isCorrect]}
-            index={0}
-            answer={'n<=1'}
-            update_answer={(chosenAnswer: string) =>
-              handleUpdateAnswer(0, chosenAnswer)
-            }
-          />{' '}
-          :
-          <br />
-          <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return
-          <MarioDropdown
-            options={options2}
-            correct_answer={[isCorrect]}
-            index={1}
-            answer={'1'}
-            update_answer={(chosenAnswer: string) =>
-              handleUpdateAnswer(1, chosenAnswer)
-            }
-          />
-          <br />
-          <br />
-          return
-          <MarioDropdown
-            options={options3}
-            correct_answer={[isCorrect]}
-            index={2}
-            answer={'n'}
-            update_answer={(chosenAnswer: string) =>
-              handleUpdateAnswer(2, chosenAnswer)
-            }
-          />
-          <br />
-          +
-          <br />
-          <MarioDropdown
-            options={options4}
-            correct_answer={[isCorrect]}
-            index={3}
-            answer={'recurSum(n-1)'}
-            update_answer={(chosenAnswer: string) =>
-              handleUpdateAnswer(3, chosenAnswer)
-            }
-          />
-        </div>
+      <div className="left-align">
+        In this example, we will use n = 5.
+        <br />
+        <Blue>def</Blue>
+        <Gold> recurSum</Gold>(n):
+        <br />
+        <Tab>
+          <>
+            <Blue>if</Blue>
+            <MarioDropdown
+              size="medium"
+              options={codeOptions1}
+              index={0}
+              answer={'n<=1'}
+              update_answer={(chosenAnswer: string) =>
+                handleUpdateAnswer(0, chosenAnswer)
+              }
+            />{' '}
+            :
+            <Tab>
+              <>
+                <Blue>return</Blue>
+                <MarioDropdown
+                  size="small"
+                  options={codeOptions2}
+                  index={1}
+                  answer={'1'}
+                  update_answer={(chosenAnswer: string) =>
+                    handleUpdateAnswer(1, chosenAnswer)
+                  }
+                />
+              </>
+            </Tab>
+            <Blue>return</Blue>
+            <MarioDropdown
+              size="medium"
+              options={codeOptions3}
+              index={2}
+              answer={'n'}
+              update_answer={(chosenAnswer: string) =>
+                handleUpdateAnswer(2, chosenAnswer)
+              }
+            />
+            + <Gold>recurSum</Gold>(
+            <MarioDropdown
+              size="medium"
+              options={codeOptions4}
+              index={3}
+              answer={'n-1'}
+              update_answer={(chosenAnswer: string) =>
+                handleUpdateAnswer(3, chosenAnswer)
+              }
+            />
+            )
+          </>
+        </Tab>
       </div>
     </FinishCodeCard>
   );
