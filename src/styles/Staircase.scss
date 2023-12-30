@@ -5,8 +5,27 @@
   flex-wrap: wrap;
 }
 
-.n-input-container {
-  margin-bottom: 10px;
+// .n-input-container {
+//   display: flex;
+//   justify-content: space-between;
+// }
+
+.tickmark-container {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 1.9em;
+  margin-top: 2px;
+  padding-right: 0.3em;
+  width: 292px;
+}
+
+.tickmark-label {
+  font-size: 15px;
+}
+
+.input-field {
+  cursor: pointer;
+  width: 300px;
 }
 
 .block {
@@ -61,10 +80,14 @@
 }
 
 .triangle {
+  background-color: darkslategrey;
   display: flex;
   flex-direction: row;
+  height: 230px;
   justify-content: center;
-  // width: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  width: 350px;
 }
 
 .small-input-field {
@@ -107,7 +130,15 @@
   text-align: left;
 }
 
+.goal-container {
+  display: flex;
+  justify-content: center;
+}
+
 .goal {
-  font-weight: 800;
-  text-decoration: underline;
+  background-color: #f0efef;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 550;
+  padding: 10px 80px;
+  width: fit-content;
 }
