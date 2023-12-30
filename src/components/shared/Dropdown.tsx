@@ -5,35 +5,37 @@ import { options_array } from '../../types';
 interface DropdownProps {
   size: string;
   options: options_array[];
-  correct_answer: boolean[];
+  correct_answer?: boolean[];
   index: number;
   answer: string;
-  update_answer: React.Dispatch<React.SetStateAction<boolean[]>>;
+  update_answer: any;
 }
 
 function Dropdown(props: DropdownProps): JSX.Element {
   const handleChange = (selectedOption: any) => {
     const chosenAnswer = selectedOption.value;
-    const newArray = props.correct_answer.map((val, i) => {
-      if (i == props.index) {
-        return props.answer === chosenAnswer;
-      } else {
-        return val;
-      }
-    });
-    props.update_answer(newArray);
+    if (props.correct_answer === undefined) {
+      // Code the Components Together dropdown
+      props.update_answer(chosenAnswer);
+    } else {
+      // KhanCard dropdown
+      const newArray = props.correct_answer.map((val, i) => {
+        if (i == props.index) return props.answer === chosenAnswer;
+        else return val;
+      });
+      props.update_answer(newArray);
+    }
   };
 
   return (
     <>
       {' '}
-      <div
-        style={{
-          width: props.size == 'medium' ? '200px' : '100px',
-          display: 'inline-block',
-        }}
-      >
-        <Select options={props.options} onChange={handleChange} />
+      <div className={`${props.size}-dropdown-field`}>
+        <Select
+          options={props.options}
+          onChange={handleChange}
+          placeholder={props.size === 'small' ? '...' : 'Select...'}
+        />
       </div>{' '}
     </>
   );

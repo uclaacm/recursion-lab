@@ -5,15 +5,13 @@ import {
   bcOptions3,
   bcOptions4,
 } from './dropdown_imports';
-import BinaryCodeDropdown from '../../components/intro_comps/intro_dropdown';
 import FinishCodeCard from '../../components/shared/FinishCode';
 import Blue from '../shared/Blue';
+import BinaryCodeDropdown from '../shared/Dropdown';
 import Gold from '../shared/Gold';
 import Tab from '../shared/Tab';
 
 function BinaryCode(): JSX.Element {
-  const [isCorrect] = useState([false, false, false]);
-
   const [selectedanswer, setselectedanswer] = useState<
     Record<PropertyKey, string>
   >({
@@ -124,7 +122,7 @@ function BinaryCode(): JSX.Element {
       } //built function
       answer_key={answerKey} //answer key
     >
-      <div style={{ textAlign: 'left' }}>
+      <div className="left-align">
         <span>
           <Blue>def</Blue>
           <Gold> binarySearch</Gold>(arr, target, low, high):
@@ -138,8 +136,8 @@ function BinaryCode(): JSX.Element {
               <>
                 <Blue>return</Blue>
                 <BinaryCodeDropdown
+                  size="small"
                   options={bcOptions1}
-                  correct_answer={isCorrect}
                   index={0}
                   answer={answerKey.question1}
                   update_answer={(chosenAnswer: string) =>
@@ -148,23 +146,18 @@ function BinaryCode(): JSX.Element {
                 />
               </>
             </Tab>
-          </>
-        </Tab>
-        <br />
-
-        <Tab>
-          <>mid = (high + low) // 2</>
-        </Tab>
-        <Tab>
-          <>
+            <br />
+            mid = (high + low) // 2
+            <br />
+            <br />
             <Blue>if</Blue> target == arr[mid]:
             <br />
             <Tab>
               <>
                 <Blue>return</Blue>
                 <BinaryCodeDropdown
+                  size="medium"
                   options={bcOptions2}
-                  correct_answer={isCorrect}
                   index={1}
                   answer={answerKey.question2}
                   update_answer={(chosenAnswer: string) =>
@@ -173,10 +166,6 @@ function BinaryCode(): JSX.Element {
                 />
               </>
             </Tab>
-          </>
-        </Tab>
-        <Tab>
-          <>
             <Blue>elif</Blue> arr[mid] {'<'} target:
             <br />
             <Tab>
@@ -185,8 +174,8 @@ function BinaryCode(): JSX.Element {
                 <Gold> binarySearch</Gold>
                 {'('}
                 <BinaryCodeDropdown
+                  size="large"
                   options={bcOptions3}
-                  correct_answer={isCorrect}
                   index={2}
                   answer={answerKey.question3}
                   update_answer={(chosenAnswer: string) =>
@@ -196,10 +185,6 @@ function BinaryCode(): JSX.Element {
                 {')'}
               </>
             </Tab>
-          </>
-        </Tab>
-        <Tab>
-          <>
             <Blue>else</Blue>:
             <br />
             <Tab>
@@ -208,8 +193,8 @@ function BinaryCode(): JSX.Element {
                 <Gold> binarySearch</Gold>
                 {'('}
                 <BinaryCodeDropdown
+                  size="large"
                   options={bcOptions4}
-                  correct_answer={isCorrect}
                   index={3}
                   answer={answerKey.question4}
                   update_answer={(chosenAnswer: string) =>
