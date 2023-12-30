@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { options_array } from '../../types';
+import { baseCaseOptions2 } from './dropdown_imports';
 import Dropdown from '../shared/Dropdown';
 import KhanCard from '../shared/KhanCard';
 import KhanInput from '../shared/KhanInput';
@@ -11,25 +11,6 @@ function BinaryBaseCasePt2(): JSX.Element {
     question2: '>',
     question3: 'high',
   });
-
-  const options1: options_array[] = [
-    {
-      value: '<',
-      label: '<',
-    },
-    {
-      value: '<=',
-      label: '<=',
-    },
-    {
-      value: '>',
-      label: '>',
-    },
-    {
-      value: '>=',
-      label: '>=',
-    },
-  ];
 
   return (
     <KhanCard
@@ -47,7 +28,7 @@ function BinaryBaseCasePt2(): JSX.Element {
           update_answer={setIsCorrect}
         />
         <Dropdown
-          options={options1}
+          options={baseCaseOptions2}
           correct_answer={isCorrect}
           index={1}
           answer={answerKey.question2}

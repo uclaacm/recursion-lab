@@ -1,5 +1,6 @@
 import '../assets/WestwoodSans-Regular.ttf';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './shared/ScrollToTop';
 import Home from '../pages/Home';
 import Intro from '../pages/Intro';
 import Page404 from '../pages/Page404';
@@ -21,6 +22,7 @@ function App(): JSX.Element {
           <Route path="/problem4" element={<Problem4 />} />
           <Route path="/*" element={<Page404 />} />
         </Routes>
+        <ScrollToTop />
       </BrowserRouter>
     </>
   );

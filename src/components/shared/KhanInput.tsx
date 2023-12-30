@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 interface KhanInputProps {
+  size: string;
   correct_answer: boolean[];
   index: number;
   answer: string;
@@ -29,7 +30,7 @@ function KhanInput(props: KhanInputProps): JSX.Element {
       <input
         type="text"
         onChange={(e) => handleChange(e)}
-        className="input-field"
+        className="small-input-field"
         value={value}
       />{' '}
     </>

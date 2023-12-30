@@ -2,11 +2,11 @@ import '../../pages/Problem4.scss';
 import { useState, useEffect } from 'react';
 import SearchableWord from './SearchableWord';
 
-interface Data {
+export default function BinarySearchExample({
+  answer,
+}: {
   answer: string;
-}
-
-export default function BinarySearchExample({ answer }: Data): JSX.Element {
+}): JSX.Element {
   const WordList = [
     'accurate',
     'action',
