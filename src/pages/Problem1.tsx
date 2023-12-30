@@ -42,13 +42,13 @@ const Problem1: FC = () => {
           >
             <ExpandBox
               class="mario-title-new"
-              title="Understanding the Problem"
+              title="Understand the Problem"
               component={Staircase}
               icon={FlagCircleIcon}
             />
             <ExpandBox
               class="mario-title-new"
-              title="Identifying the Base Case"
+              title="Identify the Base Case"
               component={MarioBaseCase}
               icon={FlagCircleIcon}
             />

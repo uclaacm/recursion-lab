@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import DiningTree from './DiningTree';
 import Jane from '../../assets/dining_guests/Jane.png';
 import Lea from '../../assets/dining_guests/Lea.png';
 import May from '../../assets/dining_guests/May.png';
@@ -162,6 +163,7 @@ function DiningUnderstand(): JSX.Element {
 
   return (
     <div>
+      <DiningTree />
       <p>
         The call stack starts at Sam. As each person calls the next person
         following, the total number of minutes increases. The result represents
