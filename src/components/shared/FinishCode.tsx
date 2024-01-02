@@ -87,7 +87,14 @@ function FinishCodeCard(props: FinishCodeCardProps): JSX.Element {
         )}
         &nbsp;&nbsp;Finish the code
       </div>
-      <div style={{ margin: 'auto', textAlign: 'center', marginTop: '10px' }}>
+      <div
+        style={{
+          margin: 'auto',
+          textAlign: 'left',
+          marginLeft: '43px',
+          marginTop: '10px',
+        }}
+      >
         {props.description}
       </div>
       <div className="finish-content">

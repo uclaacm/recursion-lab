@@ -20,7 +20,7 @@ function UnderstandingProblem(): JSX.Element {
       Keep clicking next to see the number of rabbits increasing through time!
       <br />
       <br />
-      <button onClick={nextImage} className="next-button">
+      <button onClick={nextImage} className="shared-button bunnies-next-btn">
         Next
       </button>
       <div className="container">

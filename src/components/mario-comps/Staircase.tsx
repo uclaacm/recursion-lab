@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Goal from '../shared/Goal';
 import '../../styles/Staircase.scss';
 
 interface TriangleProps {
@@ -58,9 +59,7 @@ function Staircase(): JSX.Element {
         step to the next (literally)!
       </p>
       <br />
-      <div className="goal-container">
-        <div className="goal">Find the sum of the first n natural numbers.</div>
-      </div>
+      <Goal>Find the sum of the first n natural numbers.</Goal>
       <p>Use the slider to set the value of n: {numColumns}</p>
       <div className="interactive-staircase">
         <div className="n-input-container">

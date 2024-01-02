@@ -16,6 +16,7 @@ function DiningBaseCase(): JSX.Element {
 
   return (
     <div>
+      Note that in Pythonic syntax, <i>Null</i> is denoted as <i>None</i>
       <KhanCard
         correct="When `Friend` is null, then return 0." //explanation for when user gets answer correct
         incorrect="What happens when `Friend` is null?" //hint when user gets answer incorrect

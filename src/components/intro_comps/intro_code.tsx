@@ -70,7 +70,7 @@ function IntroCode(): JSX.Element {
 
   return (
     <FinishCodeCard
-      description="Finish the code below using the dropdown menus. You answer will be checked for the case where n = 5."
+      description="Finish the code below using the dropdown menus. Your answer will be checked for the case where n = 5."
       correct_answer={[
         factorial(5) ==
           selectedfactorial(

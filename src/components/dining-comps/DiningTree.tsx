@@ -232,7 +232,7 @@ function DiningTree(): JSX.Element {
   return (
     <div>
       <svg
-        width="800"
+        width="600"
         height="400"
         viewBox="0 0 885 694"
         fill="none"
@@ -463,8 +463,13 @@ function DiningTree(): JSX.Element {
           strokeWidth="3"
         />
       </svg>
-
-      {showAnimationButton && <button onClick={animateSVG}>Play</button>}
+      <br />
+      <br />
+      {showAnimationButton && (
+        <button className="khan-check-button" onClick={animateSVG}>
+          Play
+        </button>
+      )}
     </div>
   );
 }
