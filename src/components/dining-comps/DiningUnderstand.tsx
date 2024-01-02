@@ -32,7 +32,7 @@ function DiningUnderstand(): JSX.Element {
                   whiteSpace: 'pre',
                 }}
               >
-                {' '}
+                {'    '}
               </span>
               <Gold>init</Gold>
               <span
@@ -41,7 +41,7 @@ function DiningUnderstand(): JSX.Element {
                   whiteSpace: 'pre',
                 }}
               >
-                {' '}
+                {'    '}
               </span>
               (self, val, <br />
               left = <Blue>None</Blue>, right = <Blue>None</Blue>):
