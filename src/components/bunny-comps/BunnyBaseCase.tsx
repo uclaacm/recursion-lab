@@ -11,12 +11,12 @@ function BunnyBaseCase(): JSX.Element {
   const [isCorrect, setIsCorrect] = useState([false, false]);
   const [answerKey] = useState({
     question1: 'n <= 1',
-    question2: 'n',
+    question2: '1',
   });
 
   return (
     <KhanCard
-      correct="The fibonacci sequence should end at 1! which is 1. Thus, we return the value n itself."
+      correct="The fibonacci sequence should end at 1! which is 1. Thus, we return the value 1 itself."
       incorrect="Think about what number is the last number to multiply within the factorial computation. That is the base case value. What does it return?"
       correct_answer={isCorrect}
       index={[0, 1]}

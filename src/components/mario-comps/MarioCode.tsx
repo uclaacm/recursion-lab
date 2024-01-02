@@ -546,6 +546,7 @@ function MarioCode(): JSX.Element {
 
   return (
     <FinishCodeCard
+      description="Your answer will be checked for the case where n = 5."
       correct_answer={[
         recurSum(5) ==
           selectedRecurSum(
@@ -570,8 +571,6 @@ function MarioCode(): JSX.Element {
       answer_key={answerKey}
     >
       <div className="left-align">
-        In this example, we will use n = 5.
-        <br />
         <Blue>def</Blue>
         <Gold> recurSum</Gold>(n):
         <br />

@@ -34,6 +34,7 @@ function BunnyCode(): JSX.Element {
     if (ifStatement == 'n > 1') {
       return startValue;
     } else if (
+      // CORRECT
       ifStatement == 'n <= 1' &&
       ifReturnVal == 'n' &&
       functionReturnVal == 'fib(n-1) + fib(n-2)'
@@ -46,11 +47,12 @@ function BunnyCode(): JSX.Element {
     ) {
       return nLess10Fib(startValue);
     } else if (
+      // CORRECT
       ifStatement == 'n <= 1' &&
       ifReturnVal == '1' &&
       functionReturnVal == 'fib(n-1) + fib(n-2)'
     ) {
-      return nLess11Fib(startValue);
+      return nLess1NFib(startValue);
     } else if (
       ifStatement == 'n <= 1' &&
       ifReturnVal == 'n' &&
@@ -86,12 +88,6 @@ function BunnyCode(): JSX.Element {
     }
     return nLess10Fib(n - 2) + nLess10Fib(n - 1);
   }
-  function nLess11Fib(n: number): number {
-    if (n <= 1) {
-      return 1;
-    }
-    return nLess11Fib(n - 2) + nLess11Fib(n - 1);
-  }
 
   function nLess1NSum(n: number): number {
     if (n <= 1) {
@@ -124,6 +120,7 @@ function BunnyCode(): JSX.Element {
       <FinishCodeCard
         // correct="Put the base case and calculate fib(n) by adding fib(n-1) and fib(n-2)"
         // incorrect="Combine the 2 code from `base case` and `recursive formula` into your answer."
+        description="Your answer will be tested with the case n = 7."
         correct_answer={[
           recurFib(7) ==
             selectedRecurFib(

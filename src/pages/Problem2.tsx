@@ -40,6 +40,7 @@ const Problem2: FC = () => {
             <div className="circular-diagram">
               <img src={TreeDiagram} alt="Circular Diagram with names" />
             </div>
+            <br />
 
             <ExpandBox
               class="dining-title"

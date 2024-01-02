@@ -217,7 +217,7 @@ body {
   border-radius: 1em;
   box-shadow: 1em 1em 1em 1em rgba(192, 192, 192, 0.5);
   flex-direction: column;
-  margin: 5em; // subject to change
+  margin: 2em 3em 4em;
   padding: 35px;
 }
 
@@ -229,7 +229,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  padding: 42px;
+  padding: 30px 42px 42px;
 }
 
 .code-output {
@@ -241,11 +241,9 @@ body {
   flex: 1;
   font-size: 14px;
   line-height: 1.42857143;
-  margin-left: 5em;
-  margin-right: 5em;
+  margin-left: 2em;
   padding: 6px 12px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  width: 60%;
 }
 
 .finish-horizontal-line {

@@ -26,8 +26,6 @@ function DiningCode(): JSX.Element {
     question4: 'Friend.val',
   });
 
-  // const Friends: number[] = [10, 20, 30, 40, 50];
-
   function postOrderSum(Friends: number[]): number {
     const sum = Friends.reduce((a, b) => a + b, 0);
     return sum;
@@ -115,10 +113,11 @@ function DiningCode(): JSX.Element {
   return (
     <div>
       <FinishCodeCard
+        description="Your answer will be tested with the given data at the start: [10, 7, 15, 5, 12]."
         correct_answer={[
-          postOrderSum([10, 20, 30, 40, 50]) ==
+          postOrderSum([10, 7, 15, 5, 12]) ==
             selectPostOrderSum(
-              [10, 20, 30, 40, 50],
+              [10, 7, 15, 5, 12],
               selectedanswer.question1,
               selectedanswer.question2,
               selectedanswer.question3,
@@ -126,10 +125,10 @@ function DiningCode(): JSX.Element {
             ),
         ]}
         index={0}
-        given_function={() => postOrderSum([10, 20, 30, 40, 50])}
+        given_function={() => postOrderSum([10, 7, 15, 5, 12])}
         chosen_function={() =>
           selectPostOrderSum(
-            [10, 20, 30, 40, 50],
+            [10, 7, 15, 5, 12],
             selectedanswer.question1,
             selectedanswer.question2,
             selectedanswer.question3,
