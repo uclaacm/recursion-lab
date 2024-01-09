@@ -20,6 +20,7 @@ function BinaryBaseCasePt2(): JSX.Element {
       incorrect="Think about what position of the low & high pointers means the search is over."
       correct_answer={isCorrect}
       index={[0, 1]}
+      name="binary-base-case-pt2"
     >
       <div className="left-align">
         <Blue>if </Blue>
@@ -29,6 +30,7 @@ function BinaryBaseCasePt2(): JSX.Element {
           index={0}
           answer={answerKey.question1}
           update_answer={setIsCorrect}
+          name="binary-base-case-pt2-1"
         />
         <Dropdown
           size="small"
@@ -44,6 +46,7 @@ function BinaryBaseCasePt2(): JSX.Element {
           index={2}
           answer={answerKey.question3}
           update_answer={setIsCorrect}
+          name="binary-base-case-pt2-2"
         />{' '}
         :
         <br />

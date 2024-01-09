@@ -16,6 +16,7 @@ function BunnyFormula(): JSX.Element {
       incorrect="Think about what terms you add to get the nth number."
       correct_answer={isCorrect}
       index={[0, 1]}
+      name="bunny-formula"
     >
       <div>
         <Gold>fib</Gold>(n) = <Gold>fib</Gold>
@@ -26,6 +27,7 @@ function BunnyFormula(): JSX.Element {
           index={0}
           answer={answerKey.question1}
           update_answer={setIsCorrect}
+          name="bunny-formula-1"
         />
         {' )'} + <Gold>fib</Gold>
         {'( '}
@@ -35,6 +37,7 @@ function BunnyFormula(): JSX.Element {
           index={1}
           answer={answerKey.question2}
           update_answer={setIsCorrect}
+          name="bunny-formula-2"
         />
         {' )'}
       </div>

@@ -141,6 +141,7 @@ function BunnyCode(): JSX.Element {
           )
         }
         answer_key={answerKey}
+        name="bunny"
       >
         <div className="left-align">
           <Blue>def</Blue>
