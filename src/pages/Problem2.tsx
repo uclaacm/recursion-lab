@@ -1,9 +1,9 @@
 import { faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import CallIcon from '@mui/icons-material/Call';
 import { FC } from 'react';
-import CircularDiagram from '../assets/Circular_Loop_Diagram_with_name.png';
 import FoodBackground from '../assets/newFoodBackground.png';
 import ProgressBar2 from '../assets/progress_bars/progress2.png';
+import TreeDiagram from '../assets/TreePeopleDiagram.png';
 import DiningBaseCase from '../components/dining-comps/DiningBaseCase';
 import DiningCode from '../components/dining-comps/DiningCode';
 import DiningFormula from '../components/dining-comps/DiningFormula';
@@ -38,18 +38,19 @@ const Problem2: FC = () => {
               it...
             </p>
             <div className="circular-diagram">
-              <img src={CircularDiagram} alt="Circular Diagram with names" />
+              <img src={TreeDiagram} alt="Circular Diagram with names" />
             </div>
+            <br />
 
             <ExpandBox
               class="dining-title"
-              title="Understanding the Problem"
+              title="Understand the Problem"
               component={DiningUnderstand}
               icon={CallIcon}
             />
             <ExpandBox
               class="dining-title"
-              title="Identifying the Base Case"
+              title="Identify the Base Case"
               component={DiningBaseCase}
               icon={CallIcon}
             />

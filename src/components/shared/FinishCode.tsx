@@ -104,9 +104,18 @@ function FinishCodeCard(props: FinishCodeCardProps): JSX.Element {
         )}
         &nbsp;&nbsp;Finish the code
       </div>
-      <div style={{ margin: 'auto', textAlign: 'center', marginTop: '10px' }}>
-        {props.description}
-      </div>
+      {props?.description && (
+        <div
+          style={{
+            margin: 'auto',
+            textAlign: 'left',
+            marginLeft: '43px',
+            marginTop: '10px',
+          }}
+        >
+          {props.description}
+        </div>
+      )}
       <div className="finish-content">
         <div>{props.children}</div>
         <div className="code-output">
@@ -120,7 +129,7 @@ function FinishCodeCard(props: FinishCodeCardProps): JSX.Element {
                 Incorrect. <br></br>{' '}
                 {`The correct answer is ${givenAnswer}. Your answer was ${
                   chosenAnswer <= -1 ? 'max call stack exceeded' : chosenAnswer
-                }`}
+                }.`}
               </p>
             ))}
           <div>

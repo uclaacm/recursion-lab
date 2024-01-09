@@ -8,6 +8,8 @@
 }
 
 $theme-blue: #007da3;
+$theme-green: #687b23;
+$theme-purple: #9500ae;
 
 body {
   font-family: 'Poppins', 'Helvetica Neue', 'Helvetica', sans-serif;
@@ -104,6 +106,8 @@ body {
 }
 
 .khan-content {
+  display: flex; // JUST ADDED FOR BINARY SEARCH
+  justify-content: center; // JUST ADDED FOR BINARY SEARCH
   padding: 40px;
 }
 
@@ -202,16 +206,6 @@ body {
 }
 
 // =========== FinishCode Card CSS ===========
-.code-component-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.factorial-text {
-  flex: 1;
-}
-
 .finish-footer {
   align-items: center;
   display: flex;
@@ -223,7 +217,7 @@ body {
   border-radius: 1em;
   box-shadow: 1em 1em 1em 1em rgba(192, 192, 192, 0.5);
   flex-direction: column;
-  margin: 5em; // subject to change
+  margin: 2em 3em 4em;
   padding: 35px;
 }
 
@@ -235,7 +229,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  padding: 40px;
+  padding: 30px 42px 42px;
 }
 
 .code-output {
@@ -247,11 +241,9 @@ body {
   flex: 1;
   font-size: 14px;
   line-height: 1.42857143;
-  margin-left: 5em;
-  margin-right: 5em;
+  margin-left: 2em;
   padding: 6px 12px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  width: 60%;
 }
 
 .finish-horizontal-line {
@@ -310,4 +302,103 @@ body {
   padding: 6px 12px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   width: 60%;
+}
+
+.left-align {
+  text-align: left;
+}
+
+/* Dropdown */
+.large-dropdown-field {
+  display: inline-block;
+  margin-bottom: 6px;
+  text-align: left;
+  width: 200px;
+}
+
+.medium-dropdown-field {
+  display: inline-block;
+  margin-bottom: 6px;
+  text-align: left;
+  width: 125px;
+}
+
+.small-dropdown-field {
+  display: inline-block;
+  margin-bottom: 6px;
+  text-align: left;
+  width: 75px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table td {
+  padding: 10px;
+}
+
+table thead td {
+  background-color: #007da3;
+  border: 1px solid #1d3a44;
+  color: #fff;
+  font-weight: bold;
+}
+
+table tbody td {
+  border: 1px solid #dddfe1;
+  color: #636363;
+}
+
+table tbody tr {
+  background-color: #f9fafb;
+}
+
+/* BUTTON STYLE */
+.shared-button {
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  outline: 0;
+  padding: 6px 12px;
+  text-align: center;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.bunnies-next-btn {
+  background-color: $theme-green;
+}
+
+.bunnies-next-btn:hover {
+  background-color: green;
+}
+
+.binary-purple-btn {
+  background-color: $theme-purple;
+}
+
+.binary-purple-btn:hover {
+  background-color: purple;
+}
+
+.binary-red-btn {
+  background-color: red;
+}
+
+.binary-red-btn:hover {
+  background-color: darkred;
+}
+
+.binary-green-btn {
+  background-color: $theme-green;
+}
+
+.binary-green-btn:hover {
+  background-color: green;
 }

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Gold from '../shared/Gold';
 import KhanCard from '../shared/KhanCard';
 import KhanInput from '../shared/KhanInput';
 
@@ -21,24 +22,27 @@ function DiningFormula(): JSX.Element {
         <div>
           <div>
             <p>
-              left_sum = post_order_sum(
+              left_sum = <Gold>post_order_sum</Gold>
+              {'( '}
               <KhanInput
+                size="large"
                 correct_answer={isCorrect}
                 index={0}
                 answer={answerKey.question1}
                 update_answer={setIsCorrect}
               />
-              )
+              {' )'}
               <br />
-              <br />
-              right_sum = post_order_sum(
+              right_sum = <Gold>post_order_sum</Gold>
+              {'( '}
               <KhanInput
+                size="large"
                 correct_answer={isCorrect}
                 index={1}
                 answer={answerKey.question2}
                 update_answer={setIsCorrect}
               />
-              )
+              {' )'}
             </p>
           </div>
         </div>
