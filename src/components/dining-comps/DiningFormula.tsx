@@ -17,6 +17,7 @@ function DiningFormula(): JSX.Element {
         incorrect="Think about the Friend data structure. What are we traversing?"
         correct_answer={isCorrect}
         index={[0, 1]}
+        name="dining-formula"
       >
         <div>
           <div>
@@ -27,6 +28,7 @@ function DiningFormula(): JSX.Element {
                 index={0}
                 answer={answerKey.question1}
                 update_answer={setIsCorrect}
+                name="dining-formula-1"
               />
               )
               <br />
@@ -37,6 +39,7 @@ function DiningFormula(): JSX.Element {
                 index={1}
                 answer={answerKey.question2}
                 update_answer={setIsCorrect}
+                name="dining-formula-2"
               />
               )
             </p>

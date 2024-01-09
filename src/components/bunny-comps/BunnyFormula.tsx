@@ -15,6 +15,7 @@ function BunnyFormula(): JSX.Element {
       incorrect="Think about what terms you add to get the nth number."
       correct_answer={isCorrect}
       index={[0, 1]}
+      name="bunny-formula"
     >
       <div>
         fib(n) =
@@ -23,6 +24,7 @@ function BunnyFormula(): JSX.Element {
           index={0}
           answer={answerKey.question1}
           update_answer={setIsCorrect}
+          name="bunny-formula-1"
         />
         +
         <KhanInput
@@ -30,6 +32,7 @@ function BunnyFormula(): JSX.Element {
           index={1}
           answer={answerKey.question2}
           update_answer={setIsCorrect}
+          name="bunny-formula-2"
         />
       </div>
     </KhanCard>

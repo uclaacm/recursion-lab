@@ -624,6 +624,7 @@ function MarioCode(): JSX.Element {
       }
       given_function={() => recurSum(5)}
       answer_key={answerKey}
+      name="mario"
     >
       <div className="code-component-container">
         <div className="factorial-text">

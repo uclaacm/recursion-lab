@@ -87,6 +87,7 @@ function IntroCode(): JSX.Element {
       }
       given_function={() => factorial(5)}
       answer_key={answerKey}
+      name="intro"
     >
       <div className="code-component-container">
         <div className="factorial-text">

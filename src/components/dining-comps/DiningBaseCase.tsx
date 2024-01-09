@@ -18,6 +18,7 @@ function DiningBaseCase(): JSX.Element {
         incorrect="What happens when `Friend` is null?" //hint when user gets answer incorrect
         correct_answer={isCorrect} //must pass in correctness state from parent
         index={[0, 1, 2]} //index for what KhanCard you are referring to
+        name="dining-base-case"
       >
         <div>
           <div>
@@ -28,6 +29,7 @@ function DiningBaseCase(): JSX.Element {
                 index={0} //index for what KhanCard you are referring to
                 answer={answerKey.question1} //the answer from answerkey
                 update_answer={setIsCorrect}
+                name="dining-base-1"
               />
               is
               <KhanInput
@@ -35,6 +37,7 @@ function DiningBaseCase(): JSX.Element {
                 index={1} //index for what KhanCard you are referring to
                 answer={answerKey.question2} //the answer from answerkey
                 update_answer={setIsCorrect}
+                name="dining-base-2"
               />
               :
               <br />
@@ -45,6 +48,7 @@ function DiningBaseCase(): JSX.Element {
                 index={2} //index for what KhanCard you are referring to
                 answer={answerKey.question3} //the answer from answerkey
                 update_answer={setIsCorrect}
+                name="dining-base-3"
               />
             </p>
           </div>

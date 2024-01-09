@@ -36,6 +36,7 @@ function BinaryBaseCase(): JSX.Element {
       incorrect="Think about what position in the array we are searching for at every iteration."
       correct_answer={isCorrect}
       index={[0, 1]}
+      name="binary-base-case"
     >
       <div>
         if target ==
@@ -55,6 +56,7 @@ function BinaryBaseCase(): JSX.Element {
           index={1}
           answer={answerKey.question2}
           update_answer={setIsCorrect}
+          name="binary-base-case-1"
         />
       </div>
     </KhanCard>

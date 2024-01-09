@@ -182,6 +182,7 @@ function DiningCode(): JSX.Element {
           )
         }
         answer_key={answerKey}
+        name="dining"
       >
         <div>
           <span style={{ color: 'purple' }}> def post_order_sum (Friend):</span>

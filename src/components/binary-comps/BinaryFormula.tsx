@@ -19,6 +19,7 @@ function BinaryFormula(): JSX.Element {
         incorrect="What does it mean for our target word to be higher than the middle word? What side of the array do we check now?"
         correct_answer={isCorrect1}
         index={[0, 1]}
+        name="binary-formula-pt1"
       >
         <div>
           if arr[mid] {'<'} target:
@@ -30,6 +31,7 @@ function BinaryFormula(): JSX.Element {
             index={0}
             answer={answerKey.question1}
             update_answer={setIsCorrect1}
+            name="binary-formula-1"
           />
           ,
           <KhanInput
@@ -37,6 +39,7 @@ function BinaryFormula(): JSX.Element {
             index={1}
             answer={answerKey.question2}
             update_answer={setIsCorrect1}
+            name="binary-formula-2"
           />
           {')'}
         </div>
@@ -46,6 +49,7 @@ function BinaryFormula(): JSX.Element {
         incorrect="What does it mean for our target word to be lower than the middle word? What side of the array do we check now?"
         correct_answer={isCorrect2}
         index={[0, 1]}
+        name="binary-formula-pt2"
       >
         <div>
           if arr[mid] {'>'} target:
@@ -57,6 +61,7 @@ function BinaryFormula(): JSX.Element {
             index={0}
             answer={answerKey.question3}
             update_answer={setIsCorrect2}
+            name="binary-formula-3"
           />
           ,
           <KhanInput
@@ -64,6 +69,7 @@ function BinaryFormula(): JSX.Element {
             index={1}
             answer={answerKey.question4}
             update_answer={setIsCorrect2}
+            name="binary-formula-4"
           />
           {')'}
         </div>

@@ -178,6 +178,7 @@ function BunnyCode(): JSX.Element {
           )
         }
         answer_key={answerKey}
+        name="bunny"
       >
         <div>
           <span style={{ color: 'purple' }}> def fib(n): </span>

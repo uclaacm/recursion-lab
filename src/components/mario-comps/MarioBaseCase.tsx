@@ -37,6 +37,7 @@ function MarioBaseCase(): JSX.Element {
       incorrect="Think about the last number you add when ascending the staircase. That is the base case value. What does it return?" //hint when user gets answer incorrect
       correct_answer={isCorrect} //must pass in correctness state from parent
       index={[0, 1]} //index for what KhanCard you are referring to
+      name="mario-base-case"
     >
       <div>
         if
@@ -57,6 +58,7 @@ function MarioBaseCase(): JSX.Element {
           index={1} //index for what question # you are referring to
           answer={answerKey.question1} //the answer from answerkey
           update_answer={setIsCorrect} //function to update the correctness array
+          name="mario-base"
         />
       </div>
     </KhanCard>
