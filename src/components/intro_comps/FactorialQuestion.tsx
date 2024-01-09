@@ -24,6 +24,7 @@ function FactorialQuestion(): JSX.Element {
         incorrect="Look at the above formulas, how can we write the remainder of product succinctly?" //hint when user gets answer incorrect
         correct_answer={isCorrect} //must pass in correctness state from parent
         index={[0]} //index for what KhanCard you are referring to
+        name="factorial-question"
       >
         <div>
           <span>
@@ -42,6 +43,7 @@ function FactorialQuestion(): JSX.Element {
                 index={0} //index for what KhanCard you are referring to
                 answer={answerKey.question1} //the answer from answerkey
                 update_answer={setIsCorrect}
+                name="factorial-question-1"
               />
             </div>
           </span>

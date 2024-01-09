@@ -1,6 +1,7 @@
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { useState } from 'react';
 import ConfettiExplosion from 'react-confetti-explosion';
+import { useLocalStorage } from '../useLocalStorage';
 
 interface KhanCardProps {
   children?: JSX.Element;
@@ -8,6 +9,7 @@ interface KhanCardProps {
   incorrect: string;
   correct_answer: boolean[];
   index: number[];
+  name: string;
 }
 
 interface ConfettiProps
@@ -33,7 +35,7 @@ const smallProps: ConfettiProps = {
 function KhanCard(props: KhanCardProps): JSX.Element {
   const [isExploding, setIsExploding] = useState(false);
   const [tries, setTries] = useState(3);
-  const [correct, setCorrect] = useState(false);
+  const [correct, setCorrect] = useLocalStorage(props.name + '-correct', false);
   const [expand, setExpand] = useState(false);
   const [showAnswer, setShowAnswer] = useState(false);
 

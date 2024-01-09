@@ -136,6 +136,7 @@ function DiningCode(): JSX.Element {
           )
         }
         answer_key={answerKey}
+        name="dining"
       >
         <div className="left-align">
           <span>

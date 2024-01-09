@@ -19,6 +19,7 @@ function MarioFormula(): JSX.Element {
         incorrect="Think about what terms you add together to get the total sum of the current and above rows." //hint when user gets answer incorrect
         correct_answer={isCorrect} //must pass in correctness state from parent
         index={[0]} //index for what KhanCard you are referring to
+        name="mario-formula"
       >
         <div>
           <Gold>recurSum</Gold>(n) ={' '}
@@ -28,6 +29,7 @@ function MarioFormula(): JSX.Element {
             index={0}
             answer={answerKey.question1}
             update_answer={setIsCorrect}
+            name="mario-formula"
           />{' '}
           +<Gold> recurSum</Gold>(
           <Dropdown

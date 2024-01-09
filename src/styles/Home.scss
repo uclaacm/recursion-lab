@@ -1,13 +1,4 @@
-/*@font-face {
-  font-family: "Helvetica";
-
-  src: url("https://fonts.gstatic.com/s/helvetica/v1/7Auop_0qiz-aVz7u3PJLcA.eot?#iefix")
-          format("embedded-opentype"),
-         url("https://fonts.gstatic.com/s/helvetica/v1/7Auop_0qiz-aVz7u3PJLcA.woff2")
-          format("woff2"),
-         url("https://fonts.gstatic.com/s/helvetica/v1/7Auop_0qiz-aVz7u3PJLcA.woff")
-          format("woff");
-} */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
 
 .home-container {
   //background-color: #fef2e7;
@@ -25,7 +16,16 @@
 .start-button {
   animation: blink 1s infinite, fadeIn 3s;
   animation-play-state: running;
+  background-color: #ffa950;
+  border: 0;
+  border-radius: 12px;
+  color: black;
   cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 16pt;
+  font-weight: 600;
+  height: 50px;
+  width: 180px;
 }
 
 .start-button:hover {
@@ -50,6 +50,8 @@
 }
 
 .start-button-container {
+  display: flex;
+  gap: 40px;
   left: 50%;
   position: absolute;
   top: 57%;
@@ -80,4 +82,24 @@
   position: fixed;
   width: 100%;
   z-index: 0;
+}
+
+/* reset button styles */
+
+.reset-button {
+  animation: blink 1s infinite, fadeIn 3s;
+  animation-play-state: running;
+  background-color: rgba(255, 115, 0, 0.802);
+  border: 0;
+  border-radius: 12px;
+  color: black;
+  cursor: pointer;
+  font-size: 16pt;
+  height: 50px;
+  width: 180px;
+}
+
+.reset-button:hover {
+  animation-play-state: paused;
+  opacity: 0.7;
 }

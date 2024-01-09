@@ -20,6 +20,7 @@ function BunnyBaseCase(): JSX.Element {
       incorrect="Think about what number is the last number to multiply within the factorial computation. That is the base case value. What does it return?"
       correct_answer={isCorrect}
       index={[0, 1]}
+      name="bunny-base-case"
     >
       <div className="left-align">
         <Blue>if</Blue>
@@ -41,6 +42,7 @@ function BunnyBaseCase(): JSX.Element {
               index={1}
               answer={answerKey.question2}
               update_answer={setIsCorrect}
+              name="bunny-case-1"
             />
           </>
         </Tab>

@@ -569,6 +569,7 @@ function MarioCode(): JSX.Element {
       }
       given_function={() => recurSum(5)}
       answer_key={answerKey}
+      name="mario"
     >
       <div className="left-align">
         <Blue>def</Blue>
