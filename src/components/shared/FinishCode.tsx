@@ -1,6 +1,7 @@
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { useState } from 'react';
 import ConfettiExplosion from 'react-confetti-explosion';
+import { useLocalStorage } from '../useLocalStorage';
 
 interface FinishCodeCardProps {
   children?: JSX.Element;
@@ -9,7 +10,8 @@ interface FinishCodeCardProps {
   index: number;
   chosen_function: any;
   given_function: any;
-  answer_key: Record<PropertyKey, string>;
+  answer_key: Record<PropertyKey, string>
+  name: string;
 }
 
 interface ConfettiProps
@@ -35,7 +37,7 @@ const smallProps: ConfettiProps = {
 function FinishCodeCard(props: FinishCodeCardProps): JSX.Element {
   const [isExploding, setIsExploding] = useState(false);
   const [tries, setTries] = useState(3);
-  const [correct, setCorrect] = useState(false);
+  const [correct, setCorrect] = useLocalStorage(props.name + '-code-correct', false);
   const [expand, setExpand] = useState(false);
   const [showAnswer, setShowAnswer] = useState(false);
   const [givenAnswer, setGivenAnswer] = useState(props.given_function());
