@@ -25,8 +25,13 @@ const Home: FC = () => {
         </div>
 
         <div className="reset-button-container">
-          <button className="start-button reset-button" onClick={()=>{ localStorage.clear(); }}>
-            reset
+          <button
+            className="start-button reset-button"
+            onClick={() => {
+              localStorage.clear();
+            }}
+          >
+            restart
           </button>
         </div>
       </div>

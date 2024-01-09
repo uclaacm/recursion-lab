@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { useLocalStorage } from '../useLocalStorage';
 
 interface KhanInputProps {
@@ -11,7 +10,7 @@ interface KhanInputProps {
 }
 
 function KhanInput(props: KhanInputProps): JSX.Element {
-  const [ value, setValue ] = useLocalStorage(props.name + '-input', '');
+  const [value, setValue] = useLocalStorage(props.name + '-input', '');
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const lowerCaseAnswer = e.target.value.toLowerCase();
 

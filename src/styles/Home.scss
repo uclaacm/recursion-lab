@@ -85,21 +85,17 @@
 /* reset button styles */
 
 .reset-button {
-  width: 180px;
-  height: 50px;
-  margin-top: 14px;
-  font-family: Helvetica;
-  color: black;
-  font-size: 25px;
-  background-color: white;
-  border: 0px; 
-
-}
-
-.reset-button {
   animation: blink 1s infinite, fadeIn 3s;
   animation-play-state: running;
+  background-color: white;
+  border: 0;
+  border-radius: 12px;
+  color: black;
   cursor: pointer;
+  font-size: 16pt;
+  height: 50px;
+  margin-top: 14px;
+  width: 180px;
 }
 
 .reset-button:hover {

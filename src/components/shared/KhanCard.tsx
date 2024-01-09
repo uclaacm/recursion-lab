@@ -8,7 +8,7 @@ interface KhanCardProps {
   correct: string;
   incorrect: string;
   correct_answer: boolean[];
-  index: number[]
+  index: number[];
   name: string;
 }
 
