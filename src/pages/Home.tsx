@@ -23,6 +23,12 @@ const Home: FC = () => {
             <img src={startButton} alt="Start Button" />
           </a>
         </div>
+
+        <div className="reset-button-container">
+          <button className="start-button reset-button" onClick={()=>{ localStorage.clear(); }}>
+            reset
+          </button>
+        </div>
       </div>
       <img className="mario-image" src={marioHomepage} alt="Mario" />
       <div>
