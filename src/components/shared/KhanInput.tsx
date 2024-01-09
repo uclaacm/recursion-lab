@@ -29,13 +29,12 @@ function KhanInput(props: KhanInputProps): JSX.Element {
 
   return (
     <>
-      {' '}
       <input
         type="text"
         onChange={(e) => handleChange(e)}
-        className="small-input-field"
+        className={`${props.size}-input-field`}
         value={value}
-      />{' '}
+      />
     </>
   );
 }

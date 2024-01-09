@@ -36,7 +36,7 @@ function FactorialQuestion(): JSX.Element {
             <br />
             <br />
             <div style={{ textAlign: 'center' }}>
-              <Latex>{'$n! = n \\cdot$'}</Latex>
+              <Latex>{'$n! = n \\cdot$ '}</Latex>
               <KhanInput
                 size="medium"
                 correct_answer={isCorrect} //must pass in correctness state from parent

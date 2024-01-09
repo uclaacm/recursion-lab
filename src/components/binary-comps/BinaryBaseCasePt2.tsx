@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import { options_array } from '../../types';
+import { baseCaseOptions2 } from './dropdown_imports';
+import Blue from '../shared/Blue';
 import Dropdown from '../shared/Dropdown';
 import KhanCard from '../shared/KhanCard';
 import KhanInput from '../shared/KhanInput';
+import Tab from '../shared/Tab';
 
 function BinaryBaseCasePt2(): JSX.Element {
   const [isCorrect, setIsCorrect] = useState([false, false, false]);
@@ -12,25 +14,6 @@ function BinaryBaseCasePt2(): JSX.Element {
     question3: 'high',
   });
 
-  const options1: options_array[] = [
-    {
-      value: '<',
-      label: '<',
-    },
-    {
-      value: '<=',
-      label: '<=',
-    },
-    {
-      value: '>',
-      label: '>',
-    },
-    {
-      value: '>=',
-      label: '>=',
-    },
-  ];
-
   return (
     <KhanCard
       correct="Once the left pointer is on the right of the right pointer, the search is over."
@@ -39,9 +22,10 @@ function BinaryBaseCasePt2(): JSX.Element {
       index={[0, 1]}
       name="binary-base-case-pt2"
     >
-      <div>
-        if
+      <div className="left-align">
+        <Blue>if </Blue>
         <KhanInput
+          size="medium"
           correct_answer={isCorrect}
           index={0}
           answer={answerKey.question1}
@@ -49,23 +33,28 @@ function BinaryBaseCasePt2(): JSX.Element {
           name="binary-base-case-pt2-1"
         />
         <Dropdown
-          options={options1}
+          size="small"
+          options={baseCaseOptions2}
           correct_answer={isCorrect}
           index={1}
           answer={answerKey.question2}
           update_answer={setIsCorrect}
         />
         <KhanInput
+          size="medium"
           correct_answer={isCorrect}
           index={2}
           answer={answerKey.question3}
           update_answer={setIsCorrect}
           name="binary-base-case-pt2-2"
-        />
+        />{' '}
         :
         <br />
-        <br />
-        return -1
+        <Tab>
+          <>
+            <Blue>return</Blue> -1
+          </>
+        </Tab>
       </div>
     </KhanCard>
   );

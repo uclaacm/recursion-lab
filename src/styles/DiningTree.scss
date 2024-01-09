@@ -1,0 +1,171 @@
+.lea {
+  stroke-width: 3;
+  transform-origin: 50% 12%;
+  transition: fill 0.1s ease-in-out;
+}
+
+.top-circle-path {
+  fill: black;
+}
+
+.may {
+  stroke-width: 3;
+  transform-origin: 25% 45%;
+  transition: fill 0.3s ease-in-out;
+}
+
+.lea-may {
+  fill: black;
+  stroke: black;
+  stroke-dasharray: 485; /* Set this to the total length of your path */
+  stroke-dashoffset: 0; /* Set this to the total length of your path */
+  stroke-width: 3;
+}
+
+.lea-jane {
+  fill: black;
+  stroke: black;
+  stroke-dasharray: 485; /* Set this to the total length of your path */
+  stroke-dashoffset: 0; /* Set this to the total length of your path */
+  stroke-width: 3;
+}
+
+.may-ryan {
+  fill: black;
+  stroke: black;
+  stroke-dasharray: 485; /* Set this to the total length of your path */
+  stroke-dashoffset: 0; /* Set this to the total length of your path */
+  stroke-width: 3;
+}
+
+.may-null {
+  fill: black;
+  stroke: black;
+  stroke-dasharray: 485; /* Set this to the total length of your path */
+  stroke-dashoffset: 0; /* Set this to the total length of your path */
+  stroke-width: 3;
+}
+
+.ryan {
+  stroke-width: 3;
+  transform-origin: 7% 82%;
+  transition: fill 0.3s ease-in-out;
+}
+
+.left-null {
+  stroke-width: 3;
+  transform-origin: 40% 82%;
+  transition: fill 0.3s ease-in-out;
+}
+
+.jane {
+  stroke-width: 3;
+  transform-origin: 75% 45%;
+  transition: fill 0.3s ease-in-out;
+}
+
+.jane-sam {
+  fill: black;
+  stroke: black;
+  stroke-dasharray: 485; /* Set this to the total length of your path */
+  stroke-dashoffset: 0; /* Set this to the total length of your path */
+  stroke-width: 3;
+}
+
+.sam {
+  stroke-width: 3;
+  transform-origin: 60% 82%;
+  transition: fill 0.3s ease-in-out;
+}
+
+.jane-null {
+  fill: black;
+  stroke: black;
+  stroke-dasharray: 485; /* Set this to the total length of your path */
+  stroke-dashoffset: 0; /* Set this to the total length of your path */
+  stroke-width: 3;
+}
+
+.right-null {
+  stroke-width: 3;
+  transform-origin: 90% 82%;
+  transition: fill 0.3s ease-in-out;
+}
+/* Animation for the SVG container */
+.animate {
+  animation: animateSVG 2s linear forwards;
+}
+
+.collapse {
+  animation: collapse 1s forwards;
+}
+
+.animate-line {
+  animation: animateLine 1s linear forwards;
+}
+
+@keyframes collapse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes animateLine {
+  0% {
+    stroke: orange;
+    stroke-dashoffset: 485; /* Set this to the total length of your path */
+  }
+
+  50% {
+    stroke-dashoffset: 235; /* Set this to the total length of your path */
+  }
+
+  100% {
+    stroke: orange;
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Keyframes for the animation */
+@keyframes animateSVG {
+  0% {
+    /* Initial state: everything is white */
+    fill: transparent;
+    stroke: transparent;
+  }
+
+  35% {
+    /* Top circle starts filling */
+    fill: orange;
+    stroke: orange;
+  }
+
+  50% {
+    /* Top circle is fully filled, start filling the line */
+    fill: orange;
+    stroke: orange;
+    transform: scale(1);
+  }
+
+  75% {
+    /* Line is fully filled, start filling the bottom circle */
+    fill: orange;
+    stroke: orange;
+    transform: scale(1);
+  }
+
+  100% {
+    /* All elements are fully filled */
+    fill: orange;
+    stroke: orange;
+    transform: scale(1);
+  }
+}

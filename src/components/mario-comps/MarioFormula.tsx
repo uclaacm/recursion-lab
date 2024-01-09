@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { options_array } from '../../types';
+import { formulaOptions1 } from './dropdown_imports';
 import Dropdown from '../shared/Dropdown';
+import Gold from '../shared/Gold';
 import KhanCard from '../shared/KhanCard';
 import KhanInput from '../shared/KhanInput';
 
@@ -8,27 +9,8 @@ function MarioFormula(): JSX.Element {
   const [isCorrect, setIsCorrect] = useState([false]);
   const [answerKey] = useState({
     question1: 'n',
-    question2: 'recurSum(n-1)',
+    question2: 'n-1',
   });
-
-  const options0: options_array[] = [
-    {
-      value: 'recurSum(n)',
-      label: 'recurSum(n)',
-    },
-    {
-      value: 'recurSum(n-2)',
-      label: 'recurSum(n-2)',
-    },
-    {
-      value: 'recurSum(n-1)',
-      label: 'recurSum(n-1)',
-    },
-    {
-      value: 'recurSum(n+1)',
-      label: 'recurSum(n+1)',
-    },
-  ];
 
   return (
     <div>
@@ -40,7 +22,7 @@ function MarioFormula(): JSX.Element {
         name="mario-formula"
       >
         <div>
-          recurSum(n) =
+          <Gold>recurSum</Gold>(n) ={' '}
           <KhanInput
             size="medium"
             correct_answer={isCorrect}
@@ -48,16 +30,17 @@ function MarioFormula(): JSX.Element {
             answer={answerKey.question1}
             update_answer={setIsCorrect}
             name="mario-formula"
-          />
-          +
+          />{' '}
+          +<Gold> recurSum</Gold>(
           <Dropdown
             size="medium"
-            options={options0}
+            options={formulaOptions1}
             correct_answer={isCorrect} //must pass in correctness state from parent
             index={1} //index for what KhanCard you are referring to
             answer={answerKey.question2} //the answer from answerkey
             update_answer={setIsCorrect}
           />
+          )
         </div>
       </KhanCard>
     </div>
