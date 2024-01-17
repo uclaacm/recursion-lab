@@ -54,15 +54,15 @@ const Intro: FC = () => {
       <AppWrapper section={HeaderSections.INTRO_TITLE} page={0}>
         <div className="body" style={{ backgroundColor: 'white' }}>
           <div className="content-container">
-              <h2 className="intro-title">Factorials</h2>
-              <div className="intro-content">
-                <Latex>
-                  {`For a nonnegative integer $n$, the factorial of $n$ or $n!$ is the number resulting from multiplying
+            <h2 className="intro-title">Factorials</h2>
+            <div className="intro-content">
+              <Latex>
+                {`For a nonnegative integer $n$, the factorial of $n$ or $n!$ is the number resulting from multiplying
                   $$n\\cdot(n-1)\\cdot\\ldots\\cdot 2\\cdot 1$$ For example,  $4! = 4 \\cdot 3 \\cdot 2 \\cdot 1 = 24$.
                   In particular, if we already know $4!$, then we can compute $5!$ quickly:
                   $$5! = 5\\cdot(4\\cdot3\\cdot2\\cdot1) = 5\\cdot4! = 120$$`}
-                </Latex>
-                {FactorialQuestion()}
+              </Latex>
+              {FactorialQuestion()}
             </div>
             <div style={{ paddingBottom: '50px' }}>
               <h2 className="intro-title">Recursion</h2>
@@ -119,10 +119,10 @@ const Intro: FC = () => {
                 </Latex>
               </div>
             </div>
-              <h2 className="intro-title">The Base Case</h2>
-              <div className="intro-content">
-                <Latex>
-                  {`One important element of recursion is the base case. If we look at the function we wrote above and
+            <h2 className="intro-title">The Base Case</h2>
+            <div className="intro-content">
+              <Latex>
+                {`One important element of recursion is the base case. If we look at the function we wrote above and
                   actually tried to run it, it would never stop. Following the above example with compartments, the computer
                   would repeatedly create new compartments until it runs out of space:
                   $$$$
@@ -138,13 +138,10 @@ const Intro: FC = () => {
                   is nonsense. Although this may allow the process to stop, our answers would all be wrong. For instance, if we computed
                   $3!$ with a base case of $n = -4$, we would have $$3\\cdot 2 \\cdot 1 \\cdot 0 \\cdot \\ldots \\cdot -4 = 0$$
                   `}
-                </Latex>
-                <IntroCode />
+              </Latex>
+              <IntroCode />
             </div>
-            <div
-           
-              style={{ marginBottom: '250px', paddingBottom: '50px' }}
-            >
+            <div style={{ marginBottom: '250px', paddingBottom: '50px' }}>
               <h2 className="intro-title">Summary</h2>
               <div className="intro-content">
                 <Latex>
