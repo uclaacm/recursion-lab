@@ -54,7 +54,6 @@ const Intro: FC = () => {
       <AppWrapper section={HeaderSections.INTRO_TITLE} page={0}>
         <div className="body" style={{ backgroundColor: 'white' }}>
           <div className="content-container">
-            <div className="textbox">
               <h2 className="intro-title">Factorials</h2>
               <div className="intro-content">
                 <Latex>
@@ -64,9 +63,8 @@ const Intro: FC = () => {
                   $$5! = 5\\cdot(4\\cdot3\\cdot2\\cdot1) = 5\\cdot4! = 120$$`}
                 </Latex>
                 {FactorialQuestion()}
-              </div>
             </div>
-            <div className="textbox" style={{ paddingBottom: '50px' }}>
+            <div style={{ paddingBottom: '50px' }}>
               <h2 className="intro-title">Recursion</h2>
               <div className="intro-content">
                 <Latex>
@@ -121,7 +119,6 @@ const Intro: FC = () => {
                 </Latex>
               </div>
             </div>
-            <div className="textbox">
               <h2 className="intro-title">The Base Case</h2>
               <div className="intro-content">
                 <Latex>
@@ -143,10 +140,9 @@ const Intro: FC = () => {
                   `}
                 </Latex>
                 <IntroCode />
-              </div>
             </div>
             <div
-              className="textbox"
+           
               style={{ marginBottom: '250px', paddingBottom: '50px' }}
             >
               <h2 className="intro-title">Summary</h2>
