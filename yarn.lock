@@ -1895,13 +1895,6 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-syntax-highlighter@^15.5.7":
-  version "15.5.9"
-  resolved "https://registry.yarnpkg.com/@types/react-syntax-highlighter/-/react-syntax-highlighter-15.5.9.tgz#be5a1a0eae452fce6d1e4082b75a5fb636911de1"
-  integrity sha512-ven8zRSVMNkqt8ySJ2eEW5ugbfl/V/Z9S1c9UNhGqwkwVZNV5akk10rYDALxgwS25cLmN+/Q5UxlGj9CJmZ6Ew==
-  dependencies:
-    "@types/react" "*"
-
 "@types/react-transition-group@^4.4.0", "@types/react-transition-group@^4.4.7":
   version "4.4.8"
   resolved "https://registry.npmjs.org/@types/react-transition-group/-/react-transition-group-4.4.8.tgz"
@@ -7192,15 +7185,14 @@ raw-body@2.5.1:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-react-code-blocks@^0.1.4:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/react-code-blocks/-/react-code-blocks-0.1.4.tgz#9c0415c231f0ffe34648294043425e8e9c8fb568"
-  integrity sha512-WC1f6XtqFtkb/NMbRl0rwMOBoUDuWrCdwYfMSsIoOIiy1/45BRAhJoVsIOFYr30VJLGfi0bf/qLgTTMD79I0+Q==
+react-code-blocks@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/react-code-blocks/-/react-code-blocks-0.1.5.tgz#8514c6b7bee5b238366278aaee3c0d6cc6f07851"
+  integrity sha512-p57YPvry1OY0fS/oDVfK7BBgy89jHJguyyzNbjZvMUR2/90oB0iv3D6aS/PBjuQp7JyjlRoaZ/2WRxvOyyAAEw==
   dependencies:
     "@babel/runtime" "^7.10.4"
-    "@types/react-syntax-highlighter" "^15.5.7"
     react-syntax-highlighter "^15.5.0"
-    styled-components "^6.0.5"
+    styled-components "^6.1.0"
     tslib "^2.6.0"
 
 react-confetti-explosion@^2.1.2:
@@ -8171,10 +8163,10 @@ style-search@^0.1.0:
   resolved "https://registry.npmjs.org/style-search/-/style-search-0.1.0.tgz"
   integrity sha512-Dj1Okke1C3uKKwQcetra4jSuk0DqbzbYtXipzFlFMZtowbF1x7BKJwB9AayVMyFARvU8EDrZdcax4At/452cAg==
 
-styled-components@^6.0.5:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-6.1.0.tgz#228e3ab9c1ee1daa4b0a06aae30df0ed14fda274"
-  integrity sha512-VWNfYYBuXzuLS/QYEeoPgMErP26WL+dX9//rEh80B2mmlS1yRxRxuL5eax4m6ybYEUoHWlTy2XOU32767mlMkg==
+styled-components@^6.1.0:
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-6.1.1.tgz#a5414ada07fb1c17b96a26a05369daa4e2ad55e5"
+  integrity sha512-cpZZP5RrKRIClBW5Eby4JM1wElLVP4NQrJbJ0h10TidTyJf4SIIwa3zLXOoPb4gJi8MsJ8mjq5mu2IrEhZIAcQ==
   dependencies:
     "@emotion/is-prop-valid" "^1.2.1"
     "@emotion/unitless" "^0.8.0"
