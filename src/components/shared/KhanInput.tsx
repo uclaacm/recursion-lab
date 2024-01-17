@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useLocalStorage } from '../useLocalStorage';
 
 interface KhanInputProps {
   size: string;
@@ -6,10 +6,11 @@ interface KhanInputProps {
   index: number;
   answer: string;
   update_answer: React.Dispatch<React.SetStateAction<boolean[]>>;
+  name: string;
 }
 
 function KhanInput(props: KhanInputProps): JSX.Element {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useLocalStorage(props.name + '-input', '');
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const lowerCaseAnswer = e.target.value.toLowerCase();
 
@@ -21,18 +22,18 @@ function KhanInput(props: KhanInputProps): JSX.Element {
       }
     });
     props.update_answer(newArray);
+    //localStorage.setItem(props.name, JSON.stringify(newArray));
     setValue(e.target.value);
   };
 
   return (
     <>
-      {' '}
       <input
         type="text"
         onChange={(e) => handleChange(e)}
-        className="small-input-field"
+        className={`${props.size}-input-field`}
         value={value}
-      />{' '}
+      />
     </>
   );
 }

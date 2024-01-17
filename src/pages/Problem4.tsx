@@ -1,6 +1,5 @@
 import { faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
-import MUIButton from '@mui/material/Button';
 import { FC, useState, useEffect } from 'react';
 import BookShelf from '../assets/books.png';
 import Magnifying from '../assets/magnifying.png';
@@ -97,15 +96,14 @@ const Problem4: FC = () => {
                   <p style={{ padding: '10px' }}>
                     Current word: {wordList[index]}
                   </p>
-                  <MUIButton
-                    variant="contained"
-                    color="secondary"
+                  <button
+                    className="shared-button binary-purple-btn"
                     onClick={() => {
                       setIndex(index + 1);
                     }}
                   >
                     Next
-                  </MUIButton>
+                  </button>
                 </>
               )}
               {passedIntro && (
@@ -113,15 +111,14 @@ const Problem4: FC = () => {
                   <h2> {'Too slow? Learn Binary Search'} </h2>
                   {!displayRest && (
                     <>
-                      <MUIButton
-                        variant="contained"
-                        color="secondary"
+                      <button
+                        className="shared-button binary-purple-btn"
                         onClick={() => {
                           setDisplayRest(true);
                         }}
                       >
                         Go!
-                      </MUIButton>
+                      </button>
                       <div style={{ width: '100%', height: '20px' }}></div>
                     </>
                   )}

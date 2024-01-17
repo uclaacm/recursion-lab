@@ -1,10 +1,12 @@
 import { useState } from 'react';
-import BunnyCodeDropdown from '../../components/intro_comps/intro_dropdown';
+import { codeOptions1, codeOptions2, codeOptions3 } from './dropdown_imports';
 import FinishCodeCard from '../../components/shared/FinishCode';
-import { options_array } from '../../types';
+import Blue from '../shared/Blue';
+import BunnyCodeDropdown from '../shared/Dropdown';
+import Gold from '../shared/Gold';
+import Tab from '../shared/Tab';
 
 function BunnyCode(): JSX.Element {
-  const [isCorrect] = useState([false, false, false]);
   const [selectedanswer, setselectedanswer] = useState({
     question1: 'n > 1',
     question2: '0',
@@ -32,6 +34,7 @@ function BunnyCode(): JSX.Element {
     if (ifStatement == 'n > 1') {
       return startValue;
     } else if (
+      // CORRECT
       ifStatement == 'n <= 1' &&
       ifReturnVal == 'n' &&
       functionReturnVal == 'fib(n-1) + fib(n-2)'
@@ -44,11 +47,12 @@ function BunnyCode(): JSX.Element {
     ) {
       return nLess10Fib(startValue);
     } else if (
+      // CORRECT
       ifStatement == 'n <= 1' &&
       ifReturnVal == '1' &&
       functionReturnVal == 'fib(n-1) + fib(n-2)'
     ) {
-      return nLess11Fib(startValue);
+      return nLess1NFib(startValue);
     } else if (
       ifStatement == 'n <= 1' &&
       ifReturnVal == 'n' &&
@@ -84,12 +88,6 @@ function BunnyCode(): JSX.Element {
     }
     return nLess10Fib(n - 2) + nLess10Fib(n - 1);
   }
-  function nLess11Fib(n: number): number {
-    if (n <= 1) {
-      return 1;
-    }
-    return nLess11Fib(n - 2) + nLess11Fib(n - 1);
-  }
 
   function nLess1NSum(n: number): number {
     if (n <= 1) {
@@ -110,42 +108,6 @@ function BunnyCode(): JSX.Element {
     return n + nLess11Sum(n - 1);
   }
 
-  const options1: options_array[] = [
-    {
-      value: 'n <= 1',
-      label: 'n <= 1',
-    },
-    {
-      value: 'n > 1',
-      label: 'n > 1',
-    },
-  ];
-  const options2: options_array[] = [
-    {
-      value: '0',
-      label: '0',
-    },
-    {
-      value: '1',
-      label: '1',
-    },
-    {
-      value: 'n',
-      label: 'n',
-    },
-  ];
-
-  const options3: options_array[] = [
-    {
-      value: 'n + fib(n-1)',
-      label: 'n + fib(n-1)',
-    },
-    {
-      value: 'fib(n-1) + fib(n-2)',
-      label: 'fib(n-1) + fib(n-2)',
-    },
-  ];
-
   const handleUpdateAnswer = (index: number, chosenAnswer: string) => {
     setselectedanswer((prevAnswerKey) => ({
       ...prevAnswerKey,
@@ -158,6 +120,7 @@ function BunnyCode(): JSX.Element {
       <FinishCodeCard
         // correct="Put the base case and calculate fib(n) by adding fib(n-1) and fib(n-2)"
         // incorrect="Combine the 2 code from `base case` and `recursive formula` into your answer."
+        description="Your answer will be tested with the case n = 7."
         correct_answer={[
           recurFib(7) ==
             selectedRecurFib(
@@ -178,49 +141,51 @@ function BunnyCode(): JSX.Element {
           )
         }
         answer_key={answerKey}
+        name="bunny"
       >
-        <div>
-          <span style={{ color: 'purple' }}> def fib(n): </span>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div className="left-align">
+          <Blue>def</Blue>
+          <Gold> fib</Gold>(n):
           <br />
-          <b style={{ color: 'purple' }}> if </b>
-          <BunnyCodeDropdown
-            options={options1}
-            correct_answer={isCorrect}
-            index={0}
-            answer={answerKey.question1}
-            update_answer={(chosenAnswer: string) =>
-              handleUpdateAnswer(0, chosenAnswer)
-            }
-          />
-          <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <b style={{ color: 'purple' }}>return </b>
-          <BunnyCodeDropdown
-            options={options2}
-            correct_answer={isCorrect}
-            index={1}
-            answer={answerKey.question2}
-            update_answer={(chosenAnswer: string) =>
-              handleUpdateAnswer(1, chosenAnswer)
-            }
-          />
-          <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <b style={{ color: 'purple' }}>return</b>
-          <BunnyCodeDropdown
-            options={options3}
-            correct_answer={isCorrect}
-            index={2}
-            answer={answerKey.question3}
-            update_answer={(chosenAnswer: string) =>
-              handleUpdateAnswer(2, chosenAnswer)
-            }
-          />
+          <Tab>
+            <>
+              <Blue> if </Blue>
+              <BunnyCodeDropdown
+                size="medium"
+                options={codeOptions1}
+                index={0}
+                answer={answerKey.question1}
+                update_answer={(chosenAnswer: string) =>
+                  handleUpdateAnswer(0, chosenAnswer)
+                }
+              />
+              <br />
+              <Tab>
+                <>
+                  <Blue>return </Blue>
+                  <BunnyCodeDropdown
+                    size="small"
+                    options={codeOptions2}
+                    index={1}
+                    answer={answerKey.question2}
+                    update_answer={(chosenAnswer: string) =>
+                      handleUpdateAnswer(1, chosenAnswer)
+                    }
+                  />
+                </>
+              </Tab>
+              <Blue>return</Blue>
+              <BunnyCodeDropdown
+                size="large"
+                options={codeOptions3}
+                index={2}
+                answer={answerKey.question3}
+                update_answer={(chosenAnswer: string) =>
+                  handleUpdateAnswer(2, chosenAnswer)
+                }
+              />
+            </>
+          </Tab>
         </div>
       </FinishCodeCard>
     </div>
