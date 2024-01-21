@@ -1,9 +1,10 @@
+import { CodeBlock, monoBlue } from 'react-code-blocks';
 import DiningTree from './DiningTree';
-import Blue from '../shared/Blue';
 import Goal from '../shared/Goal';
-import Gold from '../shared/Gold';
-import Tab from '../shared/Tab';
 import '../../pages/Problem2.scss';
+
+const code =
+  'class Friend:\n\tdef __init__(self, val, left = None, right = None):\n\t\tself.val = val\n\t\tself.left = left\n\t\tself.right = right';
 
 function DiningUnderstand(): JSX.Element {
   return (
@@ -21,42 +22,12 @@ function DiningUnderstand(): JSX.Element {
       <br />
       <div className="goal-container" style={{ gap: '50px' }}>
         <div className="left-align">
-          <Blue>class Friend</Blue>:
-          <br />
-          <Tab>
-            <>
-              <Blue>def </Blue>
-              <span
-                style={{
-                  textDecoration: 'underline #736000',
-                  whiteSpace: 'pre',
-                }}
-              >
-                {'    '}
-              </span>
-              <Gold>init</Gold>
-              <span
-                style={{
-                  textDecoration: 'underline #736000',
-                  whiteSpace: 'pre',
-                }}
-              >
-                {'    '}
-              </span>
-              (self, val, <br />
-              left = <Blue>None</Blue>, right = <Blue>None</Blue>):
-              <br />
-              <Tab>
-                <>
-                  self.val = val
-                  <br />
-                  self.left = left
-                  <br />
-                  self.right = right
-                </>
-              </Tab>
-            </>
-          </Tab>
+          <CodeBlock
+            text={code}
+            language="python"
+            showLineNumbers={false}
+            theme={monoBlue}
+          />
         </div>
         <table className="left-align">
           <thead>
