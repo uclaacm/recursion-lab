@@ -1,8 +1,9 @@
 import { faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import { FC } from 'react';
-import { CodeBlock, dracula } from 'react-code-blocks';
 import Latex from 'react-latex-next';
 
+import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlight';
+import { atomOneLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import FactorialQuestion from '../components/intro_comps/FactorialQuestion';
 import IntroCode from '../components/intro_comps/intro_code';
 import AppWrapper from '../components/shared/AppWrapper';
@@ -24,29 +25,23 @@ const slides: { url: string }[] = importAll(
   require.context('../assets/', false, /Variant\d\.(png|jpe?g|svg)$/)
 );
 
-function recursionCodeBlock(
-  code: string,
-  language: string,
-  showLineNumbers: boolean,
-  startingLineNumber: number
-) {
+function recursionCodeBlock(code: string) {
   return (
-    <CodeBlock
-      text={code}
-      language={language}
-      showLineNumbers={showLineNumbers}
-      startingLineNumber={startingLineNumber}
-      theme={dracula}
-    />
+    <SyntaxHighlighter
+      language="python"
+      showLineNumbers={false}
+      style={atomOneLight}
+    >
+      {code}
+    </SyntaxHighlighter>
   );
 }
-const code = `void doSomething() {
-    //---- do stuff ----
-    cout << "did something" << endl;
-    //------------------
+const code = `def doSomething():
+    #---- do stuff ----
+    print("did something")
+    #------------------
 
-    doSomething();
-}`;
+    doSomething()`;
 
 const Intro: FC = () => {
   return (
@@ -81,7 +76,7 @@ const Intro: FC = () => {
                     fontFamily: 'monospace',
                   }}
                 >
-                  {recursionCodeBlock(code, 'cpp', true, 1)}
+                  {recursionCodeBlock(code)}
                 </div>
                 <Latex>
                   {`

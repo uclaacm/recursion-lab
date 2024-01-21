@@ -33,6 +33,7 @@
     "react-latex-next": "^2.2.0",
     "react-router-dom": "^6.12.0",
     "react-select": "^5.7.2",
+    "react-syntax-highlighter": "^15.5.0",
     "stylelint-config-prettier": "^9.0.4"
   },
   "devDependencies": {
@@ -40,6 +41,7 @@
     "@babel/preset-env": "^7.22.14",
     "@babel/preset-react": "^7.22.5",
     "@babel/preset-typescript": "^7.22.11",
+    "@types/react-syntax-highlighter": "^15.5.11",
     "@typescript-eslint/eslint-plugin": "^6.9.0",
     "@typescript-eslint/parser": "^6.9.0",
     "babel-loader": "^9.1.2",
@@ -74,6 +76,6 @@
     "webpack-manifest-plugin": "^5.0.0",
     "webpack-merge": "^5.8.0",
     "webpack-nano": "^1.1.1",
-    "webpack-pwa-manifest": "^4.3.0"
+    "webpack-pwa-manifest": "^4.0.0"
   }
 }

@@ -1,10 +1,11 @@
-import { CodeBlock, monoBlue } from 'react-code-blocks';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { atomOneLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import DiningTree from './DiningTree';
 import Goal from '../shared/Goal';
 import '../../pages/Problem2.scss';
 
 const code =
-  'class Friend:\n\tdef __init__(self, val, left = None, right = None):\n\t\tself.val = val\n\t\tself.left = left\n\t\tself.right = right';
+  'class Friend:def __init__(self, val, left = None, right = None):\n\t\tself.val = val\n\t\tself.left = left\n\t\tself.right = right';
 
 function DiningUnderstand(): JSX.Element {
   return (
@@ -22,12 +23,9 @@ function DiningUnderstand(): JSX.Element {
       <br />
       <div className="goal-container" style={{ gap: '50px' }}>
         <div className="left-align">
-          <CodeBlock
-            text={code}
-            language="python"
-            showLineNumbers={false}
-            theme={monoBlue}
-          />
+          <SyntaxHighlighter language="python" style={atomOneLight}>
+            {code}
+          </SyntaxHighlighter>
         </div>
         <table className="left-align">
           <thead>
