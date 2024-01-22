@@ -4,8 +4,11 @@ import DiningTree from './DiningTree';
 import Goal from '../shared/Goal';
 import '../../pages/Problem2.scss';
 
-const code =
-  'class Friend:def __init__(self, val, left = None, right = None):\n\t\tself.val = val\n\t\tself.left = left\n\t\tself.right = right';
+const code = `class Friend:
+    def __init__(self, val, left = None, right = None):
+        self.val = val
+        self.left = left
+        self.right = right`;
 
 function DiningUnderstand(): JSX.Element {
   return (
