@@ -94,8 +94,10 @@ body {
 
 .khan-card-container {
   background-color: white;
-  border: 2px solid black;
-  margin: 20px; // subject to change
+  border-radius: 1em;
+  box-shadow: 1em 1em 1em 1em rgba(192, 192, 192, 0.5);
+  flex-direction: column;
+  margin: 5em; // subject to change
   padding: 35px;
 }
 
@@ -249,6 +251,7 @@ body {
   line-height: 1.42857143;
   margin-left: 5em;
   margin-right: 5em;
+  min-width: 40%;
   padding: 6px 12px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   width: 60%;
