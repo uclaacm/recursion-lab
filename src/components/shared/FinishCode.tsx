@@ -2,6 +2,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { useState } from 'react';
 import ConfettiExplosion from 'react-confetti-explosion';
 import { useLocalStorage } from '../useLocalStorage';
+import '../../styles/global.scss';
 
 interface FinishCodeCardProps {
   children?: JSX.Element;

@@ -14,6 +14,7 @@ import ExpandBox from '../components/shared/ExpandBox';
 import { HeaderSections } from '../components/shared/globalTypes';
 //import YardIcon from '@mui/icons-material/Yard';
 import '../styles/Problem1.scss';
+import '../styles/global.scss';
 
 const Problem1: FC = () => {
   return (
