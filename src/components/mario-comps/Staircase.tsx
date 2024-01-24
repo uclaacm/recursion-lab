@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Goal from '../shared/Goal';
 import '../../styles/Staircase.scss';
 
 interface TriangleProps {
@@ -51,17 +52,15 @@ function Staircase(): JSX.Element {
   return (
     <div className="staircase-body">
       <p className="mario-step1-subtitle">
-        This stage is meant for you to first see the big picture and find a way
-        to reduce it into smaller problems that reduce into base cases. This
-        interactive staircase should help you see all the steps that make up the
-        staircase, so have fun playing with it. Don&apos;t forget to see the
-        relationship between one step to the next (literally)!
+        Try to see the big picture and find a way to reduce it into smaller
+        problems that reduce into base cases. This interactive staircase should
+        help you see all the steps that make up the staircase, so have fun
+        playing with it. Don&apos;t forget to see the relationship between one
+        step to the next (literally)!
       </p>
-      <div>
-        <b className="goal">GOAL:</b>
-        <span> Find the sum of the first n natural numbers.</span>
-      </div>
-      <p>Use the slider to set the number of steps: {numColumns}</p>
+      <br />
+      <Goal>Find the sum of the first n natural numbers.</Goal>
+      <p>Use the slider to set the value of n: {numColumns}</p>
       <div className="interactive-staircase">
         <div className="n-input-container">
           <input
@@ -124,10 +123,15 @@ function Staircase(): JSX.Element {
             {numColumns == 9 ? <b>9</b> : 9}{' '}
           </div>
         </div>
+        <br />
         <Triangle numColumns={numColumns} />
+        <br />
         <span>
-          {numColumns > 1 ? `SUM = ${sumEnumerated} = ${sum}` : `SUM = ${sum}`}
+          <b>SUM </b>
+          {numColumns > 1 ? `= ${sumEnumerated} = ` : '= '}
+          <b>{`${sum}`}</b>
         </span>
+        <br />
       </div>
     </div>
   );

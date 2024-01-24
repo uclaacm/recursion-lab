@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { baseCaseOptions2 } from './dropdown_imports';
+import Blue from '../shared/Blue';
 import Dropdown from '../shared/Dropdown';
 import KhanCard from '../shared/KhanCard';
 import KhanInput from '../shared/KhanInput';
+import Tab from '../shared/Tab';
 
 function BinaryBaseCasePt2(): JSX.Element {
   const [isCorrect, setIsCorrect] = useState([false, false, false]);
@@ -18,16 +20,20 @@ function BinaryBaseCasePt2(): JSX.Element {
       incorrect="Think about what position of the low & high pointers means the search is over."
       correct_answer={isCorrect}
       index={[0, 1]}
+      name="binary-base-case-pt2"
     >
-      <div>
-        if
+      <div className="left-align">
+        <Blue>if </Blue>
         <KhanInput
+          size="medium"
           correct_answer={isCorrect}
           index={0}
           answer={answerKey.question1}
           update_answer={setIsCorrect}
+          name="binary-base-case-pt2-1"
         />
         <Dropdown
+          size="small"
           options={baseCaseOptions2}
           correct_answer={isCorrect}
           index={1}
@@ -35,15 +41,20 @@ function BinaryBaseCasePt2(): JSX.Element {
           update_answer={setIsCorrect}
         />
         <KhanInput
+          size="medium"
           correct_answer={isCorrect}
           index={2}
           answer={answerKey.question3}
           update_answer={setIsCorrect}
-        />
+          name="binary-base-case-pt2-2"
+        />{' '}
         :
         <br />
-        <br />
-        return -1
+        <Tab>
+          <>
+            <Blue>return</Blue> -1
+          </>
+        </Tab>
       </div>
     </KhanCard>
   );

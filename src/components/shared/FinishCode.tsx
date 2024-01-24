@@ -1,6 +1,7 @@
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { useState } from 'react';
 import ConfettiExplosion from 'react-confetti-explosion';
+import { useLocalStorage } from '../useLocalStorage';
 
 interface FinishCodeCardProps {
   children?: JSX.Element;
@@ -10,6 +11,7 @@ interface FinishCodeCardProps {
   chosen_function: any;
   given_function: any;
   answer_key: Record<PropertyKey, string>;
+  name: string;
 }
 
 interface ConfettiProps
@@ -35,7 +37,10 @@ const smallProps: ConfettiProps = {
 function FinishCodeCard(props: FinishCodeCardProps): JSX.Element {
   const [isExploding, setIsExploding] = useState(false);
   const [tries, setTries] = useState(3);
-  const [correct, setCorrect] = useState(false);
+  const [correct, setCorrect] = useLocalStorage(
+    props.name + '-code-correct',
+    false
+  );
   const [expand, setExpand] = useState(false);
   const [showAnswer, setShowAnswer] = useState(false);
   const [givenAnswer, setGivenAnswer] = useState(props.given_function());
@@ -87,9 +92,18 @@ function FinishCodeCard(props: FinishCodeCardProps): JSX.Element {
         )}
         &nbsp;&nbsp;Finish the code
       </div>
-      <div style={{ margin: 'auto', textAlign: 'center', marginTop: '10px' }}>
-        {props.description}
-      </div>
+      {props?.description && (
+        <div
+          style={{
+            margin: 'auto',
+            textAlign: 'left',
+            marginLeft: '43px',
+            marginTop: '10px',
+          }}
+        >
+          {props.description}
+        </div>
+      )}
       <div className="finish-content">
         <div>{props.children}</div>
         <div className="code-output">
@@ -103,7 +117,7 @@ function FinishCodeCard(props: FinishCodeCardProps): JSX.Element {
                 Incorrect. <br></br>{' '}
                 {`The correct answer is ${givenAnswer}. Your answer was ${
                   chosenAnswer <= -1 ? 'max call stack exceeded' : chosenAnswer
-                }`}
+                }.`}
               </p>
             ))}
           <div>

@@ -1,10 +1,12 @@
 import { useState } from 'react';
-import IntroDropdown from './intro_dropdown';
 import FinishCodeCard from '../../components/shared/FinishCode';
 import { options_array } from '../../types';
+import Blue from '../shared/Blue';
+import IntroDropdown from '../shared/Dropdown';
+import Gold from '../shared/Gold';
+import Tab from '../shared/Tab';
 
 function IntroCode(): JSX.Element {
-  const [isCorrect] = useState(false);
   const [selectedanswer, setselectedanswer] = useState({
     question1: 'n==0',
     question2: '0',
@@ -17,29 +19,29 @@ function IntroCode(): JSX.Element {
 
   const options0: options_array[] = [
     {
-      value: 'dropdown1',
+      value: 'n==0',
       label: 'n==0',
     },
     {
-      value: 'dropdown2',
+      value: 'n==1',
       label: 'n==1',
     },
     {
-      value: 'dropdown3',
+      value: 'n==2',
       label: 'n==2',
     },
   ];
   const options1: options_array[] = [
     {
-      value: 'dropdown1',
+      value: '0',
       label: '0',
     },
     {
-      value: 'dropdown2',
+      value: '1',
       label: '1',
     },
     {
-      value: 'dropdown3',
+      value: '2',
       label: '2',
     },
   ];
@@ -68,7 +70,7 @@ function IntroCode(): JSX.Element {
 
   return (
     <FinishCodeCard
-      description="Finish the code below using the dropdown menus. You answer will be checked for the case where n = 5."
+      description="Finish the code below using the dropdown menus. Your answer will be checked for the case where n = 5."
       correct_answer={[
         factorial(5) ==
           selectedfactorial(
@@ -87,33 +89,42 @@ function IntroCode(): JSX.Element {
       }
       given_function={() => factorial(5)}
       answer_key={answerKey}
+      name="intro"
     >
-      <div className="code-component-container">
-        <div className="factorial-text">
-          <div>factorial(n):</div>
-          <span>if</span>
-          <IntroDropdown
-            options={options0}
-            correct_answer={[isCorrect]}
-            index={0}
-            answer={'n==0'}
-            update_answer={(chosenAnswer: string) =>
-              handleUpdateAnswer(0, chosenAnswer)
-            }
-          />
-          <div></div>
-          <span>return</span>
-          <IntroDropdown
-            options={options1}
-            correct_answer={[isCorrect]}
-            index={1}
-            answer={'1'}
-            update_answer={(chosenAnswer: string) =>
-              handleUpdateAnswer(1, chosenAnswer)
-            }
-          />
-          <div>return n * factorial(n-1)</div>
-        </div>
+      <div className="left-align">
+        <Blue>def</Blue>
+        <Gold> factorial</Gold>(n):
+        <Tab>
+          <>
+            <Blue>if</Blue>
+            <IntroDropdown
+              options={options0}
+              index={0}
+              answer={'n==0'}
+              update_answer={(chosenAnswer: string) =>
+                handleUpdateAnswer(0, chosenAnswer)
+              }
+              size="medium"
+            />
+            :
+            <br />
+            <Tab>
+              <>
+                <Blue>return</Blue>
+                <IntroDropdown
+                  options={options1}
+                  index={1}
+                  answer={'1'}
+                  update_answer={(chosenAnswer: string) =>
+                    handleUpdateAnswer(1, chosenAnswer)
+                  }
+                  size="small"
+                />
+              </>
+            </Tab>
+            <Blue>return</Blue> n * <Gold>factorial</Gold>(n-1)
+          </>
+        </Tab>
       </div>
     </FinishCodeCard>
   );
