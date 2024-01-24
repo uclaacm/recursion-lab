@@ -5,15 +5,13 @@ import {
   bcOptions3,
   bcOptions4,
 } from './dropdown_imports';
-import BinaryCodeDropdown from '../../components/intro_comps/intro_dropdown';
 import FinishCodeCard from '../../components/shared/FinishCode';
 import Blue from '../shared/Blue';
+import BinaryCodeDropdown from '../shared/Dropdown';
 import Gold from '../shared/Gold';
 import Tab from '../shared/Tab';
 
 function BinaryCode(): JSX.Element {
-  const [isCorrect] = useState([false, false, false]);
-
   const [selectedanswer, setselectedanswer] = useState<
     Record<PropertyKey, string>
   >({
@@ -112,117 +110,109 @@ function BinaryCode(): JSX.Element {
   };
 
   return (
-    <FinishCodeCard
-      correct_answer={[
-        givenBinarySearch(arr, 'pear', 0, arr.length - 1) ===
-          createBinarySearch(selectedanswer)(arr, 'pear', 0, arr.length - 1),
-      ]} //boolean array of possible correct answers
-      index={0} //index for answer key
-      given_function={() => givenBinarySearch(arr, 'pear', 0, arr.length - 1)}
-      chosen_function={() =>
-        createBinarySearch(selectedanswer)(arr, 'pear', 0, arr.length - 1)
-      } //built function
-      answer_key={answerKey} //answer key
-    >
-      <div style={{ textAlign: 'left' }}>
-        <span>
-          <Blue>def</Blue>
-          <Gold> binarySearch</Gold>(arr, target, low, high):
-        </span>
-        <br />
-        <Tab>
-          <>
-            <Blue>if</Blue> low {'>'} high:
-            <br />
-            <Tab>
-              <>
-                <Blue>return</Blue>
-                <BinaryCodeDropdown
-                  options={bcOptions1}
-                  correct_answer={isCorrect}
-                  index={0}
-                  answer={answerKey.question1}
-                  update_answer={(chosenAnswer: string) =>
-                    handleUpdateAnswer(0, chosenAnswer)
-                  }
-                />
-              </>
-            </Tab>
-          </>
-        </Tab>
-        <br />
-
-        <Tab>
-          <>mid = (high + low) // 2</>
-        </Tab>
-        <Tab>
-          <>
-            <Blue>if</Blue> target == arr[mid]:
-            <br />
-            <Tab>
-              <>
-                <Blue>return</Blue>
-                <BinaryCodeDropdown
-                  options={bcOptions2}
-                  correct_answer={isCorrect}
-                  index={1}
-                  answer={answerKey.question2}
-                  update_answer={(chosenAnswer: string) =>
-                    handleUpdateAnswer(1, chosenAnswer)
-                  }
-                />
-              </>
-            </Tab>
-          </>
-        </Tab>
-        <Tab>
-          <>
-            <Blue>elif</Blue> arr[mid] {'<'} target:
-            <br />
-            <Tab>
-              <>
-                <Blue>return</Blue>
-                <Gold> binarySearch</Gold>
-                {'('}
-                <BinaryCodeDropdown
-                  options={bcOptions3}
-                  correct_answer={isCorrect}
-                  index={2}
-                  answer={answerKey.question3}
-                  update_answer={(chosenAnswer: string) =>
-                    handleUpdateAnswer(2, chosenAnswer)
-                  }
-                />
-                {')'}
-              </>
-            </Tab>
-          </>
-        </Tab>
-        <Tab>
-          <>
-            <Blue>else</Blue>:
-            <br />
-            <Tab>
-              <>
-                <Blue>return</Blue>
-                <Gold> binarySearch</Gold>
-                {'('}
-                <BinaryCodeDropdown
-                  options={bcOptions4}
-                  correct_answer={isCorrect}
-                  index={3}
-                  answer={answerKey.question4}
-                  update_answer={(chosenAnswer: string) =>
-                    handleUpdateAnswer(3, chosenAnswer)
-                  }
-                />
-                {')'}
-              </>
-            </Tab>
-          </>
-        </Tab>
-      </div>
-    </FinishCodeCard>
+    <>
+      <FinishCodeCard
+        description="Your answer will be tested with the given words array at the start with the target word 'pear'."
+        correct_answer={[
+          givenBinarySearch(arr, 'pear', 0, arr.length - 1) ===
+            createBinarySearch(selectedanswer)(arr, 'pear', 0, arr.length - 1),
+        ]} //boolean array of possible correct answers
+        index={0} //index for answer key
+        given_function={() => givenBinarySearch(arr, 'pear', 0, arr.length - 1)}
+        chosen_function={() =>
+          createBinarySearch(selectedanswer)(arr, 'pear', 0, arr.length - 1)
+        } //built function
+        answer_key={answerKey} //answer key
+      >
+        <div className="left-align">
+          <span>
+            <Blue>def</Blue>
+            <Gold> binarySearch</Gold>(arr, target, low, high):
+          </span>
+          <br />
+          <Tab>
+            <>
+              <Blue>if</Blue> low {'>'} high:
+              <br />
+              <Tab>
+                <>
+                  <Blue>return</Blue>
+                  <BinaryCodeDropdown
+                    size="small"
+                    options={bcOptions1}
+                    index={0}
+                    answer={answerKey.question1}
+                    update_answer={(chosenAnswer: string) =>
+                      handleUpdateAnswer(0, chosenAnswer)
+                    }
+                  />
+                </>
+              </Tab>
+              <br />
+              mid = (high + low) // 2
+              <br />
+              <br />
+              <Blue>if</Blue> target == arr[mid]:
+              <br />
+              <Tab>
+                <>
+                  <Blue>return</Blue>
+                  <BinaryCodeDropdown
+                    size="medium"
+                    options={bcOptions2}
+                    index={1}
+                    answer={answerKey.question2}
+                    update_answer={(chosenAnswer: string) =>
+                      handleUpdateAnswer(1, chosenAnswer)
+                    }
+                  />
+                </>
+              </Tab>
+              <Blue>elif</Blue> arr[mid] {'<'} target:
+              <br />
+              <Tab>
+                <>
+                  <Blue>return</Blue>
+                  <Gold> binarySearch</Gold>
+                  {'('}
+                  <BinaryCodeDropdown
+                    size="large"
+                    options={bcOptions3}
+                    index={2}
+                    answer={answerKey.question3}
+                    update_answer={(chosenAnswer: string) =>
+                      handleUpdateAnswer(2, chosenAnswer)
+                    }
+                  />
+                  {')'}
+                </>
+              </Tab>
+              <Blue>else</Blue>:
+              <br />
+              <Tab>
+                <>
+                  <Blue>return</Blue>
+                  <Gold> binarySearch</Gold>
+                  {'('}
+                  <BinaryCodeDropdown
+                    size="large"
+                    options={bcOptions4}
+                    index={3}
+                    answer={answerKey.question4}
+                    update_answer={(chosenAnswer: string) =>
+                      handleUpdateAnswer(3, chosenAnswer)
+                    }
+                  />
+                  {')'}
+                </>
+              </Tab>
+            </>
+          </Tab>
+        </div>
+      </FinishCodeCard>
+      <br />
+      <br />
+    </>
   );
 }
 export default BinaryCode;

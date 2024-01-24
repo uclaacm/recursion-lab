@@ -2,13 +2,14 @@ import { FC } from 'react';
 import '../styles/Home.scss';
 import '../styles/Mario.scss';
 import '../styles/Rabbits.scss';
+import { useNavigate } from 'react-router-dom';
 import meadows from '../assets/hill-background.png';
 import homepageTitle from '../assets/homepage_newtitle.png';
 import homepageBacklayer from '../assets/homepageBacklayer.png';
 import marioHomepage from '../assets/mario_homepage.png';
-import startButton from '../assets/start_button.png';
 
 const Home: FC = () => {
+  const navigate = useNavigate();
   return (
     <div
       className="home-container"
@@ -18,10 +19,18 @@ const Home: FC = () => {
       }}
     >
       <div className="start-button-container">
-        <div className="start-button">
-          <a href="/intro">
-            <img src={startButton} alt="Start Button" />
-          </a>
+        <button className="start-button" onClick={() => navigate('/intro')}>
+          start
+        </button>
+        <div className="reset-button-container">
+          <button
+            className="start-button reset-button"
+            onClick={() => {
+              localStorage.clear();
+            }}
+          >
+            restart
+          </button>
         </div>
       </div>
       <img className="mario-image" src={marioHomepage} alt="Mario" />

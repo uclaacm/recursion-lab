@@ -1,6 +1,7 @@
 import '../../pages/Problem4.scss';
 import { useState, useEffect } from 'react';
 import SearchableWord from './SearchableWord';
+import Goal from '../shared/Goal';
 
 export default function BinarySearchExample({
   answer,
@@ -99,10 +100,15 @@ export default function BinarySearchExample({
 
   return (
     <>
+      <Goal>
+        Locate the index of the target &apos;{answer}&apos;. If not found,
+        return -1.
+      </Goal>
+      <br />
       <div>
         {' '}
-        Let&apos;s find the word {answer}. Is the currently highlighted word
-        alphabetically before or after {answer}?{' '}
+        Is the currently highlighted word alphabetically before or after{' '}
+        {answer}?{' '}
       </div>
       <div
         style={{
@@ -123,26 +129,18 @@ export default function BinarySearchExample({
           );
         })}
       </div>
+      <br />
       <button
-        style={{
-          backgroundColor: '#ff5252',
-          color: 'white',
-          padding: '10px',
-          margin: '10px',
-        }}
+        className="shared-button binary-red-btn"
         onClick={() => {
           handleClick('lower');
         }}
       >
         Lower
       </button>
+      <div style={{ width: '10px', display: 'inline-block' }}></div>
       <button
-        style={{
-          backgroundColor: 'lightGreen',
-          color: 'white',
-          padding: '10px',
-          margin: '10px',
-        }}
+        className="shared-button binary-green-btn"
         onClick={() => {
           handleClick('higher');
         }}
