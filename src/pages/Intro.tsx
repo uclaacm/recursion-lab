@@ -2,12 +2,11 @@ import { faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import { FC } from 'react';
 import Latex from 'react-latex-next';
 
-import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlight';
-import { atomOneLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import FactorialQuestion from '../components/intro_comps/FactorialQuestion';
 import IntroCode from '../components/intro_comps/intro_code';
 import AppWrapper from '../components/shared/AppWrapper';
 import Button from '../components/shared/Button';
+import CodeBlock from '../components/shared/CodeBlock';
 import { HeaderSections } from '../components/shared/globalTypes';
 import './intro.scss';
 
@@ -26,15 +25,7 @@ const slides: { url: string }[] = importAll(
 );
 
 function recursionCodeBlock(code: string) {
-  return (
-    <SyntaxHighlighter
-      language="python"
-      showLineNumbers={false}
-      style={atomOneLight}
-    >
-      {code}
-    </SyntaxHighlighter>
-  );
+  return <CodeBlock language="python" code={code}></CodeBlock>;
 }
 const code = `def doSomething():
     #---- do stuff ----

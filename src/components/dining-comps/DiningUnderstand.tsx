@@ -1,6 +1,5 @@
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { atomOneLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import DiningTree from './DiningTree';
+import CodeBlock from '../shared/CodeBlock';
 import Goal from '../shared/Goal';
 import '../../pages/Problem2.scss';
 
@@ -26,9 +25,7 @@ function DiningUnderstand(): JSX.Element {
       <br />
       <div className="goal-container" style={{ gap: '50px' }}>
         <div className="left-align">
-          <SyntaxHighlighter language="python" style={atomOneLight}>
-            {code}
-          </SyntaxHighlighter>
+          <CodeBlock language="python" code={code}></CodeBlock>
         </div>
         <table className="left-align">
           <thead>
