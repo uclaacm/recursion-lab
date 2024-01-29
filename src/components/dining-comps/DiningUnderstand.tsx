@@ -1,6 +1,6 @@
 import DiningTree from './DiningTree';
-import Goal from '../shared/Goal';
 import CodeBlock from '../shared/CodeBlock';
+import Goal from '../shared/Goal';
 import '../../pages/Problem2.scss';
 
 const code = `class Friend:
