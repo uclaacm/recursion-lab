@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
-import styled, { css } from "styled-components";
+import React, { useState, useEffect, useRef } from 'react';
+import styled, { css } from 'styled-components';
 
 const Main = styled.div` 
   font-family: Poppins, "Helvetica Neue", Helvetica, sans-serif;
@@ -12,9 +12,9 @@ const Main = styled.div`
 
 const DropDownContainer = styled.div<{ size: Size }>`
 width: 200px;
-${(props) => props.size === "small" && css`width: 77px;`}
-${(props) => props.size === "medium" && css`width: 123px;`}
-${(props) => props.size === "large" && css`width: 200px;`}
+${(props) => props.size === 'small' && css`width: 77px;`}
+${(props) => props.size === 'medium' && css`width: 123px;`}
+${(props) => props.size === 'large' && css`width: 200px;`}
 
 `;
 
@@ -46,9 +46,9 @@ padding: 8px;
 const DropDownListContainer = styled.div<{ size: Size }>`
   position: absolute;
   width: 200px;
-${(props) => props.size === "small" && css`width: 77px;`}
-${(props) => props.size === "medium" && css`width: 123px;`}
-${(props) => props.size === "large" && css`width: 200px;`}
+${(props) => props.size === 'small' && css`width: 77px;`}
+${(props) => props.size === 'medium' && css`width: 123px;`}
+${(props) => props.size === 'large' && css`width: 200px;`}
   z-index: 999;
 `;
 
@@ -104,14 +104,14 @@ interface Option {
   label: string;
 }
 
-type Size = "small" | "medium" | "large";
+type Size = 'small' | 'medium' | 'large';
 
 interface CustomSelectProps {
   options: Option[];
   onChange: (selectedOption: Option) => void;
   placeholder: string;
   size: Size;
-  
+
 }
 
 export default function DropDownSelect({
@@ -124,17 +124,17 @@ export default function DropDownSelect({
   const [selectedOption, setSelectedOption] = useState<Option | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [isRecentlyClosed, setIsRecentlyClosed] = useState(false);
- 
+
 
   const toggling = () => {
   if (isOpen) {
     setIsOpen(false);
-   
+
   } else {
     setIsOpen(true);
 
   }
-}
+};
 
   const onOptionClicked = (option: Option) => () => {
     setSelectedOption(option);
@@ -150,21 +150,19 @@ export default function DropDownSelect({
         !dropdownRef.current.contains(event.target as Node) &&
         event.target !== dropdownHeaderRef.current
       ) {
-        console.log("Hello");
         setIsOpen(false);
         setIsRecentlyClosed(false);
-        console.log(isRecentlyClosed);
       }
     };
 
     if (isOpen) {
-      document.addEventListener("mousedown", handleOutsideClick);
+      document.addEventListener('mousedown', handleOutsideClick);
     } else {
-      document.removeEventListener("mousedown", handleOutsideClick);
+      document.removeEventListener('mousedown', handleOutsideClick);
     }
 
     return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
+      document.removeEventListener('mousedown', handleOutsideClick);
     };
   }, [isOpen]);
 
@@ -173,7 +171,8 @@ export default function DropDownSelect({
   return (
     <Main >
       <DropDownContainer size={size} >
-        <DropDownHeader  ref={dropdownHeaderRef} onClick={toggling} tabIndex={0} isOpen = {isOpen} isRecentlyClosed={isRecentlyClosed}>
+        <DropDownHeader  ref={dropdownHeaderRef} onClick={toggling} tabIndex={0} 
+        isOpen = {isOpen} isRecentlyClosed={isRecentlyClosed}>
           {selectedOption ? selectedOption.label : <Placeholder>{placeholder}</Placeholder>}
           <ArrowIcon isOpen={isOpen} />
         </DropDownHeader>

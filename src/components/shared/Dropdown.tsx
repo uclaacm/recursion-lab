@@ -1,6 +1,6 @@
 //import { useState } from 'react';
-import { options_array } from '../../types';
 import DropDownSelect from './DropDownSelect';
+import { options_array } from '../../types';
 
 interface DropdownProps {
   size: string;
@@ -24,7 +24,7 @@ function Dropdown(props: DropdownProps): JSX.Element {
     } else {
       // KhanCard dropdown
       const newArray = props.correct_answer.map((val, i) => {
-    
+
         if (i == props.index) return props.answer === chosenAnswer;
         else return val;
       });
@@ -32,7 +32,7 @@ function Dropdown(props: DropdownProps): JSX.Element {
     }
   };
 
-  type Size = "small" | "medium" | "large";
+  type Size = 'small' | 'medium' | 'large';
 
 
   return (
@@ -40,14 +40,14 @@ function Dropdown(props: DropdownProps): JSX.Element {
       {' '}
       <div className={`${props.size}-dropdown-field`}>
 
-        
+
         <DropDownSelect
           options={props.options}
           onChange={handleChange}
           placeholder={props.size === 'small' ? '...' : 'Select...'}
           size= {props.size as Size}
         />
-        
+
       </div>{' '}
     </>
   );
