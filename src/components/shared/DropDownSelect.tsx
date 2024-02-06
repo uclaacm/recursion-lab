@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled, { css } from 'styled-components';
 
-const Main = styled.div` 
-  font-family: Poppins, "Helvetica Neue", Helvetica, sans-serif;
+const Main = styled.div`
+  font-family: Poppins, 'Helvetica Neue', Helvetica, sans-serif;
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -11,16 +11,29 @@ const Main = styled.div`
 `;
 
 const DropDownContainer = styled.div<{ size: Size }>`
-width: 200px;
-${(props) => props.size === 'small' && css`width: 77px;`}
-${(props) => props.size === 'medium' && css`width: 123px;`}
-${(props) => props.size === 'large' && css`width: 200px;`}
-
+  width: 200px;
+  ${(props) =>
+    props.size === 'small' &&
+    css`
+      width: 77px;
+    `}
+  ${(props) =>
+    props.size === 'medium' &&
+    css`
+      width: 123px;
+    `}
+${(props) =>
+    props.size === 'large' &&
+    css`
+      width: 200px;
+    `}
 `;
 
-
-const DropDownHeader = styled.div<{isOpen: boolean; isRecentlyClosed: boolean}>`
-padding: 8px;
+const DropDownHeader = styled.div<{
+  isOpen: boolean;
+  isRecentlyClosed: boolean;
+}>`
+  padding: 8px;
   margin-bottom: 0.3em;
   border: 1px solid #ced4da;
   border-radius: 4px;
@@ -34,26 +47,33 @@ padding: 8px;
   &:focus {
     outline: none;
     border-color: rgb(38, 132, 255);
-    border-width: 2px; 
-    border-style: solid; 
+    border-width: 2px;
+    border-style: solid;
   }
-
-
-  
 `;
-
 
 const DropDownListContainer = styled.div<{ size: Size }>`
   position: absolute;
   width: 200px;
-${(props) => props.size === 'small' && css`width: 77px;`}
-${(props) => props.size === 'medium' && css`width: 123px;`}
-${(props) => props.size === 'large' && css`width: 200px;`}
+  ${(props) =>
+    props.size === 'small' &&
+    css`
+      width: 77px;
+    `}
+  ${(props) =>
+    props.size === 'medium' &&
+    css`
+      width: 123px;
+    `}
+${(props) =>
+    props.size === 'large' &&
+    css`
+      width: 200px;
+    `}
   z-index: 999;
 `;
 
 const DropDownList = styled.ul`
-
   padding: 0;
   margin: 0;
   padding-left: 0;
@@ -66,22 +86,20 @@ const DropDownList = styled.ul`
   &:first-child {
     padding-top: 0.25em;
   }
-  
 `;
 
 const ListItem = styled.li`
   padding: 8px;
   cursor: pointer;
   &:hover {
-    background-color: #DBE7F5;
+    background-color: #dbe7f5;
   }
 `;
 
 const Placeholder = styled.span`
-user-select: none;
-color: #696969;
+  user-select: none;
+  color: #696969;
 `;
-
 
 const ArrowIcon = styled.div<{ isOpen?: boolean }>`
   width: 0;
@@ -90,7 +108,7 @@ const ArrowIcon = styled.div<{ isOpen?: boolean }>`
   border-right: 5px solid transparent;
   border-top: 5px solid #808080;
   margin-left: 5px;
-  transition: transform 0.3s ease; 
+  transition: transform 0.3s ease;
 
   ${(props) =>
     props.isOpen &&
@@ -111,30 +129,26 @@ interface CustomSelectProps {
   onChange: (selectedOption: Option) => void;
   placeholder: string;
   size: Size;
-
 }
 
 export default function DropDownSelect({
   options,
   onChange,
   placeholder,
-  size
+  size,
 }: CustomSelectProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<Option | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [isRecentlyClosed, setIsRecentlyClosed] = useState(false);
 
-
   const toggling = () => {
-  if (isOpen) {
-    setIsOpen(false);
-
-  } else {
-    setIsOpen(true);
-
-  }
-};
+    if (isOpen) {
+      setIsOpen(false);
+    } else {
+      setIsOpen(true);
+    }
+  };
 
   const onOptionClicked = (option: Option) => () => {
     setSelectedOption(option);
@@ -143,7 +157,8 @@ export default function DropDownSelect({
     onChange(option);
   };
 
-  useEffect(() => { //if you click outside, should close the dropdown
+  useEffect(() => {
+    //if you click outside, should close the dropdown
     const handleOutsideClick = (event: MouseEvent) => {
       if (
         dropdownRef.current &&
@@ -169,11 +184,20 @@ export default function DropDownSelect({
   const dropdownHeaderRef = useRef<HTMLDivElement>(null);
 
   return (
-    <Main >
-      <DropDownContainer size={size} >
-        <DropDownHeader  ref={dropdownHeaderRef} onClick={toggling} tabIndex={0} 
-        isOpen = {isOpen} isRecentlyClosed={isRecentlyClosed}>
-          {selectedOption ? selectedOption.label : <Placeholder>{placeholder}</Placeholder>}
+    <Main>
+      <DropDownContainer size={size}>
+        <DropDownHeader
+          ref={dropdownHeaderRef}
+          onClick={toggling}
+          tabIndex={0}
+          isOpen={isOpen}
+          isRecentlyClosed={isRecentlyClosed}
+        >
+          {selectedOption ? (
+            selectedOption.label
+          ) : (
+            <Placeholder>{placeholder}</Placeholder>
+          )}
           <ArrowIcon isOpen={isOpen} />
         </DropDownHeader>
         {isOpen && (
