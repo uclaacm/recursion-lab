@@ -25,3 +25,18 @@
   right: 0;
   z-index: 0;
 }
+
+.word-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 220px;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  right: 0;
+  top: 120px;
+  width: 658px;
+  z-index: 1;
+}
