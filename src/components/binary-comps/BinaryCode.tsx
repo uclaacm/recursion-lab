@@ -112,6 +112,7 @@ function BinaryCode(): JSX.Element {
   return (
     <>
       <FinishCodeCard
+        name=""
         description="Your answer will be tested with the given words array at the start with the target word 'pear'."
         correct_answer={[
           givenBinarySearch(arr, 'pear', 0, arr.length - 1) ===

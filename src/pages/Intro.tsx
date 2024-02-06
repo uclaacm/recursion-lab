@@ -1,12 +1,11 @@
 import { faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import { FC } from 'react';
-import { CodeBlock, dracula } from 'react-code-blocks';
 import Latex from 'react-latex-next';
-
 import FactorialQuestion from '../components/intro_comps/FactorialQuestion';
 import IntroCode from '../components/intro_comps/intro_code';
 import AppWrapper from '../components/shared/AppWrapper';
 import Button from '../components/shared/Button';
+import CodeBlock from '../components/shared/CodeBlock';
 import { HeaderSections } from '../components/shared/globalTypes';
 import './intro.scss';
 
@@ -24,29 +23,14 @@ const slides: { url: string }[] = importAll(
   require.context('../assets/', false, /Variant\d\.(png|jpe?g|svg)$/)
 );
 
-function recursionCodeBlock(
-  code: string,
-  language: string,
-  showLineNumbers: boolean,
-  startingLineNumber: number
-) {
-  return (
-    <CodeBlock
-      text={code}
-      language={language}
-      showLineNumbers={showLineNumbers}
-      startingLineNumber={startingLineNumber}
-      theme={dracula}
-    />
-  );
+function recursionCodeBlock(code: string) {
+  return <CodeBlock language="python" code={code}></CodeBlock>;
 }
-const code = `void doSomething() {
-    //---- do stuff ----
-    cout << "did something" << endl;
-    //------------------
-
-    doSomething();
-}`;
+const code = `def doSomething():
+    #---- do stuff ----
+    print("did something")
+    #------------------
+    doSomething()`;
 
 const Intro: FC = () => {
   return (
@@ -81,7 +65,7 @@ const Intro: FC = () => {
                     fontFamily: 'monospace',
                   }}
                 >
-                  {recursionCodeBlock(code, 'cpp', true, 1)}
+                  {recursionCodeBlock(code)}
                 </div>
                 <Latex>
                   {`
