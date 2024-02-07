@@ -36,6 +36,7 @@ const DropDownHeader = styled.div<{
   padding: 8px;
   margin-bottom: 0.3em;
   border: 1px solid #ced4da;
+  box-sizing: border-box;
   border-radius: 4px;
   font-size: 16px;
   color: #495057;
@@ -45,6 +46,7 @@ const DropDownHeader = styled.div<{
   align-items: center;
   justify-content: space-between;
   &:focus {
+    padding: 7px;
     outline: none;
     border-color: rgb(38, 132, 255);
     border-width: 2px;
