@@ -8808,9 +8808,9 @@ webpack-nano@^1.1.1:
     rechoir "^0.7.0"
     yargs-parser "^20.2.1"
 
-webpack-pwa-manifest@^4.3.0:
+webpack-pwa-manifest@^4.0.0:
   version "4.3.0"
-  resolved "https://registry.npmjs.org/webpack-pwa-manifest/-/webpack-pwa-manifest-4.3.0.tgz"
+  resolved "https://registry.yarnpkg.com/webpack-pwa-manifest/-/webpack-pwa-manifest-4.3.0.tgz#a9382f3e280ba4f74b6e855c529bcb550461ab5e"
   integrity sha512-3hK8Qg58SyLCUIz4PBYnfUPM6iJ5K88h8Uhc3MxmlJcVtDF/11aBBdUTdQkqc9bo6Cb8Q1v2xdsB2XO6pzTbiA==
   dependencies:
     css-color-names "1.0.1"
