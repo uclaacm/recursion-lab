@@ -1,5 +1,5 @@
 //import { useState } from 'react';
-import Select from 'react-select';
+import DropDownSelect from './DropDownSelect';
 import { options_array } from '../../types';
 
 interface DropdownProps {
@@ -27,14 +27,17 @@ function Dropdown(props: DropdownProps): JSX.Element {
     }
   };
 
+  type Size = 'small' | 'medium' | 'large';
+
   return (
     <>
       {' '}
       <div className={`${props.size}-dropdown-field`}>
-        <Select
+        <DropDownSelect
           options={props.options}
           onChange={handleChange}
           placeholder={props.size === 'small' ? '...' : 'Select...'}
+          size={props.size as Size}
         />
       </div>{' '}
     </>
