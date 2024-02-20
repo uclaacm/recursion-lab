@@ -131,6 +131,7 @@ interface CustomSelectProps {
   onChange: (selectedOption: Option) => void;
   placeholder: string;
   size: Size;
+  value: string;
 }
 
 export default function DropDownSelect({
@@ -138,11 +139,17 @@ export default function DropDownSelect({
   onChange,
   placeholder,
   size,
+  value,
 }: CustomSelectProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<Option | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [isRecentlyClosed, setIsRecentlyClosed] = useState(false);
+
+  useEffect(() => {
+    const option = options.find((optionUpdate) => optionUpdate.value === value);
+    setSelectedOption(option || null);
+  }, [value, options]);
 
   const toggling = () => {
     if (isOpen) {
@@ -152,7 +159,7 @@ export default function DropDownSelect({
     }
   };
 
-  const onOptionClicked = (option: Option) => () => {
+  const onOptionClicked = (option: Option) => () => { 
     setSelectedOption(option);
     setIsOpen(false);
     setIsRecentlyClosed(true);

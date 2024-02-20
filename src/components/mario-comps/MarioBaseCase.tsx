@@ -31,6 +31,7 @@ function MarioBaseCase(): JSX.Element {
           index={0} //index for what question # you are referring to
           answer={answerKey.question2} //the answer from answerkey
           update_answer={setIsCorrect} //function to update the correctness array
+          name="mario-drop1"
         />
         :
         <br />
