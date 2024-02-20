@@ -159,7 +159,7 @@ export default function DropDownSelect({
     }
   };
 
-  const onOptionClicked = (option: Option) => () => { 
+  const onOptionClicked = (option: Option) => () => {
     setSelectedOption(option);
     setIsOpen(false);
     setIsRecentlyClosed(true);
