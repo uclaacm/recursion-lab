@@ -3,6 +3,7 @@ import { useState } from 'react';
 import ConfettiExplosion from 'react-confetti-explosion';
 import { useLocalStorage } from '../useLocalStorage';
 import '../../styles/Checkmark.scss';
+import { TestCase } from './TestCase';
 
 interface FinishCodeCardProps {
   children?: JSX.Element;
@@ -13,6 +14,8 @@ interface FinishCodeCardProps {
   given_function: any;
   answer_key: Record<PropertyKey, string>;
   name: string;
+  //Test Case Functionality
+  testCases?: TestCase[];
 }
 
 interface ConfettiProps
@@ -46,6 +49,7 @@ function FinishCodeCard(props: FinishCodeCardProps): JSX.Element {
   const [showAnswer, setShowAnswer] = useState(false);
   const [givenAnswer, setGivenAnswer] = useState(props.given_function());
   const [chosenAnswer, setChosenAnswer] = useState(0);
+  const [testCases, setTestCases] = useState<TestCase[]>(props.testCases || []);
   let showAnswerResponse = '';
   const someArray = Object.entries(props.answer_key);
 
@@ -125,6 +129,11 @@ function FinishCodeCard(props: FinishCodeCardProps): JSX.Element {
       <div className="finish-content">
         <div>{props.children}</div>
         <div className="code-output">
+          {/* MARK: Test Cases Test*/}
+          <div>
+            <p>Input: {testCases[0].data}</p>
+            <p>Expected Output: {testCases[0].answer}</p>
+          </div>
           {expand &&
             !showAnswer &&
             tries != 0 &&
