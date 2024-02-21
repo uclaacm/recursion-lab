@@ -39,6 +39,7 @@ function BinaryBaseCasePt2(): JSX.Element {
           index={1}
           answer={answerKey.question2}
           update_answer={setIsCorrect}
+          name="binary-drop2"
         />
         <KhanInput
           size="medium"

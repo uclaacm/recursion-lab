@@ -166,6 +166,7 @@ function BinaryCode(): JSX.Element {
                     update_answer={(chosenAnswer: string) =>
                       handleUpdateAnswer(1, chosenAnswer)
                     }
+                    name="binary-drop3"
                   />
                 </>
               </Tab>
@@ -184,6 +185,7 @@ function BinaryCode(): JSX.Element {
                     update_answer={(chosenAnswer: string) =>
                       handleUpdateAnswer(2, chosenAnswer)
                     }
+                    name="binary-drop4"
                   />
                   {')'}
                 </>
@@ -203,6 +205,7 @@ function BinaryCode(): JSX.Element {
                     update_answer={(chosenAnswer: string) =>
                       handleUpdateAnswer(3, chosenAnswer)
                     }
+                    name="binary-drop5"
                   />
                   {')'}
                 </>

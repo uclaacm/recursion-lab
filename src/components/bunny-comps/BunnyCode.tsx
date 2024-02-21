@@ -158,6 +158,7 @@ function BunnyCode(): JSX.Element {
                 update_answer={(chosenAnswer: string) =>
                   handleUpdateAnswer(0, chosenAnswer)
                 }
+                name="bunny-drop2"
               />
               <br />
               <Tab>
@@ -171,6 +172,7 @@ function BunnyCode(): JSX.Element {
                     update_answer={(chosenAnswer: string) =>
                       handleUpdateAnswer(1, chosenAnswer)
                     }
+                    name="bunny-drop3"
                   />
                 </>
               </Tab>
@@ -183,6 +185,7 @@ function BunnyCode(): JSX.Element {
                 update_answer={(chosenAnswer: string) =>
                   handleUpdateAnswer(2, chosenAnswer)
                 }
+                name="bunny-drop4"
               />
             </>
           </Tab>

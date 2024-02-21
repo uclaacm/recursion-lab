@@ -586,6 +586,7 @@ function MarioCode(): JSX.Element {
               update_answer={(chosenAnswer: string) =>
                 handleUpdateAnswer(0, chosenAnswer)
               }
+              name="mario-drop2"
             />{' '}
             :
             <Tab>
@@ -599,6 +600,7 @@ function MarioCode(): JSX.Element {
                   update_answer={(chosenAnswer: string) =>
                     handleUpdateAnswer(1, chosenAnswer)
                   }
+                  name="mario-drop3"
                 />
               </>
             </Tab>
@@ -611,6 +613,7 @@ function MarioCode(): JSX.Element {
               update_answer={(chosenAnswer: string) =>
                 handleUpdateAnswer(2, chosenAnswer)
               }
+              name="mario-drop4"
             />
             + <Gold>recurSum</Gold>(
             <MarioDropdown
@@ -621,6 +624,7 @@ function MarioCode(): JSX.Element {
               update_answer={(chosenAnswer: string) =>
                 handleUpdateAnswer(3, chosenAnswer)
               }
+              name="mario-drop5"
             />
             )
           </>

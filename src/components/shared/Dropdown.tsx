@@ -1,6 +1,7 @@
 //import { useState } from 'react';
 import DropDownSelect from './DropDownSelect';
 import { options_array } from '../../types';
+import { useLocalStorage } from '../useLocalStorage';
 
 interface DropdownProps {
   size: string;
@@ -9,9 +10,14 @@ interface DropdownProps {
   index: number;
   answer: string;
   update_answer: any;
+  name: string;
 }
 
 function Dropdown(props: DropdownProps): JSX.Element {
+  const [selectedValue, setSelectedValue] = useLocalStorage<string>(
+    props.name + '-dropdown',
+    ''
+  );
   const handleChange = (selectedOption: any) => {
     const chosenAnswer = selectedOption.value;
     if (props.correct_answer === undefined) {
@@ -25,6 +31,8 @@ function Dropdown(props: DropdownProps): JSX.Element {
       });
       props.update_answer(newArray);
     }
+
+    setSelectedValue(chosenAnswer);
   };
 
   type Size = 'small' | 'medium' | 'large';
@@ -38,6 +46,7 @@ function Dropdown(props: DropdownProps): JSX.Element {
           onChange={handleChange}
           placeholder={props.size === 'small' ? '...' : 'Select...'}
           size={props.size as Size}
+          value={selectedValue}
         />
       </div>{' '}
     </>

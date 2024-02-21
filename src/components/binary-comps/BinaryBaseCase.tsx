@@ -30,6 +30,7 @@ function BinaryBaseCase(): JSX.Element {
           index={0}
           answer={answerKey.question1}
           update_answer={setIsCorrect}
+          name="binary-drop1"
         />
         :
         <br />
