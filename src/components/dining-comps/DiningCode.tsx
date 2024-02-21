@@ -162,6 +162,7 @@ function DiningCode(): JSX.Element {
                     update_answer={(chosenAnswer: string) =>
                       handleUpdateAnswer(0, chosenAnswer)
                     }
+                    name="dining-drop1"
                   />
                 </>
               </Tab>
@@ -174,6 +175,7 @@ function DiningCode(): JSX.Element {
                 update_answer={(chosenAnswer: string) =>
                   handleUpdateAnswer(1, chosenAnswer)
                 }
+                name="dining-drop2"
               />
               )
               <br />
@@ -186,6 +188,7 @@ function DiningCode(): JSX.Element {
                 update_answer={(chosenAnswer: string) =>
                   handleUpdateAnswer(2, chosenAnswer)
                 }
+                name="dining-drop3"
               />
               )
               <br />
@@ -198,6 +201,7 @@ function DiningCode(): JSX.Element {
                 update_answer={(chosenAnswer: string) =>
                   handleUpdateAnswer(3, chosenAnswer)
                 }
+                name="dining-drop4"
               />
             </>
           </Tab>

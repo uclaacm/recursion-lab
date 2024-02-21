@@ -39,6 +39,7 @@ function MarioFormula(): JSX.Element {
             index={1} //index for what KhanCard you are referring to
             answer={answerKey.question2} //the answer from answerkey
             update_answer={setIsCorrect}
+            name="mario-drop6"
           />
           )
         </div>

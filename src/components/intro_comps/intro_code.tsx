@@ -53,6 +53,7 @@ function IntroCode(): JSX.Element {
       return n * factorial(n - 1);
     }
   }
+
   function selectedfactorial(n: number, n1: number, n2: number): number {
     if (n === n1) {
       return n2;
@@ -105,6 +106,7 @@ function IntroCode(): JSX.Element {
                 handleUpdateAnswer(0, chosenAnswer)
               }
               size="medium"
+              name="intro-drop1"
             />
             :
             <br />
@@ -119,6 +121,7 @@ function IntroCode(): JSX.Element {
                     handleUpdateAnswer(1, chosenAnswer)
                   }
                   size="small"
+                  name="intro-drop2"
                 />
               </>
             </Tab>
