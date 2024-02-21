@@ -12,7 +12,8 @@ interface KhanInputProps {
 function KhanInput(props: KhanInputProps): JSX.Element {
   const [value, setValue] = useLocalStorage(props.name + '-input', '');
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const lowerCaseAnswer = e.target.value.toLowerCase();
+    const strippedAnswer = e.target.value.replace(/\s/g, '');
+    const lowerCaseAnswer = strippedAnswer.toLowerCase();
 
     const newArray = props.correct_answer.map((val, i) => {
       if (i == props.index) {
