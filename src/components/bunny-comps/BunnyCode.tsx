@@ -5,6 +5,7 @@ import Blue from '../shared/Blue';
 import BunnyCodeDropdown from '../shared/Dropdown';
 import Gold from '../shared/Gold';
 import Tab from '../shared/Tab';
+import { TestCase } from '../shared/TestCase';
 
 function BunnyCode(): JSX.Element {
   const [selectedanswer, setselectedanswer] = useState({
@@ -142,6 +143,11 @@ function BunnyCode(): JSX.Element {
         }
         answer_key={answerKey}
         name="bunny"
+        testCases={[
+          new TestCase('1', '1'),
+          new TestCase('2', '2'),
+          new TestCase('3', '3'),
+        ]}
       >
         <div className="left-align">
           <Blue>def</Blue>

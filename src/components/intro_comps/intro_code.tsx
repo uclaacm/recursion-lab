@@ -5,6 +5,7 @@ import Blue from '../shared/Blue';
 import IntroDropdown from '../shared/Dropdown';
 import Gold from '../shared/Gold';
 import Tab from '../shared/Tab';
+import { TestCase } from '../shared/TestCase';
 
 function IntroCode(): JSX.Element {
   const [selectedanswer, setselectedanswer] = useState({
@@ -90,6 +91,11 @@ function IntroCode(): JSX.Element {
       given_function={() => factorial(5)}
       answer_key={answerKey}
       name="intro"
+      testCases={[
+        new TestCase('1', '1'),
+        new TestCase('2', '2'),
+        new TestCase('3', '3'),
+      ]}
     >
       <div className="left-align">
         <Blue>def</Blue>

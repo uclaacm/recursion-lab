@@ -10,6 +10,7 @@ import Blue from '../shared/Blue';
 import BinaryCodeDropdown from '../shared/Dropdown';
 import Gold from '../shared/Gold';
 import Tab from '../shared/Tab';
+import { TestCase } from '../shared/TestCase';
 
 function BinaryCode(): JSX.Element {
   const [selectedanswer, setselectedanswer] = useState<
@@ -112,7 +113,6 @@ function BinaryCode(): JSX.Element {
   return (
     <>
       <FinishCodeCard
-        name=""
         description="Your answer will be tested with the given words array at the start with the target word 'pear'."
         correct_answer={[
           givenBinarySearch(arr, 'pear', 0, arr.length - 1) ===
@@ -124,6 +124,12 @@ function BinaryCode(): JSX.Element {
           createBinarySearch(selectedanswer)(arr, 'pear', 0, arr.length - 1)
         } //built function
         answer_key={answerKey} //answer key
+        name="finish"
+        testCases={[
+          new TestCase('1', '1'),
+          new TestCase('2', '2'),
+          new TestCase('3', '3'),
+        ]}
       >
         <div className="left-align">
           <span>

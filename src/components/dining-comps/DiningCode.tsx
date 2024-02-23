@@ -10,6 +10,7 @@ import Blue from '../shared/Blue';
 import DiningDropDown from '../shared/Dropdown';
 import Gold from '../shared/Gold';
 import Tab from '../shared/Tab';
+import { TestCase } from '../shared/TestCase';
 
 function DiningCode(): JSX.Element {
   const [selectedanswer, setselectedanswer] = useState({
@@ -137,6 +138,11 @@ function DiningCode(): JSX.Element {
         }
         answer_key={answerKey}
         name="dining"
+        testCases={[
+          new TestCase('1', '1'),
+          new TestCase('2', '2'),
+          new TestCase('3', '3'),
+        ]}
       >
         <div className="left-align">
           <span>
