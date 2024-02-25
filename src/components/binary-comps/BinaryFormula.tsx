@@ -6,8 +6,12 @@ import KhanInput from '../shared/KhanInput';
 import Tab from '../shared/Tab';
 
 function BinaryFormula(): JSX.Element {
-  const [isCorrect1, setIsCorrect1] = useState([false, false]);
-  const [isCorrect2, setIsCorrect2] = useState([false, false]);
+  const [isCorrect1, setIsCorrect1] = useState<(boolean | null | number)[]>([
+    -1, -1,
+  ]);
+  const [isCorrect2, setIsCorrect2] = useState<(boolean | null | number)[]>([
+    -1, -1,
+  ]);
   const [answerKey] = useState({
     question1: 'mid+1',
     question2: 'high',

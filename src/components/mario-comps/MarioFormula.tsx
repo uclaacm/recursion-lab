@@ -6,7 +6,9 @@ import KhanCard from '../shared/KhanCard';
 import KhanInput from '../shared/KhanInput';
 
 function MarioFormula(): JSX.Element {
-  const [isCorrect, setIsCorrect] = useState([false]);
+  const [isCorrect, setIsCorrect] = useState<(boolean | null | number)[]>([
+    -1, -1,
+  ]);
   const [answerKey] = useState({
     question1: 'n',
     question2: 'n-1',

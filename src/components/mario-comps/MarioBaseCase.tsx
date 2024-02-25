@@ -7,7 +7,9 @@ import KhanInput from '../shared/KhanInput';
 import Tab from '../shared/Tab';
 
 function MarioBaseCase(): JSX.Element {
-  const [isCorrect, setIsCorrect] = useState([false, false]);
+  const [isCorrect, setIsCorrect] = useState<(boolean | null | number)[]>([
+    -1, -1,
+  ]);
   const [answerKey] = useState({
     //you can have multiple "Fill in the Blank" questions
     question1: '1',

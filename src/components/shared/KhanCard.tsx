@@ -1,5 +1,5 @@
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ConfettiExplosion from 'react-confetti-explosion';
 import { useLocalStorage } from '../useLocalStorage';
 
@@ -7,7 +7,7 @@ interface KhanCardProps {
   children?: JSX.Element;
   correct: string;
   incorrect: string;
-  correct_answer: boolean[];
+  correct_answer: (boolean | null | number)[];
   index: number[];
   name: string;
 }
@@ -36,8 +36,37 @@ function KhanCard(props: KhanCardProps): JSX.Element {
   const [isExploding, setIsExploding] = useState(false);
   const [tries, setTries] = useState(3);
   const [correct, setCorrect] = useLocalStorage(props.name + '-correct', false);
+  const [correctAnswers, setCorrectAnswers] = useLocalStorage<
+    (boolean | null | number)[]
+  >(props.name + '-correct_answers', props.correct_answer);
   const [expand, setExpand] = useState(false);
   const [showAnswer, setShowAnswer] = useState(false);
+  const [isButtonDisabled, setIsButtonDisabled] = useLocalStorage(
+    props.name + '-correct_disable',
+    true
+  );
+
+  let correctness = correctAnswers;
+  /*
+  useEffect(() => {
+    console.log("Here is the value from database: ");
+    console.log(correctAnswers);
+    const blankQuestions = correctAnswers.some(answer => answer === -1);
+    setIsButtonDisabled(blankQuestions);
+    console.log
+  }, [correctAnswers]);*/
+
+  useEffect(() => {
+    correctness = props.correct_answer;
+
+    if (correctness.every((answer) => answer === -1)) {
+      return;
+    }
+    setCorrectAnswers(props.correct_answer);
+
+    const blankQuestions = correctness.some((answer) => answer === null);
+    setIsButtonDisabled(blankQuestions);
+  }, [props.correct_answer]);
 
   const handleClick = () => {
     if (tries <= 0) {
@@ -123,7 +152,7 @@ function KhanCard(props: KhanCardProps): JSX.Element {
           <button
             className="khan-check-button"
             onClick={handleClick}
-            disabled={tries == 0 || correct ? true : false}
+            disabled={isButtonDisabled || tries == 0 || correct ? true : false}
           >
             {isExploding && <ConfettiExplosion {...smallProps} />}
             Check
