@@ -55,7 +55,7 @@ function KhanCard(props: KhanCardProps): JSX.Element {
     false
   );
   const [correctAnswers, setCorrectAnswers] = useLocalStorage<
-  (boolean | null | number)[]
+    (boolean | null | number)[]
   >(props.name + '-correct_answers', props.correct_answer);
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
@@ -166,7 +166,9 @@ function KhanCard(props: KhanCardProps): JSX.Element {
               className="khan-check-button"
               onClick={handleClick}
               disabled={
-                isButtonDisabled || tries === 0 || showAnswer || correct ? true : false
+                isButtonDisabled || tries === 0 || showAnswer || correct
+                  ? true
+                  : false
               }
             >
               {isExploding && <ConfettiExplosion {...smallProps} />}

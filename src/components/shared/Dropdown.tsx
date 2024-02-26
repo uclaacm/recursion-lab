@@ -1,7 +1,7 @@
 import { useEffect, useContext } from 'react';
 import DropDownSelect from './DropDownSelect';
-import AutofillContext from '../../context/AutofillContext';
 import { KhanCardContext } from './KhanCard'; // Import the context
+import AutofillContext from '../../context/AutofillContext';
 import { options_array } from '../../types';
 import { useLocalStorage } from '../useLocalStorage';
 
@@ -31,7 +31,7 @@ function Dropdown(props: DropdownProps): JSX.Element {
   }, [tries, showAnswer]);
 
   const { correctAnswers, setCorrectAnswers } = useContext(KhanCardContext)!; // Consume the context
-      
+
   const handleChange = (selectedOption: any) => {
     const chosenAnswer = selectedOption.value;
 

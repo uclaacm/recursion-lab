@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import { KhanCardContext } from './KhanCard'; // Import the context
-import { useLocalStorage } from '../useLocalStorage';
 import AutofillContext from '../../context/AutofillContext';
+import { useLocalStorage } from '../useLocalStorage';
 
 interface KhanInputProps {
   size: string;
@@ -26,7 +26,7 @@ function KhanInput(props: KhanInputProps): JSX.Element {
       setValue('');
     }
   }, [tries, showAnswer]);
-  
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const strippedAnswer2 = e.target.value.trim();
     const strippedAnswer = e.target.value.replace(/\s/g, '');
