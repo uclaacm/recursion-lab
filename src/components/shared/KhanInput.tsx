@@ -1,6 +1,6 @@
-import { useLocalStorage } from '../useLocalStorage';
 import React, { useContext } from 'react';
-import {KhanCardContext} from './KhanCard'; // Import the context
+import { KhanCardContext } from './KhanCard'; // Import the context
+import { useLocalStorage } from '../useLocalStorage';
 
 interface KhanInputProps {
   size: string;
@@ -17,7 +17,6 @@ function KhanInput(props: KhanInputProps): JSX.Element {
   const [value, setValue] = useLocalStorage(props.name + '-input', '');
 
   const { correctAnswers, setCorrectAnswers } = useContext(KhanCardContext)!; // Consume the context
-
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const strippedAnswer2 = e.target.value.trim();

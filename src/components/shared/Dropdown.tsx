@@ -1,9 +1,8 @@
-//import { useState } from 'react';
+import { useContext } from 'react';
 import DropDownSelect from './DropDownSelect';
+import { KhanCardContext } from './KhanCard'; // Import the context
 import { options_array } from '../../types';
 import { useLocalStorage } from '../useLocalStorage';
-import {KhanCardContext} from './KhanCard'; // Import the context
-import React, { useContext } from 'react';
 
 interface DropdownProps {
   size: string;
@@ -38,14 +37,11 @@ function Dropdown(props: DropdownProps): JSX.Element {
         if (i == props.index) {
           return props.answer === chosenAnswer;
         } else {
-
           return val;
         }
       });
 
-
       setCorrectAnswers(newArray);
-
     }
 
     setSelectedValue(chosenAnswer);
