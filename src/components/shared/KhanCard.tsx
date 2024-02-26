@@ -2,6 +2,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { useState, useEffect } from 'react';
 import ConfettiExplosion from 'react-confetti-explosion';
 import { useLocalStorage } from '../useLocalStorage';
+import React, { createContext, useContext } from 'react';
 
 interface KhanCardProps {
   children?: JSX.Element;
@@ -11,6 +12,17 @@ interface KhanCardProps {
   index: number[];
   name: string;
 }
+
+interface KhanCardContextType {
+  correctAnswers: (boolean | null | number)[];
+  setCorrectAnswers: React.Dispatch<React.SetStateAction<(boolean | null | number)[]>>;
+}
+
+export const KhanCardContext = createContext<KhanCardContextType>({
+  correctAnswers: [],
+  setCorrectAnswers: () => {}
+});
+
 
 interface ConfettiProps
   extends Omit<React.HTMLAttributes<HTMLDivElement>, 'ref'> {
@@ -41,32 +53,18 @@ function KhanCard(props: KhanCardProps): JSX.Element {
   >(props.name + '-correct_answers', props.correct_answer);
   const [expand, setExpand] = useState(false);
   const [showAnswer, setShowAnswer] = useState(false);
-  const [isButtonDisabled, setIsButtonDisabled] = useLocalStorage(
-    props.name + '-correct_disable',
-    true
-  );
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
   let correctness = correctAnswers;
-  /*
-  useEffect(() => {
-    console.log("Here is the value from database: ");
-    console.log(correctAnswers);
-    const blankQuestions = correctAnswers.some(answer => answer === -1);
-    setIsButtonDisabled(blankQuestions);
-    console.log
-  }, [correctAnswers]);*/
+
 
   useEffect(() => {
-    correctness = props.correct_answer;
 
-    if (correctness.every((answer) => answer === -1)) {
-      return;
-    }
-    setCorrectAnswers(props.correct_answer);
+    correctness = correctAnswers;
 
-    const blankQuestions = correctness.some((answer) => answer === null);
+    const blankQuestions = correctness.some((answer) => answer === null || answer === -1);
     setIsButtonDisabled(blankQuestions);
-  }, [props.correct_answer]);
+  }, [correctAnswers]);
 
   const handleClick = () => {
     if (tries <= 0) {
@@ -77,7 +75,7 @@ function KhanCard(props: KhanCardProps): JSX.Element {
     let isCorrect = true;
     const indexArray = props.index;
     for (let i = 0; i < indexArray.length; i++) {
-      if (!props.correct_answer[indexArray[i]]) {
+      if (!correctAnswers[indexArray[i]]) {
         isCorrect = false;
       }
     }
@@ -95,7 +93,10 @@ function KhanCard(props: KhanCardProps): JSX.Element {
     setShowAnswer((prev) => !prev);
   };
 
+  
+
   return (
+    <KhanCardContext.Provider value={{ correctAnswers, setCorrectAnswers }}>
     <div
       className={`khan-card-container ${
         correct ? 'khan-card-container-correct' : ''
@@ -171,6 +172,7 @@ function KhanCard(props: KhanCardProps): JSX.Element {
       </div>
       <div>{(showAnswer || tries == 0) && <p>{props.correct}</p>}</div>
     </div>
+    </KhanCardContext.Provider>
   );
 }
 

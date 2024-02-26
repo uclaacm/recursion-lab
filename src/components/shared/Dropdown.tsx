@@ -2,6 +2,8 @@
 import DropDownSelect from './DropDownSelect';
 import { options_array } from '../../types';
 import { useLocalStorage } from '../useLocalStorage';
+import {KhanCardContext} from './KhanCard'; // Import the context
+import React, { useContext } from 'react';
 
 interface DropdownProps {
   size: string;
@@ -18,35 +20,32 @@ function Dropdown(props: DropdownProps): JSX.Element {
     props.name + '-dropdown',
     ''
   );
+  const { correctAnswers, setCorrectAnswers } = useContext(KhanCardContext)!; // Consume the context
   const handleChange = (selectedOption: any) => {
     const chosenAnswer = selectedOption.value;
-    //console.log("Current value is ");
-    //console.log(chosenAnswer);
-    if (props.correct_answer === undefined) {
+
+    if (correctAnswers === undefined) {
       // Code the Components Together dropdown
       props.update_answer(chosenAnswer);
     } else {
       // KhanCard dropdown
 
-      const newArray = props.correct_answer.map((val, i) => {
+      const newArray = correctAnswers.map((val, i) => {
         if (chosenAnswer === '' || chosenAnswer === null) {
-          //console.log("Returning null...");
           return null;
         }
 
         if (i == props.index) {
-          // console.log("NOT DROP: Returning some valueueueue...");
           return props.answer === chosenAnswer;
         } else {
-          // console.log("Returning wtv val");
-          // console.log(val);
+
           return val;
         }
       });
 
-      // console.log("updating...");
-      props.update_answer(newArray);
-      //console.log(newArray);
+
+      setCorrectAnswers(newArray);
+
     }
 
     setSelectedValue(chosenAnswer);
