@@ -1,6 +1,7 @@
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import ConfettiExplosion from 'react-confetti-explosion';
+import AutofillContext from '../../context/AutofillContext';
 import { useLocalStorage } from '../useLocalStorage';
 
 interface KhanCardProps {
@@ -34,10 +35,21 @@ const smallProps: ConfettiProps = {
 
 function KhanCard(props: KhanCardProps): JSX.Element {
   const [isExploding, setIsExploding] = useState(false);
-  const [tries, setTries] = useState(3);
+  const [tries, setTries] = useLocalStorage(props.name + '-tries', 3);
   const [correct, setCorrect] = useLocalStorage(props.name + '-correct', false);
-  const [expand, setExpand] = useState(false);
-  const [showAnswer, setShowAnswer] = useState(false);
+  const [expand, setExpand] = useLocalStorage(props.name + '-expand', false);
+  const [showAnswer, setShowAnswer] = useLocalStorage(
+    props.name + '-showAnswer',
+    false
+  );
+
+  const contextValue = useMemo(
+    () => ({
+      tries,
+      showAnswer,
+    }),
+    [tries, showAnswer]
+  );
 
   const handleClick = () => {
     if (tries <= 0) {
@@ -100,7 +112,9 @@ function KhanCard(props: KhanCardProps): JSX.Element {
         )}
         &nbsp;&nbsp; Fill in the Blank
       </div>
-      <div className="khan-content">{props.children}</div>
+      <AutofillContext.Provider value={contextValue}>
+        <div className="khan-content">{props.children}</div>
+      </AutofillContext.Provider>
       <br></br>
       <div className="khan-horizontal-line"></div>
       <div className="khan-footer">
@@ -123,7 +137,7 @@ function KhanCard(props: KhanCardProps): JSX.Element {
           <button
             className="khan-check-button"
             onClick={handleClick}
-            disabled={tries == 0 || correct ? true : false}
+            disabled={tries === 0 || showAnswer || correct ? true : false}
           >
             {isExploding && <ConfettiExplosion {...smallProps} />}
             Check
@@ -140,7 +154,7 @@ function KhanCard(props: KhanCardProps): JSX.Element {
             <p className="incorrect-explanation">{`Incorrect. ${props.incorrect}`}</p>
           ))}
       </div>
-      <div>{(showAnswer || tries == 0) && <p>{props.correct}</p>}</div>
+      <div>{(tries === 0 || showAnswer) && <p>{props.correct}</p>}</div>
     </div>
   );
 }

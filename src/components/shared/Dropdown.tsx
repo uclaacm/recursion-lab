@@ -1,5 +1,6 @@
-//import { useState } from 'react';
+import { useEffect, useContext } from 'react';
 import DropDownSelect from './DropDownSelect';
+import AutofillContext from '../../context/AutofillContext';
 import { options_array } from '../../types';
 import { useLocalStorage } from '../useLocalStorage';
 
@@ -14,10 +15,20 @@ interface DropdownProps {
 }
 
 function Dropdown(props: DropdownProps): JSX.Element {
+  const { tries, showAnswer } = useContext(AutofillContext);
   const [selectedValue, setSelectedValue] = useLocalStorage<string>(
     props.name + '-dropdown',
     ''
   );
+
+  useEffect(() => {
+    if (tries === 0 || showAnswer) {
+      setSelectedValue(props.answer);
+    } else if (!showAnswer) {
+      setSelectedValue('');
+    }
+  }, [tries, showAnswer]);
+
   const handleChange = (selectedOption: any) => {
     const chosenAnswer = selectedOption.value;
     if (props.correct_answer === undefined) {

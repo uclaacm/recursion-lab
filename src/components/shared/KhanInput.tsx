@@ -1,3 +1,5 @@
+import { useEffect, useContext } from 'react';
+import AutofillContext from '../../context/AutofillContext';
 import { useLocalStorage } from '../useLocalStorage';
 
 interface KhanInputProps {
@@ -10,7 +12,17 @@ interface KhanInputProps {
 }
 
 function KhanInput(props: KhanInputProps): JSX.Element {
+  const { tries, showAnswer } = useContext(AutofillContext);
   const [value, setValue] = useLocalStorage(props.name + '-input', '');
+
+  useEffect(() => {
+    if (tries === 0 || showAnswer) {
+      setValue(props.answer);
+    } else if (!showAnswer) {
+      setValue('');
+    }
+  }, [tries, showAnswer]);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const strippedAnswer = e.target.value.replace(/\s/g, '');
     const lowerCaseAnswer = strippedAnswer.toLowerCase();
