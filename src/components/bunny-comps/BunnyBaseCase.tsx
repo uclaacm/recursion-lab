@@ -8,7 +8,9 @@ import KhanInput from '../shared/KhanInput';
 import Tab from '../shared/Tab';
 
 function BunnyBaseCase(): JSX.Element {
-  const [isCorrect, setIsCorrect] = useState([false, false]);
+  const [isCorrect, setIsCorrect] = useState<(boolean | null | number)[]>([
+    -1, -1,
+  ]);
   const [answerKey] = useState({
     question1: 'n <= 1',
     question2: '1',

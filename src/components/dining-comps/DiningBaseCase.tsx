@@ -5,7 +5,9 @@ import KhanInput from '../shared/KhanInput';
 import Tab from '../shared/Tab';
 
 function DiningBaseCase(): JSX.Element {
-  const [isCorrect, setIsCorrect] = useState([false, false, false]); // state for if the question is correct
+  const [isCorrect, setIsCorrect] = useState<(boolean | null | number)[]>([
+    -1, -1, -1,
+  ]); // state for if the question is correct
 
   const [answerKey] = useState({
     //you can have multiple "Fill in the Blank" questions

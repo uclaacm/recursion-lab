@@ -146,6 +146,7 @@ function BinaryCode(): JSX.Element {
                     update_answer={(chosenAnswer: string) =>
                       handleUpdateAnswer(0, chosenAnswer)
                     }
+                    name="binary-drop001"
                   />
                 </>
               </Tab>

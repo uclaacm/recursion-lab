@@ -1,12 +1,13 @@
-//import { useState } from 'react';
+import { useContext } from 'react';
 import DropDownSelect from './DropDownSelect';
+import { KhanCardContext } from './KhanCard'; // Import the context
 import { options_array } from '../../types';
 import { useLocalStorage } from '../useLocalStorage';
 
 interface DropdownProps {
   size: string;
   options: options_array[];
-  correct_answer?: boolean[];
+  correct_answer?: (boolean | null | number)[];
   index: number;
   answer: string;
   update_answer: any;
@@ -18,18 +19,29 @@ function Dropdown(props: DropdownProps): JSX.Element {
     props.name + '-dropdown',
     ''
   );
+  const { correctAnswers, setCorrectAnswers } = useContext(KhanCardContext)!; // Consume the context
   const handleChange = (selectedOption: any) => {
     const chosenAnswer = selectedOption.value;
-    if (props.correct_answer === undefined) {
+
+    if (correctAnswers === undefined) {
       // Code the Components Together dropdown
       props.update_answer(chosenAnswer);
     } else {
       // KhanCard dropdown
-      const newArray = props.correct_answer.map((val, i) => {
-        if (i == props.index) return props.answer === chosenAnswer;
-        else return val;
+
+      const newArray = correctAnswers.map((val, i) => {
+        if (chosenAnswer === '' || chosenAnswer === null) {
+          return null;
+        }
+
+        if (i == props.index) {
+          return props.answer === chosenAnswer;
+        } else {
+          return val;
+        }
       });
-      props.update_answer(newArray);
+
+      setCorrectAnswers(newArray);
     }
 
     setSelectedValue(chosenAnswer);
