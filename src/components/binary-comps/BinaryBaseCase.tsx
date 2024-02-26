@@ -7,7 +7,9 @@ import KhanInput from '../shared/KhanInput';
 import Tab from '../shared/Tab';
 
 function BinaryBaseCase(): JSX.Element {
-  const [isCorrect, setIsCorrect] = useState([false, false]);
+  const [isCorrect, setIsCorrect] = useState<(boolean | null | number)[]>([
+    -1, -1,
+  ]);
   const [answerKey] = useState({
     question1: 'arr[mid]',
     question2: 'mid',

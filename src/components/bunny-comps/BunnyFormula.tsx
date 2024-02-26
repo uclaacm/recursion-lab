@@ -4,7 +4,9 @@ import KhanCard from '../shared/KhanCard';
 import KhanInput from '../shared/KhanInput';
 
 function BunnyFormula(): JSX.Element {
-  const [isCorrect, setIsCorrect] = useState([false, false]);
+  const [isCorrect, setIsCorrect] = useState<(boolean | null | number)[]>([
+    -1, -1,
+  ]);
   const [answerKey] = useState({
     question1: 'fib(n-1)',
     question2: 'fib(n-2)',

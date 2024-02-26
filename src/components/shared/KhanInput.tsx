@@ -1,19 +1,23 @@
-import { useEffect, useContext } from 'react';
-import AutofillContext from '../../context/AutofillContext';
+import React, { useEffect, useContext } from 'react';
+import { KhanCardContext } from './KhanCard'; // Import the context
 import { useLocalStorage } from '../useLocalStorage';
+import AutofillContext from '../../context/AutofillContext';
 
 interface KhanInputProps {
   size: string;
-  correct_answer: boolean[];
+  correct_answer: (boolean | null | number)[];
   index: number;
   answer: string;
-  update_answer: React.Dispatch<React.SetStateAction<boolean[]>>;
+  update_answer: React.Dispatch<
+    React.SetStateAction<(boolean | null | number)[]>
+  >;
   name: string;
 }
 
 function KhanInput(props: KhanInputProps): JSX.Element {
   const { tries, showAnswer } = useContext(AutofillContext);
   const [value, setValue] = useLocalStorage(props.name + '-input', '');
+  const { correctAnswers, setCorrectAnswers } = useContext(KhanCardContext)!; // Consume the context
 
   useEffect(() => {
     if (tries === 0 || showAnswer) {
@@ -22,20 +26,24 @@ function KhanInput(props: KhanInputProps): JSX.Element {
       setValue('');
     }
   }, [tries, showAnswer]);
-
+  
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const strippedAnswer2 = e.target.value.trim();
     const strippedAnswer = e.target.value.replace(/\s/g, '');
     const lowerCaseAnswer = strippedAnswer.toLowerCase();
 
-    const newArray = props.correct_answer.map((val, i) => {
+    const newArray = correctAnswers.map((val, i) => {
       if (i == props.index) {
+        if (strippedAnswer2 == '') {
+          return null;
+        }
         return props.answer === lowerCaseAnswer;
       } else {
         return val;
       }
     });
-    props.update_answer(newArray);
-    //localStorage.setItem(props.name, JSON.stringify(newArray));
+
+    setCorrectAnswers(newArray);
     setValue(e.target.value);
   };
 
