@@ -63,6 +63,7 @@ function KhanCard(props: KhanCardProps): JSX.Element {
     () => ({
       tries,
       showAnswer,
+      setShowAnswer,
     }),
     [tries, showAnswer]
   );
@@ -146,8 +147,16 @@ function KhanCard(props: KhanCardProps): JSX.Element {
         <br></br>
         <div className="khan-horizontal-line"></div>
         <div className="khan-footer">
-          <button className="show-answer" onClick={handleShowAnswer}>
-            {showAnswer ? 'Hide Answer' : 'Show Answer'}
+          <button
+            className="show-answer"
+            onClick={handleShowAnswer}
+            style={{ cursor: tries === 0 ? 'default' : 'pointer' }}
+          >
+            {showAnswer
+              ? tries === 0
+                ? 'The Answer'
+                : 'Hide Answer'
+              : 'Show Answer'}
           </button>
           <div className="tries-left-container">
             <div className="tries-left">Tries Left</div>
