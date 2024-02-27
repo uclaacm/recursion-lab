@@ -1,6 +1,7 @@
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import { useState, useEffect, createContext } from 'react';
+import { useState, useEffect, createContext, useMemo } from 'react';
 import ConfettiExplosion from 'react-confetti-explosion';
+import AutofillContext from '../../context/AutofillContext';
 import { useLocalStorage } from '../useLocalStorage';
 
 interface KhanCardProps {
@@ -46,14 +47,26 @@ const smallProps: ConfettiProps = {
 
 function KhanCard(props: KhanCardProps): JSX.Element {
   const [isExploding, setIsExploding] = useState(false);
-  const [tries, setTries] = useState(3);
+  const [tries, setTries] = useLocalStorage(props.name + '-tries', 3);
   const [correct, setCorrect] = useLocalStorage(props.name + '-correct', false);
+  const [expand, setExpand] = useLocalStorage(props.name + '-expand', false);
+  const [showAnswer, setShowAnswer] = useLocalStorage(
+    props.name + '-showAnswer',
+    false
+  );
   const [correctAnswers, setCorrectAnswers] = useLocalStorage<
     (boolean | null | number)[]
   >(props.name + '-correct_answers', props.correct_answer);
-  const [expand, setExpand] = useState(false);
-  const [showAnswer, setShowAnswer] = useState(false);
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+
+  const contextValue = useMemo(
+    () => ({
+      tries,
+      showAnswer,
+      setShowAnswer,
+    }),
+    [tries, showAnswer]
+  );
 
   let correctness = correctAnswers;
 
@@ -128,12 +141,22 @@ function KhanCard(props: KhanCardProps): JSX.Element {
           )}
           &nbsp;&nbsp; Fill in the Blank
         </div>
-        <div className="khan-content">{props.children}</div>
+        <AutofillContext.Provider value={contextValue}>
+          <div className="khan-content">{props.children}</div>
+        </AutofillContext.Provider>
         <br></br>
         <div className="khan-horizontal-line"></div>
         <div className="khan-footer">
-          <button className="show-answer" onClick={handleShowAnswer}>
-            {showAnswer ? 'Hide Answer' : 'Show Answer'}
+          <button
+            className="show-answer"
+            onClick={handleShowAnswer}
+            style={{ cursor: tries === 0 ? 'default' : 'pointer' }}
+          >
+            {showAnswer
+              ? tries === 0
+                ? 'The Answer'
+                : 'Hide Answer'
+              : 'Show Answer'}
           </button>
           <div className="tries-left-container">
             <div className="tries-left">Tries Left</div>
@@ -152,7 +175,9 @@ function KhanCard(props: KhanCardProps): JSX.Element {
               className="khan-check-button"
               onClick={handleClick}
               disabled={
-                isButtonDisabled || tries == 0 || correct ? true : false
+                isButtonDisabled || tries === 0 || showAnswer || correct
+                  ? true
+                  : false
               }
             >
               {isExploding && <ConfettiExplosion {...smallProps} />}
@@ -170,7 +195,7 @@ function KhanCard(props: KhanCardProps): JSX.Element {
               <p className="incorrect-explanation">{`Incorrect. ${props.incorrect}`}</p>
             ))}
         </div>
-        <div>{(showAnswer || tries == 0) && <p>{props.correct}</p>}</div>
+        <div>{(showAnswer || tries === 0) && <p>{props.correct}</p>}</div>
       </div>
     </KhanCardContext.Provider>
   );

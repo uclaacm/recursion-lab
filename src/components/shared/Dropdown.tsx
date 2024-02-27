@@ -1,6 +1,7 @@
-import { useContext } from 'react';
+import { useEffect, useContext, useRef } from 'react';
 import DropDownSelect from './DropDownSelect';
 import { KhanCardContext } from './KhanCard'; // Import the context
+import AutofillContext from '../../context/AutofillContext';
 import { options_array } from '../../types';
 import { useLocalStorage } from '../useLocalStorage';
 
@@ -15,11 +16,34 @@ interface DropdownProps {
 }
 
 function Dropdown(props: DropdownProps): JSX.Element {
+  const { tries, showAnswer, setShowAnswer } = useContext(AutofillContext);
   const [selectedValue, setSelectedValue] = useLocalStorage<string>(
     props.name + '-dropdown',
     ''
   );
+
+  function usePrevious(prevValue: boolean) {
+    const ref = useRef<boolean | null>(null);
+    useEffect(() => {
+      ref.current = prevValue;
+    }, [prevValue]);
+    return ref.current;
+  }
+
+  const prevShowAnswer = usePrevious(showAnswer);
+
+  useEffect(() => {
+    if (tries === 0 || showAnswer) {
+      setSelectedValue(props.answer);
+      setShowAnswer(true);
+    } else if (prevShowAnswer && !showAnswer) {
+      // Show Answer went from True to False
+      setSelectedValue('');
+    }
+  }, [tries, showAnswer, prevShowAnswer]);
+
   const { correctAnswers, setCorrectAnswers } = useContext(KhanCardContext)!; // Consume the context
+
   const handleChange = (selectedOption: any) => {
     const chosenAnswer = selectedOption.value;
 

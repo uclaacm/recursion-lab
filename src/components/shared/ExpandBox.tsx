@@ -1,7 +1,7 @@
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { useState } from 'react';
 import '../../styles/ExpandBox.scss';
+import { useLocalStorage } from '../useLocalStorage';
 
 interface ExpandBoxProps {
   class: string;
@@ -11,7 +11,10 @@ interface ExpandBoxProps {
 }
 
 function ExpandBox(props: ExpandBoxProps): JSX.Element {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useLocalStorage(
+    props.class + props.title + '-expandBox',
+    false
+  );
   function toggle() {
     setOpen((prev) => !prev);
   }

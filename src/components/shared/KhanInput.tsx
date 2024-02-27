@@ -1,5 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useContext, useRef } from 'react';
 import { KhanCardContext } from './KhanCard'; // Import the context
+import AutofillContext from '../../context/AutofillContext';
 import { useLocalStorage } from '../useLocalStorage';
 
 interface KhanInputProps {
@@ -14,9 +15,29 @@ interface KhanInputProps {
 }
 
 function KhanInput(props: KhanInputProps): JSX.Element {
+  const { tries, showAnswer, setShowAnswer } = useContext(AutofillContext);
   const [value, setValue] = useLocalStorage(props.name + '-input', '');
-
   const { correctAnswers, setCorrectAnswers } = useContext(KhanCardContext)!; // Consume the context
+
+  function usePrevious(prevValue: boolean) {
+    const ref = useRef<boolean | null>(null);
+    useEffect(() => {
+      ref.current = prevValue;
+    }, [prevValue]);
+    return ref.current;
+  }
+
+  const prevShowAnswer = usePrevious(showAnswer);
+
+  useEffect(() => {
+    if (tries === 0 || showAnswer) {
+      setValue(props.answer);
+      setShowAnswer(true);
+    } else if (prevShowAnswer && !showAnswer) {
+      // Show Answer went from True to False
+      setValue('');
+    }
+  }, [tries, showAnswer, prevShowAnswer]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const strippedAnswer2 = e.target.value.trim();
