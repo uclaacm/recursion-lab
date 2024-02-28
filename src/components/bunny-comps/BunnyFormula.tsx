@@ -8,8 +8,8 @@ function BunnyFormula(): JSX.Element {
     -1, -1,
   ]);
   const [answerKey] = useState({
-    question1: 'fib(n-1)',
-    question2: 'fib(n-2)',
+    question1: 'n-1',
+    question2: 'n-2',
   });
 
   return (
