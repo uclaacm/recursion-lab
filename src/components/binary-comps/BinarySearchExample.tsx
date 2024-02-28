@@ -107,8 +107,8 @@ export default function BinarySearchExample({
       <br />
       <div>
         {' '}
-        Is the currently highlighted word alphabetically before or after{' '}
-        {answer}?{' '}
+        Does the target word {answer} appear alphabetically before or after the
+        currently highlighted word?
       </div>
       <div
         style={{
