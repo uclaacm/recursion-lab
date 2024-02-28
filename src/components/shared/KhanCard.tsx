@@ -104,6 +104,9 @@ function KhanCard(props: KhanCardProps): JSX.Element {
 
   const handleShowAnswer = () => {
     setShowAnswer((prev) => !prev);
+    if (!showAnswer) {
+      setIsButtonDisabled(true);
+    }
   };
 
   return (
