@@ -107,6 +107,7 @@ function IntroCode(): JSX.Element {
               }
               size="medium"
               name="intro-drop1"
+              finish={true}
             />
             :
             <br />
@@ -122,6 +123,7 @@ function IntroCode(): JSX.Element {
                   }
                   size="small"
                   name="intro-drop2"
+                  finish={true}
                 />
               </>
             </Tab>

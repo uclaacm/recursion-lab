@@ -13,6 +13,7 @@ interface DropdownProps {
   answer: string;
   update_answer: any;
   name: string;
+  finish?: boolean;
 }
 
 function Dropdown(props: DropdownProps): JSX.Element {
@@ -47,27 +48,36 @@ function Dropdown(props: DropdownProps): JSX.Element {
   const handleChange = (selectedOption: any) => {
     const chosenAnswer = selectedOption.value;
 
-    if (correctAnswers === undefined) {
+    if (
+      (props.finish && props.correct_answer === undefined) ||
+      (!props.finish && correctAnswers === undefined)
+    ) {
       // Code the Components Together dropdown
       props.update_answer(chosenAnswer);
     } else {
       // KhanCard dropdown
+      if (props.finish) {
+        const newArray2 = props.correct_answer.map((val, i) => {
+          if (i == props.index) return props.answer === chosenAnswer;
+          else return val;
+        });
+        props.update_answer(newArray2);
+      } else {
+        const newArray = correctAnswers.map((val, i) => {
+          if (chosenAnswer === '' || chosenAnswer === null) {
+            //return null;
+            return false;
+          }
 
-      const newArray = correctAnswers.map((val, i) => {
-        if (chosenAnswer === '' || chosenAnswer === null) {
-          return null;
-        }
-
-        if (i == props.index) {
-          return props.answer === chosenAnswer;
-        } else {
-          return val;
-        }
-      });
-
-      setCorrectAnswers(newArray);
+          if (i == props.index) {
+            return props.answer === chosenAnswer;
+          } else {
+            return val;
+          }
+        });
+        setCorrectAnswers(newArray);
+      }
     }
-
     setSelectedValue(chosenAnswer);
   };
 
