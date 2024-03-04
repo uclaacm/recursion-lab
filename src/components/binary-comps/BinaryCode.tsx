@@ -112,6 +112,7 @@ function BinaryCode(): JSX.Element {
   return (
     <>
       <FinishCodeCard
+        name=""
         description="Your answer will be tested with the given words array at the start with the target word 'pear'."
         correct_answer={[
           givenBinarySearch(arr, 'pear', 0, arr.length - 1) ===
@@ -145,6 +146,7 @@ function BinaryCode(): JSX.Element {
                     update_answer={(chosenAnswer: string) =>
                       handleUpdateAnswer(0, chosenAnswer)
                     }
+                    name="binary-drop001"
                   />
                 </>
               </Tab>
@@ -165,6 +167,7 @@ function BinaryCode(): JSX.Element {
                     update_answer={(chosenAnswer: string) =>
                       handleUpdateAnswer(1, chosenAnswer)
                     }
+                    name="binary-drop3"
                   />
                 </>
               </Tab>
@@ -183,6 +186,7 @@ function BinaryCode(): JSX.Element {
                     update_answer={(chosenAnswer: string) =>
                       handleUpdateAnswer(2, chosenAnswer)
                     }
+                    name="binary-drop4"
                   />
                   {')'}
                 </>
@@ -202,6 +206,7 @@ function BinaryCode(): JSX.Element {
                     update_answer={(chosenAnswer: string) =>
                       handleUpdateAnswer(3, chosenAnswer)
                     }
+                    name="binary-drop5"
                   />
                   {')'}
                 </>

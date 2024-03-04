@@ -54,6 +54,7 @@ const Problem2: FC = () => {
               component={DiningBaseCase}
               icon={CallIcon}
             />
+
             <ExpandBox
               class="dining-title"
               title="Generalize the Pattern: Recursive Formula"

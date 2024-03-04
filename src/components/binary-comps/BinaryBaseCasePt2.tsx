@@ -7,7 +7,9 @@ import KhanInput from '../shared/KhanInput';
 import Tab from '../shared/Tab';
 
 function BinaryBaseCasePt2(): JSX.Element {
-  const [isCorrect, setIsCorrect] = useState([false, false, false]);
+  const [isCorrect, setIsCorrect] = useState<(boolean | null | number)[]>([
+    -1, -1, -1,
+  ]);
   const [answerKey] = useState({
     question1: 'low',
     question2: '>',
@@ -39,6 +41,7 @@ function BinaryBaseCasePt2(): JSX.Element {
           index={1}
           answer={answerKey.question2}
           update_answer={setIsCorrect}
+          name="binary-drop2"
         />
         <KhanInput
           size="medium"

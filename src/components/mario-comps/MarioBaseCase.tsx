@@ -7,7 +7,9 @@ import KhanInput from '../shared/KhanInput';
 import Tab from '../shared/Tab';
 
 function MarioBaseCase(): JSX.Element {
-  const [isCorrect, setIsCorrect] = useState([false, false]);
+  const [isCorrect, setIsCorrect] = useState<(boolean | null | number)[]>([
+    -1, -1,
+  ]);
   const [answerKey] = useState({
     //you can have multiple "Fill in the Blank" questions
     question1: '1',
@@ -31,6 +33,7 @@ function MarioBaseCase(): JSX.Element {
           index={0} //index for what question # you are referring to
           answer={answerKey.question2} //the answer from answerkey
           update_answer={setIsCorrect} //function to update the correctness array
+          name="mario-drop1"
         />
         :
         <br />

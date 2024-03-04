@@ -1,9 +1,13 @@
 import DiningTree from './DiningTree';
-import Blue from '../shared/Blue';
+import CodeBlock from '../shared/CodeBlock';
 import Goal from '../shared/Goal';
-import Gold from '../shared/Gold';
-import Tab from '../shared/Tab';
 import '../../pages/Problem2.scss';
+
+const code = `class Friend:
+    def __init__(self, val, left = None, right = None):
+        self.val = val
+        self.left = left
+        self.right = right`;
 
 function DiningUnderstand(): JSX.Element {
   return (
@@ -21,42 +25,7 @@ function DiningUnderstand(): JSX.Element {
       <br />
       <div className="goal-container" style={{ gap: '50px' }}>
         <div className="left-align">
-          <Blue>class Friend</Blue>:
-          <br />
-          <Tab>
-            <>
-              <Blue>def </Blue>
-              <span
-                style={{
-                  textDecoration: 'underline #736000',
-                  whiteSpace: 'pre',
-                }}
-              >
-                {'    '}
-              </span>
-              <Gold>init</Gold>
-              <span
-                style={{
-                  textDecoration: 'underline #736000',
-                  whiteSpace: 'pre',
-                }}
-              >
-                {'    '}
-              </span>
-              (self, val, <br />
-              left = <Blue>None</Blue>, right = <Blue>None</Blue>):
-              <br />
-              <Tab>
-                <>
-                  self.val = val
-                  <br />
-                  self.left = left
-                  <br />
-                  self.right = right
-                </>
-              </Tab>
-            </>
-          </Tab>
+          <CodeBlock language="python" code={code}></CodeBlock>
         </div>
         <table className="left-align">
           <thead>
