@@ -91,6 +91,51 @@
   transform-origin: 90% 82%;
   transition: fill 0.3s ease-in-out;
 }
+
+.ryans-left-none {
+  stroke-width: 3;
+  transform-origin: 90% 82%;
+  transition: fill 0.3s ease-in-out;
+}
+
+.ryan-ryansleftnone {
+  fill: black;
+  stroke: black;
+  stroke-dasharray: 485; /* Set this to the total length of your path */
+  stroke-dashoffset: 0; /* Set this to the total length of your path */
+  stroke-width: 3;
+}
+
+.ryan-ryansrightnone {
+  fill: black;
+  stroke: black;
+  stroke-dasharray: 485; /* Set this to the total length of your path */
+  stroke-dashoffset: 0; /* Set this to the total length of your path */
+  stroke-width: 3;
+}
+
+.sams-left-none {
+  stroke-width: 3;
+  transform-origin: 90% 82%;
+  transition: fill 0.3s ease-in-out;
+}
+
+.sam-samsleftnone {
+  fill: black;
+  stroke: black;
+  stroke-dasharray: 485; /* Set this to the total length of your path */
+  stroke-dashoffset: 0; /* Set this to the total length of your path */
+  stroke-width: 3;
+}
+
+.sam-samsrightnone {
+  fill: black;
+  stroke: black;
+  stroke-dasharray: 485; /* Set this to the total length of your path */
+  stroke-dashoffset: 0; /* Set this to the total length of your path */
+  stroke-width: 3;
+}
+
 /* Animation for the SVG container */
 .animate {
   animation: animateSVG 2s linear forwards;
@@ -126,6 +171,26 @@
 
   50% {
     stroke-dashoffset: 235; /* Set this to the total length of your path */
+  }
+
+  100% {
+    stroke: orange;
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-line-small {
+  animation: animateLineSmall 1s linear forwards;
+}
+
+@keyframes animateLineSmall {
+  0% {
+    stroke: orange;
+    stroke-dashoffset: 400; /* Set this to the total length of your path */
+  }
+
+  50% {
+    stroke-dashoffset: 200; /* Set this to the total length of your path */
   }
 
   100% {
